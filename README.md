@@ -1,6 +1,8 @@
 # GuideAlong Tours Map
 
-This project is a web app that displays GuideAlong tours on a Google Map. It fetches live tour data from [guidealong.com/tour-list](https://guidealong.com/tour-list/), geocodes the locations, and plots them as interactive markers. Each marker popup shows the tour's description and image.
+This project is a web app that displays GuideAlong tours on a Google Map. 
+
+It fetches live tour data from [guidealong.com/tour-list](https://guidealong.com/tour-list/), geocodes the locations, and plots them as interactive markers. Each marker popup shows the tour's description and image.
 
 ## Features
 - Fetches live tour data (with CORS proxy)
@@ -23,18 +25,14 @@ This project is a web app that displays GuideAlong tours on a Google Map. It fet
 To serve the app locally, use:
 
 ```
-npx serve
+pnpm start
 ```
 
 This will start a local web server and open the app in your browser.
 
 ## Requirements
-- Node.js (for `npx serve`)
+- Node.js
 - Internet connection (for live tour data and Google Maps)
-
-## Customization
-- Replace `mapId` in `index.html` with your own Google Maps Map ID for production.
-- For production-grade CORS handling, set up a backend proxy.
 
 ## License
 This project is for demonstration purposes and is not affiliated with GuideAlong.
