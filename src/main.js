@@ -193,12 +193,9 @@ function plotToursOnMap(tours) {
   markers = [];
 
   let openInfoWindow = null;
-  // Use a path relative to the web server root, not the src folder
   const guidealongIcon = {
-    url: "icons/guidealong.png", // Served from /icons/guidealong.png
+    url: "icons/guidealong.png", 
     scaledSize: new google.maps.Size(16, 16), // Adjust size as needed
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(20, 40),
   };
   tours.forEach((t) => {
     if (t.lat && t.lng) {
@@ -393,6 +390,43 @@ async function initMap() {
       .getElementById("stateFilter")
       .addEventListener("change", filterTours);
   }
+
+  // Autocomplete for search input
+  const searchInput = document.getElementById("searchInput");
+  let datalist = document.getElementById("tourSearchList");
+  if (!datalist) {
+    datalist = document.createElement("datalist");
+    datalist.id = "tourSearchList";
+    document.body.appendChild(datalist);
+    searchInput.setAttribute("list", "tourSearchList");
+  }
+  function updateAutocomplete(tours) {
+    datalist.innerHTML = tours.map(t => `<option value="${t.title}">`).join("");
+  }
+
+  // Update autocomplete whenever filters change
+  function updateAll() {
+    const filtered = allTours.filter((t) => {
+      const search = searchInput.value.toLowerCase();
+      const country = document.getElementById("countryFilter").value;
+      const state = document.getElementById("stateFilter") ? document.getElementById("stateFilter").value : "";
+      const matchesSearch = t.title.toLowerCase().includes(search) || t.description.toLowerCase().includes(search);
+      const matchesCountry = !country || t.country === country;
+      const matchesState = !state || t.state === state;
+      return matchesSearch && matchesCountry && matchesState;
+    });
+    updateAutocomplete(filtered);
+    plotToursOnMap(filtered);
+    updateStats(filtered);
+  }
+
+  searchInput.addEventListener("input", updateAll);
+  searchInput.addEventListener("change", updateAll);
+  document.getElementById("countryFilter").addEventListener("change", updateAll);
+  if (document.getElementById("stateFilter")) {
+    document.getElementById("stateFilter").addEventListener("change", updateAll);
+  }
+  updateAutocomplete(allTours);
   plotToursOnMap(allTours);
   updateStats(allTours);
 }
