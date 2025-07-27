@@ -21,7 +21,6 @@ async function fetchTours() {
     console.error("Error fetching tours:", error);
     showError("Unable to fetch live data. Using sample tours.");
     hideLoading(); // Hide loading on error
-    return getSampleTours();
   }
 }
 
@@ -37,7 +36,7 @@ function parseTourData(html) {
     const title = link.textContent.trim();
     const url = link.href;
     // Skip if title contains 'bundle' or 'tours' (case-insensitive)
-    if (/bundle|tours/i.test(title)) {
+    if (/bundle|tours|\+/i.test(title)) {
       console.warn(`Skipping bundled tour with title: "${title}"`);
       return; // Skip this tour
     }
@@ -65,57 +64,43 @@ function parseTourData(html) {
     }
 
     // Extract audio points, duration, tour type
-    let audioPoints = "",
-      duration = "",
-      tourType = "";
+    let audioPoints = "";
+    let duration = "";
+    let tourType = "";
+    let thumbnail = "";
     if (parent) {
-      // Duration: Prefer div.tourmaster-tour-info-duration-text
-      const durationDiv = parent.querySelector("div.tourmaster-tour-info-duration-text");
-      if (durationDiv) {
-        duration = durationDiv.textContent.trim();
-      }
-      // Audio Points: Prefer div.tourmaster-tour-info-minimum-age
-      const audioDiv = parent.querySelector("div.tourmaster-tour-info-minimum-age");
-      if (audioDiv) {
-        audioPoints = audioDiv.textContent.trim().replace(/audio points[:\s]*/i, "").trim();
-      }
-      // Tour Type: Prefer div.tourmaster-tour-info-maximum-people
-      const tourTypeDiv = parent.querySelector("div.tourmaster-tour-info-maximum-people");
-      if (tourTypeDiv) {
-        tourType = tourTypeDiv.textContent.trim().replace(/tour type[:\s]*/i, "").trim();
-      }
-      // Find all <li> or <span> with icons or text
-      const textNodes = parent.querySelectorAll("li, span, div");
-      textNodes.forEach((node) => {
-        const txt = node.textContent.trim();
-        // Only set audioPoints if not already found
-        if (!audioPoints && /audio points/i.test(txt))
-          audioPoints = txt.replace(/audio points[:\s]*/i, "").trim();
-        // Only set duration if not already found
-        if (!duration && /full day|hour|day|1\/2/i.test(txt)) duration = txt;
-        // Only set tourType if not already found
-        if (!tourType && /tour type/i.test(txt))
-          tourType = txt.replace(/tour type[:\s]*/i, "").trim();
-      });
-    }
-
-    // Get image only from div.tourmaster-tour-thumbnail
-    let image = "";
-    if (parent) {
+      const durationDiv = parent.querySelector(
+        "div.tourmaster-tour-info-duration-text",
+      );
+      if (durationDiv) duration = durationDiv.textContent.trim();
+      const audioDiv = parent.querySelector(
+        "div.tourmaster-tour-info-minimum-age",
+      );
+      if (audioDiv)
+        audioPoints = audioDiv.textContent
+          .trim()
+          .replace(/audio points[:\s]*/i, "")
+          .trim();
+      const tourTypeDiv = parent.querySelector(
+        "div.tourmaster-tour-info-maximum-people",
+      );
+      if (tourTypeDiv)
+        tourType = tourTypeDiv.textContent
+          .trim()
+          .replace(/tour type[:\s]*/i, "")
+          .trim();
       const thumbDiv = parent.querySelector("div.tourmaster-tour-thumbnail");
       if (thumbDiv) {
-        console.log("thumbDiv found:", thumbDiv);
         const imgElement = thumbDiv.querySelector("img");
-        if (imgElement?.src) {
-          image = imgElement.src;
-        }
+        if (imgElement?.src) thumbnail = imgElement.src;
       }
     }
+
     tours.push({
       title,
       url,
       description,
-      image,
+      thumbnail,
       audioPoints,
       duration,
       tourType,
@@ -130,53 +115,49 @@ function parseTourData(html) {
 function extractCountryAndStateFromGeocode(geocodeResult) {
   let country = "";
   let state = "";
-  if (geocodeResult && geocodeResult.address_components) {
-    geocodeResult.address_components.forEach((comp) => {
-      if (comp.types.includes("country")) country = comp.long_name;
-      if (comp.types.includes("administrative_area_level_1"))
-        state = comp.long_name;
-    });
-  }
+  geocodeResult?.address_components?.forEach((comp) => {
+    if (comp.types.includes("country")) country = comp.long_name;
+    if (comp.types.includes("administrative_area_level_1"))
+      state = comp.long_name;
+  });
   return { country, state };
 }
 
 async function geocodeTours(tours) {
   const geocodedTours = [];
   for (const tour of tours) {
-    let geocodeDetails = null;
-    geocodeDetails = await new Promise((resolve) => {
-      const cleanName = tour.title
-        .replace(/\b(tour|audio|driving|walking|guide|app)\b/gi, " ")
-        .replace(/australia,/gi, " ")
-        .replace(/,.*$/, "") // Remove any comma and following text
-        .replace(/\s*-\s*/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-      console.log(`Geocoding: "${cleanName}"`);
+    let cleanName = tour.title
+      .replace(/\b(tour|audio|driving|walking|guide|app)\b/gi, " ")
+      .replace(/australia,/gi, " ")
+      .replace(/,.*$/, "")
+      .replace(/\s*-\s*/g, " ")
+      .replace(/\s+/g, " ")
+      .trim(); 
+
+    let geocodeDetails = await new Promise((resolve) => {
       geocoder.geocode({ address: cleanName }, (results, status) => {
-        if (status === "OK" && results[0]) {
-          resolve(results[0]);
-        } else {
-          resolve(null);
-        }
+        resolve(status === "OK" && results[0] ? results[0] : null);
       });
     });
-    if (geocodeDetails) {
-      coordinates = {
-        lat: geocodeDetails.geometry.location.lat(),
-        lng: geocodeDetails.geometry.location.lng(),
-      };
+    console.log(`Geocode result for "${cleanName}":`, geocodeDetails);
+
+    if (!geocodeDetails) {
+      cleanName = `${cleanName} National Park`;
+      geocodeDetails = await new Promise((resolve) => {
+        geocoder.geocode({ address: cleanName }, (results, status) => {
+          resolve(status === "OK" && results[0] ? results[0] : null);
+        });
+      });
+      console.log(`Retry geocode result for "${cleanName}":`, geocodeDetails);
     }
-    let country = "",
-      state = "";
+
     if (geocodeDetails) {
-      ({ country, state } = extractCountryAndStateFromGeocode(geocodeDetails));
-    }
-    if (coordinates) {
+      const { country, state } =
+        extractCountryAndStateFromGeocode(geocodeDetails);
       geocodedTours.push({
         ...tour,
-        lat: coordinates.lat,
-        lng: coordinates.lng,
+        lat: geocodeDetails.geometry.location.lat(),
+        lng: geocodeDetails.geometry.location.lng(),
         country,
         state,
       });
@@ -207,8 +188,8 @@ function hideError() {
 function plotToursOnMap(tours) {
   // Remove old markers
   markers.forEach((m) => {
-    if (m && m.map) m.map = null;
-    if (m && m.parentNode) m.parentNode.removeChild(m);
+    if (m?.map) m.map = null;
+    m?.parentNode?.removeChild(m);
   });
   markers = [];
 
@@ -218,7 +199,7 @@ function plotToursOnMap(tours) {
     url: "icons/guidealong.png", // Served from /icons/guidealong.png
     scaledSize: new google.maps.Size(16, 16), // Adjust size as needed
     origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(20, 40)
+    anchor: new google.maps.Point(20, 40),
   };
   tours.forEach((t) => {
     if (t.lat && t.lng) {
@@ -226,7 +207,7 @@ function plotToursOnMap(tours) {
         map: map,
         position: { lat: t.lat, lng: t.lng },
         title: t.title,
-        icon: guidealongIcon
+        icon: guidealongIcon,
       });
       marker.addListener("click", () => {
         if (openInfoWindow) {
@@ -234,7 +215,7 @@ function plotToursOnMap(tours) {
         }
         const info = new google.maps.InfoWindow({
           content: `<h3>${t.title}</h3>
-            ${t.image ? `<img src='${t.image}' alt='${t.title}' style='max-width:200px;max-height:120px;margin-bottom:8px;border-radius:6px;'>` : ""}
+            ${t.thumbnail ? `<img src='${t.thumbnail}' alt='${t.title}' style='max-width:200px;max-height:120px;margin-bottom:8px;border-radius:6px;'>` : ""}
             ${t.duration ? `<div><b>Duration:</b> ${t.duration}</div>` : ""}
             ${t.audioPoints ? `<div><b>Audio Points:</b> ${t.audioPoints}</div>` : ""}
             ${t.tourType ? `<div><b>Tour Type:</b> ${t.tourType}</div>` : ""}
@@ -281,7 +262,9 @@ function populateFilters(tours) {
     const stateDiv = document.createElement("div");
     stateDiv.className = "filter-section";
     stateDiv.innerHTML = `<label for="stateFilter">Filter by state:</label><select id="stateFilter"><option value="">All States</option></select>`;
-    document.getElementById("controls").insertBefore(stateDiv, document.getElementById("stats"));
+    document
+      .getElementById("controls")
+      .insertBefore(stateDiv, document.getElementById("stats"));
     stateFilter = document.getElementById("stateFilter");
   }
   let stateOptions = '<option value="">All States</option>';
@@ -292,9 +275,10 @@ function populateFilters(tours) {
       if (states.length) {
         stateOptions += `<optgroup label="${country}">`;
         states.forEach((state) => {
-          if (state) stateOptions += `<option value="${state}">${state}</option>`;
+          if (state)
+            stateOptions += `<option value="${state}">${state}</option>`;
         });
-        stateOptions += '</optgroup>';
+        stateOptions += "</optgroup>";
       }
     });
   stateFilter.innerHTML = stateOptions;
@@ -319,7 +303,9 @@ function filterTours() {
 }
 
 document.getElementById("searchInput").addEventListener("input", filterTours);
-document.getElementById("countryFilter").addEventListener("change", filterTours);
+document
+  .getElementById("countryFilter")
+  .addEventListener("change", filterTours);
 // State filter will be added dynamically, so add listener after population
 
 // Fetch & Save Latest Tours button logic
@@ -373,7 +359,7 @@ async function loadToursFromFile() {
     const tours = await response.json();
     hideLoading();
     return tours;
-  } catch (err) {
+  } catch {
     hideLoading();
     return null;
   }
@@ -385,7 +371,7 @@ async function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
     center: { lat: 39, lng: -98 }, // centered over U.S.
-    mapId: "DEMO_MAP_ID", // <-- Replace with your own Map ID for production
+    mapId: "GuideAlong Global Map", // <-- Replace with your own Map ID for production
   });
   geocoder = new google.maps.Geocoder();
 
@@ -397,15 +383,16 @@ async function initMap() {
     // If no tours.json or it's empty, fetch and geocode
     try {
       tours = await fetchTours();
-    } catch (err) {
+    } catch {
       showError("Could not load tours. Showing sample data.");
-      tours = getSampleTours();
     }
   }
   allTours = tours;
   populateFilters(allTours);
   if (document.getElementById("stateFilter")) {
-    document.getElementById("stateFilter").addEventListener("change", filterTours);
+    document
+      .getElementById("stateFilter")
+      .addEventListener("change", filterTours);
   }
   plotToursOnMap(allTours);
   updateStats(allTours);
