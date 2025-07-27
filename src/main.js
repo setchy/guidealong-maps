@@ -186,10 +186,9 @@ function hideError() {
 }
 
 function plotToursOnMap(tours) {
-  // Remove old markers
+  // Remove old markers from map
   markers.forEach((m) => {
-    if (m?.map) m.map = null;
-    m?.parentNode?.removeChild(m);
+    if (m) m.setMap(null);
   });
   markers = [];
 
