@@ -133,11 +133,13 @@ async function geocodeTours(tours) {
     let geocodeDetails = null;
     geocodeDetails = await new Promise((resolve) => {
       const cleanName = tour.title
-        .replace(/,.*$/, "") // Remove any comma and following text
         .replace(/\b(tour|audio|driving|walking|guide|app)\b/gi, " ")
+        .replace(/australia,/gi, " ")
+        .replace(/,.*$/, "") // Remove any comma and following text
         .replace(/\s*-\s*/g, " ")
         .replace(/\s+/g, " ")
         .trim();
+      console.log(`Geocoding: "${cleanName}"`);
       geocoder.geocode({ address: cleanName }, (results, status) => {
         if (status === "OK" && results[0]) {
           resolve(results[0]);
@@ -234,14 +236,18 @@ function updateStats(tours) {
 }
 
 function populateFilters(tours) {
+  // Build country and state sets
   const countrySet = new Set();
-  const stateSet = new Set();
+  const countryStates = {};
   tours.forEach((t) => {
-    // Add all countries found in geocoded address_components
-    if (t.country) countrySet.add(t.country);
-    // Add all states found in geocoded address_components
-    if (t.state) stateSet.add(t.state);
+    if (t.country) {
+      countrySet.add(t.country);
+      if (!countryStates[t.country]) countryStates[t.country] = new Set();
+      if (t.state) countryStates[t.country].add(t.state);
+    }
   });
+
+  // Populate country filter
   const countryFilter = document.getElementById("countryFilter");
   countryFilter.innerHTML = '<option value="">All Countries</option>';
   Array.from(countrySet)
@@ -249,23 +255,31 @@ function populateFilters(tours) {
     .forEach((c) => {
       if (c) countryFilter.innerHTML += `<option value="${c}">${c}</option>`;
     });
+
+  // Populate state filter grouped by country
   let stateFilter = document.getElementById("stateFilter");
   if (!stateFilter) {
     // Add state filter to controls if not present
     const stateDiv = document.createElement("div");
     stateDiv.className = "filter-section";
     stateDiv.innerHTML = `<label for="stateFilter">Filter by state:</label><select id="stateFilter"><option value="">All States</option></select>`;
-    document
-      .getElementById("controls")
-      .insertBefore(stateDiv, document.getElementById("stats"));
+    document.getElementById("controls").insertBefore(stateDiv, document.getElementById("stats"));
     stateFilter = document.getElementById("stateFilter");
   }
-  stateFilter.innerHTML = '<option value="">All States</option>';
-  Array.from(stateSet)
+  let stateOptions = '<option value="">All States</option>';
+  Object.keys(countryStates)
     .sort()
-    .forEach((s) => {
-      if (s) stateFilter.innerHTML += `<option value="${s}">${s}</option>`;
+    .forEach((country) => {
+      const states = Array.from(countryStates[country]).sort();
+      if (states.length) {
+        stateOptions += `<optgroup label="${country}">`;
+        states.forEach((state) => {
+          if (state) stateOptions += `<option value="${state}">${state}</option>`;
+        });
+        stateOptions += '</optgroup>';
+      }
     });
+  stateFilter.innerHTML = stateOptions;
 }
 
 function filterTours() {
@@ -287,12 +301,67 @@ function filterTours() {
 }
 
 document.getElementById("searchInput").addEventListener("input", filterTours);
-document
-  .getElementById("countryFilter")
-  .addEventListener("change", filterTours);
+document.getElementById("countryFilter").addEventListener("change", filterTours);
 // State filter will be added dynamically, so add listener after population
 
-function initMap() {
+// Fetch & Save Latest Tours button logic
+document.getElementById("fetchToursBtn").addEventListener("click", async () => {
+  showLoading("Fetching and saving latest tours...");
+  try {
+    const tours = await fetchTours();
+    // Save tours to tours.json using File System Access API if available
+    const toursJson = JSON.stringify(tours, null, 2);
+    if (window.showSaveFilePicker) {
+      // Modern browsers: File System Access API
+      const handle = await window.showSaveFilePicker({
+        suggestedName: "tours.json",
+        types: [
+          {
+            description: "JSON file",
+            accept: { "application/json": [".json"] },
+          },
+        ],
+      });
+      const writable = await handle.createWritable();
+      await writable.write(toursJson);
+      await writable.close();
+      showLoading("Tours saved to tours.json!");
+      setTimeout(hideLoading, 1500);
+    } else {
+      // Fallback: download as file
+      const blob = new Blob([toursJson], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "tours.json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showLoading("Tours file downloaded!");
+      setTimeout(hideLoading, 1500);
+    }
+  } catch (err) {
+    showError("Failed to fetch or save tours: " + err.message);
+    hideLoading();
+  }
+});
+
+async function loadToursFromFile() {
+  try {
+    showLoading("Loading saved tours...");
+    const response = await fetch("./data/tours.json");
+    if (!response.ok) throw new Error("No saved tours file found");
+    const tours = await response.json();
+    hideLoading();
+    return tours;
+  } catch (err) {
+    hideLoading();
+    return null;
+  }
+}
+
+async function initMap() {
   showLoading("Initializing map...");
   hideError();
   map = new google.maps.Map(document.getElementById("map"), {
@@ -302,36 +371,32 @@ function initMap() {
   });
   geocoder = new google.maps.Geocoder();
 
-  // Always hide loading after map is initialized
   hideLoading();
   document.getElementById("controls").style.display = "block";
 
-  fetchTours()
-    .then((tours) => {
-      allTours = tours;
-      populateFilters(allTours);
-      if (document.getElementById("stateFilter")) {
-        document
-          .getElementById("stateFilter")
-          .addEventListener("change", filterTours);
-      }
-      plotToursOnMap(allTours);
-      updateStats(allTours);
-    })
-    .catch((err) => {
-      // Fallback in case fetchTours throws
-      console.error("Map init error:", err);
+  let tours = await loadToursFromFile();
+  if (!tours || !Array.isArray(tours) || tours.length === 0) {
+    // If no tours.json or it's empty, fetch and geocode
+    try {
+      tours = await fetchTours();
+    } catch (err) {
       showError("Could not load tours. Showing sample data.");
-      allTours = getSampleTours();
-      plotToursOnMap(allTours);
-      updateStats(allTours);
-    });
+      tours = getSampleTours();
+    }
+  }
+  allTours = tours;
+  populateFilters(allTours);
+  if (document.getElementById("stateFilter")) {
+    document.getElementById("stateFilter").addEventListener("change", filterTours);
+  }
+  plotToursOnMap(allTours);
+  updateStats(allTours);
 }
 
 // .env loader for browser
 async function loadEnv() {
   try {
-    const response = await fetch(".env");
+    const response = await fetch("./config/.env");
     if (!response.ok) throw new Error("Could not load .env");
     const text = await response.text();
     const lines = text.split("\n");

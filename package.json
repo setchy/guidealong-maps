@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx serve -l 3000 -d",
+    "start": "npx serve -l 3000 -d ./src",
     "lint": "biome check --fix"
   },
   "keywords": [],
