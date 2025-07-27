@@ -69,31 +69,44 @@ function parseTourData(html) {
       duration = "",
       tourType = "";
     if (parent) {
+      // Duration: Prefer div.tourmaster-tour-info-duration-text
+      const durationDiv = parent.querySelector("div.tourmaster-tour-info-duration-text");
+      if (durationDiv) {
+        duration = durationDiv.textContent.trim();
+      }
+      // Audio Points: Prefer div.tourmaster-tour-info-minimum-age
+      const audioDiv = parent.querySelector("div.tourmaster-tour-info-minimum-age");
+      if (audioDiv) {
+        audioPoints = audioDiv.textContent.trim().replace(/audio points[:\s]*/i, "").trim();
+      }
+      // Tour Type: Prefer div.tourmaster-tour-info-maximum-people
+      const tourTypeDiv = parent.querySelector("div.tourmaster-tour-info-maximum-people");
+      if (tourTypeDiv) {
+        tourType = tourTypeDiv.textContent.trim().replace(/tour type[:\s]*/i, "").trim();
+      }
       // Find all <li> or <span> with icons or text
       const textNodes = parent.querySelectorAll("li, span, div");
       textNodes.forEach((node) => {
         const txt = node.textContent.trim();
-        if (/audio points/i.test(txt))
+        // Only set audioPoints if not already found
+        if (!audioPoints && /audio points/i.test(txt))
           audioPoints = txt.replace(/audio points[:\s]*/i, "").trim();
-        if (/full day|hour|day|1\/2/i.test(txt)) duration = txt;
-        if (/tour type/i.test(txt))
+        // Only set duration if not already found
+        if (!duration && /full day|hour|day|1\/2/i.test(txt)) duration = txt;
+        // Only set tourType if not already found
+        if (!tourType && /tour type/i.test(txt))
           tourType = txt.replace(/tour type[:\s]*/i, "").trim();
       });
     }
 
-    // Get image from div.tourmaster-tour-thumbnail
+    // Get image only from div.tourmaster-tour-thumbnail
     let image = "";
     if (parent) {
       const thumbDiv = parent.querySelector("div.tourmaster-tour-thumbnail");
       if (thumbDiv) {
+        console.log("thumbDiv found:", thumbDiv);
         const imgElement = thumbDiv.querySelector("img");
-        if (imgElement && imgElement.src) {
-          image = imgElement.src;
-        }
-      } else {
-        // Fallback: look for any img in parent
-        const imgElement = parent.querySelector("img");
-        if (imgElement && imgElement.src) {
+        if (imgElement?.src) {
           image = imgElement.src;
         }
       }
@@ -200,17 +213,22 @@ function plotToursOnMap(tours) {
   markers = [];
 
   let openInfoWindow = null;
+  // Use a path relative to the web server root, not the src folder
+  const guidealongIcon = {
+    url: "icons/guidealong.png", // Served from /icons/guidealong.png
+    scaledSize: new google.maps.Size(16, 16), // Adjust size as needed
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(20, 40)
+  };
   tours.forEach((t) => {
     if (t.lat && t.lng) {
-      // Use AdvancedMarkerElement for marker
-      const marker = new google.maps.marker.AdvancedMarkerElement({
+      const marker = new google.maps.Marker({
         map: map,
         position: { lat: t.lat, lng: t.lng },
         title: t.title,
+        icon: guidealongIcon
       });
-      // InfoWindow for marker click
       marker.addListener("click", () => {
-        // Close any open InfoWindow
         if (openInfoWindow) {
           openInfoWindow.close();
         }
