@@ -2,6 +2,8 @@
 
 This project is a simple web app that displays [GuideAlong][guidealong] tours on a Google Map. 
 
+![GuideAlong Tours][screenshot]
+
 By default it uses geocoded tour information from `./src/data/tours.json` to plot tour markets on an interactive map.
 
 There is also the ability to fetch the most recent tour information from [guidealong.com/tour-list][guidealong-tours] and geocode the locations.
@@ -40,5 +42,6 @@ This project is for demonstration purposes and is not affiliated with GuideAlong
 
 
 <!-- Links -->
+[screenshot]: ./src/assets/image.png
 [guidealong]: https://guidealong.com
 [guidealong-tours]: https://guidealong.com/tour-list
