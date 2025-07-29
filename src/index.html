@@ -40,6 +40,29 @@
         </div>
       </div>
       <div class="filter-section">
+        <label>Filter by tour type:</label>
+        <div class="dropdown">
+          <div class="dropdown-button" id="tourTypeDropdownButton">
+            All Tour Types
+            <span class="dropdown-arrow">▼</span>
+          </div>
+          <div class="dropdown-content" id="tourTypeDropdownContent">
+            <div class="checkbox-item">
+              <input type="radio" id="allTourTypes" name="tourType" value="all" checked>
+              <label for="allTourTypes">All Tour Types</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="radio" id="drivingTours" name="tourType" value="Driving">
+              <label for="drivingTours">Driving Tours Only</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="radio" id="walkingTours" name="tourType" value="Walking">
+              <label for="walkingTours">Walking Tours Only</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="filter-section">
         <label>Filter by tour status:</label>
         <div class="dropdown">
           <div class="dropdown-button" id="statusDropdownButton">

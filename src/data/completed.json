@@ -1,10 +1,82 @@
 [
   {
     "title": "ACADIA NATIONAL PARK TOUR",
-    "completedDate": "2024-07-15"
+    "completedDate": null
   },
   {
     "title": "GRAND CANYON SOUTH RIM TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "YELLOWSTONE TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "GRAND TETON TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "JOSHUA TREE NATIONAL PARK TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "YOSEMITE TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "OLYMPIC NATIONAL PARK TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "OREGON COAST TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "BIG SUR, PCH HWY 1 TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "MIAMI <-> KEY WEST TOUR",
+    "completedDate": "2025-05-30"
+  },
+  {
+    "title": "VERMONT, RT100 SCENIC BYWAY TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "OUTER BANKS TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "MICHIGAN LAKESHORE, M-22 TOUR",
+    "completedDate": "2025-07-05"
+  },
+  {
+    "title": "EVERGLADES NATIONAL PARK TOUR",
+    "completedDate": "2025-07-19"
+  },
+  {
+    "title": "HALEAKALA NATIONAL PARK TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "SHENANDOAH NATIONAL PARK TOUR",
+    "completedDate": "2025-06-09"
+  },
+  {
+    "title": "MAUI - ROAD TO HANA TOUR",
+    "completedDate": null
+  },
+  {
+    "title": "MAUI TOURS",
+    "completedDate": null
+  },
+  {
+    "title": "HAWAII, BIG ISLAND TOURS",
+    "completedDate": null
+  },
+  {
+    "title": "OAHU TOURS",
     "completedDate": null
   }
 ]

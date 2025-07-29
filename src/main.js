@@ -63,10 +63,10 @@ function parseTourData(html) {
     const title = link.textContent.trim();
     const url = link.href;
     // Skip if title contains 'bundle' or 'tours' (case-insensitive)
-    if (/bundle|tours|\+/i.test(title)) {
-      console.warn(`Skipping bundled tour with title: "${title}"`);
-      return; // Skip this tour
-    }
+    // if (/bundle|tours|\+/i.test(title)) {
+    //   console.warn(`Skipping bundled tour with title: "${title}"`);
+    //   return; // Skip this tour
+    // }
 
     // Find the parent tour card (assume closest div)
     const parent = link.closest("div") || link.parentElement;
@@ -334,6 +334,9 @@ function populateFilters(tours) {
   
   // Setup tour status filter
   setupTourStatusFilter();
+  
+  // Setup tour type filter
+  setupTourTypeFilter();
 }
 
 function setupStateCheckboxListeners() {
@@ -495,6 +498,56 @@ function getSelectedTourStatus() {
   return selectedStatus ? selectedStatus.value : 'all';
 }
 
+function setupTourTypeFilter() {
+  const dropdownButton = document.getElementById("tourTypeDropdownButton");
+  const dropdown = dropdownButton.parentElement;
+  
+  // Toggle dropdown
+  dropdownButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle("open");
+  });
+  
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("open");
+    }
+  });
+  
+  // Handle tour type radio button changes
+  const tourTypeRadios = document.querySelectorAll('input[name="tourType"]');
+  tourTypeRadios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      updateTourTypeDropdownButtonText();
+      filterTours();
+    });
+  });
+  
+  updateTourTypeDropdownButtonText();
+}
+
+function updateTourTypeDropdownButtonText() {
+  const dropdownButton = document.getElementById("tourTypeDropdownButton");
+  const selectedTourType = document.querySelector('input[name="tourType"]:checked').value;
+  
+  switch(selectedTourType) {
+    case 'Driving':
+      dropdownButton.innerHTML = 'Driving Tours Only <span class="dropdown-arrow">▼</span>';
+      break;
+    case 'Walking':
+      dropdownButton.innerHTML = 'Walking Tours Only <span class="dropdown-arrow">▼</span>';
+      break;
+    default:
+      dropdownButton.innerHTML = 'All Tour Types <span class="dropdown-arrow">▼</span>';
+  }
+}
+
+function getSelectedTourType() {
+  const selectedTourType = document.querySelector('input[name="tourType"]:checked');
+  return selectedTourType ? selectedTourType.value : 'all';
+}
+
 function updateDropdownButtonText() {
   const dropdownButton = document.getElementById("stateDropdownButton");
   const allStatesCheckbox = document.getElementById("allStates");
@@ -525,6 +578,7 @@ function filterTours() {
   const selectedCountries = getSelectedCountries();
   const selectedStates = getSelectedStates();
   const selectedStatus = getSelectedTourStatus();
+  const selectedTourType = getSelectedTourType();
   
   const filtered = allTours.filter((t) => {
     const matchesSearch =
@@ -542,7 +596,13 @@ function filterTours() {
       matchesStatus = !isCompleted;
     }
     
-    return matchesSearch && matchesCountry && matchesState && matchesStatus;
+    // Filter by tour type
+    let matchesTourType = true;
+    if (selectedTourType !== 'all') {
+      matchesTourType = t.tourType === selectedTourType;
+    }
+    
+    return matchesSearch && matchesCountry && matchesState && matchesStatus && matchesTourType;
   });
   plotToursOnMap(filtered);
   updateStats(filtered);
@@ -655,6 +715,7 @@ async function initMap() {
       const selectedCountries = getSelectedCountries();
       const selectedStates = getSelectedStates();
       const selectedStatus = getSelectedTourStatus();
+      const selectedTourType = getSelectedTourType();
       const matchesSearch = t.title.toLowerCase().includes(search) || t.description.toLowerCase().includes(search);
       const matchesCountry = selectedCountries.length === 0 || selectedCountries.includes(t.country);
       const matchesState = selectedStates.length === 0 || selectedStates.includes(t.state);
@@ -668,7 +729,13 @@ async function initMap() {
         matchesStatus = !isCompleted;
       }
       
-      return matchesSearch && matchesCountry && matchesState && matchesStatus;
+      // Filter by tour type
+      let matchesTourType = true;
+      if (selectedTourType !== 'all') {
+        matchesTourType = t.tourType === selectedTourType;
+      }
+      
+      return matchesSearch && matchesCountry && matchesState && matchesStatus && matchesTourType;
     });
     updateAutocomplete(filtered);
     plotToursOnMap(filtered);
