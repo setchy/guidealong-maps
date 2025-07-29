@@ -11,15 +11,56 @@
       <h3>GuideAlong Tours</h3>
       <div class="filter-section">
         <label>Filter by country:</label>
-        <select id="countryFilter">
-          <option value="">All Countries</option>
-        </select>
+        <div class="dropdown">
+          <div class="dropdown-button" id="countryDropdownButton">
+            Select Countries
+            <span class="dropdown-arrow">▼</span>
+          </div>
+          <div class="dropdown-content" id="countryDropdownContent">
+            <div class="checkbox-item">
+              <input type="checkbox" id="allCountries" value="" checked>
+              <label for="allCountries">All Countries</label>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="filter-section">
         <label>Filter by state:</label>
-        <select id="stateFilter">
-          <option value="">All States</option>
-        </select>
+        <div class="dropdown">
+          <div class="dropdown-button" id="stateDropdownButton">
+            Select States
+            <span class="dropdown-arrow">▼</span>
+          </div>
+          <div class="dropdown-content" id="stateDropdownContent">
+            <div class="checkbox-item">
+              <input type="checkbox" id="allStates" value="" checked>
+              <label for="allStates">All States</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="filter-section">
+        <label>Filter by tour status:</label>
+        <div class="dropdown">
+          <div class="dropdown-button" id="statusDropdownButton">
+            All Tours
+            <span class="dropdown-arrow">▼</span>
+          </div>
+          <div class="dropdown-content" id="statusDropdownContent">
+            <div class="checkbox-item">
+              <input type="radio" id="allTours" name="tourStatus" value="all" checked>
+              <label for="allTours">All Tours</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="radio" id="completedTours" name="tourStatus" value="completed">
+              <label for="completedTours">Completed Tours Only</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="radio" id="incompleteTours" name="tourStatus" value="incomplete">
+              <label for="incompleteTours">Not Completed Tours Only</label>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="filter-section">
         <label>Search tours:</label>
