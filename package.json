@@ -20,11 +20,9 @@
   "packageManager": "pnpm@10.14.0",
   "devDependencies": {
     "@biomejs/biome": "2.1.4",
-    "http-server": "14.1.1"
-  },
-  "dependencies": {
-    "@googlemaps/google-maps-services-js": "^3.4.2",
+    "@googlemaps/google-maps-services-js": "3.4.2",
     "cheerio": "1.1.2",
-    "dotenv": "^17.2.1"
+    "dotenv": "17.2.1",
+    "http-server": "14.1.1"
   }
 }
