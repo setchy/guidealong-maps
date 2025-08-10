@@ -4,9 +4,9 @@
   "description": "A simple site that plots GuideAlong tour locations on a map",
   "main": "index.js",
   "scripts": {
-    "start": "serve -l 3000 -d ./src",
+    "start": "http-server ./src -p 3000 -o",
     "lint": "biome check --fix",
-    "fetch:tours": "node ./scripts/index.js"
+    "fetch:tours": "node ./lib/index.js"
   },
   "author": {
     "name": "Adam Setch",
@@ -20,7 +20,7 @@
   "packageManager": "pnpm@10.14.0",
   "devDependencies": {
     "@biomejs/biome": "2.1.4",
-    "serve": "14.2.4"
+    "http-server": "14.1.1"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.2",

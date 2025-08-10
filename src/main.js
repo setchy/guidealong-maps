@@ -615,7 +615,7 @@ async function initMap() {
 // .env loader for browser
 async function loadEnv() {
   try {
-    const response = await fetch("./config/.env");
+    const response = await fetch("config/.env");
     if (!response.ok) throw new Error("Could not load .env");
     const text = await response.text();
     const lines = text.split("\n");
