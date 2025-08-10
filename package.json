@@ -6,13 +6,13 @@
   "scripts": {
     "start": "serve -l 3000 -d ./src",
     "lint": "biome check --fix",
-    "fetch:tours": "node ./scripts/fetch-tours.js"
+    "fetch:tours": "node ./scripts/index.js"
   },
   "author": {
     "name": "Adam Setch",
     "url": "https://github.com/setchy"
-  }, 
-  "homepage": "https://tours.setchy.io",   
+  },
+  "homepage": "https://tours.setchy.io",
   "bugs": {
     "url": "https://github.com/setchy/guidealong-maps/issues"
   },

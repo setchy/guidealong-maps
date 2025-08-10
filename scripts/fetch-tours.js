@@ -166,7 +166,9 @@ async function enrichToursFromPages(tours) {
     }
     await sleep(120);
   }
-  log(`Detail extraction complete: start=${foundStart}, location=${foundLocation}`);
+  log(
+    `Detail extraction complete: start=${foundStart}, location=${foundLocation}`,
+  );
   return tours;
 }
 
@@ -177,10 +179,15 @@ async function geocodeTours(tours) {
     return tours;
   }
 
-  const toGeocode = tours.filter((t) => !(t && t.lat != null && t.lng != null) && normalizeText(t.title || ""));
+  const toGeocode = tours.filter(
+    (t) =>
+      !(t && t.lat != null && t.lng != null) && normalizeText(t.title || ""),
+  );
   const client = new Client({});
   const tail = apiKey.slice(-6);
-  log(`Geocoding ${toGeocode.length}/${tours.length} tours using Google Maps SDK (key tail: …${tail}).`);
+  log(
+    `Geocoding ${toGeocode.length}/${tours.length} tours using Google Maps SDK (key tail: …${tail}).`,
+  );
 
   let ok = 0;
   let zero = 0;
@@ -192,23 +199,35 @@ async function geocodeTours(tours) {
     const query = normalizeText(t.title || "");
     log(`[${i + 1}/${toGeocode.length}] Geocoding "${query}"…`);
     try {
-      const { data } = await client.geocode({ params: { address: query, key: apiKey } });
-      if (data.status === "OK" && Array.isArray(data.results) && data.results.length) {
+      const { data } = await client.geocode({
+        params: { address: query, key: apiKey },
+      });
+      if (
+        data.status === "OK" &&
+        Array.isArray(data.results) &&
+        data.results.length
+      ) {
         const best = data.results[0];
         if (best.geometry?.location) {
           t.lat = best.geometry.location.lat;
           t.lng = best.geometry.location.lng;
         }
         const comps = best.address_components || [];
-        const findComp = (type) => comps.find((c) => Array.isArray(c.types) && c.types.includes(type));
+        const findComp = (type) =>
+          comps.find((c) => Array.isArray(c.types) && c.types.includes(type));
         const country = findComp("country");
         const admin1 = findComp("administrative_area_level_1");
         t.country = country?.long_name || t.country || "";
         t.state = admin1?.short_name || admin1?.long_name || t.state || "";
         ok++;
-        const loc = t.lat != null && t.lng != null ? `${t.lat},${t.lng}` : "(no geometry)";
+        const loc =
+          t.lat != null && t.lng != null
+            ? `${t.lat},${t.lng}`
+            : "(no geometry)";
         const place = [t.state, t.country].filter(Boolean).join(", ") || "";
-        log(`[${i + 1}/${toGeocode.length}] OK ${loc}${place ? ` - ${place}` : ""}`);
+        log(
+          `[${i + 1}/${toGeocode.length}] OK ${loc}${place ? ` - ${place}` : ""}`,
+        );
       } else if (data.status === "ZERO_RESULTS") {
         zero++;
         log(`[${i + 1}/${toGeocode.length}] ZERO_RESULTS`);
@@ -225,7 +244,9 @@ async function geocodeTours(tours) {
     await sleep(120);
   }
 
-  log(`Geocoding complete: ok=${ok}, zero=${zero}, status=${statusErr}, errors=${caughtErr}`);
+  log(
+    `Geocoding complete: ok=${ok}, zero=${zero}, status=${statusErr}, errors=${caughtErr}`,
+  );
   return tours;
 }
 

@@ -3,197 +3,19 @@ let markers = [];
 let allTours = [];
 let completedTours = [];
 let completedToursData = []; // Store full completed tour objects
-let geocoder;
-
-async function fetchTours() {
-  try {
-    showLoading("Fetching tour data...");
-    // Use corsproxy.io to bypass CORS
-    const response = await fetch(
-      "https://corsproxy.io/?https://guidealong.com/tour-list/",
-    );
-    if (!response.ok) throw new Error("Failed to fetch tour data");
-    const html = await response.text();
-    const tours = parseTourData(html);
-    showLoading("Geocoding tour locations...");
-    const geocodedTours = await geocodeTours(tours);
-    hideLoading(); // Hide loading after geocoding is done
-    return geocodedTours;
-  } catch (error) {
-    console.error("Error fetching tours:", error);
-    showError("Unable to fetch live data. Using sample tours.");
-    hideLoading(); // Hide loading on error
-  }
-}
 
 async function loadCompletedTours() {
   try {
     const response = await fetch("data/completed.json");
     if (!response.ok) throw new Error("Failed to fetch completed tours");
     const completed = await response.json();
-
-    // Handle both old format (array of strings) and new format (array of objects)
-    if (completed.length > 0) {
-      if (typeof completed[0] === "string") {
-        // Old format: array of strings
-        completedToursData = completed.map((title) => ({
-          title,
-          completedDate: null,
-        }));
-        return completed;
-      } else {
-        // New format: array of objects
-        completedToursData = completed;
-        return completed.map((tour) => tour.title);
-      }
-    }
-    return [];
+    if (!Array.isArray(completed)) return [];
+    completedToursData = completed;
+    return completed.map((tour) => tour.title);
   } catch (error) {
     console.error("Error loading completed tours:", error);
     return [];
   }
-}
-
-function parseTourData(html) {
-  const tours = [];
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, "text/html");
-
-  // Find all tour elements
-  const tourElements = doc.querySelectorAll('h3 a[href*="/tour/"]');
-
-  tourElements.forEach((link) => {
-    const title = link.textContent.trim();
-    const url = link.href;
-    // Skip if title contains 'bundle' or 'tours' (case-insensitive)
-    // if (/bundle|tours|\+/i.test(title)) {
-    //   console.warn(`Skipping bundled tour with title: "${title}"`);
-    //   return; // Skip this tour
-    // }
-
-    // Find the parent tour card (assume closest div)
-    const parent = link.closest("div") || link.parentElement;
-
-    // Extract description from div.tourmaster-tour-content
-    let description = "";
-    if (parent) {
-      const descDiv = parent.querySelector("div.tourmaster-tour-content");
-      if (descDiv) {
-        description = descDiv.textContent.trim();
-      } else {
-        // Fallback: Find all <p> tags and pick the one with the longest text
-        const pTags = Array.from(parent.querySelectorAll("p"));
-        if (pTags.length) {
-          description = pTags
-            .reduce((a, b) =>
-              a.textContent.length > b.textContent.length ? a : b,
-            )
-            .textContent.trim();
-        }
-      }
-    }
-
-    // Extract audio points, duration, tour type
-    let audioPoints = "";
-    let duration = "";
-    let tourType = "";
-    let thumbnail = "";
-    if (parent) {
-      const durationDiv = parent.querySelector(
-        "div.tourmaster-tour-info-duration-text",
-      );
-      if (durationDiv) duration = durationDiv.textContent.trim();
-      const audioDiv = parent.querySelector(
-        "div.tourmaster-tour-info-minimum-age",
-      );
-      if (audioDiv)
-        audioPoints = audioDiv.textContent
-          .trim()
-          .replace(/audio points[:\s]*/i, "")
-          .trim();
-      const tourTypeDiv = parent.querySelector(
-        "div.tourmaster-tour-info-maximum-people",
-      );
-      if (tourTypeDiv)
-        tourType = tourTypeDiv.textContent
-          .trim()
-          .replace(/tour type[:\s]*/i, "")
-          .trim();
-      const thumbDiv = parent.querySelector("div.tourmaster-tour-thumbnail");
-      if (thumbDiv) {
-        const imgElement = thumbDiv.querySelector("img");
-        if (imgElement?.src) thumbnail = imgElement.src;
-      }
-    }
-
-    tours.push({
-      title,
-      url,
-      description,
-      thumbnail,
-      audioPoints,
-      duration,
-      tourType,
-      lat: null,
-      lng: null,
-    });
-  });
-
-  return tours;
-}
-
-function extractCountryAndStateFromGeocode(geocodeResult) {
-  let country = "";
-  let state = "";
-  geocodeResult?.address_components?.forEach((comp) => {
-    if (comp.types.includes("country")) country = comp.long_name;
-    if (comp.types.includes("administrative_area_level_1"))
-      state = comp.long_name;
-  });
-  return { country, state };
-}
-
-async function geocodeTours(tours) {
-  const geocodedTours = [];
-  for (const tour of tours) {
-    let cleanName = tour.title
-      .replace(/\b(tour|audio|driving|walking|guide|app)\b/gi, " ")
-      .replace(/australia,/gi, " ")
-      .replace(/,.*$/, "")
-      .replace(/\s*-\s*/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-
-    let geocodeDetails = await new Promise((resolve) => {
-      geocoder.geocode({ address: cleanName }, (results, status) => {
-        resolve(status === "OK" && results[0] ? results[0] : null);
-      });
-    });
-    console.log(`Geocode result for "${cleanName}":`, geocodeDetails);
-
-    if (!geocodeDetails) {
-      cleanName = `${cleanName} National Park`;
-      geocodeDetails = await new Promise((resolve) => {
-        geocoder.geocode({ address: cleanName }, (results, status) => {
-          resolve(status === "OK" && results[0] ? results[0] : null);
-        });
-      });
-      console.log(`Retry geocode result for "${cleanName}":`, geocodeDetails);
-    }
-
-    if (geocodeDetails) {
-      const { country, state } =
-        extractCountryAndStateFromGeocode(geocodeDetails);
-      geocodedTours.push({
-        ...tour,
-        lat: geocodeDetails.geometry.location.lat(),
-        lng: geocodeDetails.geometry.location.lng(),
-        country,
-        state,
-      });
-    }
-  }
-  return geocodedTours;
 }
 
 function showLoading(msg) {
@@ -234,11 +56,13 @@ function plotToursOnMap(tours) {
   };
 
   tours.forEach((t) => {
-    if (t.lat && t.lng) {
+    const lat = t?.geocode?.lat;
+    const lng = t?.geocode?.lng;
+    if (lat && lng) {
       const isCompleted = completedTours.includes(t.title);
       const marker = new google.maps.Marker({
         map: map,
-        position: { lat: t.lat, lng: t.lng },
+        position: { lat, lng },
         title: t.title,
         icon: isCompleted ? completedIcon : guidealongIcon,
       });
@@ -255,14 +79,15 @@ function plotToursOnMap(tours) {
           ? `: ${completedTourData.completedDate}`
           : "";
 
+        const d = t.details || {};
         const info = new google.maps.InfoWindow({
           content: `<h3>${t.title}${isCompleted ? " ✅" : ""}</h3>
             ${isCompleted ? `<div style="color: #28a745; font-weight: bold; margin-bottom: 8px;">Completed Tour${completedDateText}</div>` : ""}
-            ${t.thumbnail ? `<img src='${t.thumbnail}' alt='${t.title}' style='max-width:200px;max-height:120px;margin-bottom:8px;border-radius:6px;'>` : ""}
-            ${t.duration ? `<div><b>Duration:</b> ${t.duration}</div>` : ""}
-            ${t.audioPoints ? `<div><b>Audio Points:</b> ${t.audioPoints}</div>` : ""}
-            ${t.tourType ? `<div><b>Tour Type:</b> ${t.tourType}</div>` : ""}
-            ${t.description ? `<p>${t.description}</p>` : "<p>No description available.</p>"}
+            ${d.thumbnail ? `<img src='${d.thumbnail}' alt='${t.title}' style='max-width:200px;max-height:120px;margin-bottom:8px;border-radius:6px;'>` : ""}
+            ${d.duration ? `<div><b>Duration:</b> ${d.duration}</div>` : ""}
+            ${d.audioPoints ? `<div><b>Audio Points:</b> ${d.audioPoints}</div>` : ""}
+            ${d.tourType ? `<div><b>Tour Type:</b> ${d.tourType}</div>` : ""}
+            ${d.description ? `<p>${d.description}</p>` : "<p>No description available.</p>"}
             <a href='${t.url}' target='_blank'>Learn more</a>`,
         });
         info.open(map, marker);
@@ -289,10 +114,12 @@ function populateFilters(tours) {
   const countrySet = new Set();
   const countryStates = {};
   tours.forEach((t) => {
-    if (t.country) {
-      countrySet.add(t.country);
-      if (!countryStates[t.country]) countryStates[t.country] = new Set();
-      if (t.state) countryStates[t.country].add(t.state);
+    const country = t?.geocode?.country;
+    const state = t?.geocode?.state;
+    if (country) {
+      countrySet.add(country);
+      if (!countryStates[country]) countryStates[country] = new Set();
+      if (state) countryStates[country].add(state);
     }
   });
 
@@ -305,10 +132,10 @@ function populateFilters(tours) {
       '<div class="checkbox-item"><input type="checkbox" id="allCountries" value="" checked><label for="allCountries">All Countries</label></div>';
 
     Array.from(countrySet)
-      .sort()
+      .sort((a, b) => a.localeCompare(b))
       .forEach((country) => {
         if (country) {
-          const countryId = `country_${country.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9_]/g, "")}`;
+          const countryId = `country_${country.replace(/\s+/g, "_").replace(/\W/g, "")}`;
           countryCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${countryId}" value="${country}"><label for="${countryId}">${country}</label></div>`;
         }
       });
@@ -325,14 +152,16 @@ function populateFilters(tours) {
       '<div class="checkbox-item"><input type="checkbox" id="allStates" value="" checked><label for="allStates">All States</label></div>';
 
     Object.keys(countryStates)
-      .sort()
+      .sort((a, b) => a.localeCompare(b))
       .forEach((country) => {
-        const states = Array.from(countryStates[country]).sort();
+        const states = Array.from(countryStates[country]).sort((a, b) =>
+          a.localeCompare(b),
+        );
         if (states.length) {
           stateCheckboxes += `<div class="optgroup-label">${country}</div>`;
           states.forEach((state) => {
             if (state) {
-              const stateId = `state_${state.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9_]/g, "")}`;
+              const stateId = `state_${state.replace(/\s+/g, "_").replace(/\W/g, "")}`;
               stateCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${stateId}" value="${state}"><label for="${stateId}">${state}</label></div>`;
             }
           });
@@ -635,13 +464,15 @@ function filterTours() {
   const selectedTourType = getSelectedTourType();
 
   const filtered = allTours.filter((t) => {
+    const d = t.details || {};
+    const g = t.geocode || {};
     const matchesSearch =
       t.title.toLowerCase().includes(search) ||
-      t.description.toLowerCase().includes(search);
+      (d.description || "").toLowerCase().includes(search);
     const matchesCountry =
-      selectedCountries.length === 0 || selectedCountries.includes(t.country);
+      selectedCountries.length === 0 || selectedCountries.includes(g.country);
     const matchesState =
-      selectedStates.length === 0 || selectedStates.includes(t.state);
+      selectedStates.length === 0 || selectedStates.includes(g.state);
 
     // Filter by completion status
     const isCompleted = completedTours.includes(t.title);
@@ -655,7 +486,7 @@ function filterTours() {
     // Filter by tour type
     let matchesTourType = true;
     if (selectedTourType !== "all") {
-      matchesTourType = t.tourType === selectedTourType;
+      matchesTourType = d.tourType === selectedTourType;
     }
 
     return (
@@ -672,55 +503,15 @@ function filterTours() {
 
 document.getElementById("searchInput").addEventListener("input", filterTours);
 
-// Fetch & Save Latest Tours button logic
-document.getElementById("fetchToursBtn").addEventListener("click", async () => {
-  showLoading("Fetching and saving latest tours...");
-  try {
-    const tours = await fetchTours();
-    // Save tours to tours.json using File System Access API if available
-    const toursJson = JSON.stringify(tours, null, 2);
-    if (window.showSaveFilePicker) {
-      // Modern browsers: File System Access API
-      const handle = await window.showSaveFilePicker({
-        suggestedName: "tours.json",
-        types: [
-          {
-            description: "JSON file",
-            accept: { "application/json": [".json"] },
-          },
-        ],
-      });
-      const writable = await handle.createWritable();
-      await writable.write(toursJson);
-      await writable.close();
-      showLoading("Tours saved to tours.json!");
-      setTimeout(hideLoading, 1500);
-    } else {
-      // Fallback: download as file
-      const blob = new Blob([toursJson], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "tours.json";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      showLoading("Tours file downloaded!");
-      setTimeout(hideLoading, 1500);
-    }
-  } catch (err) {
-    showError("Failed to fetch or save tours: " + err.message);
-    hideLoading();
-  }
-});
+// Removed Fetch & Save button and logic
 
 async function loadToursFromFile() {
   try {
     showLoading("Loading saved tours...");
     const response = await fetch("./data/tours.json");
     if (!response.ok) throw new Error("No saved tours file found");
-    const tours = await response.json();
+    const toursRaw = await response.json();
+    const tours = Array.isArray(toursRaw) ? toursRaw : [];
     hideLoading();
     return tours;
   } catch {
@@ -737,7 +528,6 @@ async function initMap() {
     center: { lat: 39, lng: -98 }, // centered over U.S.
     mapId: "GuideAlong Global Map", // <-- Replace with your own Map ID for production
   });
-  geocoder = new google.maps.Geocoder();
 
   hideLoading();
   document.getElementById("controls").style.display = "block";
@@ -745,16 +535,13 @@ async function initMap() {
   // Load completed tours
   completedTours = await loadCompletedTours();
 
-  let tours = await loadToursFromFile();
+  const tours = await loadToursFromFile();
   if (!tours || !Array.isArray(tours) || tours.length === 0) {
-    // If no tours.json or it's empty, fetch and geocode
-    try {
-      tours = await fetchTours();
-    } catch {
-      showError("Could not load tours. Showing sample data.");
-    }
+    showError(
+      "No tours found. Please generate src/data/tours.json via the backend script.",
+    );
   }
-  allTours = tours;
+  allTours = Array.isArray(tours) ? tours : [];
   populateFilters(allTours);
 
   // Autocomplete for search input
@@ -780,13 +567,15 @@ async function initMap() {
       const selectedStates = getSelectedStates();
       const selectedStatus = getSelectedTourStatus();
       const selectedTourType = getSelectedTourType();
+      const d = t.details || {};
+      const g = t.geocode || {};
       const matchesSearch =
         t.title.toLowerCase().includes(search) ||
-        t.description.toLowerCase().includes(search);
+        (d.description || "").toLowerCase().includes(search);
       const matchesCountry =
-        selectedCountries.length === 0 || selectedCountries.includes(t.country);
+        selectedCountries.length === 0 || selectedCountries.includes(g.country);
       const matchesState =
-        selectedStates.length === 0 || selectedStates.includes(t.state);
+        selectedStates.length === 0 || selectedStates.includes(g.state);
 
       // Filter by completion status
       const isCompleted = completedTours.includes(t.title);
@@ -800,7 +589,7 @@ async function initMap() {
       // Filter by tour type
       let matchesTourType = true;
       if (selectedTourType !== "all") {
-        matchesTourType = t.tourType === selectedTourType;
+        matchesTourType = d.tourType === selectedTourType;
       }
 
       return (
