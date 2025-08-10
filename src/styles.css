@@ -1,3 +1,23 @@
+.filters-section { margin-top: 6px; }
+.filters-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 6px 4px;
+  cursor: pointer;
+}
+.filters-toggle:hover { background: #f7f7f7; border-radius: 6px; }
+.filters-toggle-arrow { font-size: 12px; color: #666; transition: transform 0.2s; }
+.filters-section.collapsed .filters-toggle-arrow { transform: rotate(-90deg); }
+.filters-section.collapsed .filters-content { display: none; }
+.filters-header { margin-top: 6px; }
+.filters-title {
+  font-size: 14px;
+  font-weight: 700;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -66,12 +86,25 @@ body {
 .filter-section {
   margin-bottom: 10px;
 }
+/* Indent each block within a filter section */
+.filter-section  {
+  padding-left: 8px;
+}
+/* Make filter labels less prominent */
+.filter-section > label,
+.filter-section > .filter-label {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 4px;
+}
 select,
 input {
   width: 100%;
   padding: 5px;
   margin: 5px 0;
   box-sizing: border-box;
+  font-size: 13px;
 }
 
 select[multiple] {
@@ -96,6 +129,7 @@ select[multiple] {
   align-items: center;
   box-sizing: border-box;
   margin: 5px 0;
+  font-size: 13px;
 }
 
 .dropdown-button:hover {
@@ -158,6 +192,7 @@ select[multiple] {
   cursor: pointer;
   flex: 1;
   margin: 0;
+  font-size: 13px;
 }
 
 .optgroup-label {
@@ -181,6 +216,31 @@ select[multiple] {
   overflow-y: auto;
   max-height: 45vh;
 }
+.tour-list-section { margin-top: 6px; }
+.tour-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 6px 4px;
+  cursor: pointer;
+}
+.tour-list-header:hover { background: #f7f7f7; border-radius: 6px; }
+.tour-header-right { display: inline-flex; align-items: center; gap: 8px; }
+.tour-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+.tour-count {
+  font-size: 12px;
+  color: #666;
+}
+.tour-toggle-arrow { font-size: 12px; color: #666; transition: transform 0.2s; }
+.tour-list-section.collapsed .tour-toggle-arrow { transform: rotate(-90deg); }
+.tour-list-section.collapsed .tour-list { display: none; }
 .tour-item {
   padding: 8px 6px;
   border-radius: 6px;

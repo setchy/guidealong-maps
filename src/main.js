@@ -109,7 +109,7 @@ function updateStats(tours) {
   const totalCount = tours.length;
   const completedText =
     completedCount > 0 ? ` (${completedCount} completed)` : "";
-  document.getElementById("stats").textContent =
+  document.getElementById("tourCount").textContent =
     `${totalCount} tours shown${completedText}`;
 }
 
@@ -617,6 +617,26 @@ async function initMap() {
   plotToursOnMap(allTours);
   updateStats(allTours);
   renderTourList(allTours);
+
+  // Collapsible tour list toggle
+  const tourListSection = document.getElementById("tourListSection");
+  const tourListToggle = document.getElementById("tourListToggle");
+  if (tourListSection && tourListToggle) {
+    tourListToggle.addEventListener("click", () => {
+      const collapsed = tourListSection.classList.toggle("collapsed");
+      tourListToggle.setAttribute("aria-expanded", String(!collapsed));
+    });
+  }
+
+  // Collapsible filters toggle
+  const filtersSection = document.getElementById("filtersSection");
+  const filtersToggle = document.getElementById("filtersToggle");
+  if (filtersSection && filtersToggle) {
+    filtersToggle.addEventListener("click", () => {
+      const collapsed = filtersSection.classList.toggle("collapsed");
+      filtersToggle.setAttribute("aria-expanded", String(!collapsed));
+    });
+  }
 }
 
 // .env loader for browser

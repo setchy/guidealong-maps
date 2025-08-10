@@ -28,88 +28,104 @@
           </svg>
         </a>
       </div>
-      <div class="filter-section">
-        <label>Filter by country:</label>
-        <div class="dropdown">
-          <div class="dropdown-button" id="countryDropdownButton">
-            Select Countries
-            <span class="dropdown-arrow">▼</span>
-          </div>
-          <div class="dropdown-content" id="countryDropdownContent">
-            <div class="checkbox-item">
-              <input type="checkbox" id="allCountries" value="" checked>
-              <label for="allCountries">All Countries</label>
+      <div class="filters-section" id="filtersSection">
+        <button class="filters-toggle" id="filtersToggle" aria-expanded="true" aria-controls="filtersContent">
+          <div class="filters-title">Filters</div>
+          <span class="filters-toggle-arrow">▼</span>
+        </button>
+        <div id="filtersContent" class="filters-content">
+          <div class="filter-section">
+            <div id="lblCountry" class="filter-label">Country:</div>
+            <div class="dropdown">
+              <div class="dropdown-button" id="countryDropdownButton" aria-labelledby="lblCountry">
+                Select Countries
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <div class="dropdown-content" id="countryDropdownContent">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="allCountries" value="" checked>
+                  <label for="allCountries">All Countries</label>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="filter-section">
+            <div id="lblState" class="filter-label">State:</div>
+            <div class="dropdown">
+              <div class="dropdown-button" id="stateDropdownButton" aria-labelledby="lblState">
+                Select States
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <div class="dropdown-content" id="stateDropdownContent">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="allStates" value="" checked>
+                  <label for="allStates">All States</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-section">
+            <div id="lblTourType" class="filter-label">Tour type:</div>
+            <div class="dropdown">
+              <div class="dropdown-button" id="tourTypeDropdownButton" aria-labelledby="lblTourType">
+                All Tour Types
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <div class="dropdown-content" id="tourTypeDropdownContent">
+                <div class="checkbox-item">
+                  <input type="radio" id="allTourTypes" name="tourType" value="all" checked>
+                  <label for="allTourTypes">All Tour Types</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="radio" id="drivingTours" name="tourType" value="Driving">
+                  <label for="drivingTours">Driving Tours Only</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="radio" id="walkingTours" name="tourType" value="Walking">
+                  <label for="walkingTours">Walking Tours Only</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-section">
+            <div id="lblTourStatus" class="filter-label">Tour status:</div>
+            <div class="dropdown">
+              <div class="dropdown-button" id="statusDropdownButton" aria-labelledby="lblTourStatus">
+                All Tours
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <div class="dropdown-content" id="statusDropdownContent">
+                <div class="checkbox-item">
+                  <input type="radio" id="allTours" name="tourStatus" value="all" checked>
+                  <label for="allTours">All Tours</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="radio" id="completedTours" name="tourStatus" value="completed">
+                  <label for="completedTours">Completed Tours Only</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="radio" id="incompleteTours" name="tourStatus" value="incomplete">
+                  <label for="incompleteTours">Not Completed Tours Only</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-section">
+            <label id="lblSearch" for="searchInput">Search tours:</label>
+            <input type="text" id="searchInput" placeholder="Search by name or description" aria-labelledby="lblSearch">
           </div>
         </div>
       </div>
-      <div class="filter-section">
-        <label>Filter by state:</label>
-        <div class="dropdown">
-          <div class="dropdown-button" id="stateDropdownButton">
-            Select States
-            <span class="dropdown-arrow">▼</span>
+      <div class="tour-list-section" id="tourListSection">
+        <button class="tour-list-header" id="tourListToggle" aria-expanded="true" aria-controls="tourList">
+          <div class="tour-title">Tours</div>
+          <div class="tour-header-right">
+            <div class="tour-count" id="tourCount">0 tours</div>
+            <span class="tour-toggle-arrow">▼</span>
           </div>
-          <div class="dropdown-content" id="stateDropdownContent">
-            <div class="checkbox-item">
-              <input type="checkbox" id="allStates" value="" checked>
-              <label for="allStates">All States</label>
-            </div>
-          </div>
-        </div>
+        </button>
+        <div class="tour-list" id="tourList"></div>
       </div>
-      <div class="filter-section">
-        <label>Filter by tour type:</label>
-        <div class="dropdown">
-          <div class="dropdown-button" id="tourTypeDropdownButton">
-            All Tour Types
-            <span class="dropdown-arrow">▼</span>
-          </div>
-          <div class="dropdown-content" id="tourTypeDropdownContent">
-            <div class="checkbox-item">
-              <input type="radio" id="allTourTypes" name="tourType" value="all" checked>
-              <label for="allTourTypes">All Tour Types</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="radio" id="drivingTours" name="tourType" value="Driving">
-              <label for="drivingTours">Driving Tours Only</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="radio" id="walkingTours" name="tourType" value="Walking">
-              <label for="walkingTours">Walking Tours Only</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="filter-section">
-        <label>Filter by tour status:</label>
-        <div class="dropdown">
-          <div class="dropdown-button" id="statusDropdownButton">
-            All Tours
-            <span class="dropdown-arrow">▼</span>
-          </div>
-          <div class="dropdown-content" id="statusDropdownContent">
-            <div class="checkbox-item">
-              <input type="radio" id="allTours" name="tourStatus" value="all" checked>
-              <label for="allTours">All Tours</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="radio" id="completedTours" name="tourStatus" value="completed">
-              <label for="completedTours">Completed Tours Only</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="radio" id="incompleteTours" name="tourStatus" value="incomplete">
-              <label for="incompleteTours">Not Completed Tours Only</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="filter-section">
-        <label>Search tours:</label>
-        <input type="text" id="searchInput" placeholder="Search by name or description">
-      </div>
-      <div id="stats"></div>
-  <div class="tour-list" id="tourList"></div>
       
     </div>
     <div id="map" style="height: 100vh"></div>
