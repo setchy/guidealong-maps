@@ -110,6 +110,6 @@ This project is for demonstration purposes and is not affiliated with GuideAlong
 
 
 <!-- Links -->
-[screenshot]: ./src/assets/image.png
+[screenshot]: ./assets/image.png
 [guidealong]: https://guidealong.com
 [guidealong-tours]: https://guidealong.com/tour-list
