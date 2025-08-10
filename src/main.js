@@ -22,8 +22,12 @@ async function loadCompletedTours() {
 // --- Pure helpers ---------------------------------------------------------
 function computeFilteredTours(tours, completedTitles, filters) {
   const search = (filters.search || "").toLowerCase();
-  const { countries = [], states = [], status = "all", type = "all" } =
-    filters || {};
+  const {
+    countries = [],
+    states = [],
+    status = "all",
+    type = "all",
+  } = filters || {};
 
   return (tours || []).filter((t) => {
     const d = t?.details || {};
@@ -31,7 +35,8 @@ function computeFilteredTours(tours, completedTitles, filters) {
     const matchesSearch =
       t.title?.toLowerCase().includes(search) ||
       (d.description || "").toLowerCase().includes(search);
-    const matchesCountry = countries.length === 0 || countries.includes(g.country);
+    const matchesCountry =
+      countries.length === 0 || countries.includes(g.country);
     const matchesState = states.length === 0 || states.includes(g.state);
 
     const isCompleted = completedTitles.includes(t.title);
@@ -82,7 +87,7 @@ function debounce(fn, wait = 150) {
   let t;
   return (...args) => {
     clearTimeout(t);
-  t = setTimeout(() => fn(...args), wait);
+    t = setTimeout(() => fn(...args), wait);
   };
 }
 
@@ -262,25 +267,26 @@ function setupStateCheckboxListeners() {
   // Toggle dropdown
   dropdownButton.addEventListener("click", (e) => {
     e.stopPropagation();
-  const open = dropdown.classList.toggle("open");
-  dropdownButton.setAttribute("aria-expanded", String(open));
+    const open = dropdown.classList.toggle("open");
+    dropdownButton.setAttribute("aria-expanded", String(open));
   });
 
   // Delegate change events
   if (content) {
     content.addEventListener("change", (e) => {
       const target = e.target;
-      if (!(target instanceof HTMLInputElement) || target.type !== "checkbox") return;
+      if (!(target instanceof HTMLInputElement) || target.type !== "checkbox")
+        return;
       if (target.id === "allStates") {
         const stateCheckboxes = content.querySelectorAll(
-          'input[type="checkbox"]:not(#allStates)'
+          'input[type="checkbox"]:not(#allStates)',
         );
         stateCheckboxes.forEach((cb) => {
           cb.checked = target.checked;
         });
       } else {
         const stateCheckboxes = content.querySelectorAll(
-          'input[type="checkbox"]:not(#allStates)'
+          'input[type="checkbox"]:not(#allStates)',
         );
         const anyChecked = Array.from(stateCheckboxes).some((cb) => cb.checked);
         allStatesCheckbox.checked = !anyChecked;
@@ -302,27 +308,30 @@ function setupCountryCheckboxListeners() {
   // Toggle dropdown
   dropdownButton.addEventListener("click", (e) => {
     e.stopPropagation();
-  const open = dropdown.classList.toggle("open");
-  dropdownButton.setAttribute("aria-expanded", String(open));
+    const open = dropdown.classList.toggle("open");
+    dropdownButton.setAttribute("aria-expanded", String(open));
   });
 
   // Delegate change events
   if (content) {
     content.addEventListener("change", (e) => {
       const target = e.target;
-      if (!(target instanceof HTMLInputElement) || target.type !== "checkbox") return;
+      if (!(target instanceof HTMLInputElement) || target.type !== "checkbox")
+        return;
       if (target.id === "allCountries") {
         const countryCheckboxes = content.querySelectorAll(
-          'input[type="checkbox"]:not(#allCountries)'
+          'input[type="checkbox"]:not(#allCountries)',
         );
         countryCheckboxes.forEach((cb) => {
           cb.checked = target.checked;
         });
       } else {
         const countryCheckboxes = content.querySelectorAll(
-          'input[type="checkbox"]:not(#allCountries)'
+          'input[type="checkbox"]:not(#allCountries)',
         );
-        const anyChecked = Array.from(countryCheckboxes).some((cb) => cb.checked);
+        const anyChecked = Array.from(countryCheckboxes).some(
+          (cb) => cb.checked,
+        );
         allCountriesCheckbox.checked = !anyChecked;
       }
       updateCountryDropdownButtonText();
@@ -337,7 +346,7 @@ function updateCountryDropdownButtonText() {
   const dropdownButton = document.getElementById("countryDropdownButton");
   const allCb = document.getElementById("allCountries");
   const countryCheckboxes = document.querySelectorAll(
-    '#countryDropdownContent input[type="checkbox"]:not(#allCountries)'
+    '#countryDropdownContent input[type="checkbox"]:not(#allCountries)',
   );
   const checked = Array.from(countryCheckboxes).filter((cb) => cb.checked);
   updateMultiSelectButtonLabel(
@@ -345,7 +354,7 @@ function updateCountryDropdownButtonText() {
     !!allCb?.checked || checked.length === 0,
     checked.map((cb) => cb.value),
     "countries",
-    "All Countries"
+    "All Countries",
   );
 }
 
@@ -371,15 +380,16 @@ function setupTourStatusFilter() {
   // Toggle dropdown
   dropdownButton.addEventListener("click", (e) => {
     e.stopPropagation();
-  const open = dropdown.classList.toggle("open");
-  dropdownButton.setAttribute("aria-expanded", String(open));
+    const open = dropdown.classList.toggle("open");
+    dropdownButton.setAttribute("aria-expanded", String(open));
   });
 
   // Delegate radio changes
   if (content) {
     content.addEventListener("change", (e) => {
       const target = e.target;
-      if (!(target instanceof HTMLInputElement) || target.type !== "radio") return;
+      if (!(target instanceof HTMLInputElement) || target.type !== "radio")
+        return;
       updateStatusDropdownButtonText();
       updateAll();
       dropdown.classList.remove("open");
@@ -426,15 +436,16 @@ function setupTourTypeFilter() {
   // Toggle dropdown
   dropdownButton.addEventListener("click", (e) => {
     e.stopPropagation();
-  const open = dropdown.classList.toggle("open");
-  dropdownButton.setAttribute("aria-expanded", String(open));
+    const open = dropdown.classList.toggle("open");
+    dropdownButton.setAttribute("aria-expanded", String(open));
   });
 
   // Delegate radio changes
   if (content) {
     content.addEventListener("change", (e) => {
       const target = e.target;
-      if (!(target instanceof HTMLInputElement) || target.type !== "radio") return;
+      if (!(target instanceof HTMLInputElement) || target.type !== "radio")
+        return;
       updateTourTypeDropdownButtonText();
       updateAll();
       dropdown.classList.remove("open");
@@ -477,7 +488,7 @@ function updateStateDropdownButtonText() {
   const dropdownButton = document.getElementById("stateDropdownButton");
   const allCb = document.getElementById("allStates");
   const stateCheckboxes = document.querySelectorAll(
-    '#stateDropdownContent input[type="checkbox"]:not(#allStates)'
+    '#stateDropdownContent input[type="checkbox"]:not(#allStates)',
   );
   const checked = Array.from(stateCheckboxes).filter((cb) => cb.checked);
   updateMultiSelectButtonLabel(
@@ -485,11 +496,17 @@ function updateStateDropdownButtonText() {
     !!allCb?.checked || checked.length === 0,
     checked.map((cb) => cb.value),
     "states",
-    "All States"
+    "All States",
   );
 }
 
-function updateMultiSelectButtonLabel(buttonEl, allChecked, checkedValues, unitPlural, allLabel) {
+function updateMultiSelectButtonLabel(
+  buttonEl,
+  allChecked,
+  checkedValues,
+  unitPlural,
+  allLabel,
+) {
   if (!buttonEl) return;
   if (allChecked || (checkedValues && checkedValues.length === 0)) {
     buttonEl.innerHTML = `${allLabel} <span class="dropdown-arrow">▼</span>`;
@@ -547,7 +564,7 @@ async function initMap() {
     zoom: 4,
     center: { lat: 39, lng: -98 }, // centered over U.S.
     mapId: "GuideAlong Global Map", // <-- Replace with your own Map ID for production
-  streetViewControl: false, 
+    streetViewControl: false,
   });
 
   hideLoading();
@@ -663,8 +680,8 @@ function renderTourList(tours) {
       const place = [g.state, g.country].filter(Boolean).join(", ");
       const status = completedTours.includes(t.title) ? "✅" : "";
       const type = d.tourType ? ` • ${d.tourType}` : "";
-  const key = (t.url || t.title).replace(/"/g, '&quot;');
-  return `<div class="tour-item" data-key="${key}">
+      const key = (t.url || t.title).replace(/"/g, "&quot;");
+      return `<div class="tour-item" data-key="${key}">
         <div class="title">${t.title} ${status}</div>
         <div class="meta">${place || ""}${type}</div>
       </div>`;
@@ -674,9 +691,9 @@ function renderTourList(tours) {
   // click handlers
   list.querySelectorAll(".tour-item").forEach((el) => {
     el.addEventListener("click", () => {
-  const key = el.getAttribute("data-key");
-  if (!key) return;
-  const idx = markerIndexByKey.get(key);
+      const key = el.getAttribute("data-key");
+      if (!key) return;
+      const idx = markerIndexByKey.get(key);
       if (idx == null) return;
       const marker = markers[idx];
       if (!marker) return;
