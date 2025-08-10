@@ -83,10 +83,11 @@ function plotToursOnMap(tours) {
         const info = new google.maps.InfoWindow({
           content: `<h3>${t.title}${isCompleted ? " ✅" : ""}</h3>
             ${isCompleted ? `<div style="color: #28a745; font-weight: bold; margin-bottom: 8px;">Completed Tour${completedDateText}</div>` : ""}
-            ${d.thumbnail ? `<img src='${d.thumbnail}' alt='${t.title}' style='max-width:200px;max-height:120px;margin-bottom:8px;border-radius:6px;'>` : ""}
+            ${d.location ? `<div><b>Location:</b> ${d.location}</div>` : ""}
             ${d.duration ? `<div><b>Duration:</b> ${d.duration}</div>` : ""}
             ${d.audioPoints ? `<div><b>Audio Points:</b> ${d.audioPoints}</div>` : ""}
             ${d.tourType ? `<div><b>Tour Type:</b> ${d.tourType}</div>` : ""}
+            ${d.start ? `<div><b>Start:</b> ${d.start}</div>` : ""}
             ${d.description ? `<p>${d.description}</p>` : "<p>No description available.</p>"}
             <a href='${t.url}' target='_blank'>Learn more</a>`,
         });
@@ -527,6 +528,7 @@ async function initMap() {
     zoom: 4,
     center: { lat: 39, lng: -98 }, // centered over U.S.
     mapId: "GuideAlong Global Map", // <-- Replace with your own Map ID for production
+  streetViewControl: false, 
   });
 
   hideLoading();
