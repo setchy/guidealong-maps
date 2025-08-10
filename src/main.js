@@ -1,5 +1,6 @@
 let map;
 let markers = [];
+let markerIndexByTitle = new Map();
 let allTours = [];
 let completedTours = [];
 let completedToursData = []; // Store full completed tour objects
@@ -43,6 +44,7 @@ function plotToursOnMap(tours) {
     if (m) m.setMap(null);
   });
   markers = [];
+  markerIndexByTitle.clear();
 
   let openInfoWindow = null;
   const guidealongIcon = {
@@ -66,6 +68,7 @@ function plotToursOnMap(tours) {
         title: t.title,
         icon: isCompleted ? completedIcon : guidealongIcon,
       });
+  markerIndexByTitle.set(t.title, markers.length);
       marker.addListener("click", () => {
         if (openInfoWindow) {
           openInfoWindow.close();
@@ -500,6 +503,7 @@ function filterTours() {
   });
   plotToursOnMap(filtered);
   updateStats(filtered);
+  renderTourList(filtered);
 }
 
 document.getElementById("searchInput").addEventListener("input", filterTours);
@@ -612,6 +616,7 @@ async function initMap() {
   updateAutocomplete(allTours);
   plotToursOnMap(allTours);
   updateStats(allTours);
+  renderTourList(allTours);
 }
 
 // .env loader for browser
@@ -651,3 +656,43 @@ async function loadEnv() {
 })();
 
 window.initMap = initMap;
+
+function renderTourList(tours) {
+  const list = document.getElementById("tourList");
+  if (!list) return;
+  if (!tours || tours.length === 0) {
+    list.innerHTML = '<div class="meta">No tours to display.</div>';
+    return;
+  }
+  list.innerHTML = tours
+    .map((t) => {
+      const g = t.geocode || {};
+      const d = t.details || {};
+      const place = [g.state, g.country].filter(Boolean).join(", ");
+      const status = completedTours.includes(t.title) ? "✅" : "";
+      const type = d.tourType ? ` • ${d.tourType}` : "";
+      return `<div class="tour-item" data-title="${t.title.replace(/"/g, '&quot;')}">
+        <div class="title">${t.title} ${status}</div>
+        <div class="meta">${place || ""}${type}</div>
+      </div>`;
+    })
+    .join("");
+
+  // click handlers
+  list.querySelectorAll(".tour-item").forEach((el) => {
+    el.addEventListener("click", () => {
+      const title = el.getAttribute("data-title");
+      if (!title) return;
+      const idx = markerIndexByTitle.get(title);
+      if (idx == null) return;
+      const marker = markers[idx];
+      if (!marker) return;
+      const pos = marker.getPosition();
+      if (pos) {
+        map.panTo(pos);
+        map.setZoom(6);
+      }
+      google.maps.event.trigger(marker, "click");
+    });
+  });
+}

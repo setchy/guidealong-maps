@@ -1,7 +1,7 @@
 {
   "name": "guidealong-maps",
   "version": "1.0.0",
-  "description": "A simple site that plots GuideAlong tour locations on a map",
+  "description": "A simple site that helps you explore GuideAlong tour locations across the globe.",
   "main": "index.js",
   "scripts": {
     "start": "http-server ./src -p 3000 -o",

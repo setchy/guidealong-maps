@@ -2,6 +2,43 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
+#error {
+  position: absolute;
+  top: 10px; /* restore default position */
+  right: 10px;
+  background: #ff4444;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  display: none;
+  z-index: 1000;
+}
+
+/* Controls header with inline GitHub link */
+.controls-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.controls-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.github-link {
+  color: #24292e;
+  text-decoration: none;
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.github-link:hover {
+  background: #f5f5f5;
+}
 #loading {
   position: absolute;
   top: 50%;
@@ -22,18 +59,9 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  max-width: 300px;
-}
-#error {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff4444;
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
-  display: none;
-  z-index: 1000;
+  width: 320px;
+  max-height: calc(100vh - 20px);
+  overflow: hidden;
 }
 .filter-section {
   margin-bottom: 10px;
@@ -144,4 +172,30 @@ select[multiple] {
   font-size: 12px;
   color: #666;
   margin-top: 10px;
+}
+
+.tour-list {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  overflow-y: auto;
+  max-height: 45vh;
+}
+.tour-item {
+  padding: 8px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.tour-item:hover {
+  background: #f9f9f9;
+  border-color: #eee;
+}
+.tour-item .title {
+  font-weight: 600;
+  font-size: 13px;
+}
+.tour-item .meta {
+  font-size: 12px;
+  color: #666;
 }
