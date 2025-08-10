@@ -37,6 +37,22 @@ This will start a local web server and open the app in your browser.
 - Node.js
 - Internet connection (for live tour data and Google Maps)
 
+## Updating tours data and geocoding (server-side)
+
+You can refresh `src/data/tours.json` by scraping the tour list and optionally geocoding each tour using the Google Maps SDK:
+
+1. Install dependencies
+2. (Optional) Create `.env` at the repo root by copying `.env.example` and set `GOOGLE_MAPS_API_KEY` to a server-side key with the Geocoding API enabled. Avoid HTTP referrer restrictions; prefer IP allow-list.
+3. Run the fetch script
+
+```
+pnpm i
+cp .env.example .env  # then edit .env to add your key
+pnpm fetch:tours
+```
+
+If no API key is configured, the script still updates tours by scraping but will skip geocoding.
+
 ## License
 This project is for demonstration purposes and is not affiliated with GuideAlong.
 

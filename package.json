@@ -1,18 +1,30 @@
 {
   "name": "guidealong-maps",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple site that plots GuideAlong tour locations on a map",
   "main": "index.js",
   "scripts": {
     "start": "serve -l 3000 -d ./src",
-    "lint": "biome check --fix"
+    "lint": "biome check --fix",
+    "fetch:tours": "node ./scripts/fetch-tours.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Adam Setch",
+    "url": "https://github.com/setchy"
+  }, 
+  "homepage": "https://tours.setchy.io",   
+  "bugs": {
+    "url": "https://github.com/setchy/guidealong-maps/issues"
+  },
   "license": "ISC",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "devDependencies": {
-    "@biomejs/biome": "2.1.2",
+    "@biomejs/biome": "2.1.4",
     "serve": "14.2.4"
+  },
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.4.2",
+    "cheerio": "1.1.2",
+    "dotenv": "^17.2.1"
   }
 }
