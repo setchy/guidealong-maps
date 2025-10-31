@@ -12,8 +12,8 @@
       "location": "California, USA"
     },
     "geocode": {
-      "lat": 36.5552386,
-      "lng": -121.9232879,
+      "lat": 36.6036989,
+      "lng": -121.9451586,
       "country": "United States",
       "state": "CA"
     }
@@ -50,8 +50,8 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
+      "lat": 36.9051526,
+      "lng": -81.07675139999999,
       "country": "",
       "state": ""
     }
@@ -107,8 +107,8 @@
       "location": "Arizona, USA"
     },
     "geocode": {
-      "lat": 34.0489281,
-      "lng": -111.0937311,
+      "lat": 34.9554611,
+      "lng": -110.3184778,
       "country": "United States",
       "state": "AZ"
     }
@@ -145,10 +145,10 @@
       "location": "BC, CAN"
     },
     "geocode": {
-      "lat": 51.1784304,
-      "lng": -115.5707903,
+      "lat": 50.674522,
+      "lng": -120.3272674,
       "country": "Canada",
-      "state": "AB"
+      "state": "BC"
     }
   },
   {
@@ -240,8 +240,8 @@
       "location": "California, USA"
     },
     "geocode": {
-      "lat": 36.7545768,
-      "lng": -121.7653053,
+      "lat": 36.2881391,
+      "lng": -121.8434806,
       "country": "United States",
       "state": "CA"
     }
@@ -316,8 +316,8 @@
       "location": "Alberta, CAN"
     },
     "geocode": {
-      "lat": 51.1784304,
-      "lng": -115.5707903,
+      "lat": 51.04473309999999,
+      "lng": -114.0718831,
       "country": "Canada",
       "state": "AB"
     }
@@ -354,9 +354,9 @@
       "location": "Alberta, CAN"
     },
     "geocode": {
-      "lat": 54.1521752,
-      "lng": -120.1585339,
-      "country": "Canada",
+      "lat": 44.2642998,
+      "lng": -109.7869527,
+      "country": "",
       "state": ""
     }
   },
@@ -449,8 +449,8 @@
       "location": "Louisiana, USA"
     },
     "geocode": {
-      "lat": 30.2113448,
-      "lng": -93.37687310000001,
+      "lat": 30.2113751,
+      "lng": -93.376891,
       "country": "United States",
       "state": "LA"
     }
@@ -563,8 +563,8 @@
       "location": "Florida, USA"
     },
     "geocode": {
-      "lat": 25.2866155,
-      "lng": -80.89865089999999,
+      "lat": 25.790881,
+      "lng": -80.1310085,
       "country": "United States",
       "state": "FL"
     }
@@ -582,8 +582,8 @@
       "location": "Boston, Massachusetts"
     },
     "geocode": {
-      "lat": 42.3669391,
-      "lng": -71.0585007,
+      "lat": 42.3763541,
+      "lng": -71.0607764,
       "country": "United States",
       "state": "MA"
     }
@@ -601,10 +601,10 @@
       "location": "Montana, USA"
     },
     "geocode": {
-      "lat": 61.79322699999999,
-      "lng": -147.7974357,
-      "country": "United States",
-      "state": "AK"
+      "lat": 52.2201943,
+      "lng": -117.2261418,
+      "country": "Canada",
+      "state": "AB"
     }
   },
   {
@@ -741,6 +741,25 @@
     }
   },
   {
+    "title": "HAWAIIAN ISLANDS BUNDLE",
+    "url": "https://guidealong.com/tour/hawaii-bundle/",
+    "details": {
+      "description": "The complete collection of all our Hawaiian Island Tours. Includes Oahu, Maui, Kauai and Big Island, Hawaii.",
+      "thumbnail": "",
+      "audioPoints": "1,435",
+      "duration": "4 Islands, All Tours",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": 23.6523707476218,
+      "lng": -166.5471460142073,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "title": "HIDDEN VALLEY WALKING TRAIL TOUR",
     "url": "https://guidealong.com/tour/hidden-valley-walking-trail/",
     "details": {
@@ -772,8 +791,8 @@
       "location": "Alberta, CAN"
     },
     "geocode": {
-      "lat": 52.8732899,
-      "lng": -118.0822838,
+      "lat": 52.1703548,
+      "lng": -117.0730184,
       "country": "Canada",
       "state": "AB"
     }
@@ -829,10 +848,10 @@
       "location": "Alberta, CAN"
     },
     "geocode": {
-      "lat": 52.8732899,
-      "lng": -118.0822838,
-      "country": "Canada",
-      "state": "AB"
+      "lat": 53.552101,
+      "lng": 10.01156,
+      "country": "Germany",
+      "state": "HH"
     }
   },
   {
@@ -867,8 +886,8 @@
       "location": "New Hampshire"
     },
     "geocode": {
-      "lat": 43.9787728,
-      "lng": -71.1184579,
+      "lat": 44.0505797,
+      "lng": -71.566737,
       "country": "United States",
       "state": "NH"
     }
@@ -905,8 +924,8 @@
       "location": "Michigan, USA"
     },
     "geocode": {
-      "lat": 47.7515686,
-      "lng": -88.3249369,
+      "lat": 47.25020259999999,
+      "lng": -88.3334456,
       "country": "United States",
       "state": "MI"
     }
@@ -924,8 +943,8 @@
       "location": "Alberta, CAN"
     },
     "geocode": {
-      "lat": 51.4253705,
-      "lng": -116.1772552,
+      "lat": 51.3217416,
+      "lng": -116.1860049,
       "country": "Canada",
       "state": "AB"
     }
@@ -943,8 +962,8 @@
       "location": "Minnesota, USA"
     },
     "geocode": {
-      "lat": 46.8616659,
-      "lng": -91.9731792,
+      "lat": 46.8717037,
+      "lng": -91.9514361,
       "country": "United States",
       "state": "MN"
     }
@@ -1026,25 +1045,6 @@
     }
   },
   {
-    "title": "MAUI, OAHU, BIG ISLAND, KAUAI BUNDLE",
-    "url": "https://guidealong.com/tour/hawaii-bundle/",
-    "details": {
-      "description": "The complete collection of all our Hawaiian Island Tours. Includes Oahu, Maui, Kauai and Big Island, Hawaii.",
-      "thumbnail": "",
-      "audioPoints": "1,435",
-      "duration": "4 Islands, All Tours",
-      "tourType": "Driving",
-      "start": "",
-      "location": ""
-    },
-    "geocode": {
-      "lat": 22.0964396,
-      "lng": -159.5261238,
-      "country": "United States",
-      "state": "HI"
-    }
-  },
-  {
     "title": "MESA VERDE TOUR",
     "url": "https://guidealong.com/tour/mesa-verde-national-park/",
     "details": {
@@ -1099,6 +1099,25 @@
       "lng": -86.0492841,
       "country": "United States",
       "state": "MI"
+    }
+  },
+  {
+    "title": "MILLION DOLLAR HIGHWAY TOUR",
+    "url": "https://guidealong.com/tour/million-dollar-highway-tour/",
+    "details": {
+      "description": "A legendary highway through Colorado’s San Juan Mountains. Built to link historic mining towns across rugged cliffs and valleys. You’ll want to spend the day soaking in the dramatic scenery and alpine views.",
+      "thumbnail": "",
+      "audioPoints": "155+",
+      "duration": "1 Day",
+      "tourType": "Driving",
+      "start": "Durango, Ouray",
+      "location": "Colorado, USA"
+    },
+    "geocode": {
+      "lat": 37.9152704,
+      "lng": -107.7004968,
+      "country": "United States",
+      "state": "CO"
     }
   },
   {
@@ -1171,10 +1190,10 @@
       "location": "AL & TN, USA"
     },
     "geocode": {
-      "lat": 34.33017160000001,
-      "lng": -88.70983079999999,
+      "lat": 33.7668642,
+      "lng": -89.0187511,
       "country": "United States",
-      "state": "MS"
+      "state": ""
     }
   },
   {
@@ -1209,10 +1228,10 @@
       "location": "Ontario, CAN"
     },
     "geocode": {
-      "lat": 43.0895577,
-      "lng": -79.0849436,
-      "country": "Canada",
-      "state": "ON"
+      "lat": 43.0962143,
+      "lng": -79.0377388,
+      "country": "United States",
+      "state": "NY"
     }
   },
   {
@@ -1349,6 +1368,25 @@
     }
   },
   {
+    "title": "PIKES PEAK HIGHWAY TOUR",
+    "url": "https://guidealong.com/tour/pikes-peak-highway-tour/",
+    "details": {
+      "description": "Stunning Mountain Views. Along the drive, you'll experience breathtaking vistas, learn about the unique alpine ecosystem, and hear stories of adventurers drawn to the towering Pikes Peak summit.",
+      "thumbnail": "",
+      "audioPoints": "35+",
+      "duration": "2 - 3 Hours",
+      "tourType": "Driving",
+      "start": "Pikes Peak Highway at the Gateway entrance.",
+      "location": "Colorado, USA"
+    },
+    "geocode": {
+      "lat": 38.9039955,
+      "lng": -105.012365,
+      "country": "United States",
+      "state": "CO"
+    }
+  },
+  {
     "title": "POINT REYES NATIONAL SEASHORE TOUR",
     "url": "https://guidealong.com/tour/point-reyes-national-seashore-tour/",
     "details": {
@@ -1444,6 +1482,25 @@
     }
   },
   {
+    "title": "SALEM WITCH TRIALS TOUR",
+    "url": "https://guidealong.com/tour/salem-witch-trials-tour/",
+    "details": {
+      "description": "Spellbinding Salem. Explore historic streets, uncover chilling Witch Trials tales, and visit iconic sites that bring Salem’s legends to life.",
+      "thumbnail": "",
+      "audioPoints": "40+",
+      "duration": "2 - 3 Hours",
+      "tourType": "Walking",
+      "start": "Outside the Salem Armory at New Liberty Street",
+      "location": "Massachusetts, USA"
+    },
+    "geocode": {
+      "lat": 42.5197473,
+      "lng": -70.8954626,
+      "country": "United States",
+      "state": "MA"
+    }
+  },
+  {
     "title": "SANTA FE WALK TOUR",
     "url": "https://guidealong.com/tour/santa-fe/",
     "details": {
@@ -1452,14 +1509,14 @@
       "audioPoints": "20+",
       "duration": "1 day",
       "tourType": "Walking",
-      "start": "New Mexico State Capitol, Santa Fe, NM",
+      "start": "458 Old Santa Fe Trail, near the New Mexico Capitol.",
       "location": "New Mexico, USA"
     },
     "geocode": {
-      "lat": 35.6894307,
-      "lng": -105.9381944,
+      "lat": 33.2060195,
+      "lng": -117.2475828,
       "country": "United States",
-      "state": "NM"
+      "state": "CA"
     }
   },
   {
@@ -1639,8 +1696,8 @@
     "details": {
       "description": "US Rockies & Plains Bundle includes tours in Colorado, Montana, Wyoming, North & South Dakota. These include 12 destinations such as Yellowstone & Grand Teton, Glacier, Black Hills, Black Canyon, Rocky Mountain, Mesa Verde, Theodore Roosevelt, and more.",
       "thumbnail": "",
-      "audioPoints": "1785+",
-      "duration": "12 Destinations",
+      "audioPoints": "1940+",
+      "duration": "13 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
@@ -1684,8 +1741,8 @@
       "location": "BC, CAN"
     },
     "geocode": {
-      "lat": 49.2827291,
-      "lng": -123.1207375,
+      "lat": 50.674522,
+      "lng": -120.3272674,
       "country": "Canada",
       "state": "BC"
     }
@@ -1760,8 +1817,8 @@
       "location": "Hawaii, USA"
     },
     "geocode": {
-      "lat": 21.2793462,
-      "lng": -157.8291847,
+      "lat": 21.2791446,
+      "lng": -157.8307577,
       "country": "United States",
       "state": "HI"
     }
