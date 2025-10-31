@@ -5,7 +5,7 @@
   },
   {
     "title": "GRAND CANYON SOUTH RIM TOUR",
-    "completedDate": null
+    "completedDate": "2025-10-25"
   },
   {
     "title": "YELLOWSTONE TOUR",
@@ -78,5 +78,21 @@
   {
     "title": "OAHU TOURS",
     "completedDate": null
+  },
+  {
+    "title": "SEQUOIA & KINGS CANYON NATIONAL PARK TOUR",
+    "completedDate": "2025-10-11"
+  },
+  {
+    "title": "ARIZONA'S ROUTE 66 TOUR",
+    "completedDate": "2025-10-20"
+  },
+  {
+    "title": "SEDONA TOUR",
+    "completedDate": "2025-10-21"
+  },
+  {
+    "title": "GRAND CANYON WEST RIM, HOOVER DAM, RED ROCK CANYON, LAS VEGAS TOURS",
+    "completedDate": "2025-10-26"
   }
 ]
