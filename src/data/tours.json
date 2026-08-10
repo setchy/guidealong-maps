@@ -38,6 +38,44 @@
     }
   },
   {
+    "title": "ACADIA’S BAR HARBOR WALK TOUR",
+    "url": "https://guidealong.com/tour/acadias-bar-harbor-walk-tour/",
+    "details": {
+      "description": "Explore Bar Harbor, where historic streets, Gilded Age mansions, and stunning coastal views come together. Discover scenic trails, cultural landmarks, and the charm of this seaside town along the way.",
+      "thumbnail": "",
+      "audioPoints": "25+",
+      "duration": "Half Day",
+      "tourType": "Walking",
+      "start": "This tour begins at Agamont Fountain",
+      "location": "Maine, USA"
+    },
+    "geocode": {
+      "lat": 44.3385559,
+      "lng": -68.2733346,
+      "country": "United States",
+      "state": "ME"
+    }
+  },
+  {
+    "title": "ALASKA COMBO TOUR",
+    "url": "https://guidealong.com/tour/alaska-combo/",
+    "details": {
+      "description": "Alaska has it all. So does this seamless drive covering all 500 miles of “the Last Frontier”: Parks Highway (South Half), Seward Highway, and Sterling Highway.",
+      "thumbnail": "",
+      "audioPoints": "560+",
+      "duration": "7 - 14 Days",
+      "tourType": "Driving",
+      "start": "Multiple",
+      "location": "Alaska"
+    },
+    "geocode": {
+      "lat": 63.588753,
+      "lng": -154.4930619,
+      "country": "United States",
+      "state": "AK"
+    }
+  },
+  {
     "title": "APPALACHIANS BUNDLE",
     "url": "https://guidealong.com/tour/appalachians-bundle/",
     "details": {
@@ -107,8 +145,8 @@
       "location": "Arizona, USA"
     },
     "geocode": {
-      "lat": 34.9554611,
-      "lng": -110.3184778,
+      "lat": 35.5218045,
+      "lng": -113.4522665,
       "country": "United States",
       "state": "AZ"
     }
@@ -209,6 +247,25 @@
     }
   },
   {
+    "title": "BIG ISLAND BUNDLE",
+    "url": "https://guidealong.com/tour/big-island-hawaii/",
+    "details": {
+      "description": "Perfect companion to thoroughly explore the Big Island. Included are 4 driving routes; 2 full day (Volcanoes and Island Circle) and 2 half day (Kohala Coast and Kona Coffee Coast).",
+      "thumbnail": "",
+      "audioPoints": "460+",
+      "duration": "1 - 4 Days+",
+      "tourType": "Driving",
+      "start": "Flexible",
+      "location": "Hawaii"
+    },
+    "geocode": {
+      "lat": 19.5429151,
+      "lng": -155.6658568,
+      "country": "United States",
+      "state": "HI"
+    }
+  },
+  {
     "title": "BIG SKY DRIVE TOUR",
     "url": "https://guidealong.com/tour/big-sky-drive-tour/",
     "details": {
@@ -266,22 +323,22 @@
     }
   },
   {
-    "title": "BLACK HILLS, RUSHMORE, DEVILS TOWER & BADLANDS NATIONAL PARK TOURS",
+    "title": "BLACK HILLS, CUSTER, RUSHMORE, DEVILS TOWER & BADLANDS NATIONAL PARK TOURS",
     "url": "https://guidealong.com/tour/mount-rushmore-black-hills-badlands/",
     "details": {
-      "description": "Discover great faces and spaces. The Black Hills mountains, canyons and forests, unique rock formations in Badlands National Park, and gigantic carvings at Mount Rushmore and Crazy Horse Memorial.",
+      "description": "Discover great faces and vast open spaces from the Black Hills and Badlands National Park to the wildlife-filled roads of Custer State Park and the iconic carvings at Mount Rushmore and Crazy Horse Memorial.",
       "thumbnail": "",
-      "audioPoints": "480+",
+      "audioPoints": "580+",
       "duration": "1 - 3 Days",
       "tourType": "Driving",
       "start": "",
       "location": "South Dakota, WY"
     },
     "geocode": {
-      "lat": 44.5886461,
-      "lng": -104.6985456,
+      "lat": 43.7666507,
+      "lng": -103.5988057,
       "country": "United States",
-      "state": "WY"
+      "state": "SD"
     }
   },
   {
@@ -301,6 +358,44 @@
       "lng": -80.9078677,
       "country": "United States",
       "state": ""
+    }
+  },
+  {
+    "title": "BOSTON’S FREEDOM TRAIL TOUR",
+    "url": "https://guidealong.com/tour/bostons-freedom-trail-tour/",
+    "details": {
+      "description": "Explore Boston’s Freedom Trail, featuring historic landmarks, Revolutionary War sites, and iconic stops like Boston Common, Paul Revere’s House, and the Bunker Hill Monument. Discover America’s fight for freedom!",
+      "thumbnail": "",
+      "audioPoints": "80+",
+      "duration": "1/2 Day",
+      "tourType": "Walking",
+      "start": "Boston Common, Bunker Hill Monument",
+      "location": "Boston, Massachusetts"
+    },
+    "geocode": {
+      "lat": 42.3629711,
+      "lng": -71.0561164,
+      "country": "United States",
+      "state": "MA"
+    }
+  },
+  {
+    "title": "BOSTON’S GHOSTS TOUR",
+    "url": "https://guidealong.com/tour/bostons-ghosts-tour/",
+    "details": {
+      "description": "A chilling evening walk through Boston’s haunted past, filled with eerie legends, shadowy cemeteries, and historic landmarks. Feel the whispers of history echo through every cobblestone street.",
+      "thumbnail": "",
+      "audioPoints": "30+",
+      "duration": "1 To 2 Hours",
+      "tourType": "Walking",
+      "start": "243 Stuart St, Boston",
+      "location": "Massachusetts, USA"
+    },
+    "geocode": {
+      "lat": 42.3555076,
+      "lng": -71.0565364,
+      "country": "United States",
+      "state": "MA"
     }
   },
   {
@@ -354,10 +449,29 @@
       "location": "Alberta, CAN"
     },
     "geocode": {
-      "lat": 44.2642998,
-      "lng": -109.7869527,
-      "country": "",
+      "lat": 54.1521752,
+      "lng": -120.1585339,
+      "country": "Canada",
       "state": ""
+    }
+  },
+  {
+    "title": "CANCUN BUNDLE",
+    "url": "https://guidealong.com/tour/cancun-bundle/",
+    "details": {
+      "description": "Cancun Bundle includes Tulum and Chichen Itza.",
+      "thumbnail": "",
+      "audioPoints": "70+",
+      "duration": "2 Destinations",
+      "tourType": "Walking",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": 21.161908,
+      "lng": -86.8515279,
+      "country": "Mexico",
+      "state": "Q.R."
     }
   },
   {
@@ -377,6 +491,25 @@
       "lng": -109.9025345,
       "country": "United States",
       "state": "UT"
+    }
+  },
+  {
+    "title": "CAPE COD TOUR",
+    "url": "https://guidealong.com/tour/cape-cod/",
+    "details": {
+      "description": "Nothing says “summer” like Cape Cod. Drive the iconic “bent arm” and see lighthouses, beaches, and more.",
+      "thumbnail": "",
+      "audioPoints": "190+",
+      "duration": "1 day",
+      "tourType": "Driving",
+      "start": "Barnstable or Provincetown",
+      "location": "Massachusetts"
+    },
+    "geocode": {
+      "lat": 41.6687897,
+      "lng": -70.29624079999999,
+      "country": "United States",
+      "state": "MA"
     }
   },
   {
@@ -411,10 +544,48 @@
       "location": "New York, USA"
     },
     "geocode": {
-      "lat": 42.009138,
-      "lng": -74.1172795,
+      "lat": 41.9973144,
+      "lng": -74.10486399999999,
       "country": "United States",
       "state": "NY"
+    }
+  },
+  {
+    "title": "CHICHEN ITZA WALKING TOUR",
+    "url": "https://guidealong.com/tour/chichen-itza-walking-tour/",
+    "details": {
+      "description": "Explore the ancient marvels of Chichén Itzá, featuring iconic pyramids, sacred cenotes, and remarkable temples. Discover the Maya world, where astronomy, architecture, and history come alive!",
+      "thumbnail": "",
+      "audioPoints": "40+",
+      "duration": "1 Day",
+      "tourType": "Walking",
+      "start": "Chichén Itzá Visitor Center",
+      "location": "Yucatan, Mexico"
+    },
+    "geocode": {
+      "lat": 20.6842849,
+      "lng": -88.5677826,
+      "country": "Mexico",
+      "state": "Yuc."
+    }
+  },
+  {
+    "title": "COLORADO NATIONAL MONUMENT TOUR",
+    "url": "https://guidealong.com/tour/colorado-national-monument-tour/",
+    "details": {
+      "description": "Explore Colorado National Monument, where towering red rock canyons, sandstone monoliths, and sweeping desert vistas create a breathtaking landscape. Discover scenic Rim Rock Drive and experience the wild beauty of the American Southwest!",
+      "thumbnail": "",
+      "audioPoints": "85+",
+      "duration": "1 day",
+      "tourType": "Driving",
+      "start": "From Fruita or Grand Junction",
+      "location": "Colorado"
+    },
+    "geocode": {
+      "lat": 39.0505442,
+      "lng": -108.6920904,
+      "country": "United States",
+      "state": "CO"
     }
   },
   {
@@ -449,8 +620,8 @@
       "location": "Louisiana, USA"
     },
     "geocode": {
-      "lat": 30.2113751,
-      "lng": -93.376891,
+      "lat": 30.2365943,
+      "lng": -93.37737829999999,
       "country": "United States",
       "state": "LA"
     }
@@ -513,25 +684,6 @@
     }
   },
   {
-    "title": "DOWNTOWN HONOLULU WALK TOUR",
-    "url": "https://guidealong.com/tour/downtown-honolulu-walk/",
-    "details": {
-      "description": "Journey through Honolulu’s historic core, exploring Iolani Palace, the King Kamehameha Statue, and Aloha Tower. Take your time to soak in its rich heritage and beauty.",
-      "thumbnail": "",
-      "audioPoints": "30+",
-      "duration": "1 Day",
-      "tourType": "Walking",
-      "start": "Aloha Tower, downtown Honolulu",
-      "location": "Hawaii, USA"
-    },
-    "geocode": {
-      "lat": 21.3096187,
-      "lng": -157.8599592,
-      "country": "United States",
-      "state": "HI"
-    }
-  },
-  {
     "title": "DRUMHELLER TOUR",
     "url": "https://guidealong.com/tour/drumheller-badlands/",
     "details": {
@@ -551,6 +703,25 @@
     }
   },
   {
+    "title": "EDINBURGH’S OLD TOWN WALKING TOUR",
+    "url": "https://guidealong.com/tour/edinburgh-old-town-walking-tour/",
+    "details": {
+      "description": "Explore Edinburgh’s Old Town, from Victoria Street and Greyfriars Kirkyard to Edinburgh Castle, and discover historic landmarks, hidden closes, and local stories linked to J.K. Rowling’s time in the city.",
+      "thumbnail": "",
+      "audioPoints": "35+",
+      "duration": "Half Day",
+      "tourType": "Walking",
+      "start": "Covenanter's Memorial",
+      "location": "Edinburgh"
+    },
+    "geocode": {
+      "lat": 55.94685339999999,
+      "lng": -3.1914782,
+      "country": "United Kingdom",
+      "state": "Scotland"
+    }
+  },
+  {
     "title": "EVERGLADES NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/everglades-national-park-tour/",
     "details": {
@@ -563,29 +734,86 @@
       "location": "Florida, USA"
     },
     "geocode": {
-      "lat": 25.790881,
-      "lng": -80.1310085,
+      "lat": 25.2866155,
+      "lng": -80.89865089999999,
       "country": "United States",
       "state": "FL"
     }
   },
   {
-    "title": "FREEDOM TRAIL TOUR",
-    "url": "https://guidealong.com/tour/freedom-trail-tour/",
+    "title": "FINGER LAKES TOUR",
+    "url": "https://guidealong.com/tour/finger-lakes/",
     "details": {
-      "description": "Explore Boston’s Freedom Trail, featuring historic landmarks, Revolutionary War sites, and iconic stops like Boston Common, Paul Revere’s House, and the Bunker Hill Monument. Discover America’s fight for freedom!",
+      "description": "Discover the heart of the Finger Lakes: explore the two biggest lakes, Seneca and Cayuga, relax along the famous Wine Trail, and marvel at the stunning glacial waterfalls and woodland hikes of upstate New York.",
       "thumbnail": "",
-      "audioPoints": "80+",
-      "duration": "1 day",
-      "tourType": "Walking",
-      "start": "Boston Common, Bunker Hill Monument",
-      "location": "Boston, Massachusetts"
+      "audioPoints": "155+",
+      "duration": "1 - 2 Days+",
+      "tourType": "Driving",
+      "start": "Ithaca New York",
+      "location": "New York, USA"
     },
     "geocode": {
-      "lat": 42.3763541,
-      "lng": -71.0607764,
+      "lat": 42.7238165,
+      "lng": -76.9297247,
       "country": "United States",
-      "state": "MA"
+      "state": "NY"
+    }
+  },
+  {
+    "title": "FREE: WAIKIKI TO HANAUMA BAY TOUR",
+    "url": "https://guidealong.com/tour/waikiki-to-hanauma-tour/",
+    "details": {
+      "description": "Explore Oahu’s stunning southeast coast from Waikiki on this free audio tour. Visit must-see spots like Diamond Head, Hanauma Bay, Halona Blowhole, and Makapuʻu Point Lighthouse while hearing stories about volcanic landscapes, island history, and local culture along the way.",
+      "thumbnail": "",
+      "audioPoints": "50+",
+      "duration": "Half Day",
+      "tourType": "Driving",
+      "start": "Kalakaua Ave, Waikiki",
+      "location": "Hawaii"
+    },
+    "geocode": {
+      "lat": 21.2690358,
+      "lng": -157.6937919,
+      "country": "United States",
+      "state": "HI"
+    }
+  },
+  {
+    "title": "GARDEN OF THE GODS AUDIO TOUR",
+    "url": "https://guidealong.com/tour/garden-of-the-gods/",
+    "details": {
+      "description": "Discover the spectacular landscapes and dramatic formations of Colorado's Garden of the Gods.",
+      "thumbnail": "",
+      "audioPoints": "40+",
+      "duration": "Half Day",
+      "tourType": "Driving and Walking",
+      "start": "N 30th St",
+      "location": "Colorado, USA"
+    },
+    "geocode": {
+      "lat": 38.8717933,
+      "lng": -104.8861757,
+      "country": "United States",
+      "state": "CO"
+    }
+  },
+  {
+    "title": "GETTYSBURG BATTLEFIELD BUNDLE",
+    "url": "https://guidealong.com/tour/gettysburg-battlefield-bundle/",
+    "details": {
+      "description": "A sacred Civil War battlefield in southern Pennsylvania. Gettysburg National Military Park preserves the rolling fields, stone walls, and historic landmarks where one of America’s most pivotal battles unfolded.",
+      "thumbnail": "",
+      "audioPoints": "160+",
+      "duration": "1 Day",
+      "tourType": "Driving Hybrid",
+      "start": "Any drive into Gettysburg",
+      "location": "Pennsylvania, USA"
+    },
+    "geocode": {
+      "lat": 39.8309293,
+      "lng": -77.2310955,
+      "country": "United States",
+      "state": "PA"
     }
   },
   {
@@ -601,10 +829,10 @@
       "location": "Montana, USA"
     },
     "geocode": {
-      "lat": 52.2201943,
-      "lng": -117.2261418,
-      "country": "Canada",
-      "state": "AB"
+      "lat": 61.79322699999999,
+      "lng": -147.7974357,
+      "country": "United States",
+      "state": "AK"
     }
   },
   {
@@ -646,25 +874,6 @@
     }
   },
   {
-    "title": "GRAND PRISMATIC’S FAIRY FALLS TRAIL WALKING TOUR",
-    "url": "https://guidealong.com/tour/grand-prismatic/",
-    "details": {
-      "description": "Experience Yellowstone’s natural wonders on a scenic hike to Grand Prismatic Spring, where vibrant rainbow colors, steamy landscapes, and panoramic views await from the overlook trail.",
-      "thumbnail": "",
-      "audioPoints": "10+",
-      "duration": "1 day",
-      "tourType": "Walking",
-      "start": "Fairy Falls Parking Lot, Yellowstone",
-      "location": "Yellowstone National Park, Wyoming"
-    },
-    "geocode": {
-      "lat": 44.5330824,
-      "lng": -110.8574932,
-      "country": "United States",
-      "state": "WY"
-    }
-  },
-  {
     "title": "GRAND TETON TOUR",
     "url": "https://guidealong.com/tour/grand-teton-national-park/",
     "details": {
@@ -703,41 +912,22 @@
     }
   },
   {
-    "title": "HALEAKALA NATIONAL PARK TOUR",
-    "url": "https://guidealong.com/tour/haleakala-national-park/",
+    "title": "GUADALUPE MOUNTAINS NATIONAL PARK TOUR",
+    "url": "https://guidealong.com/tour/guadalupe-mountains-national-park-tour/",
     "details": {
-      "description": "Explore Haleakalā National Park, a stunning volcanic wonderland with epic sunrise views, scenic trails, and diverse ecosystems. Discover the towering summit, the vast crater, and lush tropical forests along the way.",
+      "description": "Explore Guadalupe Mountains National Park, featuring rugged desert landscapes, towering peaks, and scenic canyons, including Guadalupe Peak, the highest point in Texas.",
       "thumbnail": "",
-      "audioPoints": "90+",
+      "audioPoints": "115+",
       "duration": "1 day",
-      "tourType": "Driving",
-      "start": "Kahului",
-      "location": "Maui, Hawaii, USA"
+      "tourType": "Driving Hybrid",
+      "start": "Carlsbad, El Paso, Van Horn",
+      "location": "Texas, USA"
     },
     "geocode": {
-      "lat": 20.7203826,
-      "lng": -156.1551524,
+      "lat": 31.9233303,
+      "lng": -104.8663109,
       "country": "United States",
-      "state": "HI"
-    }
-  },
-  {
-    "title": "HAWAII, BIG ISLAND TOURS",
-    "url": "https://guidealong.com/tour/big-island-hawaii/",
-    "details": {
-      "description": "Perfect companion to thoroughly explore the Big Island. Included are 4 driving routes; 2 full day (Volcanoes and Island Circle) and 2 half day (Kohala Coast and Kona Coffee Coast).",
-      "thumbnail": "",
-      "audioPoints": "460+",
-      "duration": "1 - 4 Days+",
-      "tourType": "Driving",
-      "start": "Flexible",
-      "location": "Hawaii, USA"
-    },
-    "geocode": {
-      "lat": 19.5429151,
-      "lng": -155.6658568,
-      "country": "United States",
-      "state": "HI"
+      "state": "TX"
     }
   },
   {
@@ -757,25 +947,6 @@
       "lng": -166.5471460142073,
       "country": "",
       "state": ""
-    }
-  },
-  {
-    "title": "HIDDEN VALLEY WALKING TRAIL TOUR",
-    "url": "https://guidealong.com/tour/hidden-valley-walking-trail/",
-    "details": {
-      "description": "Explore Hidden Valley, a stunning desert oasis in Joshua Tree National Park. Wander through towering rock formations, iconic Joshua trees, and a hidden past as a rumored cattle rustler hideout. Experience the magic of this secluded wonder!",
-      "thumbnail": "",
-      "audioPoints": "15+",
-      "duration": "1 day",
-      "tourType": "Walking",
-      "start": "Hidden Valley Parking Lot, Joshua Tree",
-      "location": "California, USA"
-    },
-    "geocode": {
-      "lat": 34.134728,
-      "lng": -116.3130661,
-      "country": "United States",
-      "state": "CA"
     }
   },
   {
@@ -801,18 +972,18 @@
     "title": "ICELAND BUNDLE",
     "url": "https://guidealong.com/tour/iceland-bundle/",
     "details": {
-      "description": "Iceland Bundle includes Golden Circle, Snæfellsnes Peninsula, and Reykjanes Peninsula.",
+      "description": "Iceland Bundle includes Golden Circle, Snæfellsnes Peninsula, Reykjanes Peninsula, and Reykjavik.",
       "thumbnail": "",
-      "audioPoints": "610",
-      "duration": "3 Destinations",
-      "tourType": "Driving",
+      "audioPoints": "645",
+      "duration": "4 Destinations",
+      "tourType": "Driving/Walking",
       "start": "",
       "location": ""
     },
     "geocode": {
-      "lat": 64.963051,
-      "lng": -19.020835,
-      "country": "Iceland",
+      "lat": null,
+      "lng": null,
+      "country": "",
       "state": ""
     }
   },
@@ -829,10 +1000,29 @@
       "location": "Iceland"
     },
     "geocode": {
-      "lat": 64.963051,
-      "lng": -19.020835,
+      "lat": 64.14761419999999,
+      "lng": -21.9224794,
       "country": "Iceland",
-      "state": ""
+      "state": "Reykjavíkurborg"
+    }
+  },
+  {
+    "title": "ISLE OF SKYE TOUR",
+    "url": "https://guidealong.com/tour/isle-of-skye/",
+    "details": {
+      "description": "Explore the spectacular landscapes and dramatic vistas of Scotland's Isle of Skye.",
+      "thumbnail": "",
+      "audioPoints": "230+",
+      "duration": "2 days",
+      "tourType": "Driving",
+      "start": "Route A87, in Kyleakin",
+      "location": "Scotland"
+    },
+    "geocode": {
+      "lat": 57.2736278,
+      "lng": -6.2155022,
+      "country": "United Kingdom",
+      "state": "Scotland"
     }
   },
   {
@@ -848,10 +1038,10 @@
       "location": "Alberta, CAN"
     },
     "geocode": {
-      "lat": 53.552101,
-      "lng": 10.01156,
-      "country": "Germany",
-      "state": "HH"
+      "lat": 52.8732899,
+      "lng": -118.0822838,
+      "country": "Canada",
+      "state": "AB"
     }
   },
   {
@@ -874,6 +1064,25 @@
     }
   },
   {
+    "title": "JOSHUA’S HIDDEN VALLEY WALKING TRAIL TOUR",
+    "url": "https://guidealong.com/tour/joshuas-hidden-valley-walking-trail/",
+    "details": {
+      "description": "Explore Hidden Valley, a stunning desert oasis in Joshua Tree National Park. Wander through towering rock formations, iconic Joshua trees, and a hidden past as a rumored cattle rustler hideout. Experience the magic of this secluded wonder!",
+      "thumbnail": "",
+      "audioPoints": "15+",
+      "duration": "1 day",
+      "tourType": "Walking",
+      "start": "Hidden Valley Parking Lot, Joshua Tree",
+      "location": "California, USA"
+    },
+    "geocode": {
+      "lat": 34.134728,
+      "lng": -116.3130661,
+      "country": "United States",
+      "state": "CA"
+    }
+  },
+  {
     "title": "KANCAMAGUS TOUR",
     "url": "https://guidealong.com/tour/kancamagus/",
     "details": {
@@ -886,14 +1095,14 @@
       "location": "New Hampshire"
     },
     "geocode": {
-      "lat": 44.0505797,
-      "lng": -71.566737,
+      "lat": 43.9787728,
+      "lng": -71.1184579,
       "country": "United States",
       "state": "NH"
     }
   },
   {
-    "title": "KAUAI TOURS",
+    "title": "KAUAI BUNDLE",
     "url": "https://guidealong.com/tour/kauai/",
     "details": {
       "description": "We've divided Hawaii’s Garden Isle into 2 driving routes; North and Eastern Kauai, and South and Western Kauai. Each could easily be a day of sightseeing, but more time is better.",
@@ -902,7 +1111,7 @@
       "duration": "2 Days+",
       "tourType": "Driving",
       "start": "Multiple",
-      "location": "Hawaii, USA"
+      "location": "Hawaii"
     },
     "geocode": {
       "lat": 22.0964396,
@@ -924,8 +1133,8 @@
       "location": "Michigan, USA"
     },
     "geocode": {
-      "lat": 47.25020259999999,
-      "lng": -88.3334456,
+      "lat": 47.7515686,
+      "lng": -88.3249369,
       "country": "United States",
       "state": "MI"
     }
@@ -943,8 +1152,8 @@
       "location": "Alberta, CAN"
     },
     "geocode": {
-      "lat": 51.3217416,
-      "lng": -116.1860049,
+      "lat": 51.4253705,
+      "lng": -116.1772552,
       "country": "Canada",
       "state": "AB"
     }
@@ -962,8 +1171,8 @@
       "location": "Minnesota, USA"
     },
     "geocode": {
-      "lat": 46.8717037,
-      "lng": -91.9514361,
+      "lat": 46.8616659,
+      "lng": -91.9731792,
       "country": "United States",
       "state": "MN"
     }
@@ -1007,39 +1216,58 @@
     }
   },
   {
-    "title": "MAUI – ROAD TO HANA TOUR",
-    "url": "https://guidealong.com/tour/road-to-hana-maui/",
+    "title": "MAUI BUNDLE",
+    "url": "https://guidealong.com/tour/maui/",
     "details": {
-      "description": "The Road to Hana from Paia to Oheo Gulch. We'll point out all the waterfalls, viewpoints and beaches, but we have 5 \"not to be missed\" stops. On the return drive, there are stories about Hawaii's rich history.",
+      "description": "Experience everything on Maui with the island’s most complete and trusted audio tour. This all-in-one Maui experience covers the entire island - world-famous Road to Hana, volcanic Haleakala, lush Iao Valley, remote West Maui, and sandy South Maui.",
       "thumbnail": "",
-      "audioPoints": "140",
-      "duration": "10 Hours+",
+      "audioPoints": "500+",
+      "duration": "1 - 5 Days",
       "tourType": "Driving",
-      "start": "Central Maui",
-      "location": "Hawaii, USA"
+      "start": "Flexible",
+      "location": "Hawaii"
     },
     "geocode": {
-      "lat": 20.8546661,
-      "lng": -156.1694682,
+      "lat": 20.7983626,
+      "lng": -156.3319253,
       "country": "United States",
       "state": "HI"
     }
   },
   {
-    "title": "MAUI TOURS",
-    "url": "https://guidealong.com/tour/maui/",
+    "title": "MAUI’S HALEAKALA NATIONAL PARK TOUR",
+    "url": "https://guidealong.com/tour/maui-haleakala-national-park/",
     "details": {
-      "description": "Our complete tour guides you across the entire Maui island. Tours include our complete Road to Hana, Haleakala, Iao Valley and West & South Maui routes.",
+      "description": "Explore Haleakalā National Park, a stunning volcanic wonderland with epic sunrise views, scenic trails, and diverse ecosystems. Discover the towering summit, the vast crater, and lush tropical forests along the way.",
       "thumbnail": "",
-      "audioPoints": "465+",
-      "duration": "1 - 5 Days",
+      "audioPoints": "90+",
+      "duration": "1 day",
       "tourType": "Driving",
-      "start": "Flexible",
-      "location": "Hawaii, USA"
+      "start": "Kahului",
+      "location": "Maui, Hawaii, USA"
     },
     "geocode": {
-      "lat": 20.7983626,
-      "lng": -156.3319253,
+      "lat": 20.7203826,
+      "lng": -156.1551524,
+      "country": "United States",
+      "state": "HI"
+    }
+  },
+  {
+    "title": "MAUI’S ROAD TO HANA TOUR – (ALL ROUTES)",
+    "url": "https://guidealong.com/tour/road-to-hana-maui/",
+    "details": {
+      "description": "Experience Maui’s famous Road to Hana with the most trusted audio tour. We’ll guide you to all the must-see sights and hidden gems including spectacular waterfalls, black sand beaches, bamboo forests, lava rock formations and amazing ocean views.",
+      "thumbnail": "",
+      "audioPoints": "140+",
+      "duration": "10 Hours+",
+      "tourType": "Driving",
+      "start": "Central Maui",
+      "location": "Hawaii"
+    },
+    "geocode": {
+      "lat": 20.8546661,
+      "lng": -156.1694682,
       "country": "United States",
       "state": "HI"
     }
@@ -1095,8 +1323,8 @@
       "location": "Michigan, USA"
     },
     "geocode": {
-      "lat": 44.7335895,
-      "lng": -86.0492841,
+      "lat": 44.3148443,
+      "lng": -85.60236429999999,
       "country": "United States",
       "state": "MI"
     }
@@ -1137,6 +1365,25 @@
       "lng": -110.0916343,
       "country": "United States",
       "state": "AZ"
+    }
+  },
+  {
+    "title": "MOUNT HOOD SCENIC LOOP TOUR",
+    "url": "https://guidealong.com/tour/mount-hood-scenic-loop-tour/",
+    "details": {
+      "description": "Experience the breathtaking beauty of Mount Hood Scenic Loop with cascading waterfalls, alpine lakes, and stunning mountain views.",
+      "thumbnail": "",
+      "audioPoints": "160+",
+      "duration": "1 - 2 Days",
+      "tourType": "Driving",
+      "start": "Sandy, Troutdale",
+      "location": "Oregon, USA"
+    },
+    "geocode": {
+      "lat": 45.373615,
+      "lng": -121.695951,
+      "country": "United States",
+      "state": "OR"
     }
   },
   {
@@ -1181,7 +1428,7 @@
     "title": "NATCHEZ TRACE PARKWAY TOUR",
     "url": "https://guidealong.com/tour/natchez-trace-parkway/",
     "details": {
-      "description": "A ribbon of parkway enveloped by the tranquility of the countryside and sometimes urban areas.",
+      "description": "A drive along the Natchez Trace Parkway is a journey through time, history, and the natural beauty of the American South.",
       "thumbnail": "",
       "audioPoints": "255+",
       "duration": "1 - 2 Days",
@@ -1190,10 +1437,10 @@
       "location": "AL & TN, USA"
     },
     "geocode": {
-      "lat": 33.7668642,
-      "lng": -89.0187511,
+      "lat": 34.33017160000001,
+      "lng": -88.70983079999999,
       "country": "United States",
-      "state": ""
+      "state": "MS"
     }
   },
   {
@@ -1254,16 +1501,16 @@
     }
   },
   {
-    "title": "OAHU TOURS",
+    "title": "OAHU BUNDLE",
     "url": "https://guidealong.com/tour/oahu/",
     "details": {
       "description": "You’ve had your fill of lounging beachside at that swanky Waikiki resort and now you’re looking for a little adventure. That means it’s time for an Oahu road trip. Rent a car and go! Includes 4 driving routes.",
       "thumbnail": "",
-      "audioPoints": "230+",
+      "audioPoints": "340+",
       "duration": "1 - 4 Days",
       "tourType": "Driving",
       "start": "Flexible",
-      "location": "Hawaii, USA"
+      "location": "Hawaii"
     },
     "geocode": {
       "lat": 21.4389123,
@@ -1273,22 +1520,60 @@
     }
   },
   {
-    "title": "OLD FAITHFUL WALKING TRAIL TOUR",
-    "url": "https://guidealong.com/tour/old-faithful/",
+    "title": "OAHU’S DOWNTOWN HONOLULU WALK TOUR",
+    "url": "https://guidealong.com/tour/oahus-downtown-honolulu-walk/",
     "details": {
-      "description": "Experience Yellowstone’s geothermal magic on a scenic walk to Old Faithful, where powerful eruptions, steamy surroundings, and iconic views create an unforgettable adventure.",
+      "description": "Journey through Honolulu’s historic core, exploring Iolani Palace, the King Kamehameha Statue, and Aloha Tower. Take your time to soak in its rich heritage and beauty.",
+      "thumbnail": "",
+      "audioPoints": "30+",
+      "duration": "1 Day",
+      "tourType": "Walking",
+      "start": "Aloha Tower, downtown Honolulu",
+      "location": "Hawaii"
+    },
+    "geocode": {
+      "lat": 21.3096187,
+      "lng": -157.8599592,
+      "country": "United States",
+      "state": "HI"
+    }
+  },
+  {
+    "title": "OAHU’S WAIKIKI WALK TOUR",
+    "url": "https://guidealong.com/tour/oahus-waikiki-walk-tour/",
+    "details": {
+      "description": "A scenic walk along Waikiki’s iconic shoreline and bustling Kalakaua Avenue. Explore Duke Kahanamoku’s surfing legacy, royal history, wartime sites, and a mysterious crime. Plan for a full day to soak in the stories, sights, and vibrant beachfront atmosphere.",
+      "thumbnail": "",
+      "audioPoints": "25+",
+      "duration": "1 Day",
+      "tourType": "Walking",
+      "start": "Brothers in Valor Memorial",
+      "location": "Oahu"
+    },
+    "geocode": {
+      "lat": 21.2753984,
+      "lng": -157.8252495,
+      "country": "United States",
+      "state": "HI"
+    }
+  },
+  {
+    "title": "OLD SAN JUAN WALKING TOUR",
+    "url": "https://guidealong.com/tour/old-san-juan-walking-tour/",
+    "details": {
+      "description": "Experience San Juan’s historic charm on a scenic walk through Old San Juan, where colourful colonial streets, oceanfront fortresses, and centuries of Caribbean history create an unforgettable adventure.",
       "thumbnail": "",
       "audioPoints": "35+",
       "duration": "1 day",
       "tourType": "Walking",
-      "start": "Upper Geyser Basin near Old Faithful Visitor Center",
-      "location": "Yellowstone National Park, Wyoming"
+      "start": "Plaza Colón",
+      "location": "Puerto Rico"
     },
     "geocode": {
-      "lat": 44.4604788,
-      "lng": -110.8281376,
-      "country": "United States",
-      "state": "WY"
+      "lat": 18.4660854,
+      "lng": -66.111992,
+      "country": "Puerto Rico",
+      "state": "San Juan"
     }
   },
   {
@@ -1349,6 +1634,25 @@
     }
   },
   {
+    "title": "PARKS HIGHWAY TOUR",
+    "url": "https://guidealong.com/tour/parks-highway/",
+    "details": {
+      "description": "Explore Knik Glacier, Talkeetna, Eklutna Village, mountain views, rivers, and vast wilderness on one of Alaska’s most scenic drives between Anchorage and Denali.",
+      "thumbnail": "",
+      "audioPoints": "200+",
+      "duration": "1 day",
+      "tourType": "Driving",
+      "start": "Anchorage or Denali",
+      "location": "Alaska"
+    },
+    "geocode": {
+      "lat": 63.2438663,
+      "lng": -149.2518748,
+      "country": "United States",
+      "state": "AK"
+    }
+  },
+  {
     "title": "PETRIFIED FOREST NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/petrified-forest-national-park-tour/",
     "details": {
@@ -1406,6 +1710,25 @@
     }
   },
   {
+    "title": "PUERTO VALLARTA WALKING TOUR",
+    "url": "https://guidealong.com/tour/puerto-vallarta-walking-tour/",
+    "details": {
+      "description": "Vibrant Coastal Charm. As you explore, you’ll stroll along scenic waterfronts, discover colorful neighborhoods, and hear stories of the culture, history, and local life that shape Puerto Vallarta.",
+      "thumbnail": "",
+      "audioPoints": "65+",
+      "duration": "2 - 3 Hours",
+      "tourType": "Half Day",
+      "start": "Malecón McDonald’s, Paseo Díaz Ordaz & C. 31 de Octubre",
+      "location": "Mexico"
+    },
+    "geocode": {
+      "lat": 20.6033293,
+      "lng": -105.2334896,
+      "country": "Mexico",
+      "state": "Jal."
+    }
+  },
+  {
     "title": "REDWOOD NATIONAL AND STATE PARK TOUR",
     "url": "https://guidealong.com/tour/redwood-national-and-state-parks-tour/",
     "details": {
@@ -1437,10 +1760,48 @@
       "location": "Iceland"
     },
     "geocode": {
-      "lat": 63.8086111,
-      "lng": -22.6944444,
+      "lat": 63.91548030000001,
+      "lng": -22.3649667,
       "country": "Iceland",
-      "state": "Grindavíkurbær"
+      "state": ""
+    }
+  },
+  {
+    "title": "REYKJAVIK WALKING TOUR",
+    "url": "https://guidealong.com/tour/reykjavik-walking-tour/",
+    "details": {
+      "description": "Discover Reykjavik on a scenic walk through colorful streets, Viking history, and iconic landmarks like Hallgrímskirkja and Sun Voyager.",
+      "thumbnail": "",
+      "audioPoints": "35+",
+      "duration": "1 day",
+      "tourType": "Walking",
+      "start": "Hallgrímskirkja",
+      "location": "Iceland"
+    },
+    "geocode": {
+      "lat": 64.147181,
+      "lng": -21.939835,
+      "country": "Iceland",
+      "state": "Reykjavíkurborg"
+    }
+  },
+  {
+    "title": "RING OF KERRY TOUR",
+    "url": "https://guidealong.com/tour/ring-of-kerry/",
+    "details": {
+      "description": "Explore the Kerry Cliffs, rugged coastline, lush hills, historic castles, and picturesque villages on one of Ireland's most scenic drives.",
+      "thumbnail": "",
+      "audioPoints": "445+",
+      "duration": "2 days",
+      "tourType": "Driving",
+      "start": "Cork, Mallow or Tralee",
+      "location": "Ireland"
+    },
+    "geocode": {
+      "lat": 52.05820370000001,
+      "lng": -9.5087878,
+      "country": "Ireland",
+      "state": "KY"
     }
   },
   {
@@ -1463,184 +1824,13 @@
     }
   },
   {
-    "title": "SAGUARO NATIONAL PARK TOUR",
-    "url": "https://guidealong.com/tour/saguaro-national-park-tour/",
-    "details": {
-      "description": "Discover Saguaro National Park's towering cacti, desert landscapes, and scenic trails. Enjoy serene drives, mountain vistas, and the park's unique beauty and heritage!",
-      "thumbnail": "",
-      "audioPoints": "90+",
-      "duration": "1 Day",
-      "tourType": "Driving",
-      "start": "Tucson",
-      "location": "Arizona, USA"
-    },
-    "geocode": {
-      "lat": 32.18308990000001,
-      "lng": -110.6126823,
-      "country": "United States",
-      "state": "AZ"
-    }
-  },
-  {
-    "title": "SALEM WITCH TRIALS TOUR",
-    "url": "https://guidealong.com/tour/salem-witch-trials-tour/",
-    "details": {
-      "description": "Spellbinding Salem. Explore historic streets, uncover chilling Witch Trials tales, and visit iconic sites that bring Salem’s legends to life.",
-      "thumbnail": "",
-      "audioPoints": "40+",
-      "duration": "2 - 3 Hours",
-      "tourType": "Walking",
-      "start": "Outside the Salem Armory at New Liberty Street",
-      "location": "Massachusetts, USA"
-    },
-    "geocode": {
-      "lat": 42.5197473,
-      "lng": -70.8954626,
-      "country": "United States",
-      "state": "MA"
-    }
-  },
-  {
-    "title": "SANTA FE WALK TOUR",
-    "url": "https://guidealong.com/tour/santa-fe/",
-    "details": {
-      "description": "Explore Santa Fe’s rich history on a walking tour of its vibrant plazas and iconic landmarks, including the oldest U.S. church, Loretto Chapel, and Santa Fe Plaza.",
-      "thumbnail": "",
-      "audioPoints": "20+",
-      "duration": "1 day",
-      "tourType": "Walking",
-      "start": "458 Old Santa Fe Trail, near the New Mexico Capitol.",
-      "location": "New Mexico, USA"
-    },
-    "geocode": {
-      "lat": 33.2060195,
-      "lng": -117.2475828,
-      "country": "United States",
-      "state": "CA"
-    }
-  },
-  {
-    "title": "SEDONA TOUR",
-    "url": "https://guidealong.com/tour/sedona/",
-    "details": {
-      "description": "Sedona's surrounding red rocks provide a perfect vacation hub to stay to recharge and renew your spirituality with outdoor adventure, vibrant arts, New Age vortexes and other places of worship, or connecting with Native American history and culture.",
-      "thumbnail": "",
-      "audioPoints": "115",
-      "duration": "1 Day+",
-      "tourType": "Driving",
-      "start": "Multiple",
-      "location": "Arizona, USA"
-    },
-    "geocode": {
-      "lat": 34.862614,
-      "lng": -111.8137258,
-      "country": "United States",
-      "state": "AZ"
-    }
-  },
-  {
-    "title": "SEQUOIA & KINGS CANYON NATIONAL PARK TOUR",
-    "url": "https://guidealong.com/tour/sequoia-and-kings-canyon/",
-    "details": {
-      "description": "This slice of the Sierra Nevada mountains in California is indeed one of the best places to see these incredible, awe-inspiring trees. You will see incredible trees!",
-      "thumbnail": "",
-      "audioPoints": "215+",
-      "duration": "1 - 2+ Days",
-      "tourType": "Driving",
-      "start": "Fresno or Visalia",
-      "location": "California"
-    },
-    "geocode": {
-      "lat": 36.694861,
-      "lng": -118.5583226,
-      "country": "United States",
-      "state": "CA"
-    }
-  },
-  {
-    "title": "SHENANDOAH NATIONAL PARK TOUR",
-    "url": "https://guidealong.com/tour/shenandoah/",
-    "details": {
-      "description": "Shenandoah National Park is home to hundreds of animals, historic sites, beautiful views and unique hiking trails. The most popular activity is to drive the famous Skyline Drive - all 105 miles along the spine of the Blue Ridge Mountains.",
-      "thumbnail": "",
-      "audioPoints": "170+",
-      "duration": "1 Day+",
-      "tourType": "Driving",
-      "start": "Front Royal or Waynesboro",
-      "location": "Virginia, USA"
-    },
-    "geocode": {
-      "lat": 38.4754706,
-      "lng": -78.4534573,
-      "country": "United States",
-      "state": "VA"
-    }
-  },
-  {
-    "title": "SNÆFELLSNES PENINSULA TOUR",
-    "url": "https://guidealong.com/tour/snaefellsnes-peninsula-tour/",
-    "details": {
-      "description": "Explore Iceland's Snæfellsnes Peninsula, a breathtaking blend of volcanic peaks, glacier-capped mountains, black sand beaches, and iconic landmarks like Kirkjufell and Snæfellsjökull. Experience the magic of Iceland’s natural beauty!",
-      "thumbnail": "",
-      "audioPoints": "220+",
-      "duration": "1-2 days",
-      "tourType": "Driving",
-      "start": "From Snæfellsnes",
-      "location": "Snaefellsnes, Iceland"
-    },
-    "geocode": {
-      "lat": 64.8443266,
-      "lng": -22.6532697,
-      "country": "Iceland",
-      "state": "Eyja- og Miklaholtshreppur"
-    }
-  },
-  {
-    "title": "SONOMA AND NAPA VALLEY TOUR",
-    "url": "https://guidealong.com/tour/sonoma-and-napa-valley-tour/",
-    "details": {
-      "description": "Explore Sonoma and Napa Valley, a picturesque region of rolling vineyards, world-class wineries, and charming towns. Discover the beauty of lush landscapes, historic landmarks, and indulge in the valley’s renowned wine culture!",
-      "thumbnail": "",
-      "audioPoints": "230+",
-      "duration": "1-2 days",
-      "tourType": "Driving",
-      "start": "Oakland, San Francisco, Santa Rosa, Sacramento",
-      "location": "California, USA"
-    },
-    "geocode": {
-      "lat": 38.291859,
-      "lng": -122.4580356,
-      "country": "United States",
-      "state": "CA"
-    }
-  },
-  {
-    "title": "THEODORE ROOSEVELT NATIONAL PARK TOUR",
-    "url": "https://guidealong.com/tour/theodore-roosevelt-national-park-tour/",
-    "details": {
-      "description": "Discover the untamed beauty of North Dakota on the Theodore Roosevelt National Park Tour—where vast prairies, striking Badlands formations, and diverse wildlife come together to showcase the rugged spirit of the American West.",
-      "thumbnail": "",
-      "audioPoints": "65+",
-      "duration": "1 Day",
-      "tourType": "Driving",
-      "start": "From Medora Or US-85",
-      "location": "North Dakota, USA"
-    },
-    "geocode": {
-      "lat": 46.9508897,
-      "lng": -103.4627031,
-      "country": "United States",
-      "state": "ND"
-    }
-  },
-  {
     "title": "US CLASSIC SOUTHWEST BUNDLE",
     "url": "https://guidealong.com/tour/us-classic-southwest-bundle/",
     "details": {
-      "description": "US Classic Southwest Bundle includes tours in Arizona, Nevada, New Mexico, Texas & Utah. These include 16 destinations such as Arches & Canyonlands, Zion & Bryce, Grand Canyon, Sedona, Petrified Forest, and more.",
+      "description": "US Classic Southwest Bundle includes tours in Arizona, Nevada, New Mexico, Texas & Utah. These include 17 destinations such as Arches & Canyonlands, Zion & Bryce, Grand Canyon, Sedona, Petrified Forest, and more.",
       "thumbnail": "",
-      "audioPoints": "2205+",
-      "duration": "16 Destinations",
+      "audioPoints": "2,320+",
+      "duration": "17 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
@@ -1656,11 +1846,11 @@
     "title": "US EAST BUNDLE",
     "url": "https://guidealong.com/tour/us-east-tour-bundle/",
     "details": {
-      "description": "US East Tours bundle includes Acadia, Blue Ridge Parkway, Creole Nature Trail, Catskills, Freedom Trail, Great Smoky Mountains, Keweenaw, Lake Michigan, Lake Superior North Shore, Miami - Key West, Natchez Trace, New River Gorge, Outer Banks, Shenandoah, and Vermont RT […]",
+      "description": "US East Tours bundle includes Acadia, Bar Harbor, Blue Ridge Parkway, Creole Nature Trail, Catskills, Boston Ghost, Freedom Trail, Gettysburg Battlefield, Great Smoky Mountains, Keweenaw, Lake Michigan, Lake Superior North Shore, Miami - Key West, Natchez Trace, New River Gorge, […]",
       "thumbnail": "",
-      "audioPoints": "3,330",
-      "duration": "18 Destinations",
-      "tourType": "Driving",
+      "audioPoints": "3900+",
+      "duration": "28 Destinations",
+      "tourType": "Driving & Walking",
       "start": "",
       "location": ""
     },
@@ -1675,10 +1865,10 @@
     "title": "US PACIFIC COASTLINE BUNDLE",
     "url": "https://guidealong.com/tour/us-pacific-coastline-bundle/",
     "details": {
-      "description": "US Pacific Coastline Bundle includes tours in California, Oregon & Washington. These include 16 destinations such as 17-Mile, Big Sur, Crater Lake, Joshua Tree, Lake Tahoe, Lassen Volcanic, Mount Rainier, and more.",
+      "description": "US Pacific Coastline Bundle includes tours in California, Oregon & Washington. These include 17 destinations such as 17-Mile, Big Sur, Crater Lake, Joshua Tree, Lake Tahoe, Lassen Volcanic, Mount Rainier, and more.",
       "thumbnail": "",
-      "audioPoints": "3245+",
-      "duration": "16 Destinations",
+      "audioPoints": "3305+",
+      "duration": "17 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
@@ -1694,10 +1884,10 @@
     "title": "US ROCKIES & PLAINS BUNDLE",
     "url": "https://guidealong.com/tour/us-rockies-plains-bundle/",
     "details": {
-      "description": "US Rockies & Plains Bundle includes tours in Colorado, Montana, Wyoming, North & South Dakota. These include 12 destinations such as Yellowstone & Grand Teton, Glacier, Black Hills, Black Canyon, Rocky Mountain, Mesa Verde, Theodore Roosevelt, and more.",
+      "description": "US Rockies & Plains Bundle includes tours in Colorado, Montana, Wyoming, North & South Dakota. These include 16 destinations such as Yellowstone & Grand Teton, Glacier, Black Hills, Black Canyon, Rocky Mountain, Mesa Verde, Theodore Roosevelt, and more.",
       "thumbnail": "",
-      "audioPoints": "1940+",
-      "duration": "13 Destinations",
+      "audioPoints": "2060+",
+      "duration": "16 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
@@ -1707,253 +1897,6 @@
       "lng": -109.7869527,
       "country": "",
       "state": ""
-    }
-  },
-  {
-    "title": "UTAH MIGHTY 5 BUNDLE",
-    "url": "https://guidealong.com/tour/utah-mighty-5-bundle/",
-    "details": {
-      "description": "Utah's Mighty 5 National Parks. Includes Arches, Canyonlands, Zion, Bryce Canyon and Capitol Reef National Parks.",
-      "thumbnail": "",
-      "audioPoints": "520",
-      "duration": "5 National Parks",
-      "tourType": "Driving",
-      "start": "",
-      "location": ""
-    },
-    "geocode": {
-      "lat": 40.7606608,
-      "lng": -111.8939487,
-      "country": "United States",
-      "state": "UT"
-    }
-  },
-  {
-    "title": "VANCOUVER <-> KAMLOOPS TOUR",
-    "url": "https://guidealong.com/tour/vancouver-kamloops/",
-    "details": {
-      "description": "Drive through desert tumbleweeds of the BC Interior and rainforests along the Coastal mountains. This tour works in either direction - Eastbound or Westbound.",
-      "thumbnail": "",
-      "audioPoints": "140",
-      "duration": "4 - 6 Hours+",
-      "tourType": "Driving",
-      "start": "Vancouver or Kamloops",
-      "location": "BC, CAN"
-    },
-    "geocode": {
-      "lat": 50.674522,
-      "lng": -120.3272674,
-      "country": "Canada",
-      "state": "BC"
-    }
-  },
-  {
-    "title": "VANCOUVER <-> WHISTLER TOUR",
-    "url": "https://guidealong.com/tour/whistler/",
-    "details": {
-      "description": "Sea to Sky Highway. The drive hugs the BC Coast Mountains with views of Howe Sound waters and islands before heading inland to Squamish and Whistler.",
-      "thumbnail": "",
-      "audioPoints": "115",
-      "duration": "3 - 4 Hours",
-      "tourType": "Driving",
-      "start": "Vancouver or Whistler",
-      "location": "BC, CAN"
-    },
-    "geocode": {
-      "lat": 49.2827291,
-      "lng": -123.1207375,
-      "country": "Canada",
-      "state": "BC"
-    }
-  },
-  {
-    "title": "VANCOUVER DOWNTOWN TOUR",
-    "url": "https://guidealong.com/tour/vancouver-downtown/",
-    "details": {
-      "description": "Canada's Beautiful West Coast Cosmopolitan City. Explore the City of Vancouver, Stanley Park, Granville Island Markets and local beaches. A must do orientation for any first time visitor to Vancouver.",
-      "thumbnail": "",
-      "audioPoints": "100",
-      "duration": "4 - 6 Hours",
-      "tourType": "Driving",
-      "start": "Flexible",
-      "location": "BC, CAN"
-    },
-    "geocode": {
-      "lat": 49.281954,
-      "lng": -123.1170744,
-      "country": "Canada",
-      "state": "BC"
-    }
-  },
-  {
-    "title": "VERMONT, RT100 SCENIC BYWAY TOUR",
-    "url": "https://guidealong.com/tour/rt-100-scenic-byway-vermont/",
-    "details": {
-      "description": "Vermont's Main Street. A road trip for those that like food sampling, shops with arts & crafts and the prettiest New England towns, villages and covered bridges. And when it's fall you'll be blinded by the autumn colors.",
-      "thumbnail": "",
-      "audioPoints": "300",
-      "duration": "1 Day+",
-      "tourType": "Driving",
-      "start": "Wilmington or Jeffersonville",
-      "location": "Vermont, USA"
-    },
-    "geocode": {
-      "lat": 44.5588028,
-      "lng": -72.57784149999999,
-      "country": "United States",
-      "state": "VT"
-    }
-  },
-  {
-    "title": "WAIKIKI WALK TOUR",
-    "url": "https://guidealong.com/tour/waikiki-walk/",
-    "details": {
-      "description": "An iconic stroll through Waikiki’s vibrant heart. Discover stunning ocean views, historic landmarks, and lively shops along Kalakaua Avenue. Though it’s a leisurely walk, you’ll want to spend a full day soaking in the atmosphere and scenic spots.",
-      "thumbnail": "",
-      "audioPoints": "20+",
-      "duration": "1 Day",
-      "tourType": "Walking",
-      "start": "Kālia Road parking lot, Honolulu",
-      "location": "Hawaii, USA"
-    },
-    "geocode": {
-      "lat": 21.2791446,
-      "lng": -157.8307577,
-      "country": "United States",
-      "state": "HI"
-    }
-  },
-  {
-    "title": "WATERTON ALBERTA SW TOUR",
-    "url": "https://guidealong.com/tour/waterton-national-park/",
-    "details": {
-      "description": "Waterton & Alberta SW stunning Waterton National Park and Alberta's diverse southwest communities. A cowboy trail road trip from the Canada/US border to the foothills of the Canadian Rockies.",
-      "thumbnail": "",
-      "audioPoints": "450+",
-      "duration": "1 - 2 Days+",
-      "tourType": "Driving",
-      "start": "Waterton, Hwy 22 or Calgary",
-      "location": "Alberta, CAN"
-    },
-    "geocode": {
-      "lat": 49.0509828,
-      "lng": -113.9085675,
-      "country": "Canada",
-      "state": "AB"
-    }
-  },
-  {
-    "title": "WEST THUMB WALKING TRAIL TOUR",
-    "url": "https://guidealong.com/tour/west-thumb/",
-    "details": {
-      "description": "Discover West Thumb, a lakeside geothermal wonder! Walk past steaming vents and colorful springs with Yellowstone Lake as your backdrop—a must-see stop!",
-      "thumbnail": "",
-      "audioPoints": "20+",
-      "duration": "1 day",
-      "tourType": "Walking",
-      "start": "West Thumb Geyser Basin, Yellowstone National Park",
-      "location": "Yellowstone National Park, Wyoming"
-    },
-    "geocode": {
-      "lat": 44.4154952,
-      "lng": -110.5754846,
-      "country": "United States",
-      "state": "WY"
-    }
-  },
-  {
-    "title": "WHITE SANDS NATIONAL PARK TOUR",
-    "url": "https://guidealong.com/tour/white-sands/",
-    "details": {
-      "description": "Otherworldly White Dunes. Discover the stunning gypsum landscape while hearing tales of the unique ecosystem and the adventurous souls who braved this surreal desert terrain.",
-      "thumbnail": "",
-      "audioPoints": "65+",
-      "duration": "1.5 to 5 Hours",
-      "tourType": "Driving",
-      "start": "Route 70",
-      "location": "New Mexico, USA"
-    },
-    "geocode": {
-      "lat": 32.7872403,
-      "lng": -106.3256816,
-      "country": "United States",
-      "state": "NM"
-    }
-  },
-  {
-    "title": "YELLOWSTONE + GRAND TETON NATIONAL PARK TOUR",
-    "url": "https://guidealong.com/tour/yellowstone-grand-teton/",
-    "details": {
-      "description": "With almost too much to see and do in Yellowstone and Grand Teton National Parks, this Combo App will help narrow down what are \"not to be missed\" areas with insider tips and stories.",
-      "thumbnail": "",
-      "audioPoints": "550+",
-      "duration": "1 - 5 Days+",
-      "tourType": "Driving",
-      "start": "Any of the 7 Entrances",
-      "location": "Wyoming, USA"
-    },
-    "geocode": {
-      "lat": 43.7904282,
-      "lng": -110.6817627,
-      "country": "United States",
-      "state": "WY"
-    }
-  },
-  {
-    "title": "YELLOWSTONE TOUR",
-    "url": "https://guidealong.com/tour/yellowstone-national-park/",
-    "details": {
-      "description": "The USA’s most magnificent National Park will impress you. Our tours cover all 4 quadrants of the park, allowing you either to just cover the highlights or with more time, in depth.",
-      "thumbnail": "",
-      "audioPoints": "375+",
-      "duration": "1 - 3 Days+",
-      "tourType": "Driving",
-      "start": "Any of the 5 Entrances",
-      "location": "Wyoming, USA"
-    },
-    "geocode": {
-      "lat": 44.5979182,
-      "lng": -110.561249,
-      "country": "United States",
-      "state": ""
-    }
-  },
-  {
-    "title": "YOSEMITE TOUR",
-    "url": "https://guidealong.com/tour/yosemite-national-park/",
-    "details": {
-      "description": "California's Majestic National Park. We'll visit the must do viewpoints, sequoia groves and waterfalls. However if you have more time or want to escape the crowds, we also tour Hetch Hetchy and Tioga Road.",
-      "thumbnail": "",
-      "audioPoints": "200+",
-      "duration": "1 - 2 Days+",
-      "tourType": "Driving",
-      "start": "Any of the 5 Entrances",
-      "location": "California, USA"
-    },
-    "geocode": {
-      "lat": 37.8651011,
-      "lng": -119.5383294,
-      "country": "United States",
-      "state": "CA"
-    }
-  },
-  {
-    "title": "ZION + BRYCE CANYON NATIONAL PARK TOURS",
-    "url": "https://guidealong.com/tour/zion-bryce-canyon/",
-    "details": {
-      "description": "Tour 2 of Utah’s National Parks that are equally surreal. Zion with its steep sandstone walls, slot canyons and green oasis’s created by water and Bryce Canyon with thousands of hoodoos towers densely packed into a spectacular amphitheatre.",
-      "thumbnail": "",
-      "audioPoints": "195+",
-      "duration": "2 Days+",
-      "tourType": "Driving",
-      "start": "La Verkin, Widtsoe, Henrieville, or Panguitch",
-      "location": "Utah, USA"
-    },
-    "geocode": {
-      "lat": 37.2051385,
-      "lng": -113.2721584,
-      "country": "United States",
-      "state": "UT"
     }
   }
 ]
