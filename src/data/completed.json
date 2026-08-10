@@ -4,10 +4,6 @@
     "completedDate": null
   },
   {
-    "title": "GRAND CANYON SOUTH RIM TOUR",
-    "completedDate": "2025-10-25"
-  },
-  {
     "title": "YELLOWSTONE TOUR",
     "completedDate": null
   },
@@ -36,10 +32,6 @@
     "completedDate": null
   },
   {
-    "title": "MIAMI <-> KEY WEST TOUR",
-    "completedDate": "2025-05-30"
-  },
-  {
     "title": "VERMONT, RT100 SCENIC BYWAY TOUR",
     "completedDate": null
   },
@@ -48,20 +40,8 @@
     "completedDate": null
   },
   {
-    "title": "MICHIGAN LAKESHORE, M-22 TOUR",
-    "completedDate": "2025-07-05"
-  },
-  {
-    "title": "EVERGLADES NATIONAL PARK TOUR",
-    "completedDate": "2025-07-19"
-  },
-  {
     "title": "HALEAKALA NATIONAL PARK TOUR",
     "completedDate": null
-  },
-  {
-    "title": "SHENANDOAH NATIONAL PARK TOUR",
-    "completedDate": "2025-06-09"
   },
   {
     "title": "MAUI - ROAD TO HANA TOUR",
@@ -80,6 +60,22 @@
     "completedDate": null
   },
   {
+    "title": "MIAMI <-> KEY WEST TOUR",
+    "completedDate": "2025-05-30"
+  },
+  {
+    "title": "SHENANDOAH NATIONAL PARK TOUR",
+    "completedDate": "2025-06-09"
+  },
+  {
+    "title": "MICHIGAN LAKESHORE, M-22 TOUR",
+    "completedDate": "2025-07-05"
+  },
+  {
+    "title": "EVERGLADES NATIONAL PARK TOUR",
+    "completedDate": "2025-07-19"
+  },
+  {
     "title": "SEQUOIA & KINGS CANYON NATIONAL PARK TOUR",
     "completedDate": "2025-10-11"
   },
@@ -92,7 +88,19 @@
     "completedDate": "2025-10-21"
   },
   {
+    "title": "GRAND CANYON SOUTH RIM TOUR",
+    "completedDate": "2025-10-25"
+  },
+  {
     "title": "GRAND CANYON WEST RIM, HOOVER DAM, RED ROCK CANYON, LAS VEGAS TOURS",
     "completedDate": "2025-10-26"
+  },
+  {
+    "title": "NEW RIVER GORGE NATIONAL PARK TOUR",
+    "completedDate": "2026-06-19"
+  },
+  {
+    "title": "CUYAHOGA VALLEY NATIONAL PARK TOUR",
+    "completedDate": "2026-06-21"
   }
 ]
