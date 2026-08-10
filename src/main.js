@@ -1,3 +1,10 @@
+import {
+  Map as MapLibreMap,
+  Marker,
+  NavigationControl,
+  Popup,
+} from "https://cdn.jsdelivr.net/npm/maplibre-gl@6.3.0/+esm";
+
 let map;
 let markers = [];
 const markerIndexByKey = new Map();
@@ -113,21 +120,10 @@ function hideError() {
 function plotToursOnMap(tours) {
   // Remove old markers from map
   markers.forEach((m) => {
-    if (m) m.setMap(null);
+    if (m) m.remove();
   });
   markers = [];
   markerIndexByKey.clear();
-
-  let openInfoWindow = null;
-  const guidealongIcon = {
-    url: "icons/guidealong.png",
-    scaledSize: new google.maps.Size(16, 16),
-  };
-
-  const completedIcon = {
-    url: "icons/guidealong-completed.png",
-    scaledSize: new google.maps.Size(16, 16),
-  };
 
   tours.forEach((t) => {
     const lat = t?.geocode?.lat;
@@ -135,26 +131,26 @@ function plotToursOnMap(tours) {
     if (lat && lng) {
       const isCompleted = completedTours.includes(t.title);
       const key = t.url || t.title;
-      const marker = new google.maps.Marker({
-        map: map,
-        position: { lat, lng },
-        title: t.title,
-        icon: isCompleted ? completedIcon : guidealongIcon,
-      });
-      markerIndexByKey.set(key, markers.length);
-      marker.addListener("click", () => {
-        if (openInfoWindow) openInfoWindow.close();
+      const el = document.createElement("img");
+      el.src = isCompleted
+        ? "icons/guidealong-completed.png"
+        : "icons/guidealong.png";
+      el.style.width = "16px";
+      el.style.height = "16px";
 
-        // Get completion data for this tour
-        const completedTourData = completedToursData.find(
-          (ct) => ct.title === t.title,
-        );
-        const info = new google.maps.InfoWindow({
-          content: buildInfoContent(t, isCompleted, completedTourData),
-        });
-        info.open(map, marker);
-        openInfoWindow = info;
-      });
+      const marker = new Marker({ element: el })
+        .setLngLat([lng, lat])
+        .addTo(map);
+
+      const completedTourData = completedToursData.find(
+        (ct) => ct.title === t.title,
+      );
+      const popup = new Popup({ offset: 25 }).setHTML(
+        buildInfoContent(t, isCompleted, completedTourData),
+      );
+      marker.setPopup(popup);
+
+      markerIndexByKey.set(key, markers.length);
       markers.push(marker);
     }
   });
@@ -560,11 +556,18 @@ async function loadToursFromFile() {
 async function initMap() {
   showLoading("Initializing map...");
   hideError();
-  map = new google.maps.Map(document.getElementById("map"), {
+  map = new MapLibreMap({
+    container: "map",
+    style: "https://tiles.openfreemap.org/styles/liberty",
+    center: [-98, 39], // centered over U.S.
     zoom: 4,
-    center: { lat: 39, lng: -98 }, // centered over U.S.
-    mapId: "GuideAlong Global Map", // <-- Replace with your own Map ID for production
-    streetViewControl: false,
+  });
+  map.addControl(new NavigationControl(), "top-right");
+  map.on("popupopen", (e) => {
+    markers.forEach((m) => {
+      const p = m.getPopup();
+      if (p && p !== e.popup && p.isOpen()) p.remove();
+    });
   });
 
   hideLoading();
@@ -628,43 +631,8 @@ function initGlobalDropdownCloser() {
   });
 }
 
-// .env loader for browser
-async function loadEnv() {
-  try {
-    const response = await fetch("config/.env");
-    if (!response.ok) throw new Error("Could not load .env");
-    const text = await response.text();
-    const lines = text.split("\n");
-    const env = {};
-    lines.forEach((line) => {
-      line = line.trim();
-      if (line && !line.startsWith("#") && line.includes("=")) {
-        const [key, ...rest] = line.split("=");
-        env[key.trim()] = rest.join("=").trim();
-      }
-    });
-    return env;
-  } catch (e) {
-    console.warn("Failed to load .env:", e);
-    return {};
-  }
-}
-
-// Use .env loader for Google Maps API key
-(async () => {
-  const env = await loadEnv();
-  if (env.GOOGLE_MAPS_API_KEY) {
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${env.GOOGLE_MAPS_API_KEY}&libraries=places,marker&callback=initMap`;
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
-  } else {
-    showError("Google Maps API key not found in .env");
-  }
-})();
-
-window.initMap = initMap;
+// MapLibre GL JS is loaded via ES module import above
+initMap();
 
 function renderTourList(tours) {
   const list = document.getElementById("tourList");
@@ -697,12 +665,11 @@ function renderTourList(tours) {
       if (idx == null) return;
       const marker = markers[idx];
       if (!marker) return;
-      const pos = marker.getPosition();
+      const pos = marker.getLngLat();
       if (pos) {
-        map.panTo(pos);
-        map.setZoom(6);
+        map.flyTo({ center: [pos.lng, pos.lat], zoom: 6 });
       }
-      google.maps.event.trigger(marker, "click");
+      marker.togglePopup();
     });
   });
 }
