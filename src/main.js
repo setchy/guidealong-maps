@@ -1,4 +1,6 @@
 import {
+  AttributionControl,
+  GeolocateControl,
   Map as MapLibreMap,
   Marker,
   NavigationControl,
@@ -11,6 +13,9 @@ const markerIndexByKey = new Map();
 let allTours = [];
 let completedTours = [];
 let completedToursData = []; // Store full completed tour objects
+let userLocation = null;
+let geolocateControl = null;
+let locationRequested = false;
 
 async function loadCompletedTours() {
   try {
@@ -33,7 +38,7 @@ function computeFilteredTours(tours, completedTitles, filters) {
     countries = [],
     states = [],
     status = "all",
-    type = "all",
+    type = [],
   } = filters || {};
 
   return (tours || []).filter((t) => {
@@ -52,7 +57,9 @@ function computeFilteredTours(tours, completedTitles, filters) {
     else if (status === "incomplete") matchesStatus = !isCompleted;
 
     let matchesTourType = true;
-    if (type !== "all") matchesTourType = d.tourType === type;
+    if (type.length > 0) {
+      matchesTourType = type.includes(t.category || "Driving");
+    }
 
     return (
       matchesSearch &&
@@ -251,7 +258,7 @@ function populateFilters(tours) {
   setupTourStatusFilter();
 
   // Setup tour type filter
-  setupTourTypeFilter();
+  setupTourTypeFilter(tours);
 }
 
 function setupStateCheckboxListeners() {
@@ -424,10 +431,23 @@ function getSelectedTourStatus() {
   return selectedStatus ? selectedStatus.value : "all";
 }
 
-function setupTourTypeFilter() {
+function setupTourTypeFilter(tours) {
   const dropdownButton = document.getElementById("tourTypeDropdownButton");
   const dropdown = dropdownButton.parentElement;
   const content = document.getElementById("tourTypeDropdownContent");
+  if (!dropdownButton || !dropdown || !content) return;
+
+  // Build category options from data (plus "All")
+  const categories = Array.from(
+    new Set((tours || []).map((t) => t.category || "Driving")),
+  ).sort((a, b) => a.localeCompare(b));
+  content.innerHTML = [
+    '<div class="checkbox-item"><input type="checkbox" id="allTourTypes" name="tourType" value="" checked><label for="allTourTypes">All Tour Types</label></div>',
+    ...categories.map(
+      (c) =>
+        `<div class="checkbox-item"><input type="checkbox" name="tourType" value="${c}"><label>${c}</label></div>`,
+    ),
+  ].join("");
 
   // Toggle dropdown
   dropdownButton.addEventListener("click", (e) => {
@@ -436,48 +456,66 @@ function setupTourTypeFilter() {
     dropdownButton.setAttribute("aria-expanded", String(open));
   });
 
-  // Delegate radio changes
-  if (content) {
-    content.addEventListener("change", (e) => {
-      const target = e.target;
-      if (!(target instanceof HTMLInputElement) || target.type !== "radio")
-        return;
-      updateTourTypeDropdownButtonText();
-      updateAll();
-      dropdown.classList.remove("open");
-      dropdownButton.setAttribute("aria-expanded", "false");
-    });
-  }
+  // Delegate checkbox changes
+  content.addEventListener("change", (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLInputElement) || target.type !== "checkbox")
+      return;
+    if (target.id === "allTourTypes") {
+      const tourTypeCheckboxes = content.querySelectorAll(
+        'input[name="tourType"]:not(#allTourTypes)',
+      );
+      tourTypeCheckboxes.forEach((cb) => {
+        cb.checked = target.checked;
+      });
+    } else {
+      const tourTypeCheckboxes = content.querySelectorAll(
+        'input[name="tourType"]:not(#allTourTypes)',
+      );
+      const anyChecked = Array.from(tourTypeCheckboxes).some(
+        (cb) => cb.checked,
+      );
+      const allCb = document.getElementById("allTourTypes");
+      if (allCb) allCb.checked = !anyChecked;
+    }
+    updateTourTypeDropdownButtonText();
+    updateAll();
+    dropdown.classList.remove("open");
+    dropdownButton.setAttribute("aria-expanded", "false");
+  });
 
   updateTourTypeDropdownButtonText();
 }
 
 function updateTourTypeDropdownButtonText() {
   const dropdownButton = document.getElementById("tourTypeDropdownButton");
-  const selectedTourType = document.querySelector(
-    'input[name="tourType"]:checked',
-  ).value;
-
-  switch (selectedTourType) {
-    case "Driving":
-      dropdownButton.innerHTML =
-        'Driving Tours Only <span class="dropdown-arrow">▼</span>';
-      break;
-    case "Walking":
-      dropdownButton.innerHTML =
-        'Walking Tours Only <span class="dropdown-arrow">▼</span>';
-      break;
-    default:
-      dropdownButton.innerHTML =
-        'All Tour Types <span class="dropdown-arrow">▼</span>';
+  if (!dropdownButton) return;
+  const checked = Array.from(
+    document.querySelectorAll(
+      'input[name="tourType"]:checked:not(#allTourTypes)',
+    ),
+  ).map((cb) => cb.value);
+  const allCb = document.getElementById("allTourTypes");
+  if (allCb?.checked || checked.length === 0) {
+    dropdownButton.innerHTML =
+      'All Tour Types <span class="dropdown-arrow">▼</span>';
+  } else if (checked.length === 1) {
+    dropdownButton.innerHTML = `${checked[0]} <span class="dropdown-arrow">▼</span>`;
+  } else {
+    dropdownButton.innerHTML = `${checked.length} Tour Types <span class="dropdown-arrow">▼</span>`;
   }
 }
 
 function getSelectedTourType() {
-  const selectedTourType = document.querySelector(
-    'input[name="tourType"]:checked',
-  );
-  return selectedTourType ? selectedTourType.value : "all";
+  const allCb = document.getElementById("allTourTypes");
+  if (allCb?.checked) {
+    return [];
+  }
+  return Array.from(
+    document.querySelectorAll(
+      'input[name="tourType"]:checked:not(#allTourTypes)',
+    ),
+  ).map((cb) => cb.value);
 }
 
 function updateStateDropdownButtonText() {
@@ -527,6 +565,196 @@ function getSelectedStates() {
     .map((cb) => cb.value);
 }
 
+// --- Group & Sort helpers -------------------------------------------------
+function getCompletedInfo(title) {
+  const data = completedToursData.find((ct) => ct.title === title);
+  return {
+    completed: completedTours.includes(title),
+    date: data?.completedDate || null,
+  };
+}
+
+function haversineDistanceMiles(a, b) {
+  const R = 3958.8; // Earth radius in miles
+  const toRad = (deg) => (deg * Math.PI) / 180;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const lat1 = toRad(a.lat);
+  const lat2 = toRad(b.lat);
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+function tourDistanceMiles(t, userLocation) {
+  const g = t?.geocode;
+  if (!g || g.lat == null || g.lng == null || !userLocation) return null;
+  return haversineDistanceMiles(userLocation, { lat: g.lat, lng: g.lng });
+}
+
+function sortTours(tours, sortKey, userLocation) {
+  const sorted = [...tours];
+  const byTitle = (a, b) =>
+    (a.title || "").localeCompare(b.title || "", undefined, { numeric: true });
+
+  switch (sortKey) {
+    case "completedDate": {
+      sorted.sort((a, b) => {
+        const ca = getCompletedInfo(a.title);
+        const cb = getCompletedInfo(b.title);
+        // Not completed first? No - completed tours go first.
+        if (ca.completed !== cb.completed) return ca.completed ? -1 : 1;
+        if (!ca.completed) return byTitle(a, b);
+        // Both completed: dated before undated
+        if (!!ca.date !== !!cb.date) return ca.date ? -1 : 1;
+        if (ca.date && cb.date) return cb.date.localeCompare(ca.date); // newest first
+        return byTitle(a, b);
+      });
+      break;
+    }
+    case "distance": {
+      sorted.sort((a, b) => {
+        const da = tourDistanceMiles(a, userLocation);
+        const db = tourDistanceMiles(b, userLocation);
+        if (da == null && db == null) return byTitle(a, b);
+        if (da == null) return 1; // ungeocoded last
+        if (db == null) return -1;
+        return da - db;
+      });
+      break;
+    }
+    default:
+      sorted.sort(byTitle);
+  }
+  return sorted;
+}
+
+function groupTours(sortedTours, groupKey) {
+  if (groupKey === "none" || !groupKey) {
+    return [
+      {
+        key: "all",
+        label: null,
+        count: sortedTours.length,
+        tours: sortedTours,
+      },
+    ];
+  }
+
+  const groups = new Map();
+  for (const t of sortedTours) {
+    let key;
+    let label;
+    if (groupKey === "status") {
+      const { completed } = getCompletedInfo(t.title);
+      key = completed ? "completed" : "incomplete";
+      label = completed ? "Completed" : "Not Completed";
+    } else {
+      key = t.category || "Driving";
+      label = key;
+    }
+    if (!groups.has(key)) groups.set(key, { key, label, count: 0, tours: [] });
+    groups.get(key).tours.push(t);
+    groups.get(key).count += 1;
+  }
+
+  const list = Array.from(groups.values());
+  if (groupKey === "category") {
+    // Most tours first; tie-break alphabetically
+    list.sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  } else {
+    // Status: Completed first, then Not Completed
+    list.sort((a, b) => {
+      const order = { completed: 0, incomplete: 1 };
+      return (order[a.key] ?? 2) - (order[b.key] ?? 2);
+    });
+  }
+  return list;
+}
+
+function getGroupBy() {
+  const selected = document.querySelector('input[name="groupBy"]:checked');
+  return selected ? selected.value : "status";
+}
+
+function getSortBy() {
+  const selected = document.querySelector('input[name="sortBy"]:checked');
+  return selected ? selected.value : "title";
+}
+
+function setupGroupByFilter() {
+  const dropdownButton = document.getElementById("groupByDropdownButton");
+  const dropdown = dropdownButton.parentElement;
+  const content = document.getElementById("groupByDropdownContent");
+
+  dropdownButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = dropdown.classList.toggle("open");
+    dropdownButton.setAttribute("aria-expanded", String(open));
+  });
+
+  if (content) {
+    content.addEventListener("change", (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLInputElement) || target.type !== "radio")
+        return;
+      updateGroupByDropdownButtonText();
+      updateAll();
+      dropdown.classList.remove("open");
+      dropdownButton.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  updateGroupByDropdownButtonText();
+}
+
+function updateGroupByDropdownButtonText() {
+  const dropdownButton = document.getElementById("groupByDropdownButton");
+  if (!dropdownButton) return;
+  const selected = document.querySelector('input[name="groupBy"]:checked');
+  const labels = { none: "None", status: "Status", category: "Category" };
+  dropdownButton.innerHTML = `${labels[selected?.value] || "None"} <span class="dropdown-arrow">▼</span>`;
+}
+
+function setupSortByFilter() {
+  const dropdownButton = document.getElementById("sortByDropdownButton");
+  const dropdown = dropdownButton.parentElement;
+  const content = document.getElementById("sortByDropdownContent");
+
+  dropdownButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = dropdown.classList.toggle("open");
+    dropdownButton.setAttribute("aria-expanded", String(open));
+  });
+
+  if (content) {
+    content.addEventListener("change", (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLInputElement) || target.type !== "radio")
+        return;
+      updateSortByDropdownButtonText();
+      updateAll();
+      dropdown.classList.remove("open");
+      dropdownButton.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  updateSortByDropdownButtonText();
+}
+
+function updateSortByDropdownButtonText() {
+  const dropdownButton = document.getElementById("sortByDropdownButton");
+  if (!dropdownButton) return;
+  const selected = document.querySelector('input[name="sortBy"]:checked');
+  const labels = {
+    title: "Title",
+    completedDate: "Completed date",
+    distance: "Distance",
+  };
+  dropdownButton.innerHTML = `${labels[selected?.value] || "Title"} <span class="dropdown-arrow">▼</span>`;
+}
+
 function updateAll() {
   const filters = getFilters();
   const filtered = computeFilteredTours(allTours, completedTours, filters);
@@ -534,6 +762,17 @@ function updateAll() {
   plotToursOnMap(filtered);
   updateStats(filtered);
   renderTourList(filtered);
+}
+
+function groupAndSort(tours) {
+  const sortKey = getSortBy();
+  const groupKey = getGroupBy();
+  if (sortKey === "distance" && !userLocation && !locationRequested) {
+    locationRequested = true;
+    geolocateControl?.trigger();
+  }
+  const sorted = sortTours(tours, sortKey, userLocation);
+  return groupTours(sorted, groupKey);
 }
 
 // Removed Fetch & Save button and logic
@@ -553,6 +792,24 @@ async function loadToursFromFile() {
   }
 }
 
+async function loadLastSynced() {
+  try {
+    const response = await fetch("./data/meta.json");
+    if (!response.ok) throw new Error("No meta file found");
+    const meta = await response.json();
+    const el = document.getElementById("lastSynced");
+    if (!el || !meta?.lastSynced) return;
+    const date = new Date(meta.lastSynced);
+    el.textContent = `Last synced ${date.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })}`;
+  } catch {
+    // Leave footer timestamp empty if meta is unavailable
+  }
+}
+
 async function initMap() {
   showLoading("Initializing map...");
   hideError();
@@ -561,8 +818,27 @@ async function initMap() {
     style: "https://tiles.openfreemap.org/styles/liberty",
     center: [-98, 39], // centered over U.S.
     zoom: 4,
+    attributionControl: false,
   });
-  map.addControl(new NavigationControl(), "top-right");
+  map.addControl(new NavigationControl(), "bottom-right");
+  const attributionControl = new AttributionControl({ compact: true });
+  map.addControl(attributionControl, "top-right");
+  const collapseAttribution = () => {
+    const el = map.getContainer().querySelector(".maplibregl-ctrl-attrib");
+    if (el) el.classList.remove("maplibregl-compact-show");
+  };
+  collapseAttribution();
+  map.on("load", collapseAttribution);
+  geolocateControl = new GeolocateControl({
+    positionOptions: { enableHighAccuracy: true },
+    trackUserLocation: false,
+    showUserLocation: true,
+    fitBoundsOptions: { maxZoom: 10 },
+  });
+  map.addControl(geolocateControl, "bottom-right");
+  geolocateControl.on("geolocate", (e) => {
+    userLocation = { lat: e.coords.latitude, lng: e.coords.longitude };
+  });
   map.on("popupopen", (e) => {
     markers.forEach((m) => {
       const p = m.getPopup();
@@ -575,6 +851,9 @@ async function initMap() {
 
   // Load completed tours
   completedTours = await loadCompletedTours();
+
+  // Load last-synced timestamp
+  loadLastSynced();
 
   const tours = await loadToursFromFile();
   if (!tours || !Array.isArray(tours) || tours.length === 0) {
@@ -605,15 +884,38 @@ async function initMap() {
     });
   }
 
-  // Collapsible filters toggle
+  // Collapsible filters toggle (start collapsed)
   const filtersSection = document.getElementById("filtersSection");
   const filtersToggle = document.getElementById("filtersToggle");
   if (filtersSection && filtersToggle) {
+    if (!filtersSection.classList.contains("collapsed")) {
+      filtersSection.classList.add("collapsed");
+      filtersToggle.setAttribute("aria-expanded", "false");
+    }
     filtersToggle.addEventListener("click", () => {
       const collapsed = filtersSection.classList.toggle("collapsed");
       filtersToggle.setAttribute("aria-expanded", String(!collapsed));
     });
   }
+
+  // Collapsible group & sort toggle (start collapsed)
+  const groupSortSection = document.getElementById("groupSortSection");
+  const groupSortToggle = document.getElementById("groupSortToggle");
+  if (groupSortSection && groupSortToggle) {
+    if (!groupSortSection.classList.contains("collapsed")) {
+      groupSortSection.classList.add("collapsed");
+      groupSortToggle.setAttribute("aria-expanded", "false");
+    }
+    groupSortToggle.addEventListener("click", () => {
+      const collapsed = groupSortSection.classList.toggle("collapsed");
+      groupSortToggle.setAttribute("aria-expanded", String(!collapsed));
+    });
+  }
+
+  setupGroupByFilter();
+  setupSortByFilter();
+
+  setupSearch();
 
   // Global outside-click to close any open dropdowns
   initGlobalDropdownCloser();
@@ -631,28 +933,203 @@ function initGlobalDropdownCloser() {
   });
 }
 
+// --- Search ---------------------------------------------------------------
+// Single search input drives both the list filter (via updateAll) and a
+// jump-to-tour results dropdown that appears on focus / Cmd+K.
+let searchResults = [];
+let searchActiveIndex = 0;
+
+function getSearchInput() {
+  return document.getElementById("searchInput");
+}
+
+function getSearchResultsEl() {
+  return document.getElementById("searchResults");
+}
+
+function searchFilterResults(query) {
+  const q = (query || "").toLowerCase().trim();
+  if (!q) return [];
+  return allTours
+    .filter(
+      (t) =>
+        t.title?.toLowerCase().includes(q) ||
+        (t.details?.description || "").toLowerCase().includes(q),
+    )
+    .slice(0, 10);
+}
+
+function focusTour(t) {
+  const key = t.url || t.title;
+  const idx = markerIndexByKey.get(key);
+  const marker = idx != null ? markers[idx] : null;
+  if (marker) {
+    const pos = marker.getLngLat();
+    if (pos) map.flyTo({ center: [pos.lng, pos.lat], zoom: 6 });
+    marker.togglePopup();
+  }
+}
+
+function renderSearchResults() {
+  const el = getSearchResultsEl();
+  if (!el) return;
+  if (searchResults.length === 0) {
+    el.innerHTML =
+      '<div class="search-results-list"><div class="search-results-empty">No tours to display.</div></div>';
+    return;
+  }
+  el.innerHTML = `<div class="search-results-list">${searchResults
+    .map((t, i) => {
+      const g = t.geocode || {};
+      const place = [g.state, g.country].filter(Boolean).join(", ");
+      const active = i === searchActiveIndex ? " active" : "";
+      return `<div class="search-result${active}" data-index="${i}">
+        <div class="result-title">${t.title}</div>
+        ${place ? `<div class="result-meta">${place}</div>` : ""}
+      </div>`;
+    })
+    .join("")}</div>
+    <div class="search-results-footer">
+      <span><b>↑↓</b> navigate</span>
+      <span><b>↵</b> select</span>
+      <span><b>esc</b> close</span>
+    </div>`;
+}
+
+function openSearchResults() {
+  const input = getSearchInput();
+  const el = getSearchResultsEl();
+  if (!input || !el) return;
+  searchResults = searchFilterResults(input.value);
+  searchActiveIndex = 0;
+  renderSearchResults();
+  positionSearchResults();
+  el.classList.add("open");
+}
+
+function positionSearchResults() {
+  const input = getSearchInput();
+  const el = getSearchResultsEl();
+  if (!input || !el) return;
+  const rect = input.getBoundingClientRect();
+  el.style.left = `${rect.left}px`;
+  el.style.top = `${rect.bottom + 6}px`;
+}
+
+function closeSearchResults() {
+  const el = getSearchResultsEl();
+  if (el) el.classList.remove("open");
+}
+
+function setupSearch() {
+  const input = getSearchInput();
+  const el = getSearchResultsEl();
+  if (!input || !el) return;
+
+  input.addEventListener("input", () => {
+    searchResults = searchFilterResults(input.value);
+    searchActiveIndex = 0;
+    renderSearchResults();
+  });
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeSearchResults();
+      return;
+    }
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      if (!el.classList.contains("open") || searchResults.length === 0) return;
+      e.preventDefault();
+      const delta = e.key === "ArrowDown" ? 1 : -1;
+      searchActiveIndex =
+        (searchActiveIndex + delta + searchResults.length) %
+        searchResults.length;
+      renderSearchResults();
+      const active = el.querySelector(".search-result.active");
+      active?.scrollIntoView({ block: "nearest" });
+      return;
+    }
+    if (e.key === "Enter") {
+      if (!el.classList.contains("open")) return;
+      e.preventDefault();
+      const t = searchResults[searchActiveIndex];
+      if (t) {
+        focusTour(t);
+        closeSearchResults();
+        input.blur();
+      }
+      return;
+    }
+  });
+
+  el.addEventListener("click", (e) => {
+    const row = e.target.closest(".search-result");
+    if (!row) return;
+    const t = searchResults[Number(row.getAttribute("data-index"))];
+    if (t) {
+      focusTour(t);
+      closeSearchResults();
+      input.blur();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#searchInput, #searchResults")) {
+      closeSearchResults();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      input.focus();
+      openSearchResults();
+    }
+  });
+
+  window.addEventListener("resize", positionSearchResults);
+}
+
 // MapLibre GL JS is loaded via ES module import above
 initMap();
 
 function renderTourList(tours) {
   const list = document.getElementById("tourList");
   if (!list) return;
-  if (!tours || tours.length === 0) {
+
+  const groups = groupAndSort(tours);
+  const sortByDistance = getSortBy() === "distance";
+
+  if (groups.length === 0 || groups.every((g) => g.tours.length === 0)) {
     list.innerHTML = '<div class="meta">No tours to display.</div>';
     return;
   }
-  list.innerHTML = tours
-    .map((t) => {
-      const g = t.geocode || {};
-      const d = t.details || {};
-      const place = [g.state, g.country].filter(Boolean).join(", ");
-      const status = completedTours.includes(t.title) ? "✅" : "";
-      const type = d.tourType ? ` • ${d.tourType}` : "";
-      const key = (t.url || t.title).replace(/"/g, "&quot;");
-      return `<div class="tour-item" data-key="${key}">
-        <div class="title">${t.title} ${status}</div>
-        <div class="meta">${place || ""}${type}</div>
-      </div>`;
+
+  list.innerHTML = groups
+    .map((group) => {
+      const items = group.tours
+        .map((t) => {
+          const g = t.geocode || {};
+          const d = t.details || {};
+          const place = [g.state, g.country].filter(Boolean).join(", ");
+          const status = completedTours.includes(t.title) ? "✅" : "";
+          const type = d.tourType ? ` • ${d.tourType}` : "";
+          const key = (t.url || t.title).replace(/"/g, "&quot;");
+          let dist = "";
+          if (sortByDistance) {
+            const miles = tourDistanceMiles(t, userLocation);
+            dist = miles != null ? `${miles.toFixed(1)} mi · ` : "— · ";
+          }
+          return `<div class="tour-item" data-key="${key}">
+            <div class="title">${t.title} ${status}</div>
+            <div class="meta">${dist}${place || ""}${type}</div>
+          </div>`;
+        })
+        .join("");
+      const header = group.label
+        ? `<div class="group-header">${group.label} <span class="group-count">(${group.count})</span></div>`
+        : "";
+      return header + items;
     })
     .join("");
 

@@ -4,7 +4,7 @@
   "description": "A simple site that helps you explore GuideAlong tour locations across the globe.",
   "main": "index.js",
   "scripts": {
-    "start": "http-server ./src -p 3000 -o",
+    "start": "vite",
     "lint": "biome check --fix",
     "fetch:tours": "node ./lib/index.js"
   },
@@ -23,6 +23,6 @@
     "@googlemaps/google-maps-services-js": "3.4.2",
     "cheerio": "1.2.0",
     "dotenv": "17.4.2",
-    "http-server": "14.1.1"
+    "vite": "^8.2.1"
   }
 }

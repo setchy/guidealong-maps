@@ -1,77 +1,46 @@
 # GuideAlong Tours Explorer
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b9368d23-cad4-45f5-a018-e1af6a6269ed/deploy-status)](https://app.netlify.com/projects/guidealong-tours/deploys)
 
-This project is a simple web app that displays [GuideAlong][guidealong] tours on a Google Map.
+A simple web app that displays [GuideAlong][guidealong] tours on an interactive map powered by [MapLibre GL JS][maplibre] with free OpenStreetMap vector tiles. Deployed via [Netlify][netlify].
 
 ![GuideAlong Tours][screenshot]
 
-By default it uses geocoded tour information from `./src/data/tours.json` to plot tour markers on an interactive map.
-
-There is also the ability to fetch the most recent tour information from [guidealong.com/tour-list][guidealong-tours] and geocode the locations.
-
-If you'd like to show completed trips, these can be added into `./src/data/completed.json` and will be plotted with a green GuideAlong logo.
-
 ## Features
+
 - Display all GuideAlong tours on a single view
-- Geocodes tour locations using Google Maps
 - Marker popups show tour title, description, and link
-- Search/filter tours by name, country, state, type or status
+- Search/filter tours by name, country, state, tour type, or status
+- Group the tour list by Status or Category (Driving, Walking, National Park, Bundle)
+- Sort by title, completion date, or distance from your location
+- Locate-me control to find tours near you
+- Completed trips shown with a green GuideAlong logo
 
-## Setup
-- Prereqs: Node.js and pnpm (this repo uses `pnpm@10.x`).
-- Clone or download this repository.
-- Add your Google Maps API key to `./src/config/.env`:
-   ```
-   GOOGLE_MAPS_API_KEY=your_api_key_here
-   ```
-   Notes:
-   - The same `.env` file is used by the browser (to load the Maps JS API) and by the server-side data fetch script (to run Geocoding).
-   - Use a browser key (HTTP referrer restrictions) for the UI. For server-side geocoding, use a server key (IP allow-list). You can temporarily reuse the same key while testing.
+## Getting started
 
-## Running locally
-Start the static site server and open the app in your browser:
+### Prerequisites
+
+- Node.js and pnpm (this repo uses `pnpm@10.x`)
+
+### Running locally
+
+Start a static file server and open the app in your browser:
 
 ```
 pnpm start
 ```
 
-## Requirements
-- Node.js
-- Internet connection (for Google Maps and data refresh)
-
-## Updating tours data and geocoding (server-side)
-You can refresh `src/data/tours.json` by scraping the tour list and optionally geocoding each tour using the Google Maps SDK.
-
-1) Install dependencies and ensure your key is in `./src/config/.env`:
-```
-pnpm i
-```
-
-2) Run the fetch script:
-```
-pnpm fetch:tours
-```
-
-Behavior:
-- If `GOOGLE_MAPS_API_KEY` is set in `./src/config/.env`, the script will geocode missing tours and fill `geocode` fields.
-- If not set, the script still scrapes/upserts tours but skips geocoding.
-
-Output: `./src/data/tours.json` (sorted by title)
-
-Tip: Don’t commit your real API keys. Keep `.env` files out of version control.
-
-## Scripts
-- `pnpm start` — Serve the UI from `./src` on port 3000.
-- `pnpm fetch:tours` — Scrape and update `src/data/tours.json` (and geocode when API key is present).
-- `pnpm lint` — Check and auto-fix formatting/linting via Biome.
+The UI runs entirely in the browser — MapLibre GL JS and free OpenStreetMap tiles need **no API key**.
 
 ## Data files
-- `src/data/tours.json` — The main dataset consumed by the UI. Example (abridged):
+
+- `src/data/tours.json` — The main dataset consumed by the UI. Each tour has a normalized `category` (`Driving`, `Walking`, `National Park`, `Bundle`) plus raw scraped details. Example (abridged):
+
    ```json
    [
       {
          "title": "Banff National Park Driving Tour",
          "url": "https://guidealong.com/tour/banff-driving-tour/",
+         "category": "Driving",
          "details": {
             "description": "Explore scenic drives and viewpoints...",
             "thumbnail": "",
@@ -86,7 +55,8 @@ Tip: Don’t commit your real API keys. Keep `.env` files out of version control
    ]
    ```
 
-- `src/data/completed.json` — Optional list of completed tours shown with a green icon. Example:
+- `src/data/completed.json` — Optional list of completed tours, shown with a green icon and counted in the Status group. Example:
+
    ```json
    [
       { "title": "Banff National Park Driving Tour", "completedDate": "2024-08-20" },
@@ -94,23 +64,70 @@ Tip: Don’t commit your real API keys. Keep `.env` files out of version control
    ]
    ```
 
-Titles should match those in `tours.json` for completion to be detected.
+   Titles should match those in `tours.json` for completion to be detected. `completedDate` may be `null` (completed, date unknown); null dates sort after dated tours.
+
+## Refreshing tour data (server-side)
+
+You can refresh `src/data/tours.json` by scraping the tour list and optionally geocoding each tour using the Google Maps Geocoding SDK (server-side only). This also re-derives each tour's `category`.
+
+1) Install dependencies and ensure your key is in `.env` (copy `.env.template`):
+
+```
+pnpm i
+cp .env.template .env
+```
+
+2) Run the fetch script:
+
+```
+pnpm fetch:tours
+```
+
+Behavior:
+- If `GOOGLE_MAPS_API_KEY` is set in `.env`, the script geocodes missing tours and fills the `geocode` fields.
+- If not set, the script still scrapes/upserts tours but skips geocoding.
+
+Output: `./src/data/tours.json` (sorted by title)
+
+Tip: Don't commit your real API keys. Keep `.env` files out of version control.
+
+## Deploying to Netlify
+
+The site is deployed with [Netlify][netlify]:
+
+- **Production** deploys automatically from the `main` branch.
+- **Preview branches** — every pull request gets its own preview deploy, so changes can be reviewed live before merging.
+- **Base directory / publish directory**: `./src` (the site is static — no build step).
+- **No secrets are required** — the map needs no API key.
 
 ## Using the UI
-- Filters: Country, State, Tour type, Tour status, and Search (title/description).
-- Sections: Filters and Tours are collapsible; the Tours header shows the count and completed tally.
+
+- Search: press `Cmd+K`/`Ctrl+K` (or the search button) for a keyboard-driven tour search palette, or use the inline search field.
+- Filters: Country, State, Tour type (by category), Tour status, and Search (title/description).
+- Group & Sort: group the list by Status or Category, and sort by Title, Completed date, or Distance.
+- Locate-me: use the map's locate control to capture your position, then sort by Distance to see tours nearest you (with computed distances shown).
+- Sections (Filters, Group & Sort, Tours) are collapsible and start collapsed on load; the Tours header shows the count and completed tally.
 - Clicking a tour in the list pans/zooms the map and opens its info window.
 
+## Scripts
+
+- `pnpm start` — Serve the UI from `./src` on port 3000.
+- `pnpm fetch:tours` — Scrape and update `src/data/tours.json` (and geocode when an API key is present).
+- `pnpm lint` — Check and auto-fix formatting/linting via Biome.
+
 ## Troubleshooting
-- Blank map or “API key not found”: Verify `./src/config/.env` exists and the key is valid. Refresh the page after changes.
-- No tours displayed: Ensure `./src/data/tours.json` exists or run `pnpm fetch:tours` to generate it.
-- Geocoding skipped: The server-side script didn’t find a key; add it to `./src/config/.env` and re-run.
+
+- No tours displayed: Ensure `src/data/tours.json` exists or run `pnpm fetch:tours` to generate it.
+- Geocoding skipped: The server-side script didn't find a key; add it to `.env` and re-run.
+- Distance sort unavailable: The browser declined the location prompt; allow access or use the map's locate control to try again.
 
 ## License
-This project is for demonstration purposes and is not affiliated with GuideAlong.
 
+This project is for demonstration purposes and is not affiliated with GuideAlong.
 
 <!-- Links -->
 [screenshot]: ./assets/image.png
 [guidealong]: https://guidealong.com
 [guidealong-tours]: https://guidealong.com/tour-list
+[maplibre]: https://maplibre.org
+[netlify]: https://netlify.com
