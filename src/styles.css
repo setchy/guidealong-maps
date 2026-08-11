@@ -61,6 +61,14 @@ body {
   margin: 0;
   font-size: 18px;
 }
+.controls-header-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.controls-header-title img {
+  display: block;
+}
 .github-link {
   color: #24292e;
   text-decoration: none;
