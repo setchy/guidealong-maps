@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GuideAlong Tours Map</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GuideAlong Tours Explorer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@6.3.0/dist/maplibre-gl.css">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -28,6 +30,10 @@
             0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
           </svg>
         </a>
+      </div>
+      <div class="filter-section search-section">
+        <label id="lblSearch" for="searchInput">Search tours:</label>
+        <input type="text" id="searchInput" placeholder="Search by name or description" aria-labelledby="lblSearch">
       </div>
       <div class="filters-section" id="filtersSection">
         <button class="filters-toggle" id="filtersToggle" aria-expanded="true" aria-controls="filtersContent">
@@ -111,9 +117,59 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="group-sort-section" id="groupSortSection">
+        <button class="group-sort-toggle" id="groupSortToggle" aria-expanded="true" aria-controls="groupSortContent">
+          <div class="group-sort-title">Group &amp; Sort</div>
+          <span class="group-sort-toggle-arrow">▼</span>
+        </button>
+        <div id="groupSortContent" class="group-sort-content">
           <div class="filter-section">
-            <label id="lblSearch" for="searchInput">Search tours:</label>
-            <input type="text" id="searchInput" placeholder="Search by name or description" aria-labelledby="lblSearch">
+            <div id="lblGroupBy" class="filter-label">Group by:</div>
+            <div class="dropdown">
+              <div class="dropdown-button" id="groupByDropdownButton" aria-labelledby="lblGroupBy">
+                None
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <div class="dropdown-content" id="groupByDropdownContent">
+                <div class="checkbox-item">
+                  <input type="radio" id="groupByNone" name="groupBy" value="none" checked>
+                  <label for="groupByNone">None</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="radio" id="groupByStatus" name="groupBy" value="status">
+                  <label for="groupByStatus">Status</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="radio" id="groupByCategory" name="groupBy" value="category">
+                  <label for="groupByCategory">Category</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-section">
+            <div id="lblSortBy" class="filter-label">Sort by:</div>
+            <div class="dropdown">
+              <div class="dropdown-button" id="sortByDropdownButton" aria-labelledby="lblSortBy">
+                Title
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <div class="dropdown-content" id="sortByDropdownContent">
+                <div class="checkbox-item">
+                  <input type="radio" id="sortByTitle" name="sortBy" value="title" checked>
+                  <label for="sortByTitle">Title</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="radio" id="sortByCompletedDate" name="sortBy" value="completedDate">
+                  <label for="sortByCompletedDate">Completed date</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="radio" id="sortByDistance" name="sortBy" value="distance">
+                  <label for="sortByDistance">Distance</label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

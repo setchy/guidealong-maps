@@ -2,6 +2,7 @@
   {
     "title": "17 MILE DRIVE TOUR",
     "url": "https://guidealong.com/tour/17-mile-drive/",
+    "category": "Driving",
     "details": {
       "description": "Explore 17-Mile Drive, a stunning coastal route with rugged cliffs, iconic landmarks, and breathtaking ocean views. Discover the Lone Cypress, Pebble Beach, and scenic overlooks along the way.",
       "thumbnail": "",
@@ -21,6 +22,7 @@
   {
     "title": "ACADIA NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/acadia-national-park/",
+    "category": "National Park",
     "details": {
       "description": "Road trip around Acadia National Park and Mount Desert Island with its interesting mix of natural features, great hikes, superb sightseeing and rugged coastline.",
       "thumbnail": "",
@@ -40,6 +42,7 @@
   {
     "title": "ACADIA’S BAR HARBOR WALK TOUR",
     "url": "https://guidealong.com/tour/acadias-bar-harbor-walk-tour/",
+    "category": "Walking",
     "details": {
       "description": "Explore Bar Harbor, where historic streets, Gilded Age mansions, and stunning coastal views come together. Discover scenic trails, cultural landmarks, and the charm of this seaside town along the way.",
       "thumbnail": "",
@@ -59,6 +62,7 @@
   {
     "title": "ALASKA COMBO TOUR",
     "url": "https://guidealong.com/tour/alaska-combo/",
+    "category": "Bundle",
     "details": {
       "description": "Alaska has it all. So does this seamless drive covering all 500 miles of “the Last Frontier”: Parks Highway (South Half), Seward Highway, and Sterling Highway.",
       "thumbnail": "",
@@ -78,6 +82,7 @@
   {
     "title": "APPALACHIANS BUNDLE",
     "url": "https://guidealong.com/tour/appalachians-bundle/",
+    "category": "Bundle",
     "details": {
       "description": "One of America's best road trips is through the Appalachian Mountains along the Blue Ridge Parkway, Skyline Drive in Shenandoah National Park and Great Smoky Mountains National Park.",
       "thumbnail": "",
@@ -97,6 +102,7 @@
   {
     "title": "ARCHES + CANYONLANDS NATIONAL PARK TOURS",
     "url": "https://guidealong.com/tour/arches-canyonlands-national-parks/",
+    "category": "National Park",
     "details": {
       "description": "Two National Parks, One Destination. Both our tours are included in this comprehensive guide that explores the towering Arches National Park & deep valleys of Canyonlands National Park.",
       "thumbnail": "",
@@ -116,6 +122,7 @@
   {
     "title": "ARCHES NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/arches-national-park/",
+    "category": "National Park",
     "details": {
       "description": "Breathtaking Land Features. Beyond the amazing natural formations, you'll hear stories about the fragile ecosystem and some of the characters who were drawn to the challenging desert environment.",
       "thumbnail": "",
@@ -135,6 +142,7 @@
   {
     "title": "ARIZONA’S ROUTE 66 TOUR",
     "url": "https://guidealong.com/tour/arizonas-route-66-tour/",
+    "category": "Driving",
     "details": {
       "description": "A nostalgic road trip packed with quirky Americana, desert views, and classic roadside stops. Don’t miss the neon signs, vintage diners, and canyon landscapes.",
       "thumbnail": "",
@@ -154,6 +162,7 @@
   {
     "title": "AUSTRALIA, GREAT OCEAN ROAD TOUR",
     "url": "https://guidealong.com/tour/great-ocean-road/",
+    "category": "Driving",
     "details": {
       "description": "Towering limestone stacks and cliffs along the Southern Ocean make for a stunning scenic drive. See local wildlife, bushwalk through rainforest to lush waterfalls and explore classic beach towns.",
       "thumbnail": "",
@@ -173,6 +182,7 @@
   {
     "title": "BANFF <-> KAMLOOPS TOUR",
     "url": "https://guidealong.com/tour/banff-kamloops/",
+    "category": "Driving",
     "details": {
       "description": "Break up the long TransCanada Highway 1 drive between Kamloops - Banff with stories, worthwhile stops and viewpoints. This tour works in either direction - Eastbound or Westbound.",
       "thumbnail": "",
@@ -192,6 +202,7 @@
   {
     "title": "BANFF TOWNSITE TOUR",
     "url": "https://guidealong.com/tour/banff-townsite-tour/",
+    "category": "Driving",
     "details": {
       "description": "A Townsite Built Inside A National Park. Explore the Banff Townsite and surrounds, perfect orientation for any first time visitor to Banff with all the must do viewpoints included.",
       "thumbnail": "",
@@ -211,6 +222,7 @@
   {
     "title": "BEARTOOTH HIGHWAY TOUR",
     "url": "https://guidealong.com/tour/beartooth-highway/",
+    "category": "Driving",
     "details": {
       "description": "The Beartooth Highway, Hwy 212, travels through some of the wildest and most scenic mountain landscape in the country. Drive, hike or even get out onto an alpine lake.",
       "thumbnail": "",
@@ -230,6 +242,7 @@
   {
     "title": "BIG BEND NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/big-bend-national-park/",
+    "category": "National Park",
     "details": {
       "description": "Explore Big Bend National Park, where vast deserts, towering canyons, and the winding Rio Grande converge. Discover scenic overlooks, hidden hot springs, and diverse wildlife in this breathtaking wilderness.",
       "thumbnail": "",
@@ -249,6 +262,7 @@
   {
     "title": "BIG ISLAND BUNDLE",
     "url": "https://guidealong.com/tour/big-island-hawaii/",
+    "category": "Bundle",
     "details": {
       "description": "Perfect companion to thoroughly explore the Big Island. Included are 4 driving routes; 2 full day (Volcanoes and Island Circle) and 2 half day (Kohala Coast and Kona Coffee Coast).",
       "thumbnail": "",
@@ -268,6 +282,7 @@
   {
     "title": "BIG SKY DRIVE TOUR",
     "url": "https://guidealong.com/tour/big-sky-drive-tour/",
+    "category": "Driving",
     "details": {
       "description": "Experience the ultimate Montana adventure on Big Sky Drive—where breathtaking mountain vistas, sparkling rivers, and rich outdoor activities blend seamlessly with the rugged charm of the Northern Rockies.",
       "thumbnail": "",
@@ -287,6 +302,7 @@
   {
     "title": "BIG SUR, PCH HWY 1 TOUR",
     "url": "https://guidealong.com/tour/big-sur/",
+    "category": "Driving",
     "details": {
       "description": "Could you ask for more from a scenic drive? Dramatic coastline, pristine beaches, marine wildlife and interesting stories about local pioneers and characters, all make this a quintessential Californian road trip adventure.",
       "thumbnail": "",
@@ -306,6 +322,7 @@
   {
     "title": "BLACK CANYON OF THE GUNNISON NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/black-canyon-of-the-gunnison/",
+    "category": "National Park",
     "details": {
       "description": "Explore Black Canyon of the Gunnison National Park, where sheer cliffs, narrow gorges, and breathtaking canyon vistas showcase nature’s raw power. Discover dramatic overlooks, ancient rock formations, and diverse wildlife along the way.",
       "thumbnail": "",
@@ -325,6 +342,7 @@
   {
     "title": "BLACK HILLS, CUSTER, RUSHMORE, DEVILS TOWER & BADLANDS NATIONAL PARK TOURS",
     "url": "https://guidealong.com/tour/mount-rushmore-black-hills-badlands/",
+    "category": "National Park",
     "details": {
       "description": "Discover great faces and vast open spaces from the Black Hills and Badlands National Park to the wildlife-filled roads of Custer State Park and the iconic carvings at Mount Rushmore and Crazy Horse Memorial.",
       "thumbnail": "",
@@ -344,6 +362,7 @@
   {
     "title": "BLUE RIDGE PARKWAY TOUR",
     "url": "https://guidealong.com/tour/blue-ridge-parkway/",
+    "category": "Driving",
     "details": {
       "description": "One of America's favorite road trips, the 469-mile long Blue Ridge Parkway stretches from Virginia to North Carolina, riding along the spine of the Appalachians most of the way with hundreds of spectacular views around countless corners.",
       "thumbnail": "",
@@ -363,6 +382,7 @@
   {
     "title": "BOSTON’S FREEDOM TRAIL TOUR",
     "url": "https://guidealong.com/tour/bostons-freedom-trail-tour/",
+    "category": "Driving",
     "details": {
       "description": "Explore Boston’s Freedom Trail, featuring historic landmarks, Revolutionary War sites, and iconic stops like Boston Common, Paul Revere’s House, and the Bunker Hill Monument. Discover America’s fight for freedom!",
       "thumbnail": "",
@@ -382,6 +402,7 @@
   {
     "title": "BOSTON’S GHOSTS TOUR",
     "url": "https://guidealong.com/tour/bostons-ghosts-tour/",
+    "category": "Driving",
     "details": {
       "description": "A chilling evening walk through Boston’s haunted past, filled with eerie legends, shadowy cemeteries, and historic landmarks. Feel the whispers of history echo through every cobblestone street.",
       "thumbnail": "",
@@ -401,6 +422,7 @@
   {
     "title": "CALGARY TO BANFF TOUR",
     "url": "https://guidealong.com/tour/calgary-to-banff/",
+    "category": "Driving",
     "details": {
       "description": "Introducing the Canadian Rockies from the Gateway of Calgary. From either the Calgary Airport for Downtown Calgary, we'll provide turn by turn directions to Highway#1, where you'll hear stories about Banff's pioneers, animals and things to do.",
       "thumbnail": "",
@@ -420,6 +442,7 @@
   {
     "title": "CANADIAN ROCKIES + VANCOUVER BUNDLE",
     "url": "https://guidealong.com/tour/canadian-rockies-vancouver/",
+    "category": "Bundle",
     "details": {
       "description": "Canadian Rockies and Vancouver Tours, includes Banff, Lake Louise, Yoho, Icefields Parkway, Jasper, Vancouver, Whistler and to/from the Canadian Rockies.",
       "thumbnail": "",
@@ -439,6 +462,7 @@
   {
     "title": "CANADIAN ROCKIES TOURS",
     "url": "https://guidealong.com/tour/canadian-rockies/",
+    "category": "Driving",
     "details": {
       "description": "Canadian Rockies covers four major regions – Banff, Lake Louise & Yoho, Icefields Parkway, and Jasper in this guide.",
       "thumbnail": "",
@@ -458,6 +482,7 @@
   {
     "title": "CANCUN BUNDLE",
     "url": "https://guidealong.com/tour/cancun-bundle/",
+    "category": "Bundle",
     "details": {
       "description": "Cancun Bundle includes Tulum and Chichen Itza.",
       "thumbnail": "",
@@ -477,6 +502,7 @@
   {
     "title": "CANYONLANDS NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/canyonlands-national-park/",
+    "category": "National Park",
     "details": {
       "description": "The incredible Island in the Sky. In contrast to Arches National Park, but just as spectacular, don't overlook this National Park on your visit to Moab. More incredible outlooks of cliffs and canyons.",
       "thumbnail": "",
@@ -496,6 +522,7 @@
   {
     "title": "CAPE COD TOUR",
     "url": "https://guidealong.com/tour/cape-cod/",
+    "category": "Driving",
     "details": {
       "description": "Nothing says “summer” like Cape Cod. Drive the iconic “bent arm” and see lighthouses, beaches, and more.",
       "thumbnail": "",
@@ -515,6 +542,7 @@
   {
     "title": "CAPITOL REEF TOUR",
     "url": "https://guidealong.com/tour/capitol-reef/",
+    "category": "Driving",
     "details": {
       "description": "Visitors to Capitol Reef National Park are often blown away by the amazing geology and wide-range of activities this lesser-known park has to offer.",
       "thumbnail": "",
@@ -534,6 +562,7 @@
   {
     "title": "CATSKILLS TOUR",
     "url": "https://guidealong.com/tour/catskills-mountains-tour/",
+    "category": "Driving",
     "details": {
       "description": "Meander through the heart of the Catskills, with picturesque views of the surrounding mountains, waterways and rolling farmlands.",
       "thumbnail": "",
@@ -553,6 +582,7 @@
   {
     "title": "CHICHEN ITZA WALKING TOUR",
     "url": "https://guidealong.com/tour/chichen-itza-walking-tour/",
+    "category": "Walking",
     "details": {
       "description": "Explore the ancient marvels of Chichén Itzá, featuring iconic pyramids, sacred cenotes, and remarkable temples. Discover the Maya world, where astronomy, architecture, and history come alive!",
       "thumbnail": "",
@@ -572,6 +602,7 @@
   {
     "title": "COLORADO NATIONAL MONUMENT TOUR",
     "url": "https://guidealong.com/tour/colorado-national-monument-tour/",
+    "category": "Driving",
     "details": {
       "description": "Explore Colorado National Monument, where towering red rock canyons, sandstone monoliths, and sweeping desert vistas create a breathtaking landscape. Discover scenic Rim Rock Drive and experience the wild beauty of the American Southwest!",
       "thumbnail": "",
@@ -591,6 +622,7 @@
   {
     "title": "CRATER LAKE NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/crater-lake-national-park/",
+    "category": "National Park",
     "details": {
       "description": "Explore Crater Lake National Park, home to the deepest lake in the U.S., with stunning blue waters, towering cliffs, and scenic viewpoints. Drive along Rim Drive, hike to Watchman Peak, and take in breathtaking views of this volcanic wonder.",
       "thumbnail": "",
@@ -610,6 +642,7 @@
   {
     "title": "CREOLE NATURE TRAIL TOUR",
     "url": "https://guidealong.com/tour/creole-nature-trail-tour/",
+    "category": "Driving",
     "details": {
       "description": "The Creole Nature Trail Tour: A journey through Louisiana’s wild beauty. From wetlands to Gulf beaches, spot wildlife and immerse yourself in Creole culture. This scenic byway is a must-see adventure.",
       "thumbnail": "",
@@ -629,6 +662,7 @@
   {
     "title": "CUYAHOGA VALLEY NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/cuyahoga-valley-national-park-tour/",
+    "category": "National Park",
     "details": {
       "description": "Explore Cuyahoga Valley National Park's lush forests, waterfalls, and scenic trails. Discover Towpath Trail, Brandywine Falls, and the park's rich beauty and history!",
       "thumbnail": "",
@@ -648,6 +682,7 @@
   {
     "title": "DEATH VALLEY NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/death-valley-tour/",
+    "category": "National Park",
     "details": {
       "description": "A unique blend of vast landscapes, extreme temperatures, and awe-inspiring geological wonders that make it an unforgettable journey.",
       "thumbnail": "",
@@ -667,6 +702,7 @@
   {
     "title": "DELICATE ARCH WALKING TRAIL TOUR",
     "url": "https://guidealong.com/tour/delicate-arch/",
+    "category": "Walking",
     "details": {
       "description": "Experience Delicate Arch, Utah’s iconic wonder! Hike through rugged terrain to see this breathtaking freestanding arch, perfectly framing the La Sal Mountains—a must-visit for hikers and photographers!",
       "thumbnail": "",
@@ -686,6 +722,7 @@
   {
     "title": "DRUMHELLER TOUR",
     "url": "https://guidealong.com/tour/drumheller-badlands/",
+    "category": "Driving",
     "details": {
       "description": "Canada's Dinosaur Trail. Explore Alberta's Badlands as a day trip from Calgary or add on to your Canadian Rockies vacation. World class dinosaur and fossil exhibits combined with small Albertan towns.",
       "thumbnail": "",
@@ -705,6 +742,7 @@
   {
     "title": "EDINBURGH’S OLD TOWN WALKING TOUR",
     "url": "https://guidealong.com/tour/edinburgh-old-town-walking-tour/",
+    "category": "Walking",
     "details": {
       "description": "Explore Edinburgh’s Old Town, from Victoria Street and Greyfriars Kirkyard to Edinburgh Castle, and discover historic landmarks, hidden closes, and local stories linked to J.K. Rowling’s time in the city.",
       "thumbnail": "",
@@ -724,6 +762,7 @@
   {
     "title": "EVERGLADES NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/everglades-national-park-tour/",
+    "category": "National Park",
     "details": {
       "description": "Discover Everglades National Park's wetlands, vibrant wildlife, and scenic trails like Anhinga Trail and Shark Valley in a subtropical paradise.",
       "thumbnail": "",
@@ -743,6 +782,7 @@
   {
     "title": "FINGER LAKES TOUR",
     "url": "https://guidealong.com/tour/finger-lakes/",
+    "category": "Driving",
     "details": {
       "description": "Discover the heart of the Finger Lakes: explore the two biggest lakes, Seneca and Cayuga, relax along the famous Wine Trail, and marvel at the stunning glacial waterfalls and woodland hikes of upstate New York.",
       "thumbnail": "",
@@ -762,6 +802,7 @@
   {
     "title": "FREE: WAIKIKI TO HANAUMA BAY TOUR",
     "url": "https://guidealong.com/tour/waikiki-to-hanauma-tour/",
+    "category": "Driving",
     "details": {
       "description": "Explore Oahu’s stunning southeast coast from Waikiki on this free audio tour. Visit must-see spots like Diamond Head, Hanauma Bay, Halona Blowhole, and Makapuʻu Point Lighthouse while hearing stories about volcanic landscapes, island history, and local culture along the way.",
       "thumbnail": "",
@@ -781,6 +822,7 @@
   {
     "title": "GARDEN OF THE GODS AUDIO TOUR",
     "url": "https://guidealong.com/tour/garden-of-the-gods/",
+    "category": "Driving",
     "details": {
       "description": "Discover the spectacular landscapes and dramatic formations of Colorado's Garden of the Gods.",
       "thumbnail": "",
@@ -800,6 +842,7 @@
   {
     "title": "GETTYSBURG BATTLEFIELD BUNDLE",
     "url": "https://guidealong.com/tour/gettysburg-battlefield-bundle/",
+    "category": "Bundle",
     "details": {
       "description": "A sacred Civil War battlefield in southern Pennsylvania. Gettysburg National Military Park preserves the rolling fields, stone walls, and historic landmarks where one of America’s most pivotal battles unfolded.",
       "thumbnail": "",
@@ -819,6 +862,7 @@
   {
     "title": "GLACIER TOUR",
     "url": "https://guidealong.com/tour/going-to-the-sun-road/",
+    "category": "Driving",
     "details": {
       "description": "An engineering feat in Glacier National Park. Created specifically for visitors to drive over Continental Divide. While it's a short, steep 50 miles, you'll want to spend most of a full day or longer taking in the numerous beautiful viewpoints.",
       "thumbnail": "",
@@ -838,6 +882,7 @@
   {
     "title": "GRAND CANYON SOUTH RIM TOUR",
     "url": "https://guidealong.com/tour/grand-canyon-south-rim/",
+    "category": "Driving",
     "details": {
       "description": "Listen to stories as you drive to the Grand Canyon South Rim from Flagstaff, Williams or Cameron. Once inside the Park we also tour to all the best sites in the Village and Rim route drives.",
       "thumbnail": "",
@@ -857,6 +902,7 @@
   {
     "title": "GRAND CANYON WEST RIM, HOOVER DAM, RED ROCK CANYON, LAS VEGAS TOURS",
     "url": "https://guidealong.com/tour/grand-canyon-hoover-dam/",
+    "category": "Driving",
     "details": {
       "description": "Includes 3 recommended sightseeing trips from Las Vegas: Hoover Dam, Grand Canyon West and Red Rock Canyon. Rent a car and explore past the Las Vegas Strip.",
       "thumbnail": "",
@@ -876,6 +922,7 @@
   {
     "title": "GRAND TETON TOUR",
     "url": "https://guidealong.com/tour/grand-teton-national-park/",
+    "category": "Driving",
     "details": {
       "description": "A loop of Grand Teton National Park via any of 4 park entrances. Dramatic mountainscapes, animal sightings and historic ranches and cabins can be explored in one or multiple days.",
       "thumbnail": "",
@@ -895,6 +942,7 @@
   {
     "title": "GREAT SMOKY MOUNTAINS NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/great-smoky-mountains/",
+    "category": "National Park",
     "details": {
       "description": "Visit America’s most visited National Park and you’ll enjoy the many historic log buildings, a wide range of wildlife in diverse ecosystems, extensive hiking trails and stunning viewpoints from scenic drives and mountain peaks.",
       "thumbnail": "",
@@ -914,6 +962,7 @@
   {
     "title": "GUADALUPE MOUNTAINS NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/guadalupe-mountains-national-park-tour/",
+    "category": "National Park",
     "details": {
       "description": "Explore Guadalupe Mountains National Park, featuring rugged desert landscapes, towering peaks, and scenic canyons, including Guadalupe Peak, the highest point in Texas.",
       "thumbnail": "",
@@ -933,6 +982,7 @@
   {
     "title": "HAWAIIAN ISLANDS BUNDLE",
     "url": "https://guidealong.com/tour/hawaii-bundle/",
+    "category": "Bundle",
     "details": {
       "description": "The complete collection of all our Hawaiian Island Tours. Includes Oahu, Maui, Kauai and Big Island, Hawaii.",
       "thumbnail": "",
@@ -952,6 +1002,7 @@
   {
     "title": "ICEFIELDS PARKWAY TOUR",
     "url": "https://guidealong.com/tour/icefields-parkway/",
+    "category": "Driving",
     "details": {
       "description": "Voted The World's Most Beautiful Mountain Drive. And the best way to tour this is at your own pace. All the \"not to be missed\" viewpoints, some recommended hikes and places to enjoy a picnic lunch.",
       "thumbnail": "",
@@ -971,6 +1022,7 @@
   {
     "title": "ICELAND BUNDLE",
     "url": "https://guidealong.com/tour/iceland-bundle/",
+    "category": "Bundle",
     "details": {
       "description": "Iceland Bundle includes Golden Circle, Snæfellsnes Peninsula, Reykjanes Peninsula, and Reykjavik.",
       "thumbnail": "",
@@ -990,6 +1042,7 @@
   {
     "title": "ICELAND GOLDEN CIRCLE TOUR",
     "url": "https://guidealong.com/tour/iceland-golden-circle-tour/",
+    "category": "Driving",
     "details": {
       "description": "Explore Iceland's Golden Circle, featuring stunning landscapes, geothermal wonders, and iconic sites like Thingvellir, Geysir, and Gullfoss. Discover Iceland's beauty and heritage!",
       "thumbnail": "",
@@ -1009,6 +1062,7 @@
   {
     "title": "ISLE OF SKYE TOUR",
     "url": "https://guidealong.com/tour/isle-of-skye/",
+    "category": "Driving",
     "details": {
       "description": "Explore the spectacular landscapes and dramatic vistas of Scotland's Isle of Skye.",
       "thumbnail": "",
@@ -1028,6 +1082,7 @@
   {
     "title": "JASPER TOUR",
     "url": "https://guidealong.com/tour/jasper-national-park/",
+    "category": "Driving",
     "details": {
       "description": "Stunning Lakes, Canyons & Mountains and So Much Wildlife. Jasper should not be overlooked on your Canadian Rockies road trip. A wilder environ, less crowded townsite and great opportunities to see wildlife.",
       "thumbnail": "",
@@ -1047,6 +1102,7 @@
   {
     "title": "JOSHUA TREE NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/joshua-tree-national-park/",
+    "category": "National Park",
     "details": {
       "description": "Named for the twisted, spiky trees, there's so much more to see in this popular California national park with its rugged rock formations, breathtaking views, wide variety of wildlife and stark desert landscapes.",
       "thumbnail": "",
@@ -1066,6 +1122,7 @@
   {
     "title": "JOSHUA’S HIDDEN VALLEY WALKING TRAIL TOUR",
     "url": "https://guidealong.com/tour/joshuas-hidden-valley-walking-trail/",
+    "category": "Walking",
     "details": {
       "description": "Explore Hidden Valley, a stunning desert oasis in Joshua Tree National Park. Wander through towering rock formations, iconic Joshua trees, and a hidden past as a rumored cattle rustler hideout. Experience the magic of this secluded wonder!",
       "thumbnail": "",
@@ -1085,6 +1142,7 @@
   {
     "title": "KANCAMAGUS TOUR",
     "url": "https://guidealong.com/tour/kancamagus/",
+    "category": "Driving",
     "details": {
       "description": "The 34-mile long Kancamagus Scenic Byway is a classic New England drive, particularly in fall, and offers plenty of scenic views and hiking opportunities.",
       "thumbnail": "",
@@ -1104,6 +1162,7 @@
   {
     "title": "KAUAI BUNDLE",
     "url": "https://guidealong.com/tour/kauai/",
+    "category": "Bundle",
     "details": {
       "description": "We've divided Hawaii’s Garden Isle into 2 driving routes; North and Eastern Kauai, and South and Western Kauai. Each could easily be a day of sightseeing, but more time is better.",
       "thumbnail": "",
@@ -1123,6 +1182,7 @@
   {
     "title": "KEWEENAW COPPER COUNTRY TRAIL TOUR",
     "url": "https://guidealong.com/tour/copper-country-trail/",
+    "category": "Driving",
     "details": {
       "description": "Take a road trip filled with natural beauty and cultural surprises to Michigan's Upper Peninsula, Copper Country.",
       "thumbnail": "",
@@ -1142,6 +1202,7 @@
   {
     "title": "LAKE LOUISE, MORAINE & YOHO TOUR",
     "url": "https://guidealong.com/tour/banff-lake-louise-yoho/",
+    "category": "Driving",
     "details": {
       "description": "Mountains, Lakes & Waterfalls. Tour some of the most spectacular scenery in Banff and neighbouring Yoho National Park. Drive the Bow Valley Parkway (the old highway) and keep your eyes peeled for wildlife.",
       "thumbnail": "",
@@ -1161,6 +1222,7 @@
   {
     "title": "LAKE SUPERIOR NORTH SHORE, HWY 61 TOUR",
     "url": "https://guidealong.com/tour/lake-superior-north-shore/",
+    "category": "Driving",
     "details": {
       "description": "Minnesota’s North Shore Scenic Drive is a gateway to pristine wilderness, spectacular Lake Superior beaches and endless waterfalls.",
       "thumbnail": "",
@@ -1180,6 +1242,7 @@
   {
     "title": "LAKE TAHOE TOUR",
     "url": "https://guidealong.com/tour/lake-tahoe/",
+    "category": "Driving",
     "details": {
       "description": "Lake Tahoe's pristine beaches, world renowned ski resort, extensive and varied trail system, and historic and cultural highlights make for a destination rich in variety.",
       "thumbnail": "",
@@ -1199,6 +1262,7 @@
   {
     "title": "LASSEN VOLCANIC NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/lassen-volcanic-national-park-tour/",
+    "category": "National Park",
     "details": {
       "description": "Explore Lassen Volcanic National Park's geothermal wonders, steaming fumaroles, serene lakes, and scenic trails in a breathtaking volcanic landscape.",
       "thumbnail": "",
@@ -1218,6 +1282,7 @@
   {
     "title": "MAUI BUNDLE",
     "url": "https://guidealong.com/tour/maui/",
+    "category": "Bundle",
     "details": {
       "description": "Experience everything on Maui with the island’s most complete and trusted audio tour. This all-in-one Maui experience covers the entire island - world-famous Road to Hana, volcanic Haleakala, lush Iao Valley, remote West Maui, and sandy South Maui.",
       "thumbnail": "",
@@ -1237,6 +1302,7 @@
   {
     "title": "MAUI’S HALEAKALA NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/maui-haleakala-national-park/",
+    "category": "National Park",
     "details": {
       "description": "Explore Haleakalā National Park, a stunning volcanic wonderland with epic sunrise views, scenic trails, and diverse ecosystems. Discover the towering summit, the vast crater, and lush tropical forests along the way.",
       "thumbnail": "",
@@ -1256,6 +1322,7 @@
   {
     "title": "MAUI’S ROAD TO HANA TOUR – (ALL ROUTES)",
     "url": "https://guidealong.com/tour/road-to-hana-maui/",
+    "category": "Driving",
     "details": {
       "description": "Experience Maui’s famous Road to Hana with the most trusted audio tour. We’ll guide you to all the must-see sights and hidden gems including spectacular waterfalls, black sand beaches, bamboo forests, lava rock formations and amazing ocean views.",
       "thumbnail": "",
@@ -1275,6 +1342,7 @@
   {
     "title": "MESA VERDE TOUR",
     "url": "https://guidealong.com/tour/mesa-verde-national-park/",
+    "category": "Driving",
     "details": {
       "description": "The first national park to be created specifically to preserve important archeological and cultural sites. Tour the park for incredible scenic vistas, views into ancient cliff dwellings, mesa top sites and other archeological features.",
       "thumbnail": "",
@@ -1294,6 +1362,7 @@
   {
     "title": "MIAMI <-> KEY WEST TOUR",
     "url": "https://guidealong.com/tour/miami-key-west-florida/",
+    "category": "Driving",
     "details": {
       "description": "One of America's Classic Driving routes - the Overseas Highway. Take your convertible, swimwear and partner for a day in the sun, exploring beaches, parks, towns and history along the way. Tour Northbound AND Southbound.",
       "thumbnail": "",
@@ -1313,6 +1382,7 @@
   {
     "title": "MICHIGAN LAKESHORE, M-22 TOUR",
     "url": "https://guidealong.com/tour/sleeping-bear-dunes-michigan-lakeshore/",
+    "category": "Driving",
     "details": {
       "description": "Taking a scenic drive on Michigan's M-22 along the shoreline of Lake Michigan and Sleeping Bear Dunes is a delightful journey filled with outstanding views and unique landscapes.",
       "thumbnail": "",
@@ -1332,6 +1402,7 @@
   {
     "title": "MILLION DOLLAR HIGHWAY TOUR",
     "url": "https://guidealong.com/tour/million-dollar-highway-tour/",
+    "category": "Driving",
     "details": {
       "description": "A legendary highway through Colorado’s San Juan Mountains. Built to link historic mining towns across rugged cliffs and valleys. You’ll want to spend the day soaking in the dramatic scenery and alpine views.",
       "thumbnail": "",
@@ -1351,6 +1422,7 @@
   {
     "title": "MONUMENT VALLEY TOUR",
     "url": "https://guidealong.com/tour/monument-valley-tour/",
+    "category": "Driving",
     "details": {
       "description": "Discover Monument Valley’s iconic red rock buttes and vast desert vistas. Drive the scenic loop and immerse yourself in its timeless beauty and rich heritage.",
       "thumbnail": "",
@@ -1370,6 +1442,7 @@
   {
     "title": "MOUNT HOOD SCENIC LOOP TOUR",
     "url": "https://guidealong.com/tour/mount-hood-scenic-loop-tour/",
+    "category": "Driving",
     "details": {
       "description": "Experience the breathtaking beauty of Mount Hood Scenic Loop with cascading waterfalls, alpine lakes, and stunning mountain views.",
       "thumbnail": "",
@@ -1389,6 +1462,7 @@
   {
     "title": "MOUNT LEMMON SCENIC BYWAY TOUR",
     "url": "https://guidealong.com/tour/mount-lemmon-tour/",
+    "category": "Driving",
     "details": {
       "description": "Experience the stunning beauty of Mount Lemmon Scenic Byway with winding roads, diverse landscapes, and breathtaking mountain views.",
       "thumbnail": "",
@@ -1408,6 +1482,7 @@
   {
     "title": "MOUNT RAINIER NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/mount-rainier-tour/",
+    "category": "National Park",
     "details": {
       "description": "Experience Mount Rainier's rugged beauty with scenic roads, diverse landscapes, and breathtaking views. Explore this serene natural paradise.",
       "thumbnail": "",
@@ -1427,6 +1502,7 @@
   {
     "title": "NATCHEZ TRACE PARKWAY TOUR",
     "url": "https://guidealong.com/tour/natchez-trace-parkway/",
+    "category": "Driving",
     "details": {
       "description": "A drive along the Natchez Trace Parkway is a journey through time, history, and the natural beauty of the American South.",
       "thumbnail": "",
@@ -1446,6 +1522,7 @@
   {
     "title": "NEW RIVER GORGE NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/new-river-gorge-national-park/",
+    "category": "National Park",
     "details": {
       "description": "Majestic River Views. Explore the rugged cliffs and winding river while learning about the park’s rich history, diverse wildlife, and the daring adventurers who navigated its challenging terrain.",
       "thumbnail": "",
@@ -1465,6 +1542,7 @@
   {
     "title": "NIAGARA FALLS TOUR",
     "url": "https://guidealong.com/tour/niagara-falls/",
+    "category": "Driving",
     "details": {
       "description": "Niagara Falls is said to be one of the most spectacular natural attractions in the world. Explore the Canadian side of the Falls as well as the surrounding region.",
       "thumbnail": "",
@@ -1484,6 +1562,7 @@
   {
     "title": "NORTH CASCADES NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/north-cascades-national-park-tour/",
+    "category": "National Park",
     "details": {
       "description": "Explore North Cascades National Park, where rugged peaks, alpine lakes, and over 300 glaciers await. Discover scenic trails, cascading waterfalls, and thriving wildlife in this mountain paradise.",
       "thumbnail": "",
@@ -1503,6 +1582,7 @@
   {
     "title": "OAHU BUNDLE",
     "url": "https://guidealong.com/tour/oahu/",
+    "category": "Bundle",
     "details": {
       "description": "You’ve had your fill of lounging beachside at that swanky Waikiki resort and now you’re looking for a little adventure. That means it’s time for an Oahu road trip. Rent a car and go! Includes 4 driving routes.",
       "thumbnail": "",
@@ -1522,6 +1602,7 @@
   {
     "title": "OAHU’S DOWNTOWN HONOLULU WALK TOUR",
     "url": "https://guidealong.com/tour/oahus-downtown-honolulu-walk/",
+    "category": "Walking",
     "details": {
       "description": "Journey through Honolulu’s historic core, exploring Iolani Palace, the King Kamehameha Statue, and Aloha Tower. Take your time to soak in its rich heritage and beauty.",
       "thumbnail": "",
@@ -1541,6 +1622,7 @@
   {
     "title": "OAHU’S WAIKIKI WALK TOUR",
     "url": "https://guidealong.com/tour/oahus-waikiki-walk-tour/",
+    "category": "Walking",
     "details": {
       "description": "A scenic walk along Waikiki’s iconic shoreline and bustling Kalakaua Avenue. Explore Duke Kahanamoku’s surfing legacy, royal history, wartime sites, and a mysterious crime. Plan for a full day to soak in the stories, sights, and vibrant beachfront atmosphere.",
       "thumbnail": "",
@@ -1560,6 +1642,7 @@
   {
     "title": "OLD SAN JUAN WALKING TOUR",
     "url": "https://guidealong.com/tour/old-san-juan-walking-tour/",
+    "category": "Walking",
     "details": {
       "description": "Experience San Juan’s historic charm on a scenic walk through Old San Juan, where colourful colonial streets, oceanfront fortresses, and centuries of Caribbean history create an unforgettable adventure.",
       "thumbnail": "",
@@ -1579,6 +1662,7 @@
   {
     "title": "OLYMPIC NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/olympic-national-park/",
+    "category": "National Park",
     "details": {
       "description": "Olympic National Park is a place of incredibly diverse landscapes, plant life and animals, all conveniently located within a few hours of each other on Washington’s Olympic Peninsula.",
       "thumbnail": "",
@@ -1598,6 +1682,7 @@
   {
     "title": "OREGON COAST TOUR",
     "url": "https://guidealong.com/tour/oregon-coast/",
+    "category": "Driving",
     "details": {
       "description": "A driving tour of the Oregon Coast is an unforgettable experience that offers some of the most stunning scenery in the country. Our tour runs between Astoria at the Oregon - Washington border, and Florence in the south.",
       "thumbnail": "",
@@ -1617,6 +1702,7 @@
   {
     "title": "OUTER BANKS TOUR",
     "url": "https://guidealong.com/tour/outer-banks/",
+    "category": "Driving",
     "details": {
       "description": "Between climbing three historic lighthouses, searching for wild horses in the dunes, building sandcastles, surfing and fishing and paddling around, and soaking up the sun - there's a rich selection of cultural, natural and historic places of interest.",
       "thumbnail": "",
@@ -1636,6 +1722,7 @@
   {
     "title": "PARKS HIGHWAY TOUR",
     "url": "https://guidealong.com/tour/parks-highway/",
+    "category": "Driving",
     "details": {
       "description": "Explore Knik Glacier, Talkeetna, Eklutna Village, mountain views, rivers, and vast wilderness on one of Alaska’s most scenic drives between Anchorage and Denali.",
       "thumbnail": "",
@@ -1655,6 +1742,7 @@
   {
     "title": "PETRIFIED FOREST NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/petrified-forest-national-park-tour/",
+    "category": "National Park",
     "details": {
       "description": "Embark on a road trip through Petrified Forest National Park, where you can explore an incredible landscape filled with ancient petrified wood, stunning desert vistas, and unique geological formations.",
       "thumbnail": "",
@@ -1674,6 +1762,7 @@
   {
     "title": "PIKES PEAK HIGHWAY TOUR",
     "url": "https://guidealong.com/tour/pikes-peak-highway-tour/",
+    "category": "Driving",
     "details": {
       "description": "Stunning Mountain Views. Along the drive, you'll experience breathtaking vistas, learn about the unique alpine ecosystem, and hear stories of adventurers drawn to the towering Pikes Peak summit.",
       "thumbnail": "",
@@ -1693,6 +1782,7 @@
   {
     "title": "POINT REYES NATIONAL SEASHORE TOUR",
     "url": "https://guidealong.com/tour/point-reyes-national-seashore-tour/",
+    "category": "Driving",
     "details": {
       "description": "Discover Point Reyes' dramatic cliffs, pristine beaches, and ocean views. Explore scenic roads and diverse landscapes in this coastal paradise.",
       "thumbnail": "",
@@ -1712,6 +1802,7 @@
   {
     "title": "PUERTO VALLARTA WALKING TOUR",
     "url": "https://guidealong.com/tour/puerto-vallarta-walking-tour/",
+    "category": "Walking",
     "details": {
       "description": "Vibrant Coastal Charm. As you explore, you’ll stroll along scenic waterfronts, discover colorful neighborhoods, and hear stories of the culture, history, and local life that shape Puerto Vallarta.",
       "thumbnail": "",
@@ -1731,6 +1822,7 @@
   {
     "title": "REDWOOD NATIONAL AND STATE PARK TOUR",
     "url": "https://guidealong.com/tour/redwood-national-and-state-parks-tour/",
+    "category": "Driving",
     "details": {
       "description": "Explore Redwood National and State Parks, where towering trees, lush forests, and coastal views await. Discover serene trails, stunning beaches, and diverse wildlife.",
       "thumbnail": "",
@@ -1750,6 +1842,7 @@
   {
     "title": "REYKJANES PENINSULA TOUR",
     "url": "https://guidealong.com/tour/reykjanes-peninsula-tour/",
+    "category": "Driving",
     "details": {
       "description": "Explore Iceland’s Reykjanes Peninsula, a striking landscape of volcanic craters, steaming geothermal fields, rugged coastlines, and iconic sites like the Blue Lagoon and the Bridge Between Continents. Experience the raw beauty of Iceland’s dynamic terrain!",
       "thumbnail": "",
@@ -1769,6 +1862,7 @@
   {
     "title": "REYKJAVIK WALKING TOUR",
     "url": "https://guidealong.com/tour/reykjavik-walking-tour/",
+    "category": "Walking",
     "details": {
       "description": "Discover Reykjavik on a scenic walk through colorful streets, Viking history, and iconic landmarks like Hallgrímskirkja and Sun Voyager.",
       "thumbnail": "",
@@ -1788,6 +1882,7 @@
   {
     "title": "RING OF KERRY TOUR",
     "url": "https://guidealong.com/tour/ring-of-kerry/",
+    "category": "Driving",
     "details": {
       "description": "Explore the Kerry Cliffs, rugged coastline, lush hills, historic castles, and picturesque villages on one of Ireland's most scenic drives.",
       "thumbnail": "",
@@ -1807,6 +1902,7 @@
   {
     "title": "ROCKY MOUNTAIN NATIONAL PARK TOUR",
     "url": "https://guidealong.com/tour/rocky-mountain-national-park/",
+    "category": "National Park",
     "details": {
       "description": "An outstanding and picturesque scenic drive. Climbing above the tree line to 12,000 feet, surrounded by towering Colorado peaks and wildlife on the Trail Ridge or Old Falls Roads.",
       "thumbnail": "",
@@ -1826,6 +1922,7 @@
   {
     "title": "US CLASSIC SOUTHWEST BUNDLE",
     "url": "https://guidealong.com/tour/us-classic-southwest-bundle/",
+    "category": "Bundle",
     "details": {
       "description": "US Classic Southwest Bundle includes tours in Arizona, Nevada, New Mexico, Texas & Utah. These include 17 destinations such as Arches & Canyonlands, Zion & Bryce, Grand Canyon, Sedona, Petrified Forest, and more.",
       "thumbnail": "",
@@ -1845,6 +1942,7 @@
   {
     "title": "US EAST BUNDLE",
     "url": "https://guidealong.com/tour/us-east-tour-bundle/",
+    "category": "Bundle",
     "details": {
       "description": "US East Tours bundle includes Acadia, Bar Harbor, Blue Ridge Parkway, Creole Nature Trail, Catskills, Boston Ghost, Freedom Trail, Gettysburg Battlefield, Great Smoky Mountains, Keweenaw, Lake Michigan, Lake Superior North Shore, Miami - Key West, Natchez Trace, New River Gorge, […]",
       "thumbnail": "",
@@ -1864,6 +1962,7 @@
   {
     "title": "US PACIFIC COASTLINE BUNDLE",
     "url": "https://guidealong.com/tour/us-pacific-coastline-bundle/",
+    "category": "Bundle",
     "details": {
       "description": "US Pacific Coastline Bundle includes tours in California, Oregon & Washington. These include 17 destinations such as 17-Mile, Big Sur, Crater Lake, Joshua Tree, Lake Tahoe, Lassen Volcanic, Mount Rainier, and more.",
       "thumbnail": "",
@@ -1883,6 +1982,7 @@
   {
     "title": "US ROCKIES & PLAINS BUNDLE",
     "url": "https://guidealong.com/tour/us-rockies-plains-bundle/",
+    "category": "Bundle",
     "details": {
       "description": "US Rockies & Plains Bundle includes tours in Colorado, Montana, Wyoming, North & South Dakota. These include 16 destinations such as Yellowstone & Grand Teton, Glacier, Black Hills, Black Canyon, Rocky Mountain, Mesa Verde, Theodore Roosevelt, and more.",
       "thumbnail": "",
