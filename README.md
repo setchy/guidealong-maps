@@ -1,4 +1,5 @@
 # GuideAlong Tours Explorer
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b9368d23-cad4-45f5-a018-e1af6a6269ed/deploy-status)](https://app.netlify.com/projects/guidealong-tours/deploys)
 
 This project is a simple web app that displays [GuideAlong][guidealong] tours on a Google Map.
 
