@@ -1,6 +1,6 @@
 # GuideAlong Tours Explorer
 
-A simple web app that displays [GuideAlong][guidealong] tours on an interactive map powered by [MapLibre GL JS][maplibre] with free OpenStreetMap vector tiles. Deploys to GitHub Pages.
+A simple web app that displays [GuideAlong][guidealong] tours on an interactive map powered by [MapLibre GL JS][maplibre] with free OpenStreetMap vector tiles. Deployed via [Netlify][netlify].
 
 ![GuideAlong Tours][screenshot]
 
@@ -90,26 +90,22 @@ Output: `./src/data/tours.json` (sorted by title)
 
 Tip: Don't commit your real API keys. Keep `.env` files out of version control.
 
-## Deploying to GitHub Pages
+## Deploying to Netlify
 
-The repository ships a GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) that publishes `./src` to GitHub Pages:
+The site is deployed with [Netlify][netlify]:
 
-- Triggers on pushes to `main` and via manual dispatch (`workflow_dispatch`)
-- Builds and uploads `./src` as a static artifact, then deploys it to the `github-pages` environment
-
-To use it:
-
-1. In your repo settings, set Pages → Source to **GitHub Actions**.
-2. Push to `main` (or run the workflow manually).
-
-No secrets are required — the map needs no API key.
+- **Production** deploys automatically from the `main` branch.
+- **Preview branches** — every pull request gets its own preview deploy, so changes can be reviewed live before merging.
+- **Base directory / publish directory**: `./src` (the site is static — no build step).
+- **No secrets are required** — the map needs no API key.
 
 ## Using the UI
 
-- Filters: Country, State, Tour type, Tour status, and Search (title/description).
+- Search: press `Cmd+K`/`Ctrl+K` (or the search button) for a keyboard-driven tour search palette, or use the inline search field.
+- Filters: Country, State, Tour type (by category), Tour status, and Search (title/description).
 - Group & Sort: group the list by Status or Category, and sort by Title, Completed date, or Distance.
 - Locate-me: use the map's locate control to capture your position, then sort by Distance to see tours nearest you (with computed distances shown).
-- Sections (Filters, Group & Sort, Tours) are collapsible; the Tours header shows the count and completed tally.
+- Sections (Filters, Group & Sort, Tours) are collapsible and start collapsed on load; the Tours header shows the count and completed tally.
 - Clicking a tour in the list pans/zooms the map and opens its info window.
 
 ## Scripts
@@ -133,3 +129,4 @@ This project is for demonstration purposes and is not affiliated with GuideAlong
 [guidealong]: https://guidealong.com
 [guidealong-tours]: https://guidealong.com/tour-list
 [maplibre]: https://maplibre.org
+[netlify]: https://netlify.com

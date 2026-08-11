@@ -38,7 +38,7 @@ function computeFilteredTours(tours, completedTitles, filters) {
     countries = [],
     states = [],
     status = "all",
-    type = "all",
+    type = [],
   } = filters || {};
 
   return (tours || []).filter((t) => {
@@ -57,7 +57,9 @@ function computeFilteredTours(tours, completedTitles, filters) {
     else if (status === "incomplete") matchesStatus = !isCompleted;
 
     let matchesTourType = true;
-    if (type !== "all") matchesTourType = d.tourType === type;
+    if (type.length > 0) {
+      matchesTourType = type.includes(t.category || "Driving");
+    }
 
     return (
       matchesSearch &&
@@ -256,7 +258,7 @@ function populateFilters(tours) {
   setupTourStatusFilter();
 
   // Setup tour type filter
-  setupTourTypeFilter();
+  setupTourTypeFilter(tours);
 }
 
 function setupStateCheckboxListeners() {
@@ -429,10 +431,23 @@ function getSelectedTourStatus() {
   return selectedStatus ? selectedStatus.value : "all";
 }
 
-function setupTourTypeFilter() {
+function setupTourTypeFilter(tours) {
   const dropdownButton = document.getElementById("tourTypeDropdownButton");
   const dropdown = dropdownButton.parentElement;
   const content = document.getElementById("tourTypeDropdownContent");
+  if (!dropdownButton || !dropdown || !content) return;
+
+  // Build category options from data (plus "All")
+  const categories = Array.from(
+    new Set((tours || []).map((t) => t.category || "Driving")),
+  ).sort((a, b) => a.localeCompare(b));
+  content.innerHTML = [
+    '<div class="checkbox-item"><input type="checkbox" id="allTourTypes" name="tourType" value="" checked><label for="allTourTypes">All Tour Types</label></div>',
+    ...categories.map(
+      (c) =>
+        `<div class="checkbox-item"><input type="checkbox" name="tourType" value="${c}"><label>${c}</label></div>`,
+    ),
+  ].join("");
 
   // Toggle dropdown
   dropdownButton.addEventListener("click", (e) => {
@@ -441,48 +456,66 @@ function setupTourTypeFilter() {
     dropdownButton.setAttribute("aria-expanded", String(open));
   });
 
-  // Delegate radio changes
-  if (content) {
-    content.addEventListener("change", (e) => {
-      const target = e.target;
-      if (!(target instanceof HTMLInputElement) || target.type !== "radio")
-        return;
-      updateTourTypeDropdownButtonText();
-      updateAll();
-      dropdown.classList.remove("open");
-      dropdownButton.setAttribute("aria-expanded", "false");
-    });
-  }
+  // Delegate checkbox changes
+  content.addEventListener("change", (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLInputElement) || target.type !== "checkbox")
+      return;
+    if (target.id === "allTourTypes") {
+      const tourTypeCheckboxes = content.querySelectorAll(
+        'input[name="tourType"]:not(#allTourTypes)',
+      );
+      tourTypeCheckboxes.forEach((cb) => {
+        cb.checked = target.checked;
+      });
+    } else {
+      const tourTypeCheckboxes = content.querySelectorAll(
+        'input[name="tourType"]:not(#allTourTypes)',
+      );
+      const anyChecked = Array.from(tourTypeCheckboxes).some(
+        (cb) => cb.checked,
+      );
+      const allCb = document.getElementById("allTourTypes");
+      if (allCb) allCb.checked = !anyChecked;
+    }
+    updateTourTypeDropdownButtonText();
+    updateAll();
+    dropdown.classList.remove("open");
+    dropdownButton.setAttribute("aria-expanded", "false");
+  });
 
   updateTourTypeDropdownButtonText();
 }
 
 function updateTourTypeDropdownButtonText() {
   const dropdownButton = document.getElementById("tourTypeDropdownButton");
-  const selectedTourType = document.querySelector(
-    'input[name="tourType"]:checked',
-  ).value;
-
-  switch (selectedTourType) {
-    case "Driving":
-      dropdownButton.innerHTML =
-        'Driving Tours Only <span class="dropdown-arrow">▼</span>';
-      break;
-    case "Walking":
-      dropdownButton.innerHTML =
-        'Walking Tours Only <span class="dropdown-arrow">▼</span>';
-      break;
-    default:
-      dropdownButton.innerHTML =
-        'All Tour Types <span class="dropdown-arrow">▼</span>';
+  if (!dropdownButton) return;
+  const checked = Array.from(
+    document.querySelectorAll(
+      'input[name="tourType"]:checked:not(#allTourTypes)',
+    ),
+  ).map((cb) => cb.value);
+  const allCb = document.getElementById("allTourTypes");
+  if (allCb?.checked || checked.length === 0) {
+    dropdownButton.innerHTML =
+      'All Tour Types <span class="dropdown-arrow">▼</span>';
+  } else if (checked.length === 1) {
+    dropdownButton.innerHTML = `${checked[0]} <span class="dropdown-arrow">▼</span>`;
+  } else {
+    dropdownButton.innerHTML = `${checked.length} Tour Types <span class="dropdown-arrow">▼</span>`;
   }
 }
 
 function getSelectedTourType() {
-  const selectedTourType = document.querySelector(
-    'input[name="tourType"]:checked',
-  );
-  return selectedTourType ? selectedTourType.value : "all";
+  const allCb = document.getElementById("allTourTypes");
+  if (allCb?.checked) {
+    return [];
+  }
+  return Array.from(
+    document.querySelectorAll(
+      'input[name="tourType"]:checked:not(#allTourTypes)',
+    ),
+  ).map((cb) => cb.value);
 }
 
 function updateStateDropdownButtonText() {
@@ -642,7 +675,7 @@ function groupTours(sortedTours, groupKey) {
 
 function getGroupBy() {
   const selected = document.querySelector('input[name="groupBy"]:checked');
-  return selected ? selected.value : "none";
+  return selected ? selected.value : "status";
 }
 
 function getSortBy() {
@@ -759,6 +792,24 @@ async function loadToursFromFile() {
   }
 }
 
+async function loadLastSynced() {
+  try {
+    const response = await fetch("./data/meta.json");
+    if (!response.ok) throw new Error("No meta file found");
+    const meta = await response.json();
+    const el = document.getElementById("lastSynced");
+    if (!el || !meta?.lastSynced) return;
+    const date = new Date(meta.lastSynced);
+    el.textContent = `Last synced ${date.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })}`;
+  } catch {
+    // Leave footer timestamp empty if meta is unavailable
+  }
+}
+
 async function initMap() {
   showLoading("Initializing map...");
   hideError();
@@ -801,6 +852,9 @@ async function initMap() {
   // Load completed tours
   completedTours = await loadCompletedTours();
 
+  // Load last-synced timestamp
+  loadLastSynced();
+
   const tours = await loadToursFromFile();
   if (!tours || !Array.isArray(tours) || tours.length === 0) {
     showError(
@@ -830,14 +884,11 @@ async function initMap() {
     });
   }
 
-  // Collapsible filters toggle
+  // Collapsible filters toggle (start collapsed)
   const filtersSection = document.getElementById("filtersSection");
   const filtersToggle = document.getElementById("filtersToggle");
   if (filtersSection && filtersToggle) {
-    if (
-      window.innerWidth <= 600 &&
-      !filtersSection.classList.contains("collapsed")
-    ) {
+    if (!filtersSection.classList.contains("collapsed")) {
       filtersSection.classList.add("collapsed");
       filtersToggle.setAttribute("aria-expanded", "false");
     }
@@ -847,10 +898,14 @@ async function initMap() {
     });
   }
 
-  // Collapsible group & sort toggle
+  // Collapsible group & sort toggle (start collapsed)
   const groupSortSection = document.getElementById("groupSortSection");
   const groupSortToggle = document.getElementById("groupSortToggle");
   if (groupSortSection && groupSortToggle) {
+    if (!groupSortSection.classList.contains("collapsed")) {
+      groupSortSection.classList.add("collapsed");
+      groupSortToggle.setAttribute("aria-expanded", "false");
+    }
     groupSortToggle.addEventListener("click", () => {
       const collapsed = groupSortSection.classList.toggle("collapsed");
       groupSortToggle.setAttribute("aria-expanded", String(!collapsed));
@@ -859,6 +914,8 @@ async function initMap() {
 
   setupGroupByFilter();
   setupSortByFilter();
+
+  setupSearch();
 
   // Global outside-click to close any open dropdowns
   initGlobalDropdownCloser();
@@ -874,6 +931,163 @@ function initGlobalDropdownCloser() {
       }
     });
   });
+}
+
+// --- Search ---------------------------------------------------------------
+// Single search input drives both the list filter (via updateAll) and a
+// jump-to-tour results dropdown that appears on focus / Cmd+K.
+let searchResults = [];
+let searchActiveIndex = 0;
+
+function getSearchInput() {
+  return document.getElementById("searchInput");
+}
+
+function getSearchResultsEl() {
+  return document.getElementById("searchResults");
+}
+
+function searchFilterResults(query) {
+  const q = (query || "").toLowerCase().trim();
+  if (!q) return [];
+  return allTours
+    .filter(
+      (t) =>
+        t.title?.toLowerCase().includes(q) ||
+        (t.details?.description || "").toLowerCase().includes(q),
+    )
+    .slice(0, 10);
+}
+
+function focusTour(t) {
+  const key = t.url || t.title;
+  const idx = markerIndexByKey.get(key);
+  const marker = idx != null ? markers[idx] : null;
+  if (marker) {
+    const pos = marker.getLngLat();
+    if (pos) map.flyTo({ center: [pos.lng, pos.lat], zoom: 6 });
+    marker.togglePopup();
+  }
+}
+
+function renderSearchResults() {
+  const el = getSearchResultsEl();
+  if (!el) return;
+  if (searchResults.length === 0) {
+    el.innerHTML =
+      '<div class="search-results-list"><div class="search-results-empty">No tours to display.</div></div>';
+    return;
+  }
+  el.innerHTML = `<div class="search-results-list">${searchResults
+    .map((t, i) => {
+      const g = t.geocode || {};
+      const place = [g.state, g.country].filter(Boolean).join(", ");
+      const active = i === searchActiveIndex ? " active" : "";
+      return `<div class="search-result${active}" data-index="${i}">
+        <div class="result-title">${t.title}</div>
+        ${place ? `<div class="result-meta">${place}</div>` : ""}
+      </div>`;
+    })
+    .join("")}</div>
+    <div class="search-results-footer">
+      <span><b>↑↓</b> navigate</span>
+      <span><b>↵</b> select</span>
+      <span><b>esc</b> close</span>
+    </div>`;
+}
+
+function openSearchResults() {
+  const input = getSearchInput();
+  const el = getSearchResultsEl();
+  if (!input || !el) return;
+  searchResults = searchFilterResults(input.value);
+  searchActiveIndex = 0;
+  renderSearchResults();
+  positionSearchResults();
+  el.classList.add("open");
+}
+
+function positionSearchResults() {
+  const input = getSearchInput();
+  const el = getSearchResultsEl();
+  if (!input || !el) return;
+  const rect = input.getBoundingClientRect();
+  el.style.left = `${rect.left}px`;
+  el.style.top = `${rect.bottom + 6}px`;
+}
+
+function closeSearchResults() {
+  const el = getSearchResultsEl();
+  if (el) el.classList.remove("open");
+}
+
+function setupSearch() {
+  const input = getSearchInput();
+  const el = getSearchResultsEl();
+  if (!input || !el) return;
+
+  input.addEventListener("input", () => {
+    searchResults = searchFilterResults(input.value);
+    searchActiveIndex = 0;
+    renderSearchResults();
+  });
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeSearchResults();
+      return;
+    }
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      if (!el.classList.contains("open") || searchResults.length === 0) return;
+      e.preventDefault();
+      const delta = e.key === "ArrowDown" ? 1 : -1;
+      searchActiveIndex =
+        (searchActiveIndex + delta + searchResults.length) %
+        searchResults.length;
+      renderSearchResults();
+      const active = el.querySelector(".search-result.active");
+      active?.scrollIntoView({ block: "nearest" });
+      return;
+    }
+    if (e.key === "Enter") {
+      if (!el.classList.contains("open")) return;
+      e.preventDefault();
+      const t = searchResults[searchActiveIndex];
+      if (t) {
+        focusTour(t);
+        closeSearchResults();
+        input.blur();
+      }
+      return;
+    }
+  });
+
+  el.addEventListener("click", (e) => {
+    const row = e.target.closest(".search-result");
+    if (!row) return;
+    const t = searchResults[Number(row.getAttribute("data-index"))];
+    if (t) {
+      focusTour(t);
+      closeSearchResults();
+      input.blur();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#searchInput, #searchResults")) {
+      closeSearchResults();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      input.focus();
+      openSearchResults();
+    }
+  });
+
+  window.addEventListener("resize", positionSearchResults);
 }
 
 // MapLibre GL JS is loaded via ES module import above

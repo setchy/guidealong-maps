@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,8 @@
     <div id="controls" style="display: none;">
       <div class="controls-header">
         <h3>GuideAlong Tours Explorer</h3>
-        <a
+        <div class="controls-header-actions">
+          <a
           class="github-link"
           href="https://github.com/setchy/guidealong-maps"
           target="_blank"
@@ -30,13 +31,22 @@
             0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
           </svg>
         </a>
+        </div>
       </div>
       <div class="filter-section search-section">
         <label id="lblSearch" for="searchInput">Search tours:</label>
-        <input type="text" id="searchInput" placeholder="Search by name or description" aria-labelledby="lblSearch">
+        <div class="search-input-wrap">
+          <svg class="search-input-icon" height="14" width="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Search by name or description" aria-labelledby="lblSearch">
+          <span class="search-kbd">⌘K</span>
+        </div>
+        <div class="search-results" id="searchResults"></div>
       </div>
       <div class="filters-section" id="filtersSection">
-        <button class="filters-toggle" id="filtersToggle" aria-expanded="true" aria-controls="filtersContent">
+        <button type="button" class="filters-toggle" id="filtersToggle" aria-expanded="true" aria-controls="filtersContent">
           <div class="filters-title">Filters</div>
           <span class="filters-toggle-arrow">▼</span>
         </button>
@@ -78,20 +88,7 @@
                 All Tour Types
                 <span class="dropdown-arrow">▼</span>
               </div>
-              <div class="dropdown-content" id="tourTypeDropdownContent">
-                <div class="checkbox-item">
-                  <input type="radio" id="allTourTypes" name="tourType" value="all" checked>
-                  <label for="allTourTypes">All Tour Types</label>
-                </div>
-                <div class="checkbox-item">
-                  <input type="radio" id="drivingTours" name="tourType" value="Driving">
-                  <label for="drivingTours">Driving Tours Only</label>
-                </div>
-                <div class="checkbox-item">
-                  <input type="radio" id="walkingTours" name="tourType" value="Walking">
-                  <label for="walkingTours">Walking Tours Only</label>
-                </div>
-              </div>
+              <div class="dropdown-content" id="tourTypeDropdownContent"></div>
             </div>
           </div>
           <div class="filter-section">
@@ -120,7 +117,7 @@
         </div>
       </div>
       <div class="group-sort-section" id="groupSortSection">
-        <button class="group-sort-toggle" id="groupSortToggle" aria-expanded="true" aria-controls="groupSortContent">
+        <button type="button" class="group-sort-toggle" id="groupSortToggle" aria-expanded="true" aria-controls="groupSortContent">
           <div class="group-sort-title">Group &amp; Sort</div>
           <span class="group-sort-toggle-arrow">▼</span>
         </button>
@@ -134,11 +131,11 @@
               </div>
               <div class="dropdown-content" id="groupByDropdownContent">
                 <div class="checkbox-item">
-                  <input type="radio" id="groupByNone" name="groupBy" value="none" checked>
+                  <input type="radio" id="groupByNone" name="groupBy" value="none">
                   <label for="groupByNone">None</label>
                 </div>
                 <div class="checkbox-item">
-                  <input type="radio" id="groupByStatus" name="groupBy" value="status">
+                  <input type="radio" id="groupByStatus" name="groupBy" value="status" checked>
                   <label for="groupByStatus">Status</label>
                 </div>
                 <div class="checkbox-item">
@@ -174,7 +171,7 @@
         </div>
       </div>
       <div class="tour-list-section" id="tourListSection">
-        <button class="tour-list-header" id="tourListToggle" aria-expanded="true" aria-controls="tourList">
+        <button type="button" class="tour-list-header" id="tourListToggle" aria-expanded="true" aria-controls="tourList">
           <div class="tour-title">Tours</div>
           <div class="tour-header-right">
             <div class="tour-count" id="tourCount">0 tours</div>
@@ -182,6 +179,10 @@
           </div>
         </button>
         <div class="tour-list" id="tourList"></div>
+      </div>
+      <div class="controls-footer">
+        <span id="lastSynced"></span>
+        <a href="https://guidealong.com/tour-list" target="_blank" rel="noopener noreferrer">View all tours on GuideAlong.com</a>
       </div>
       
     </div>
