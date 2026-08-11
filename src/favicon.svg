@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-labelledby="faviconTitle">
+  <title id="faviconTitle">GuideAlong Tours Explorer</title>
   <circle cx="16" cy="16" r="15" fill="#2c7a4b"/>
   <path d="M16 5 L27 24 L16 20.5 L5 24 Z" fill="#ffffff"/>
   <circle cx="16" cy="15" r="4" fill="#2c7a4b"/>

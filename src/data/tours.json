@@ -1540,6 +1540,26 @@
     }
   },
   {
+    "title": "NEWPORT’S CLIFF WALK TOUR",
+    "url": "https://guidealong.com/tour/cliff-walk/",
+    "category": "Walking",
+    "details": {
+      "description": "Rugged cliffs, lavish Gilded Age architecture, and dramatic ocean views. They only come together in one place: Newport’s iconic Cliff Walk.",
+      "thumbnail": "",
+      "audioPoints": "40",
+      "duration": "1 Day",
+      "tourType": "Walking",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "title": "NIAGARA FALLS TOUR",
     "url": "https://guidealong.com/tour/niagara-falls/",
     "category": "Driving",
@@ -1920,6 +1940,306 @@
     }
   },
   {
+    "title": "SAGUARO NATIONAL PARK TOUR",
+    "url": "https://guidealong.com/tour/saguaro-national-park-tour/",
+    "category": "National Park",
+    "details": {
+      "description": "Discover Saguaro National Park's towering cacti, desert landscapes, and scenic trails. Enjoy serene drives, mountain vistas, and the park's unique beauty and heritage!",
+      "thumbnail": "",
+      "audioPoints": "90+",
+      "duration": "1 Day",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SALEM WITCH TRIALS TOUR",
+    "url": "https://guidealong.com/tour/salem-witch-trials-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Spellbinding Salem. Explore historic streets, uncover chilling Witch Trials tales, and visit iconic sites that bring Salem’s legends to life.",
+      "thumbnail": "",
+      "audioPoints": "40+",
+      "duration": "2 - 3 Hours",
+      "tourType": "Walking",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SALZBURG TOUR",
+    "url": "https://guidealong.com/tour/salzburg/",
+    "category": "Driving",
+    "details": {
+      "description": "Discover Salzburg: from “Sound of Music” spots to Von Trapp family history, princely palaces, and centuries of history",
+      "thumbnail": "",
+      "audioPoints": "70",
+      "duration": "1 Day",
+      "tourType": "Walking",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SANTA FE WALK TOUR",
+    "url": "https://guidealong.com/tour/santa-fe/",
+    "category": "Walking",
+    "details": {
+      "description": "Explore Santa Fe’s rich history on a walking tour of its vibrant plazas and iconic landmarks, including the oldest U.S. church, Loretto Chapel, and Santa Fe Plaza.",
+      "thumbnail": "",
+      "audioPoints": "20+",
+      "duration": "1 day",
+      "tourType": "Walking",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SAVANNAH TO CHARLESTON TOUR",
+    "url": "https://guidealong.com/tour/savannah-to-charleston-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore the scenic route between Savannah and Charleston, featuring historic Lowcountry charm, coastal landscapes, and iconic stops like Drayton Hall and Angel Oak Tree.",
+      "thumbnail": "",
+      "audioPoints": "200+",
+      "duration": "1 day",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SEDONA TOUR",
+    "url": "https://guidealong.com/tour/sedona/",
+    "category": "Driving",
+    "details": {
+      "description": "Sedona's surrounding red rocks provide a perfect vacation hub to stay to recharge and renew your spirituality with outdoor adventure, vibrant arts, New Age vortexes and other places of worship, or connecting with Native American history and culture.",
+      "thumbnail": "",
+      "audioPoints": "115",
+      "duration": "1 Day+",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SEQUOIA & KINGS CANYON NATIONAL PARK TOUR",
+    "url": "https://guidealong.com/tour/sequoia-and-kings-canyon/",
+    "category": "National Park",
+    "details": {
+      "description": "This slice of the Sierra Nevada mountains in California is indeed one of the best places to see these incredible, awe-inspiring trees. You will see incredible trees!",
+      "thumbnail": "",
+      "audioPoints": "215+",
+      "duration": "1 - 2+ Days",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SEWARD HIGHWAY TOUR",
+    "url": "https://guidealong.com/tour/anchorage-to-seward-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore Alaska’s Seward Highway, featuring dramatic coastal scenery, glacier views, and iconic stops like Turnagain Arm, Portage Valley, and Kenai Fjords. Discover Alaska’s wild beauty and unforgettable landscapes!",
+      "thumbnail": "",
+      "audioPoints": "175+",
+      "duration": "1 day",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SHENANDOAH NATIONAL PARK TOUR",
+    "url": "https://guidealong.com/tour/shenandoah/",
+    "category": "National Park",
+    "details": {
+      "description": "Shenandoah National Park is home to hundreds of animals, historic sites, beautiful views and unique hiking trails. The most popular activity is to drive the famous Skyline Drive - all 105 miles along the spine of the Blue Ridge Mountains.",
+      "thumbnail": "",
+      "audioPoints": "170+",
+      "duration": "1 Day+",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SNÆFELLSNES PENINSULA TOUR",
+    "url": "https://guidealong.com/tour/snaefellsnes-peninsula-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore Iceland's Snæfellsnes Peninsula, a breathtaking blend of volcanic peaks, glacier-capped mountains, black sand beaches, and iconic landmarks like Kirkjufell and Snæfellsjökull. Experience the magic of Iceland’s natural beauty!",
+      "thumbnail": "",
+      "audioPoints": "220+",
+      "duration": "1-2 days",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "SONOMA AND NAPA VALLEY TOUR",
+    "url": "https://guidealong.com/tour/sonoma-and-napa-valley-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore Sonoma and Napa Valley, a picturesque region of rolling vineyards, world-class wineries, and charming towns. Discover the beauty of lush landscapes, historic landmarks, and indulge in the valley’s renowned wine culture!",
+      "thumbnail": "",
+      "audioPoints": "230+",
+      "duration": "1-2 days",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "ST. LOUIS TOUR",
+    "url": "https://guidealong.com/tour/st-louis-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Discover the spirit of St. Louis through the towering Gateway Arch, legendary blues history, vibrant riverfront, and iconic city landmarks.",
+      "thumbnail": "",
+      "audioPoints": "60+",
+      "duration": "1 day",
+      "tourType": "Walking Hybrid",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "STERLING HIGHWAY TOUR",
+    "url": "https://guidealong.com/tour/sterling-highway-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore Alaska’s Sterling Highway, featuring scenic river valleys, turquoise lakes, mountain views, and charming Kenai Peninsula towns like Soldotna, Ninilchik, and Homer. Discover Alaska’s rich landscapes, wildlife, and coastal beauty!",
+      "thumbnail": "",
+      "audioPoints": "290+",
+      "duration": "1 day",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "THEODORE ROOSEVELT NATIONAL PARK TOUR",
+    "url": "https://guidealong.com/tour/theodore-roosevelt-national-park-tour/",
+    "category": "National Park",
+    "details": {
+      "description": "Discover the untamed beauty of North Dakota on the Theodore Roosevelt National Park Tour—where vast prairies, striking Badlands formations, and diverse wildlife come together to showcase the rugged spirit of the American West.",
+      "thumbnail": "",
+      "audioPoints": "65+",
+      "duration": "1 Day",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "TULUM TOUR",
+    "url": "https://guidealong.com/tour/tulum-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore Tulum, where clifftop temples, turquoise sea views, and Maya history come together. Stroll past El Castillo, the Temple of the Wind, and sacred cenotes as you uncover the story of this iconic seaside city.",
+      "thumbnail": "",
+      "audioPoints": "25+",
+      "duration": "1 day",
+      "tourType": "Walking",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "title": "US CLASSIC SOUTHWEST BUNDLE",
     "url": "https://guidealong.com/tour/us-classic-southwest-bundle/",
     "category": "Bundle",
@@ -1995,6 +2315,306 @@
     "geocode": {
       "lat": 44.2642998,
       "lng": -109.7869527,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "UTAH MIGHTY 5 BUNDLE",
+    "url": "https://guidealong.com/tour/utah-mighty-5-bundle/",
+    "category": "Bundle",
+    "details": {
+      "description": "Utah's Mighty 5 National Parks. Includes Arches, Canyonlands, Zion, Bryce Canyon and Capitol Reef National Parks.",
+      "thumbnail": "",
+      "audioPoints": "520",
+      "duration": "5 National Parks",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "VANCOUVER DOWNTOWN TOUR",
+    "url": "https://guidealong.com/tour/vancouver-downtown/",
+    "category": "Driving",
+    "details": {
+      "description": "Canada's Beautiful West Coast Cosmopolitan City. Explore the City of Vancouver, Stanley Park, Granville Island Markets and local beaches. A must do orientation for any first time visitor to Vancouver.",
+      "thumbnail": "",
+      "audioPoints": "100",
+      "duration": "4 - 6 Hours",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "VANCOUVER KAMLOOPS TOUR",
+    "url": "https://guidealong.com/tour/vancouver-kamloops/",
+    "category": "Driving",
+    "details": {
+      "description": "Drive through desert tumbleweeds of the BC Interior and rainforests along the Coastal mountains. This tour works in either direction - Eastbound or Westbound.",
+      "thumbnail": "",
+      "audioPoints": "140",
+      "duration": "4 - 6 Hours+",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "VANCOUVER WHISTLER TOUR",
+    "url": "https://guidealong.com/tour/whistler/",
+    "category": "Driving",
+    "details": {
+      "description": "Sea to Sky Highway. The drive hugs the BC Coast Mountains with views of Howe Sound waters and islands before heading inland to Squamish and Whistler.",
+      "thumbnail": "",
+      "audioPoints": "115",
+      "duration": "3 - 4 Hours",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "VERMONT, RT100 SCENIC BYWAY TOUR",
+    "url": "https://guidealong.com/tour/rt-100-scenic-byway-vermont/",
+    "category": "Driving",
+    "details": {
+      "description": "Vermont's Main Street. A road trip for those that like food sampling, shops with arts & crafts and the prettiest New England towns, villages and covered bridges. And when it's fall you'll be blinded by the autumn colors.",
+      "thumbnail": "",
+      "audioPoints": "300",
+      "duration": "1 Day+",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "WASHINGTON D.C. TOUR",
+    "url": "https://guidealong.com/tour/washington-dc-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore the heart of Washington D.C. on a driving tour through Capitol Hill, the National Mall, East Potomac Park, and Arlington National Cemetery.",
+      "thumbnail": "",
+      "audioPoints": "55+",
+      "duration": "1 day",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "WATERTON ALBERTA SW TOUR",
+    "url": "https://guidealong.com/tour/waterton-national-park/",
+    "category": "Driving",
+    "details": {
+      "description": "Waterton & Alberta SW stunning Waterton National Park and Alberta's diverse southwest communities. A cowboy trail road trip from the Canada/US border to the foothills of the Canadian Rockies.",
+      "thumbnail": "",
+      "audioPoints": "450+",
+      "duration": "1 - 2 Days+",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "WHITE SANDS NATIONAL PARK TOUR",
+    "url": "https://guidealong.com/tour/white-sands/",
+    "category": "National Park",
+    "details": {
+      "description": "Otherworldly White Dunes. Discover the stunning gypsum landscape while hearing tales of the unique ecosystem and the adventurous souls who braved this surreal desert terrain.",
+      "thumbnail": "",
+      "audioPoints": "65+",
+      "duration": "1.5 to 5 Hours",
+      "tourType": "Driving Hybrid",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "YELLOWSTONE + GRAND TETON NATIONAL PARK TOUR",
+    "url": "https://guidealong.com/tour/yellowstone-grand-teton/",
+    "category": "National Park",
+    "details": {
+      "description": "With almost too much to see and do in Yellowstone and Grand Teton National Parks, this Combo App will help narrow down what are \"not to be missed\" areas with insider tips and stories.",
+      "thumbnail": "",
+      "audioPoints": "550+",
+      "duration": "1 - 5 Days+",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "YELLOWSTONE TOUR",
+    "url": "https://guidealong.com/tour/yellowstone-national-park/",
+    "category": "Driving",
+    "details": {
+      "description": "The USA’s most magnificent National Park will impress you. Our tours cover all 4 quadrants of the park, allowing you either to just cover the highlights or with more time, in depth.",
+      "thumbnail": "",
+      "audioPoints": "375+",
+      "duration": "1 - 3 Days+",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "YELLOWSTONE’S GRAND PRISMATIC FAIRY FALLS TRAIL TOUR",
+    "url": "https://guidealong.com/tour/yellowstones-grand-prismatic-fairy-falls-trail/",
+    "category": "Driving",
+    "details": {
+      "description": "Experience Yellowstone’s natural wonders on a scenic hike to Grand Prismatic Spring, where vibrant rainbow colors, steamy landscapes, and panoramic views await from the overlook trail.",
+      "thumbnail": "",
+      "audioPoints": "10+",
+      "duration": "1 day",
+      "tourType": "Walking",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "YELLOWSTONE’S OLD FAITHFUL GEYSER BASIN WALK TOUR",
+    "url": "https://guidealong.com/tour/yellowstone-old-faithful-geyser-basin-walk/",
+    "category": "Walking",
+    "details": {
+      "description": "Experience Yellowstone’s geothermal magic on a scenic walk to Old Faithful, where powerful eruptions, steamy surroundings, and iconic views create an unforgettable adventure.",
+      "thumbnail": "",
+      "audioPoints": "35+",
+      "duration": "1 day",
+      "tourType": "Walking",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "YELLOWSTONE’S WEST THUMB GEYSER BASIN WALK TOUR",
+    "url": "https://guidealong.com/tour/yellowstone-west-thumb-geyser-basin-walk/",
+    "category": "Walking",
+    "details": {
+      "description": "Discover West Thumb, a lakeside geothermal wonder! Walk past steaming vents and colorful springs with Yellowstone Lake as your backdrop—a must-see stop!",
+      "thumbnail": "",
+      "audioPoints": "20+",
+      "duration": "1 day",
+      "tourType": "Walking",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "YOSEMITE TOUR",
+    "url": "https://guidealong.com/tour/yosemite-national-park/",
+    "category": "Driving",
+    "details": {
+      "description": "California's Majestic National Park. We'll visit the must do viewpoints, sequoia groves and waterfalls. However if you have more time or want to escape the crowds, we also tour Hetch Hetchy and Tioga Road.",
+      "thumbnail": "",
+      "audioPoints": "200+",
+      "duration": "1 - 2 Days+",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
+    "title": "ZION + BRYCE CANYON NATIONAL PARK TOURS",
+    "url": "https://guidealong.com/tour/zion-bryce-canyon/",
+    "category": "National Park",
+    "details": {
+      "description": "Tour 2 of Utah’s National Parks that are equally surreal. Zion with its steep sandstone walls, slot canyons and green oasis’s created by water and Bryce Canyon with thousands of hoodoos towers densely packed into a spectacular amphitheatre.",
+      "thumbnail": "",
+      "audioPoints": "195+",
+      "duration": "2 Days+",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
       "country": "",
       "state": ""
     }
