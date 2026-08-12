@@ -823,7 +823,7 @@ async function initMap() {
     zoom: 4,
     attributionControl: false,
   });
-  map.addControl(new NavigationControl(), "bottom-right");
+  map.addControl(new NavigationControl({ showCompass: false }), "bottom-right");
   const attributionControl = new AttributionControl({ compact: true });
   map.addControl(attributionControl, "top-right");
   const collapseAttribution = () => {
