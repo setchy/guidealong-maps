@@ -5,7 +5,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore 17-Mile Drive, a stunning coastal route with rugged cliffs, iconic landmarks, and breathtaking ocean views. Discover the Lone Cypress, Pebble Beach, and scenic overlooks along the way.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/02/Fanshell-Beach-Overlook.webp",
       "audioPoints": "90+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -25,7 +25,7 @@
     "category": "National Park",
     "details": {
       "description": "Road trip around Acadia National Park and Mount Desert Island with its interesting mix of natural features, great hikes, superb sightseeing and rugged coastline.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2022/07/Cadillac-Mountain-during-Autumn.jpg",
       "audioPoints": "115+",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -45,7 +45,7 @@
     "category": "Walking",
     "details": {
       "description": "Explore Bar Harbor, where historic streets, Gilded Age mansions, and stunning coastal views come together. Discover scenic trails, cultural landmarks, and the charm of this seaside town along the way.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/04/ENTRANCE-FEES.jpg",
       "audioPoints": "25+",
       "duration": "Half Day",
       "tourType": "Walking",
@@ -65,7 +65,7 @@
     "category": "Bundle",
     "details": {
       "description": "Alaska has it all. So does this seamless drive covering all 500 miles of “the Last Frontier”: Parks Highway (South Half), Seward Highway, and Sterling Highway.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/12/Anchorage-To-Seward-Trip-Planner-4.jpg",
       "audioPoints": "560+",
       "duration": "7 - 14 Days",
       "tourType": "Driving",
@@ -85,7 +85,7 @@
     "category": "Bundle",
     "details": {
       "description": "One of America's best road trips is through the Appalachian Mountains along the Blue Ridge Parkway, Skyline Drive in Shenandoah National Park and Great Smoky Mountains National Park.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/06/Appalachian-Bundle.jpg",
       "audioPoints": "1,115+",
       "duration": "3 Destinations",
       "tourType": "Driving",
@@ -105,7 +105,7 @@
     "category": "National Park",
     "details": {
       "description": "Two National Parks, One Destination. Both our tours are included in this comprehensive guide that explores the towering Arches National Park & deep valleys of Canyonlands National Park.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/arches-canyonlands-9.jpg",
       "audioPoints": "200+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -125,7 +125,7 @@
     "category": "National Park",
     "details": {
       "description": "Breathtaking Land Features. Beyond the amazing natural formations, you'll hear stories about the fragile ecosystem and some of the characters who were drawn to the challenging desert environment.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/arches-canyonlands-14.jpg",
       "audioPoints": "70+",
       "duration": "4 - 8 Hours+",
       "tourType": "Driving",
@@ -145,7 +145,7 @@
     "category": "Driving",
     "details": {
       "description": "A nostalgic road trip packed with quirky Americana, desert views, and classic roadside stops. Don’t miss the neon signs, vintage diners, and canyon landscapes.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/06/Route-66-Trip-Planner-3.jpg",
       "audioPoints": "360+",
       "duration": "2 - 3 Days",
       "tourType": "Driving",
@@ -165,7 +165,7 @@
     "category": "Driving",
     "details": {
       "description": "Towering limestone stacks and cliffs along the Southern Ocean make for a stunning scenic drive. See local wildlife, bushwalk through rainforest to lush waterfalls and explore classic beach towns.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/02/Great-Ocean-Drive-Tour-1.jpg",
       "audioPoints": "260+",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -185,7 +185,7 @@
     "category": "Driving",
     "details": {
       "description": "Break up the long TransCanada Highway 1 drive between Kamloops - Banff with stories, worthwhile stops and viewpoints. This tour works in either direction - Eastbound or Westbound.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/01/Giant-Cedars.jpg",
       "audioPoints": "140+",
       "duration": "6 Hours+",
       "tourType": "Driving",
@@ -205,7 +205,7 @@
     "category": "Driving",
     "details": {
       "description": "A Townsite Built Inside A National Park. Explore the Banff Townsite and surrounds, perfect orientation for any first time visitor to Banff with all the must do viewpoints included.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Banff-7.jpg",
       "audioPoints": "95+",
       "duration": "4 - 6 Hours",
       "tourType": "Driving",
@@ -225,7 +225,7 @@
     "category": "Driving",
     "details": {
       "description": "The Beartooth Highway, Hwy 212, travels through some of the wildest and most scenic mountain landscape in the country. Drive, hike or even get out onto an alpine lake.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2022/07/Beartooth-Highway-Hairpin-New.webp",
       "audioPoints": "93+",
       "duration": "1.5 Hours+",
       "tourType": "Driving",
@@ -245,7 +245,7 @@
     "category": "National Park",
     "details": {
       "description": "Explore Big Bend National Park, where vast deserts, towering canyons, and the winding Rio Grande converge. Discover scenic overlooks, hidden hot springs, and diverse wildlife in this breathtaking wilderness.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/02/HOW-MUCH-TIME-DO-you-NEED.webp",
       "audioPoints": "125+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -265,7 +265,7 @@
     "category": "Bundle",
     "details": {
       "description": "Perfect companion to thoroughly explore the Big Island. Included are 4 driving routes; 2 full day (Volcanoes and Island Circle) and 2 half day (Kohala Coast and Kona Coffee Coast).",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Big-Island-11.jpg",
       "audioPoints": "460+",
       "duration": "1 - 4 Days+",
       "tourType": "Driving",
@@ -285,7 +285,7 @@
     "category": "Driving",
     "details": {
       "description": "Experience the ultimate Montana adventure on Big Sky Drive—where breathtaking mountain vistas, sparkling rivers, and rich outdoor activities blend seamlessly with the rugged charm of the Northern Rockies.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/08/Big-Sky-Montana-landscape-view.webp",
       "audioPoints": "90+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -305,7 +305,7 @@
     "category": "Driving",
     "details": {
       "description": "Could you ask for more from a scenic drive? Dramatic coastline, pristine beaches, marine wildlife and interesting stories about local pioneers and characters, all make this a quintessential Californian road trip adventure.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Big-Sur-15.jpg",
       "audioPoints": "170",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -325,7 +325,7 @@
     "category": "National Park",
     "details": {
       "description": "Explore Black Canyon of the Gunnison National Park, where sheer cliffs, narrow gorges, and breathtaking canyon vistas showcase nature’s raw power. Discover dramatic overlooks, ancient rock formations, and diverse wildlife along the way.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/03/Black-Canyon-Trip-Planner-2.webp",
       "audioPoints": "35+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -345,7 +345,7 @@
     "category": "National Park",
     "details": {
       "description": "Discover great faces and vast open spaces from the Black Hills and Badlands National Park to the wildlife-filled roads of Custer State Park and the iconic carvings at Mount Rushmore and Crazy Horse Memorial.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/08/Mount-Rushmore.jpg",
       "audioPoints": "580+",
       "duration": "1 - 3 Days",
       "tourType": "Driving",
@@ -365,7 +365,7 @@
     "category": "Driving",
     "details": {
       "description": "One of America's favorite road trips, the 469-mile long Blue Ridge Parkway stretches from Virginia to North Carolina, riding along the spine of the Appalachians most of the way with hundreds of spectacular views around countless corners.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/05/Blue-Ridge-Parkway-in-Fall.jpg",
       "audioPoints": "765+",
       "duration": "3 - 7 Days",
       "tourType": "Driving",
@@ -385,7 +385,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Boston’s Freedom Trail, featuring historic landmarks, Revolutionary War sites, and iconic stops like Boston Common, Paul Revere’s House, and the Bunker Hill Monument. Discover America’s fight for freedom!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/07/AWESOME-EXPERIENCES.jpg",
       "audioPoints": "80+",
       "duration": "1/2 Day",
       "tourType": "Walking",
@@ -405,7 +405,7 @@
     "category": "Driving",
     "details": {
       "description": "A chilling evening walk through Boston’s haunted past, filled with eerie legends, shadowy cemeteries, and historic landmarks. Feel the whispers of history echo through every cobblestone street.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/11/HOW-TO-GET-HERE.jpg",
       "audioPoints": "30+",
       "duration": "1 To 2 Hours",
       "tourType": "Walking",
@@ -425,7 +425,7 @@
     "category": "Driving",
     "details": {
       "description": "Introducing the Canadian Rockies from the Gateway of Calgary. From either the Calgary Airport for Downtown Calgary, we'll provide turn by turn directions to Highway#1, where you'll hear stories about Banff's pioneers, animals and things to do.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Calgary-to-Banff-2.jpg",
       "audioPoints": "60",
       "duration": "2 Hours",
       "tourType": "Driving",
@@ -445,7 +445,7 @@
     "category": "Bundle",
     "details": {
       "description": "Canadian Rockies and Vancouver Tours, includes Banff, Lake Louise, Yoho, Icefields Parkway, Jasper, Vancouver, Whistler and to/from the Canadian Rockies.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2021/07/canoe-moraine-lake.jpg",
       "audioPoints": "915",
       "duration": "3 - 7 Days+",
       "tourType": "Driving",
@@ -465,7 +465,7 @@
     "category": "Driving",
     "details": {
       "description": "Canadian Rockies covers four major regions – Banff, Lake Louise & Yoho, Icefields Parkway, and Jasper in this guide.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/wildlife-1.jpg",
       "audioPoints": "520+",
       "duration": "1 - 5 Days+",
       "tourType": "Driving",
@@ -485,7 +485,7 @@
     "category": "Bundle",
     "details": {
       "description": "Cancun Bundle includes Tulum and Chichen Itza.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/12/ENTRANCE-FEES.jpg",
       "audioPoints": "70+",
       "duration": "2 Destinations",
       "tourType": "Walking",
@@ -505,7 +505,7 @@
     "category": "National Park",
     "details": {
       "description": "The incredible Island in the Sky. In contrast to Arches National Park, but just as spectacular, don't overlook this National Park on your visit to Moab. More incredible outlooks of cliffs and canyons.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/arches-canyonlands-16.jpg",
       "audioPoints": "74",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -525,7 +525,7 @@
     "category": "Driving",
     "details": {
       "description": "Nothing says “summer” like Cape Cod. Drive the iconic “bent arm” and see lighthouses, beaches, and more.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/06/Cape-cod-Tour.jpg",
       "audioPoints": "190+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -545,7 +545,7 @@
     "category": "Driving",
     "details": {
       "description": "Visitors to Capitol Reef National Park are often blown away by the amazing geology and wide-range of activities this lesser-known park has to offer.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2021/06/Signature.jpg",
       "audioPoints": "90+",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -565,7 +565,7 @@
     "category": "Driving",
     "details": {
       "description": "Meander through the heart of the Catskills, with picturesque views of the surrounding mountains, waterways and rolling farmlands.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/06/Catskill-Mountains-Scenic-Byway.jpg",
       "audioPoints": "72",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -585,7 +585,7 @@
     "category": "Walking",
     "details": {
       "description": "Explore the ancient marvels of Chichén Itzá, featuring iconic pyramids, sacred cenotes, and remarkable temples. Discover the Maya world, where astronomy, architecture, and history come alive!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/12/El-Castillo.jpg",
       "audioPoints": "40+",
       "duration": "1 Day",
       "tourType": "Walking",
@@ -605,7 +605,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Colorado National Monument, where towering red rock canyons, sandstone monoliths, and sweeping desert vistas create a breathtaking landscape. Discover scenic Rim Rock Drive and experience the wild beauty of the American Southwest!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/11/Colorado-National-Monument-Trip-Planner-2.jpg",
       "audioPoints": "85+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -625,7 +625,7 @@
     "category": "National Park",
     "details": {
       "description": "Explore Crater Lake National Park, home to the deepest lake in the U.S., with stunning blue waters, towering cliffs, and scenic viewpoints. Drive along Rim Drive, hike to Watchman Peak, and take in breathtaking views of this volcanic wonder.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/02/Crater-Lake-Trip-Planner-1.webp",
       "audioPoints": "85+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -645,7 +645,7 @@
     "category": "Driving",
     "details": {
       "description": "The Creole Nature Trail Tour: A journey through Louisiana’s wild beauty. From wetlands to Gulf beaches, spot wildlife and immerse yourself in Creole culture. This scenic byway is a must-see adventure.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/07/Cameron-Prairie-Boardwalk-Trail.jpg",
       "audioPoints": "100+",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -665,7 +665,7 @@
     "category": "National Park",
     "details": {
       "description": "Explore Cuyahoga Valley National Park's lush forests, waterfalls, and scenic trails. Discover Towpath Trail, Brandywine Falls, and the park's rich beauty and history!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/11/Cuyahoga-Trip-Planner.webp",
       "audioPoints": "140+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -685,7 +685,7 @@
     "category": "National Park",
     "details": {
       "description": "A unique blend of vast landscapes, extreme temperatures, and awe-inspiring geological wonders that make it an unforgettable journey.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/09/Death-Valley-National-Park.jpg",
       "audioPoints": "220+",
       "duration": "Full Day",
       "tourType": "Driving",
@@ -705,7 +705,7 @@
     "category": "Walking",
     "details": {
       "description": "Experience Delicate Arch, Utah’s iconic wonder! Hike through rugged terrain to see this breathtaking freestanding arch, perfectly framing the La Sal Mountains—a must-visit for hikers and photographers!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/03/DELICATE-ARCH-Trail-trip-planner.jpg",
       "audioPoints": "25+",
       "duration": "1 day",
       "tourType": "Walking",
@@ -725,7 +725,7 @@
     "category": "Driving",
     "details": {
       "description": "Canada's Dinosaur Trail. Explore Alberta's Badlands as a day trip from Calgary or add on to your Canadian Rockies vacation. World class dinosaur and fossil exhibits combined with small Albertan towns.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/Drumheller-Tour-1.jpg",
       "audioPoints": "110+",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -745,7 +745,7 @@
     "category": "Walking",
     "details": {
       "description": "Explore Edinburgh’s Old Town, from Victoria Street and Greyfriars Kirkyard to Edinburgh Castle, and discover historic landmarks, hidden closes, and local stories linked to J.K. Rowling’s time in the city.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/02/Edinburgh-Harry-Potter-Trip-Planner-1.jpg",
       "audioPoints": "35+",
       "duration": "Half Day",
       "tourType": "Walking",
@@ -765,7 +765,7 @@
     "category": "National Park",
     "details": {
       "description": "Discover Everglades National Park's wetlands, vibrant wildlife, and scenic trails like Anhinga Trail and Shark Valley in a subtropical paradise.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/10/Everglades-Trip-Planner.webp",
       "audioPoints": "70+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -785,7 +785,7 @@
     "category": "Driving",
     "details": {
       "description": "Discover the heart of the Finger Lakes: explore the two biggest lakes, Seneca and Cayuga, relax along the famous Wine Trail, and marvel at the stunning glacial waterfalls and woodland hikes of upstate New York.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/07/Finger-Lakes-2.jpg",
       "audioPoints": "155+",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -805,7 +805,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Oahu’s stunning southeast coast from Waikiki on this free audio tour. Visit must-see spots like Diamond Head, Hanauma Bay, Halona Blowhole, and Makapuʻu Point Lighthouse while hearing stories about volcanic landscapes, island history, and local culture along the way.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/02/Hanuama-Bay.jpg",
       "audioPoints": "50+",
       "duration": "Half Day",
       "tourType": "Driving",
@@ -825,7 +825,7 @@
     "category": "Driving",
     "details": {
       "description": "Discover the spectacular landscapes and dramatic formations of Colorado's Garden of the Gods.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2022/07/Garden-of-the-Gods-Tour.jpg",
       "audioPoints": "40+",
       "duration": "Half Day",
       "tourType": "Driving and Walking",
@@ -845,7 +845,7 @@
     "category": "Bundle",
     "details": {
       "description": "A sacred Civil War battlefield in southern Pennsylvania. Gettysburg National Military Park preserves the rolling fields, stone walls, and historic landmarks where one of America’s most pivotal battles unfolded.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/02/Gettysburg-Battlefield-trip-planner-4.jpg",
       "audioPoints": "160+",
       "duration": "1 Day",
       "tourType": "Driving Hybrid",
@@ -865,7 +865,7 @@
     "category": "Driving",
     "details": {
       "description": "An engineering feat in Glacier National Park. Created specifically for visitors to drive over Continental Divide. While it's a short, steep 50 miles, you'll want to spend most of a full day or longer taking in the numerous beautiful viewpoints.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/Going-to-the-Sun-Tour-1.jpg",
       "audioPoints": "160+",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -885,7 +885,7 @@
     "category": "Driving",
     "details": {
       "description": "Listen to stories as you drive to the Grand Canyon South Rim from Flagstaff, Williams or Cameron. Once inside the Park we also tour to all the best sites in the Village and Rim route drives.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Grand-Canyon-South-Rim-3.jpg",
       "audioPoints": "190",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -905,7 +905,7 @@
     "category": "Driving",
     "details": {
       "description": "Includes 3 recommended sightseeing trips from Las Vegas: Hoover Dam, Grand Canyon West and Red Rock Canyon. Rent a car and explore past the Las Vegas Strip.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2019/04/Hoover-Dam-1.jpg",
       "audioPoints": "220+",
       "duration": "1 - 3 Days",
       "tourType": "Driving",
@@ -925,7 +925,7 @@
     "category": "Driving",
     "details": {
       "description": "A loop of Grand Teton National Park via any of 4 park entrances. Dramatic mountainscapes, animal sightings and historic ranches and cabins can be explored in one or multiple days.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/Grand-Teton-National-Park-Tour-1.jpg",
       "audioPoints": "165",
       "duration": "1 Day+",
       "tourType": "Driving",
@@ -945,7 +945,7 @@
     "category": "National Park",
     "details": {
       "description": "Visit America’s most visited National Park and you’ll enjoy the many historic log buildings, a wide range of wildlife in diverse ecosystems, extensive hiking trails and stunning viewpoints from scenic drives and mountain peaks.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2019/03/Great-Smoky-Mountains-National-Park-1.jpg",
       "audioPoints": "180",
       "duration": "1 Day+",
       "tourType": "Driving",
@@ -965,7 +965,7 @@
     "category": "National Park",
     "details": {
       "description": "Explore Guadalupe Mountains National Park, featuring rugged desert landscapes, towering peaks, and scenic canyons, including Guadalupe Peak, the highest point in Texas.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/01/Guadalupe-Mountains-NP-Trip-Planner-1.jpg",
       "audioPoints": "115+",
       "duration": "1 day",
       "tourType": "Driving Hybrid",
@@ -985,7 +985,7 @@
     "category": "Bundle",
     "details": {
       "description": "The complete collection of all our Hawaiian Island Tours. Includes Oahu, Maui, Kauai and Big Island, Hawaii.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/12/Hawaiian-Islands-GyPSy-Guide-Driving-Tour-Apps-Ed.jpg",
       "audioPoints": "1,435",
       "duration": "4 Islands, All Tours",
       "tourType": "Driving",
@@ -1005,7 +1005,7 @@
     "category": "Driving",
     "details": {
       "description": "Voted The World's Most Beautiful Mountain Drive. And the best way to tour this is at your own pace. All the \"not to be missed\" viewpoints, some recommended hikes and places to enjoy a picnic lunch.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/Icefields-Parkway-Tour-1.jpg",
       "audioPoints": "150",
       "duration": "10 - 12 Hours",
       "tourType": "Driving",
@@ -1025,7 +1025,7 @@
     "category": "Bundle",
     "details": {
       "description": "Iceland Bundle includes Golden Circle, Snæfellsnes Peninsula, Reykjanes Peninsula, and Reykjavik.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/01/Kirkjufell-mountain.jpg",
       "audioPoints": "645",
       "duration": "4 Destinations",
       "tourType": "Driving/Walking",
@@ -1045,7 +1045,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Iceland's Golden Circle, featuring stunning landscapes, geothermal wonders, and iconic sites like Thingvellir, Geysir, and Gullfoss. Discover Iceland's beauty and heritage!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/12/Iceland-Trip-Planner.webp",
       "audioPoints": "250+",
       "duration": "1-2 days",
       "tourType": "Driving",
@@ -1065,7 +1065,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore the spectacular landscapes and dramatic vistas of Scotland's Isle of Skye.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/07/Isle-of-Skye-Driving-Tour.jpg",
       "audioPoints": "230+",
       "duration": "2 days",
       "tourType": "Driving",
@@ -1085,7 +1085,7 @@
     "category": "Driving",
     "details": {
       "description": "Stunning Lakes, Canyons & Mountains and So Much Wildlife. Jasper should not be overlooked on your Canadian Rockies road trip. A wilder environ, less crowded townsite and great opportunities to see wildlife.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/01/Jasper-2.jpg",
       "audioPoints": "110",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -1105,7 +1105,7 @@
     "category": "National Park",
     "details": {
       "description": "Named for the twisted, spiky trees, there's so much more to see in this popular California national park with its rugged rock formations, breathtaking views, wide variety of wildlife and stark desert landscapes.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/05/Joshua-Tree-National-Park.jpg",
       "audioPoints": "185+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -1125,7 +1125,7 @@
     "category": "Walking",
     "details": {
       "description": "Explore Hidden Valley, a stunning desert oasis in Joshua Tree National Park. Wander through towering rock formations, iconic Joshua trees, and a hidden past as a rumored cattle rustler hideout. Experience the magic of this secluded wonder!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/03/Hidden-Valley-Trip-Planner-2.jpg",
       "audioPoints": "15+",
       "duration": "1 day",
       "tourType": "Walking",
@@ -1145,7 +1145,7 @@
     "category": "Driving",
     "details": {
       "description": "The 34-mile long Kancamagus Scenic Byway is a classic New England drive, particularly in fall, and offers plenty of scenic views and hiking opportunities.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/07/Kancamagus-Highway.jpg",
       "audioPoints": "67",
       "duration": "1/2 - Full Day",
       "tourType": "Driving",
@@ -1165,7 +1165,7 @@
     "category": "Bundle",
     "details": {
       "description": "We've divided Hawaii’s Garden Isle into 2 driving routes; North and Eastern Kauai, and South and Western Kauai. Each could easily be a day of sightseeing, but more time is better.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/Kuaui-Tour-1.jpg",
       "audioPoints": "280+",
       "duration": "2 Days+",
       "tourType": "Driving",
@@ -1185,7 +1185,7 @@
     "category": "Driving",
     "details": {
       "description": "Take a road trip filled with natural beauty and cultural surprises to Michigan's Upper Peninsula, Copper Country.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/06/Keweenaw-Peninsula.jpg",
       "audioPoints": "105+",
       "duration": "1 - 3 Days+",
       "tourType": "Driving",
@@ -1205,7 +1205,7 @@
     "category": "Driving",
     "details": {
       "description": "Mountains, Lakes & Waterfalls. Tour some of the most spectacular scenery in Banff and neighbouring Yoho National Park. Drive the Bow Valley Parkway (the old highway) and keep your eyes peeled for wildlife.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Lake-Louise-Moraine-10.jpg",
       "audioPoints": "120",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -1225,7 +1225,7 @@
     "category": "Driving",
     "details": {
       "description": "Minnesota’s North Shore Scenic Drive is a gateway to pristine wilderness, spectacular Lake Superior beaches and endless waterfalls.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/05/Split-Rock-Lighthouse-Sunset.jpg",
       "audioPoints": "245",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -1245,7 +1245,7 @@
     "category": "Driving",
     "details": {
       "description": "Lake Tahoe's pristine beaches, world renowned ski resort, extensive and varied trail system, and historic and cultural highlights make for a destination rich in variety.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2022/06/Lake-Tahoe.jpg",
       "audioPoints": "275",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -1265,7 +1265,7 @@
     "category": "National Park",
     "details": {
       "description": "Explore Lassen Volcanic National Park's geothermal wonders, steaming fumaroles, serene lakes, and scenic trails in a breathtaking volcanic landscape.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/10/Lassen-Volcanic-Trip-Planner.webp",
       "audioPoints": "80+",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -1285,7 +1285,7 @@
     "category": "Bundle",
     "details": {
       "description": "Experience everything on Maui with the island’s most complete and trusted audio tour. This all-in-one Maui experience covers the entire island - world-famous Road to Hana, volcanic Haleakala, lush Iao Valley, remote West Maui, and sandy South Maui.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/Maui-Tour-1.jpg",
       "audioPoints": "500+",
       "duration": "1 - 5 Days",
       "tourType": "Driving",
@@ -1305,7 +1305,7 @@
     "category": "National Park",
     "details": {
       "description": "Explore Haleakalā National Park, a stunning volcanic wonderland with epic sunrise views, scenic trails, and diverse ecosystems. Discover the towering summit, the vast crater, and lush tropical forests along the way.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/02/Haleakala-Trip-Planner-4.webp",
       "audioPoints": "90+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -1325,7 +1325,7 @@
     "category": "Driving",
     "details": {
       "description": "Experience Maui’s famous Road to Hana with the most trusted audio tour. We’ll guide you to all the must-see sights and hidden gems including spectacular waterfalls, black sand beaches, bamboo forests, lava rock formations and amazing ocean views.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/r2h-1.jpg",
       "audioPoints": "140+",
       "duration": "10 Hours+",
       "tourType": "Driving",
@@ -1345,7 +1345,7 @@
     "category": "Driving",
     "details": {
       "description": "The first national park to be created specifically to preserve important archeological and cultural sites. Tour the park for incredible scenic vistas, views into ancient cliff dwellings, mesa top sites and other archeological features.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2022/04/Mesa-Verde-National-Park-800x900-1.jpg",
       "audioPoints": "100+",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -1365,7 +1365,7 @@
     "category": "Driving",
     "details": {
       "description": "One of America's Classic Driving routes - the Overseas Highway. Take your convertible, swimwear and partner for a day in the sun, exploring beaches, parks, towns and history along the way. Tour Northbound AND Southbound.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2019/03/Florida-Keys-Drive-1.jpg",
       "audioPoints": "230+",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -1385,7 +1385,7 @@
     "category": "Driving",
     "details": {
       "description": "Taking a scenic drive on Michigan's M-22 along the shoreline of Lake Michigan and Sleeping Bear Dunes is a delightful journey filled with outstanding views and unique landscapes.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/08/Sleeping-Bear-Dunes-Michigan-Audio-Tour.png",
       "audioPoints": "220",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -1405,7 +1405,7 @@
     "category": "Driving",
     "details": {
       "description": "A legendary highway through Colorado’s San Juan Mountains. Built to link historic mining towns across rugged cliffs and valleys. You’ll want to spend the day soaking in the dramatic scenery and alpine views.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/08/AWESOME-EXPERIENCES.jpg",
       "audioPoints": "155+",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -1425,7 +1425,7 @@
     "category": "Driving",
     "details": {
       "description": "Discover Monument Valley’s iconic red rock buttes and vast desert vistas. Drive the scenic loop and immerse yourself in its timeless beauty and rich heritage.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/09/Monument-Valley-Road.webp",
       "audioPoints": "50+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -1445,7 +1445,7 @@
     "category": "Driving",
     "details": {
       "description": "Experience the breathtaking beauty of Mount Hood Scenic Loop with cascading waterfalls, alpine lakes, and stunning mountain views.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/04/Mt-Hood-Loop-Trip-Planner.jpg",
       "audioPoints": "160+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -1465,7 +1465,7 @@
     "category": "Driving",
     "details": {
       "description": "Experience the stunning beauty of Mount Lemmon Scenic Byway with winding roads, diverse landscapes, and breathtaking mountain views.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/09/Entrance-Fees-3.webp",
       "audioPoints": "65+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -1485,7 +1485,7 @@
     "category": "National Park",
     "details": {
       "description": "Experience Mount Rainier's rugged beauty with scenic roads, diverse landscapes, and breathtaking views. Explore this serene natural paradise.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/09/Paradise.webp",
       "audioPoints": "140+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -1505,7 +1505,7 @@
     "category": "Driving",
     "details": {
       "description": "A drive along the Natchez Trace Parkway is a journey through time, history, and the natural beauty of the American South.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/09/Natchez-Trace-Parkway-Audio-Tour.jpg",
       "audioPoints": "255+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -1525,7 +1525,7 @@
     "category": "National Park",
     "details": {
       "description": "Majestic River Views. Explore the rugged cliffs and winding river while learning about the park’s rich history, diverse wildlife, and the daring adventurers who navigated its challenging terrain.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/05/New-River-Gorge-Trip-Planner-1.jpg",
       "audioPoints": "170+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -1565,7 +1565,7 @@
     "category": "Driving",
     "details": {
       "description": "Niagara Falls is said to be one of the most spectacular natural attractions in the world. Explore the Canadian side of the Falls as well as the surrounding region.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/06/Niagara-Falls-Aerial.jpg",
       "audioPoints": "110+",
       "duration": "1 - 3 Days+",
       "tourType": "Driving",
@@ -1585,7 +1585,7 @@
     "category": "National Park",
     "details": {
       "description": "Explore North Cascades National Park, where rugged peaks, alpine lakes, and over 300 glaciers await. Discover scenic trails, cascading waterfalls, and thriving wildlife in this mountain paradise.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/01/North-Cascades-National-Park-2.webp",
       "audioPoints": "220+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -1605,7 +1605,7 @@
     "category": "Bundle",
     "details": {
       "description": "You’ve had your fill of lounging beachside at that swanky Waikiki resort and now you’re looking for a little adventure. That means it’s time for an Oahu road trip. Rent a car and go! Includes 4 driving routes.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/Oahu-Circle-Tour-1-e1617903121332.jpg",
       "audioPoints": "340+",
       "duration": "1 - 4 Days",
       "tourType": "Driving",
@@ -1625,7 +1625,7 @@
     "category": "Walking",
     "details": {
       "description": "Journey through Honolulu’s historic core, exploring Iolani Palace, the King Kamehameha Statue, and Aloha Tower. Take your time to soak in its rich heritage and beauty.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/03/Things-to-See-and-Do-1.jpg",
       "audioPoints": "30+",
       "duration": "1 Day",
       "tourType": "Walking",
@@ -1645,7 +1645,7 @@
     "category": "Walking",
     "details": {
       "description": "A scenic walk along Waikiki’s iconic shoreline and bustling Kalakaua Avenue. Explore Duke Kahanamoku’s surfing legacy, royal history, wartime sites, and a mysterious crime. Plan for a full day to soak in the stories, sights, and vibrant beachfront atmosphere.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/03/WHEN-TO-VISIT.jpg",
       "audioPoints": "25+",
       "duration": "1 Day",
       "tourType": "Walking",
@@ -1665,7 +1665,7 @@
     "category": "Walking",
     "details": {
       "description": "Experience San Juan’s historic charm on a scenic walk through Old San Juan, where colourful colonial streets, oceanfront fortresses, and centuries of Caribbean history create an unforgettable adventure.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/02/WHEN-TO-VISIT.jpg",
       "audioPoints": "35+",
       "duration": "1 day",
       "tourType": "Walking",
@@ -1685,7 +1685,7 @@
     "category": "National Park",
     "details": {
       "description": "Olympic National Park is a place of incredibly diverse landscapes, plant life and animals, all conveniently located within a few hours of each other on Washington’s Olympic Peninsula.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/05/Ruby-Beach-Sunset.jpg",
       "audioPoints": "420+",
       "duration": "2 Days+",
       "tourType": "Driving",
@@ -1705,7 +1705,7 @@
     "category": "Driving",
     "details": {
       "description": "A driving tour of the Oregon Coast is an unforgettable experience that offers some of the most stunning scenery in the country. Our tour runs between Astoria at the Oregon - Washington border, and Florence in the south.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/04/Cannon-Beach.jpg",
       "audioPoints": "565+",
       "duration": "3 Days+",
       "tourType": "Driving",
@@ -1725,7 +1725,7 @@
     "category": "Driving",
     "details": {
       "description": "Between climbing three historic lighthouses, searching for wild horses in the dunes, building sandcastles, surfing and fishing and paddling around, and soaking up the sun - there's a rich selection of cultural, natural and historic places of interest.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/06/Outer-Banks-Audio-Driving-Tour.jpg",
       "audioPoints": "190+",
       "duration": "3 Days+",
       "tourType": "Driving",
@@ -1745,7 +1745,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Knik Glacier, Talkeetna, Eklutna Village, mountain views, rivers, and vast wilderness on one of Alaska’s most scenic drives between Anchorage and Denali.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/06/BY-CAR.jpg",
       "audioPoints": "200+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -1765,7 +1765,7 @@
     "category": "National Park",
     "details": {
       "description": "Embark on a road trip through Petrified Forest National Park, where you can explore an incredible landscape filled with ancient petrified wood, stunning desert vistas, and unique geological formations.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/08/Colorful-petrified-wood-near-Holbrook.webp",
       "audioPoints": "80+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -1785,7 +1785,7 @@
     "category": "Driving",
     "details": {
       "description": "Stunning Mountain Views. Along the drive, you'll experience breathtaking vistas, learn about the unique alpine ecosystem, and hear stories of adventurers drawn to the towering Pikes Peak summit.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/10/Pikes-Peak-Highway-trip-planner-2.jpg",
       "audioPoints": "35+",
       "duration": "2 - 3 Hours",
       "tourType": "Driving",
@@ -1805,7 +1805,7 @@
     "category": "Driving",
     "details": {
       "description": "Discover Point Reyes' dramatic cliffs, pristine beaches, and ocean views. Explore scenic roads and diverse landscapes in this coastal paradise.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/09/Point-Reyes-Lighthouse.webp",
       "audioPoints": "70+",
       "duration": "1 - 2 Days",
       "tourType": "Driving",
@@ -1825,7 +1825,7 @@
     "category": "Walking",
     "details": {
       "description": "Vibrant Coastal Charm. As you explore, you’ll stroll along scenic waterfronts, discover colorful neighborhoods, and hear stories of the culture, history, and local life that shape Puerto Vallarta.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/03/Things-to-See-and-Do-2.jpg",
       "audioPoints": "65+",
       "duration": "2 - 3 Hours",
       "tourType": "Half Day",
@@ -1845,7 +1845,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Redwood National and State Parks, where towering trees, lush forests, and coastal views await. Discover serene trails, stunning beaches, and diverse wildlife.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/11/Redwood-Trip-Planner.webp",
       "audioPoints": "180+",
       "duration": "1-3 days",
       "tourType": "Driving",
@@ -1865,7 +1865,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Iceland’s Reykjanes Peninsula, a striking landscape of volcanic craters, steaming geothermal fields, rugged coastlines, and iconic sites like the Blue Lagoon and the Bridge Between Continents. Experience the raw beauty of Iceland’s dynamic terrain!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/01/Reykjanes-Peninsula-Trip-Planner.webp",
       "audioPoints": "140+",
       "duration": "1-2 days",
       "tourType": "Driving",
@@ -1885,7 +1885,7 @@
     "category": "Walking",
     "details": {
       "description": "Discover Reykjavik on a scenic walk through colorful streets, Viking history, and iconic landmarks like Hallgrímskirkja and Sun Voyager.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/03/ENTRANCE-FEES.jpg",
       "audioPoints": "35+",
       "duration": "1 day",
       "tourType": "Walking",
@@ -1905,7 +1905,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore the Kerry Cliffs, rugged coastline, lush hills, historic castles, and picturesque villages on one of Ireland's most scenic drives.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/06/Ring-Of-Kerry-2.jpg",
       "audioPoints": "445+",
       "duration": "2 days",
       "tourType": "Driving",
@@ -1925,7 +1925,7 @@
     "category": "National Park",
     "details": {
       "description": "An outstanding and picturesque scenic drive. Climbing above the tree line to 12,000 feet, surrounded by towering Colorado peaks and wildlife on the Trail Ridge or Old Falls Roads.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Rocky-Mountain-National-Park-14.jpg",
       "audioPoints": "135",
       "duration": "1 Day+",
       "tourType": "Driving",
@@ -2049,8 +2049,8 @@
       "audioPoints": "115",
       "duration": "1 Day+",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Multiple",
+      "location": "Arizona, USA"
     },
     "geocode": {
       "lat": 34.86175980000001,
@@ -2245,7 +2245,7 @@
     "category": "Bundle",
     "details": {
       "description": "US Classic Southwest Bundle includes tours in Arizona, Nevada, New Mexico, Texas & Utah. These include 17 destinations such as Arches & Canyonlands, Zion & Bryce, Grand Canyon, Sedona, Petrified Forest, and more.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/01/Classic-Southwest.jpg",
       "audioPoints": "2,320+",
       "duration": "17 Destinations",
       "tourType": "Driving",
@@ -2265,7 +2265,7 @@
     "category": "Bundle",
     "details": {
       "description": "US East Tours bundle includes Acadia, Bar Harbor, Blue Ridge Parkway, Creole Nature Trail, Catskills, Boston Ghost, Freedom Trail, Gettysburg Battlefield, Great Smoky Mountains, Keweenaw, Lake Michigan, Lake Superior North Shore, Miami - Key West, Natchez Trace, New River Gorge, […]",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/05/Cowee-Mountain-Overlook-in-Fall.jpg",
       "audioPoints": "3900+",
       "duration": "28 Destinations",
       "tourType": "Driving & Walking",
@@ -2285,7 +2285,7 @@
     "category": "Bundle",
     "details": {
       "description": "US Pacific Coastline Bundle includes tours in California, Oregon & Washington. These include 17 destinations such as 17-Mile, Big Sur, Crater Lake, Joshua Tree, Lake Tahoe, Lassen Volcanic, Mount Rainier, and more.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/US-Pacific-Coastline-Bundle-3.jpg",
       "audioPoints": "3305+",
       "duration": "17 Destinations",
       "tourType": "Driving",
@@ -2305,7 +2305,7 @@
     "category": "Bundle",
     "details": {
       "description": "US Rockies & Plains Bundle includes tours in Colorado, Montana, Wyoming, North & South Dakota. These include 16 destinations such as Yellowstone & Grand Teton, Glacier, Black Hills, Black Canyon, Rocky Mountain, Mesa Verde, Theodore Roosevelt, and more.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/Rockies-Plains.jpg",
       "audioPoints": "2060+",
       "duration": "16 Destinations",
       "tourType": "Driving",

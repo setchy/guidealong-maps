@@ -168,7 +168,10 @@ function buildInfoContent(t, isCompleted, completedTourData) {
   const completedDateText = completedTourData?.completedDate
     ? `: ${completedTourData.completedDate}`
     : "";
-  return `<h3>${t.title}${isCompleted ? " ✅" : ""}</h3>
+  const thumbnail = d.thumbnail
+    ? `<img src="${d.thumbnail}" alt="${String(t.title || "").replace(/"/g, "&quot;")}" loading="lazy" style="width: 100%; border-radius: 8px; margin-bottom: 8px; display: block;">`
+    : "";
+  return `${thumbnail}<h3>${t.title}${isCompleted ? " ✅" : ""}</h3>
     ${isCompleted ? `<div style="color: #28a745; font-weight: bold; margin-bottom: 8px;">Completed Tour${completedDateText}</div>` : ""}
     ${d.location ? `<div><b>Location:</b> ${d.location}</div>` : ""}
     ${d.duration ? `<div><b>Duration:</b> ${d.duration}</div>` : ""}
