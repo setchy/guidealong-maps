@@ -1549,14 +1549,14 @@
       "audioPoints": "40",
       "duration": "1 Day",
       "tourType": "Walking",
-      "start": "",
-      "location": ""
+      "start": "Memorial Blvd & Eustis Ave",
+      "location": "Rhode Island"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 41.4852419,
+      "lng": -71.2975984,
+      "country": "United States",
+      "state": "RI"
     }
   },
   {
@@ -1949,14 +1949,14 @@
       "audioPoints": "90+",
       "duration": "1 Day",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Tucson",
+      "location": "Arizona, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 32.18308990000001,
+      "lng": -110.6126823,
+      "country": "United States",
+      "state": "AZ"
     }
   },
   {
@@ -1969,14 +1969,14 @@
       "audioPoints": "40+",
       "duration": "2 - 3 Hours",
       "tourType": "Walking",
-      "start": "",
-      "location": ""
+      "start": "Outside the Salem Armory at New Liberty Street",
+      "location": "Massachusetts, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 42.5197473,
+      "lng": -70.8954626,
+      "country": "United States",
+      "state": "MA"
     }
   },
   {
@@ -1993,10 +1993,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 47.8014154,
+      "lng": 13.0448441,
+      "country": "Austria",
+      "state": "Salzburg"
     }
   },
   {
@@ -2009,14 +2009,14 @@
       "audioPoints": "20+",
       "duration": "1 day",
       "tourType": "Walking",
-      "start": "",
-      "location": ""
+      "start": "458 Old Santa Fe Trail, near the New Mexico Capitol.",
+      "location": "New Mexico, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 35.6894307,
+      "lng": -105.9381944,
+      "country": "United States",
+      "state": "NM"
     }
   },
   {
@@ -2029,14 +2029,14 @@
       "audioPoints": "200+",
       "duration": "1 day",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Savannah, Charleston",
+      "location": "South Carolina"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 32.7833163,
+      "lng": -79.9319664,
+      "country": "United States",
+      "state": "SC"
     }
   },
   {
@@ -2053,10 +2053,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 34.86175980000001,
+      "lng": -111.8139436,
+      "country": "United States",
+      "state": "AZ"
     }
   },
   {
@@ -2069,14 +2069,14 @@
       "audioPoints": "215+",
       "duration": "1 - 2+ Days",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Fresno or Visalia",
+      "location": "California"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 36.694861,
+      "lng": -118.5583226,
+      "country": "United States",
+      "state": "CA"
     }
   },
   {
@@ -2089,14 +2089,14 @@
       "audioPoints": "175+",
       "duration": "1 day",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Anchorage or Seward",
+      "location": "Alaska"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 60.6638286,
+      "lng": -149.4812527,
+      "country": "United States",
+      "state": "AK"
     }
   },
   {
@@ -2109,14 +2109,14 @@
       "audioPoints": "170+",
       "duration": "1 Day+",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Front Royal or Waynesboro",
+      "location": "Virginia, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 38.4754706,
+      "lng": -78.4534573,
+      "country": "United States",
+      "state": "VA"
     }
   },
   {
@@ -2133,10 +2133,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 64.8443266,
+      "lng": -22.6532697,
+      "country": "Iceland",
+      "state": "Eyja- og Miklaholtshreppur"
     }
   },
   {
@@ -2149,14 +2149,14 @@
       "audioPoints": "230+",
       "duration": "1-2 days",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Oakland, San Francisco, Santa Rosa, Sacramento",
+      "location": "California, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 38.291859,
+      "lng": -122.4580356,
+      "country": "United States",
+      "state": "CA"
     }
   },
   {
@@ -2169,14 +2169,14 @@
       "audioPoints": "60+",
       "duration": "1 day",
       "tourType": "Walking Hybrid",
-      "start": "",
-      "location": ""
+      "start": "Corner of Chestnut Street & North 7th Street, St. Louis",
+      "location": "Missouri, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 38.62742799999999,
+      "lng": -90.1982439,
+      "country": "United States",
+      "state": "MO"
     }
   },
   {
@@ -2193,10 +2193,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 60.2873902,
+      "lng": -151.2828304,
+      "country": "United States",
+      "state": "AK"
     }
   },
   {
@@ -2209,14 +2209,14 @@
       "audioPoints": "65+",
       "duration": "1 Day",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "From Medora Or US-85",
+      "location": "North Dakota, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 46.9508897,
+      "lng": -103.4627031,
+      "country": "United States",
+      "state": "ND"
     }
   },
   {
@@ -2229,14 +2229,14 @@
       "audioPoints": "25+",
       "duration": "1 day",
       "tourType": "Walking",
-      "start": "",
-      "location": ""
+      "start": "From main entrance near the parking area.",
+      "location": "Quintana Roo, Mexico"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 20.2114185,
+      "lng": -87.46535019999999,
+      "country": "Mexico",
+      "state": "Q.R."
     }
   },
   {
@@ -2333,10 +2333,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 40.7606608,
+      "lng": -111.8939487,
+      "country": "United States",
+      "state": "UT"
     }
   },
   {
@@ -2353,10 +2353,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 49.281954,
+      "lng": -123.1170744,
+      "country": "Canada",
+      "state": "BC"
     }
   },
   {
@@ -2369,14 +2369,14 @@
       "audioPoints": "140",
       "duration": "4 - 6 Hours+",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Vancouver or Kamloops",
+      "location": "BC, CAN"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 50.674522,
+      "lng": -120.3272674,
+      "country": "Canada",
+      "state": "BC"
     }
   },
   {
@@ -2393,10 +2393,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 49.2827291,
+      "lng": -123.1207375,
+      "country": "Canada",
+      "state": "BC"
     }
   },
   {
@@ -2409,14 +2409,14 @@
       "audioPoints": "300",
       "duration": "1 Day+",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Wilmington or Jeffersonville",
+      "location": "Vermont, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 44.5588028,
+      "lng": -72.57784149999999,
+      "country": "United States",
+      "state": "VT"
     }
   },
   {
@@ -2433,10 +2433,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 38.9072873,
+      "lng": -77.0369274,
+      "country": "United States",
+      "state": "DC"
     }
   },
   {
@@ -2449,14 +2449,14 @@
       "audioPoints": "450+",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Waterton, Hwy 22 or Calgary",
+      "location": "Alberta, CAN"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 49.0509828,
+      "lng": -113.9085675,
+      "country": "Canada",
+      "state": "AB"
     }
   },
   {
@@ -2473,10 +2473,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 32.7872403,
+      "lng": -106.3256816,
+      "country": "United States",
+      "state": "NM"
     }
   },
   {
@@ -2489,14 +2489,14 @@
       "audioPoints": "550+",
       "duration": "1 - 5 Days+",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Any of the 7 Entrances",
+      "location": "Wyoming, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 43.0759678,
+      "lng": -107.2902839,
+      "country": "United States",
+      "state": "WY"
     }
   },
   {
@@ -2509,13 +2509,13 @@
       "audioPoints": "375+",
       "duration": "1 - 3 Days+",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Any of the 5 Entrances",
+      "location": "Wyoming, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
+      "lat": 44.5979182,
+      "lng": -110.561249,
+      "country": "United States",
       "state": ""
     }
   },
@@ -2529,14 +2529,14 @@
       "audioPoints": "10+",
       "duration": "1 day",
       "tourType": "Walking",
-      "start": "",
-      "location": ""
+      "start": "Fairy Falls Parking Lot, Yellowstone",
+      "location": "Yellowstone National Park, Wyoming"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 44.5330824,
+      "lng": -110.8574932,
+      "country": "United States",
+      "state": "WY"
     }
   },
   {
@@ -2549,14 +2549,14 @@
       "audioPoints": "35+",
       "duration": "1 day",
       "tourType": "Walking",
-      "start": "",
-      "location": ""
+      "start": "Upper Geyser Basin near Old Faithful Visitor Center",
+      "location": "Yellowstone National Park, Wyoming"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 44.460036,
+      "lng": -110.8292198,
+      "country": "United States",
+      "state": "WY"
     }
   },
   {
@@ -2573,10 +2573,10 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 44.4154952,
+      "lng": -110.5754846,
+      "country": "United States",
+      "state": "WY"
     }
   },
   {
@@ -2589,14 +2589,14 @@
       "audioPoints": "200+",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Any of the 5 Entrances",
+      "location": "California, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 37.4733029,
+      "lng": -119.6351947,
+      "country": "United States",
+      "state": "CA"
     }
   },
   {
@@ -2609,14 +2609,14 @@
       "audioPoints": "195+",
       "duration": "2 Days+",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "La Verkin, Widtsoe, Henrieville, or Panguitch",
+      "location": "Utah, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 37.5930377,
+      "lng": -112.1870895,
+      "country": "United States",
+      "state": "UT"
     }
   }
 ]
