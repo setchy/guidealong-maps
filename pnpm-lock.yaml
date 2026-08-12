@@ -24,7 +24,7 @@ importers:
         specifier: 1.55.0
         version: 1.55.0
       vite:
-        specifier: ^8.2.1
+        specifier: 8.2.1
         version: 8.2.1
 
 packages:
