@@ -847,7 +847,7 @@ async function initMap() {
   });
 
   hideLoading();
-  document.getElementById("controls").style.display = "block";
+  document.getElementById("controls").classList.remove("controls-hidden");
 
   // Load completed tours
   completedTours = await loadCompletedTours();
@@ -912,13 +912,26 @@ async function initMap() {
     });
   }
 
-  // Mobile bottom sheet: handle toggles peek ↔ expanded
-  const sheetHandle = document.getElementById("sheetHandle");
+  // Mobile bottom sheet: tap header or expand button to toggle peek ↔ expanded
   const controls = document.getElementById("controls");
-  if (sheetHandle && controls) {
-    sheetHandle.addEventListener("click", () => {
+  const controlsHeader = document.getElementById("controlsHeader");
+  const sheetExpand = document.getElementById("sheetExpand");
+  if (controls && controlsHeader && sheetExpand) {
+    const toggleSheet = () => {
       const expanded = controls.classList.toggle("expanded");
-      sheetHandle.setAttribute("aria-expanded", String(expanded));
+      sheetExpand.setAttribute("aria-expanded", String(expanded));
+      sheetExpand.setAttribute(
+        "aria-label",
+        expanded ? "Collapse controls" : "Expand controls",
+      );
+    };
+    controlsHeader.addEventListener("click", (e) => {
+      if (e.target.closest("a, button")) return;
+      toggleSheet();
+    });
+    sheetExpand.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleSheet();
     });
   }
 
