@@ -912,6 +912,16 @@ async function initMap() {
     });
   }
 
+  // Mobile bottom sheet: handle toggles peek ↔ expanded
+  const sheetHandle = document.getElementById("sheetHandle");
+  const controls = document.getElementById("controls");
+  if (sheetHandle && controls) {
+    sheetHandle.addEventListener("click", () => {
+      const expanded = controls.classList.toggle("expanded");
+      sheetHandle.setAttribute("aria-expanded", String(expanded));
+    });
+  }
+
   setupGroupByFilter();
   setupSortByFilter();
 

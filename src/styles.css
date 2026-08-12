@@ -459,10 +459,101 @@ select[multiple] {
 }
 
 @media (max-width: 600px) {
+  /* Map fills the dynamic viewport so it isn't clipped behind mobile chrome */
+  #map {
+    height: 100vh; /* fallback for browsers without dvh */
+    /* biome-ignore lint/suspicious/noDuplicateProperties: intentional dvh fallback */
+    height: 100dvh;
+  }
+
+  /* Controls become a fixed bottom sheet; peek and expanded states */
   #controls {
-    width: calc(100% - 20px);
-    max-width: calc(100vw - 20px);
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: height 0.25s ease;
+  }
+
+  /* Peek state: search + section toggles visible, map mostly visible */
+  #controls {
+    height: 38dvh;
+  }
+
+  /* Expanded state: full controls, list scrolls internally */
+  #controls.expanded {
+    height: 90dvh;
+  }
+
+  .sheet-handle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 0 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .sheet-grabber {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background: #ccc;
+  }
+  .sheet-chevron {
+    font-size: 10px;
+    color: #888;
+    transition: transform 0.2s;
+  }
+  #controls.expanded .sheet-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Sheet body scrolls internally; map stays fixed */
+  #controls .controls-header,
+  #controls .search-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #controls > .filters-section,
+  #controls > .group-sort-section,
+  #controls > .tour-list-section,
+  #controls > .controls-footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #controls > .filters-section,
+  #controls > .group-sort-section,
+  #controls > .tour-list-section {
     overflow-y: auto;
-    max-height: calc(100vh - 20px);
+    flex-shrink: 0;
+  }
+  #controls > .tour-list-section {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  #controls .tour-list {
+    max-height: none;
+  }
+  #controls > .controls-footer {
+    flex-shrink: 0;
+    padding-bottom: 14px;
+  }
+
+  /* Hide the desktop-only ⌘K hint on mobile */
+  .search-kbd {
+    display: none;
   }
 }
