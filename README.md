@@ -19,7 +19,7 @@ A simple web app that displays [GuideAlong][guidealong] tours on an interactive 
 
 ### Prerequisites
 
-- Node.js and pnpm (this repo uses `pnpm@10.x`)
+- Node.js and pnpm
 
 ### Running locally
 
