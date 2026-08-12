@@ -11,13 +11,19 @@
   <body>
     <div id="loading">Loading tours...</div>
     <div id="error"></div>
-    <div id="controls" style="display: none;">
-      <div class="controls-header">
+    <div id="controls" class="controls-hidden">
+      <div class="sheet-handle" id="sheetHandle" aria-hidden="true">
+        <span class="sheet-grabber"></span>
+      </div>
+      <div class="controls-header" id="controlsHeader">
         <div class="controls-header-title">
           <img src="favicon.svg" alt="" width="18" height="18" aria-hidden="true">
           <h3>GuideAlong Tours Explorer</h3>
         </div>
         <div class="controls-header-actions">
+          <button type="button" class="sheet-expand" id="sheetExpand" aria-label="Expand controls" aria-expanded="false">
+            <span class="sheet-chevron">▲</span>
+          </button>
           <a
           class="github-link"
           href="https://github.com/setchy/guidealong-maps"
