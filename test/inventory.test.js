@@ -8,7 +8,7 @@ const tourUrl = (slug) => `https://guidealong.com/tour/${slug}/`;
 test("classifies known destination-only national park tours", () => {
   const parkSlugs = [
     "capitol-reef",
-    "glacier-tour",
+    "going-to-the-sun-road",
     "grand-canyon-south-rim",
     "grand-teton-national-park",
     "jasper-national-park",
