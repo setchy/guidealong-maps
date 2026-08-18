@@ -918,23 +918,43 @@ async function initMap() {
   // Mobile bottom sheet: tap header or expand button to toggle peek ↔ expanded
   const controls = document.getElementById("controls");
   const controlsHeader = document.getElementById("controlsHeader");
+  const sheetHandle = document.getElementById("sheetHandle");
   const sheetExpand = document.getElementById("sheetExpand");
-  if (controls && controlsHeader && sheetExpand) {
-    const toggleSheet = () => {
-      const expanded = controls.classList.toggle("expanded");
+  if (controls && controlsHeader && sheetHandle && sheetExpand) {
+    const setSheetExpanded = (expanded) => {
+      controls.classList.toggle("expanded", expanded);
+      const label = expanded ? "Collapse controls" : "Expand controls";
       sheetExpand.setAttribute("aria-expanded", String(expanded));
-      sheetExpand.setAttribute(
-        "aria-label",
-        expanded ? "Collapse controls" : "Expand controls",
-      );
+      sheetExpand.setAttribute("aria-label", label);
+      sheetHandle.setAttribute("aria-expanded", String(expanded));
+      sheetHandle.setAttribute("aria-label", label);
+    };
+    const toggleSheet = () => {
+      setSheetExpanded(!controls.classList.contains("expanded"));
     };
     controlsHeader.addEventListener("click", (e) => {
       if (e.target.closest("a, button")) return;
       toggleSheet();
     });
+    sheetHandle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleSheet();
+    });
     sheetExpand.addEventListener("click", (e) => {
       e.stopPropagation();
       toggleSheet();
+    });
+    document.addEventListener("click", (e) => {
+      if (!controls.classList.contains("expanded")) return;
+      if (!e.target.closest("#map")) return;
+      if (
+        e.target.closest(
+          ".maplibregl-ctrl, .maplibregl-popup, .maplibregl-marker",
+        )
+      ) {
+        return;
+      }
+      setSheetExpanded(false);
     });
   }
 

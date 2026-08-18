@@ -37,6 +37,9 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
+#map {
+  height: 100vh;
+}
 #error {
   position: absolute;
   top: 10px; /* restore default position */
@@ -466,7 +469,12 @@ select[multiple] {
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+
   /* Map fills the dynamic viewport so it isn't clipped behind mobile chrome */
   #map {
     height: 100vh; /* fallback for browsers without dvh */
@@ -474,41 +482,43 @@ select[multiple] {
     height: 100dvh;
   }
 
-  /* Controls become a fixed bottom sheet; peek and expanded states */
+  /* Controls become a compact, fixed bottom sheet over the map */
   #controls {
     position: fixed;
     top: auto;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     width: auto;
     max-width: none;
-    max-height: none;
+    max-height: min(62dvh, 560px);
     margin: 0;
-    padding: 0;
+    padding: 0 0 env(safe-area-inset-bottom);
+    box-sizing: border-box;
     border-radius: 14px 14px 0 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: height 0.25s ease;
+    height: 88px;
+    transition: height 0.2s ease;
   }
 
-  /* Peek state: search + section toggles visible, map mostly visible */
-  #controls {
-    height: 38dvh;
-  }
-
-  /* Expanded state: full controls, list scrolls internally */
   #controls.expanded {
-    height: 90dvh;
+    height: min(62dvh, 560px);
+    overflow-y: auto;
   }
 
   .sheet-handle {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 0 6px;
+    width: 100%;
+    height: 24px;
     flex-shrink: 0;
+    padding: 6px 0 3px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
   }
@@ -524,13 +534,28 @@ select[multiple] {
     justify-content: center;
     width: 28px;
     height: 28px;
+    padding: 0;
     border: none;
     background: transparent;
     cursor: pointer;
-    padding: 0;
   }
   .controls-header {
+    min-height: 28px;
+    margin-bottom: 2px;
+    padding-right: 10px;
+    padding-left: 15px;
     cursor: pointer;
+  }
+  .controls-header h3 {
+    font-size: 14px;
+  }
+  .controls-header-title {
+    min-width: 0;
+  }
+  .controls-header-title h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .sheet-chevron {
     font-size: 12px;
@@ -541,46 +566,57 @@ select[multiple] {
     transform: rotate(180deg);
   }
 
-  /* Sheet body scrolls internally; map stays fixed */
-  #controls .controls-header,
-  #controls .search-section {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+  #controls .search-section,
   #controls > .filters-section,
   #controls > .group-sort-section,
   #controls > .tour-list-section,
   #controls > .controls-footer {
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
+  }
+  #controls .search-section {
+    flex-shrink: 0;
   }
   #controls > .filters-section,
-  #controls > .group-sort-section {
-    overflow-y: auto;
-    flex-shrink: 0;
-  }
-  #controls > .tour-list-section {
-    flex: 1 1 auto;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  #controls .tour-list-header {
-    flex-shrink: 0;
-  }
-  #controls .tour-list {
-    flex: 1 1 auto;
-    min-height: 0;
-    max-height: none;
-    overflow-y: auto;
-  }
+  #controls > .group-sort-section,
   #controls > .controls-footer {
     flex-shrink: 0;
-    padding-bottom: 14px;
   }
 
-  /* Hide the desktop-only ⌘K hint on mobile */
+  /* The peek keeps the map primary while retaining search and tour summary. */
+  #controls:not(.expanded) > .filters-section,
+  #controls:not(.expanded) > .group-sort-section,
+  #controls:not(.expanded) > .controls-footer,
+  #controls:not(.expanded) .tour-list {
+    display: none;
+  }
+  #controls:not(.expanded) .search-input-wrap input {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #controls:not(.expanded) .search-section > label {
+    display: none;
+  }
+
+  #controls.expanded > .tour-list-section {
+    flex-shrink: 0;
+  }
+  #controls.expanded .tour-list {
+    max-height: 35dvh;
+  }
+  #controls > .controls-footer {
+    padding-bottom: 10px;
+  }
+
+  /* Keep MapLibre controls in the visible map strip above the sheet. */
+  #map .maplibregl-ctrl-bottom-right {
+    top: 10px;
+    right: auto;
+    bottom: auto;
+    left: 10px;
+  }
+
+  /* Hide the desktop-only keyboard hint on touch devices. */
   .search-kbd {
     display: none;
   }
