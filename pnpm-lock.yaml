@@ -25,8 +25,8 @@ importers:
         specifier: 17.4.2
         version: 17.4.2
       playwright-core:
-        specifier: 1.55.0
-        version: 1.55.0
+        specifier: 1.62.1
+        version: 1.62.1
       vite:
         specifier: 8.2.2
         version: 8.2.2
@@ -495,9 +495,9 @@ packages:
     resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
     engines: {node: '>=12'}
 
-  playwright-core@1.55.0:
-    resolution: {integrity: sha512-GvZs4vU3U5ro2nZpeiwyb0zuFaqb9sUiAJuyrWpcGouD8y9/HLgGbNRjIph7zU9D3hnPaisMl9zG9CgFi/biIg==}
-    engines: {node: '>=18'}
+  playwright-core@1.62.1:
+    resolution: {integrity: sha512-wPYSwEBJY9GHraISXqyqtx0na0LpO3XEX7jNDhntbex7tzUS7kLnZsOlFruFJB4Hi/rhDMjXGqHewDZ68nYZVw==}
+    engines: {node: '>=20'}
     hasBin: true
 
   postcss@8.5.26:
@@ -979,7 +979,7 @@ snapshots:
 
   picomatch@4.0.5: {}
 
-  playwright-core@1.55.0: {}
+  playwright-core@1.62.1: {}
 
   postcss@8.5.26:
     dependencies:
