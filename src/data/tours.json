@@ -600,6 +600,26 @@
     }
   },
   {
+    "title": "COLONIAL WILLIAMSBURG WALKING TOUR",
+    "url": "https://guidealong.com/tour/colonial-williamsburg-walking-tour/",
+    "category": "Walking",
+    "details": {
+      "description": "Revolutionary America comes to life on the historic streets of Colonial Williamsburg",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/08/Governors-Palace.jpg",
+      "audioPoints": "40+",
+      "duration": "1/2 Day",
+      "tourType": "Walking",
+      "start": "Colonial Williamsburg, 101 Visitor Center Dr, Williamsburg, VA 23185.",
+      "location": "Virginia, USA"
+    },
+    "geocode": {
+      "lat": 37.2696927,
+      "lng": -76.6961231,
+      "country": "United States",
+      "state": "VA"
+    }
+  },
+  {
     "title": "COLORADO NATIONAL MONUMENT TOUR",
     "url": "https://guidealong.com/tour/colorado-national-monument-tour/",
     "category": "Driving",
@@ -917,6 +937,26 @@
       "lng": -115.1391009,
       "country": "United States",
       "state": "NV"
+    }
+  },
+  {
+    "title": "GRAND STAIRCASE NATIONAL MONUMENT",
+    "url": "https://guidealong.com/tour/grand-staircase-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Massive plateaus of multicolored rock form a literal “Grand Staircase” between Bryce and Capitol Reef",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/08/grand-staircase-tp5.jpg",
+      "audioPoints": "150+",
+      "duration": "1 day",
+      "tourType": "Driving",
+      "start": "Bryce OR Capitol Reef",
+      "location": "Utah, USA"
+    },
+    "geocode": {
+      "lat": 37.4608765,
+      "lng": -111.5943485,
+      "country": "United States",
+      "state": "UT"
     }
   },
   {
@@ -1500,6 +1540,46 @@
     }
   },
   {
+    "title": "MUIR WOODS",
+    "url": "https://guidealong.com/tour/muir-woods/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore the ancient redwoods of Muir Woods, near San Francisco",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/08/Muir-Woods-TRIP-PLANNER-1.jpg",
+      "audioPoints": "30+",
+      "duration": "1 day",
+      "tourType": "Driving Hybrid",
+      "start": "256 CA-1, Mill Valley, CA 94941.",
+      "location": "California, USA"
+    },
+    "geocode": {
+      "lat": 37.8970199,
+      "lng": -122.5811177,
+      "country": "United States",
+      "state": "CA"
+    }
+  },
+  {
+    "title": "NASHVILLE WALKING TOUR",
+    "url": "https://guidealong.com/tour/nashville/",
+    "category": "Walking",
+    "details": {
+      "description": "Discover the heart of country music on this two-mile, one-way walking tour in downtown Nashville.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/01/Nashville-TRIP-PLANNER-1.jpg",
+      "audioPoints": "25+",
+      "duration": "1/2 Day",
+      "tourType": "Walking",
+      "start": "Cumberland Riverfront",
+      "location": "Tennessee, USA"
+    },
+    "geocode": {
+      "lat": 36.1626638,
+      "lng": -86.7816016,
+      "country": "United States",
+      "state": "TN"
+    }
+  },
+  {
     "title": "NATCHEZ TRACE PARKWAY TOUR",
     "url": "https://guidealong.com/tour/natchez-trace-parkway/",
     "category": "Driving",
@@ -1545,7 +1625,7 @@
     "category": "Walking",
     "details": {
       "description": "Rugged cliffs, lavish Gilded Age architecture, and dramatic ocean views. They only come together in one place: Newport’s iconic Cliff Walk.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/08/Marble-House-Cliff-Walk.jpg",
       "audioPoints": "40",
       "duration": "1 Day",
       "tourType": "Walking",
@@ -1800,6 +1880,26 @@
     }
   },
   {
+    "title": "PLYMOUTH WALKING TOUR",
+    "url": "https://guidealong.com/tour/plymouth-walking-tour/",
+    "category": "Walking",
+    "details": {
+      "description": "Stroll historic Plymouth streets and catch the Pilgrim spirit at the Mayflower II, Grist Mill, Burial Hill, and more.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/08/entrance-fee.jpg",
+      "audioPoints": "20+",
+      "duration": "1/2 Day",
+      "tourType": "Walking",
+      "start": "Plymouth Visitor Center at 130 Water Street.",
+      "location": "Massachusetts, USA"
+    },
+    "geocode": {
+      "lat": 41.9584457,
+      "lng": -70.6672621,
+      "country": "United States",
+      "state": "MA"
+    }
+  },
+  {
     "title": "POINT REYES NATIONAL SEASHORE TOUR",
     "url": "https://guidealong.com/tour/point-reyes-national-seashore-tour/",
     "category": "Driving",
@@ -1945,7 +2045,7 @@
     "category": "National Park",
     "details": {
       "description": "Discover Saguaro National Park's towering cacti, desert landscapes, and scenic trails. Enjoy serene drives, mountain vistas, and the park's unique beauty and heritage!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/10/Saguaro-Trip-Planner-2.webp",
       "audioPoints": "90+",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -1965,7 +2065,7 @@
     "category": "Driving",
     "details": {
       "description": "Spellbinding Salem. Explore historic streets, uncover chilling Witch Trials tales, and visit iconic sites that bring Salem’s legends to life.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/10/The-Witch-House.jpg",
       "audioPoints": "40+",
       "duration": "2 - 3 Hours",
       "tourType": "Walking",
@@ -1985,12 +2085,12 @@
     "category": "Driving",
     "details": {
       "description": "Discover Salzburg: from “Sound of Music” spots to Von Trapp family history, princely palaces, and centuries of history",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/07/Salzburg-Sound-of-Music.jpg",
       "audioPoints": "70",
       "duration": "1 Day",
       "tourType": "Walking",
-      "start": "",
-      "location": ""
+      "start": "Mirabell Palace",
+      "location": "Austria"
     },
     "geocode": {
       "lat": 47.8014154,
@@ -2005,7 +2105,7 @@
     "category": "Walking",
     "details": {
       "description": "Explore Santa Fe’s rich history on a walking tour of its vibrant plazas and iconic landmarks, including the oldest U.S. church, Loretto Chapel, and Santa Fe Plaza.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/03/HOW-MUCH-TIME-DO-you-NEED-4.jpg",
       "audioPoints": "20+",
       "duration": "1 day",
       "tourType": "Walking",
@@ -2025,7 +2125,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore the scenic route between Savannah and Charleston, featuring historic Lowcountry charm, coastal landscapes, and iconic stops like Drayton Hall and Angel Oak Tree.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/03/Savannah-Charleston-Trip-Planner-4.jpg",
       "audioPoints": "200+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -2045,7 +2145,7 @@
     "category": "Driving",
     "details": {
       "description": "Sedona's surrounding red rocks provide a perfect vacation hub to stay to recharge and renew your spirituality with outdoor adventure, vibrant arts, New Age vortexes and other places of worship, or connecting with Native American history and culture.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2021/07/Sedona-Audio-Tour.jpg",
       "audioPoints": "115",
       "duration": "1 Day+",
       "tourType": "Driving",
@@ -2065,7 +2165,7 @@
     "category": "National Park",
     "details": {
       "description": "This slice of the Sierra Nevada mountains in California is indeed one of the best places to see these incredible, awe-inspiring trees. You will see incredible trees!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2023/09/Sequoia-National-Park.jpg",
       "audioPoints": "215+",
       "duration": "1 - 2+ Days",
       "tourType": "Driving",
@@ -2085,7 +2185,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Alaska’s Seward Highway, featuring dramatic coastal scenery, glacier views, and iconic stops like Turnagain Arm, Portage Valley, and Kenai Fjords. Discover Alaska’s wild beauty and unforgettable landscapes!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/12/Portage-Valley.jpg",
       "audioPoints": "175+",
       "duration": "1 day",
       "tourType": "Driving",
@@ -2105,7 +2205,7 @@
     "category": "National Park",
     "details": {
       "description": "Shenandoah National Park is home to hundreds of animals, historic sites, beautiful views and unique hiking trails. The most popular activity is to drive the famous Skyline Drive - all 105 miles along the spine of the Blue Ridge Mountains.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2022/08/Shenandoah-Audio-Tour-Guide.jpg",
       "audioPoints": "170+",
       "duration": "1 Day+",
       "tourType": "Driving",
@@ -2125,12 +2225,12 @@
     "category": "Driving",
     "details": {
       "description": "Explore Iceland's Snæfellsnes Peninsula, a breathtaking blend of volcanic peaks, glacier-capped mountains, black sand beaches, and iconic landmarks like Kirkjufell and Snæfellsjökull. Experience the magic of Iceland’s natural beauty!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/12/HOW-TO-GET-HERE-2.webp",
       "audioPoints": "220+",
       "duration": "1-2 days",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "From Snæfellsnes",
+      "location": "Snaefellsnes, Iceland"
     },
     "geocode": {
       "lat": 64.8443266,
@@ -2145,7 +2245,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Sonoma and Napa Valley, a picturesque region of rolling vineyards, world-class wineries, and charming towns. Discover the beauty of lush landscapes, historic landmarks, and indulge in the valley’s renowned wine culture!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/12/Sonoma-and-Napa-Valley-Trip-Planner.webp",
       "audioPoints": "230+",
       "duration": "1-2 days",
       "tourType": "Driving",
@@ -2165,7 +2265,7 @@
     "category": "Driving",
     "details": {
       "description": "Discover the spirit of St. Louis through the towering Gateway Arch, legendary blues history, vibrant riverfront, and iconic city landmarks.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/04/St-Louis-Trip-Planner-1.jpg",
       "audioPoints": "60+",
       "duration": "1 day",
       "tourType": "Walking Hybrid",
@@ -2185,12 +2285,12 @@
     "category": "Driving",
     "details": {
       "description": "Explore Alaska’s Sterling Highway, featuring scenic river valleys, turquoise lakes, mountain views, and charming Kenai Peninsula towns like Soldotna, Ninilchik, and Homer. Discover Alaska’s rich landscapes, wildlife, and coastal beauty!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/12/Anchorage-to-Homer-Trip-Planner-2.jpg",
       "audioPoints": "290+",
       "duration": "1 day",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Anchorage or Homer",
+      "location": "Alaska"
     },
     "geocode": {
       "lat": 60.2873902,
@@ -2205,7 +2305,7 @@
     "category": "National Park",
     "details": {
       "description": "Discover the untamed beauty of North Dakota on the Theodore Roosevelt National Park Tour—where vast prairies, striking Badlands formations, and diverse wildlife come together to showcase the rugged spirit of the American West.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2024/08/When-To-Visit-TR.webp",
       "audioPoints": "65+",
       "duration": "1 Day",
       "tourType": "Driving",
@@ -2225,7 +2325,7 @@
     "category": "Driving",
     "details": {
       "description": "Explore Tulum, where clifftop temples, turquoise sea views, and Maya history come together. Stroll past El Castillo, the Temple of the Wind, and sacred cenotes as you uncover the story of this iconic seaside city.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/11/Tulum-Ruins-Trip-Planner-1.jpg",
       "audioPoints": "25+",
       "duration": "1 day",
       "tourType": "Walking",
@@ -2244,10 +2344,10 @@
     "url": "https://guidealong.com/tour/us-classic-southwest-bundle/",
     "category": "Bundle",
     "details": {
-      "description": "US Classic Southwest Bundle includes tours in Arizona, Nevada, New Mexico, Texas & Utah. These include 17 destinations such as Arches & Canyonlands, Zion & Bryce, Grand Canyon, Sedona, Petrified Forest, and more.",
+      "description": "US Classic Southwest Bundle includes tours in Arizona, Nevada, New Mexico, Texas & Utah. These include 18 destinations such as Arches & Canyonlands, Zion & Bryce, Grand Canyon, Sedona, Petrified Forest, and more.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2017/01/Classic-Southwest.jpg",
-      "audioPoints": "2,320+",
-      "duration": "17 Destinations",
+      "audioPoints": "2,465+",
+      "duration": "18 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
@@ -2266,8 +2366,8 @@
     "details": {
       "description": "US East Tours bundle includes Acadia, Bar Harbor, Blue Ridge Parkway, Creole Nature Trail, Catskills, Boston Ghost, Freedom Trail, Gettysburg Battlefield, Great Smoky Mountains, Keweenaw, Lake Michigan, Lake Superior North Shore, Miami - Key West, Natchez Trace, New River Gorge, […]",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2023/05/Cowee-Mountain-Overlook-in-Fall.jpg",
-      "audioPoints": "3900+",
-      "duration": "28 Destinations",
+      "audioPoints": "4370+",
+      "duration": "31 Destinations",
       "tourType": "Driving & Walking",
       "start": "",
       "location": ""
@@ -2325,7 +2425,7 @@
     "category": "Bundle",
     "details": {
       "description": "Utah's Mighty 5 National Parks. Includes Arches, Canyonlands, Zion, Bryce Canyon and Capitol Reef National Parks.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/arches-canyonlands-20.jpg",
       "audioPoints": "520",
       "duration": "5 National Parks",
       "tourType": "Driving",
@@ -2345,12 +2445,12 @@
     "category": "Driving",
     "details": {
       "description": "Canada's Beautiful West Coast Cosmopolitan City. Explore the City of Vancouver, Stanley Park, Granville Island Markets and local beaches. A must do orientation for any first time visitor to Vancouver.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/11/Vancouver-Downtown-1.jpg",
       "audioPoints": "100",
       "duration": "4 - 6 Hours",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "Flexible",
+      "location": "BC, CAN"
     },
     "geocode": {
       "lat": 49.281954,
@@ -2365,7 +2465,7 @@
     "category": "Driving",
     "details": {
       "description": "Drive through desert tumbleweeds of the BC Interior and rainforests along the Coastal mountains. This tour works in either direction - Eastbound or Westbound.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/11/Vancouver-to-Kamloops-GyPSy-Guide-1.jpg",
       "audioPoints": "140",
       "duration": "4 - 6 Hours+",
       "tourType": "Driving",
@@ -2385,7 +2485,7 @@
     "category": "Driving",
     "details": {
       "description": "Sea to Sky Highway. The drive hugs the BC Coast Mountains with views of Howe Sound waters and islands before heading inland to Squamish and Whistler.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Whistler-9.jpg",
       "audioPoints": "115",
       "duration": "3 - 4 Hours",
       "tourType": "Driving",
@@ -2405,7 +2505,7 @@
     "category": "Driving",
     "details": {
       "description": "Vermont's Main Street. A road trip for those that like food sampling, shops with arts & crafts and the prettiest New England towns, villages and covered bridges. And when it's fall you'll be blinded by the autumn colors.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2019/03/Vermont-Scenic-Drive-1.jpg",
       "audioPoints": "300",
       "duration": "1 Day+",
       "tourType": "Driving",
@@ -2425,12 +2525,12 @@
     "category": "Driving",
     "details": {
       "description": "Explore the heart of Washington D.C. on a driving tour through Capitol Hill, the National Mall, East Potomac Park, and Arlington National Cemetery.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/05/Washington-DC-Trip-Planner-2.jpg",
       "audioPoints": "55+",
       "duration": "1 day",
       "tourType": "Driving",
-      "start": "",
-      "location": ""
+      "start": "White House Visitor Center, Washington",
+      "location": "District of Columbia, USA"
     },
     "geocode": {
       "lat": 38.9072873,
@@ -2445,7 +2545,7 @@
     "category": "National Park",
     "details": {
       "description": "Waterton & Alberta SW stunning Waterton National Park and Alberta's diverse southwest communities. A cowboy trail road trip from the Canada/US border to the foothills of the Canadian Rockies.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/07/Waterton-National-Park.jpg",
       "audioPoints": "450+",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -2465,12 +2565,12 @@
     "category": "National Park",
     "details": {
       "description": "Otherworldly White Dunes. Discover the stunning gypsum landscape while hearing tales of the unique ecosystem and the adventurous souls who braved this surreal desert terrain.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/05/WHEN-TO-VISIT.jpg",
       "audioPoints": "65+",
       "duration": "1.5 to 5 Hours",
       "tourType": "Driving Hybrid",
-      "start": "",
-      "location": ""
+      "start": "Route 70",
+      "location": "New Mexico, USA"
     },
     "geocode": {
       "lat": 32.7872403,
@@ -2485,7 +2585,7 @@
     "category": "National Park",
     "details": {
       "description": "With almost too much to see and do in Yellowstone and Grand Teton National Parks, this Combo App will help narrow down what are \"not to be missed\" areas with insider tips and stories.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/Yellowstone-and-Grand-Teton-National-Park-Tours-1.jpg",
       "audioPoints": "550+",
       "duration": "1 - 5 Days+",
       "tourType": "Driving",
@@ -2505,7 +2605,7 @@
     "category": "National Park",
     "details": {
       "description": "The USA’s most magnificent National Park will impress you. Our tours cover all 4 quadrants of the park, allowing you either to just cover the highlights or with more time, in depth.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Yellowstone-13.jpg",
       "audioPoints": "375+",
       "duration": "1 - 3 Days+",
       "tourType": "Driving",
@@ -2525,7 +2625,7 @@
     "category": "National Park",
     "details": {
       "description": "Experience Yellowstone’s natural wonders on a scenic hike to Grand Prismatic Spring, where vibrant rainbow colors, steamy landscapes, and panoramic views await from the overlook trail.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/Things-to-See-and-Do.jpg",
       "audioPoints": "10+",
       "duration": "1 day",
       "tourType": "Walking",
@@ -2545,7 +2645,7 @@
     "category": "National Park",
     "details": {
       "description": "Experience Yellowstone’s geothermal magic on a scenic walk to Old Faithful, where powerful eruptions, steamy surroundings, and iconic views create an unforgettable adventure.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/AWESOME-EXPERIENCES-2.jpg",
       "audioPoints": "35+",
       "duration": "1 day",
       "tourType": "Walking",
@@ -2565,12 +2665,12 @@
     "category": "National Park",
     "details": {
       "description": "Discover West Thumb, a lakeside geothermal wonder! Walk past steaming vents and colorful springs with Yellowstone Lake as your backdrop—a must-see stop!",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/West-Thumb-trip-planner-2.jpg",
       "audioPoints": "20+",
       "duration": "1 day",
       "tourType": "Walking",
-      "start": "",
-      "location": ""
+      "start": "West Thumb Geyser Basin, Yellowstone National Park",
+      "location": "Yellowstone National Park, Wyoming"
     },
     "geocode": {
       "lat": 44.4154952,
@@ -2585,7 +2685,7 @@
     "category": "National Park",
     "details": {
       "description": "California's Majestic National Park. We'll visit the must do viewpoints, sequoia groves and waterfalls. However if you have more time or want to escape the crowds, we also tour Hetch Hetchy and Tioga Road.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/Yosemite-National-Park-1.jpg",
       "audioPoints": "200+",
       "duration": "1 - 2 Days+",
       "tourType": "Driving",
@@ -2605,7 +2705,7 @@
     "category": "National Park",
     "details": {
       "description": "Tour 2 of Utah’s National Parks that are equally surreal. Zion with its steep sandstone walls, slot canyons and green oasis’s created by water and Bryce Canyon with thousands of hoodoos towers densely packed into a spectacular amphitheatre.",
-      "thumbnail": "",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2019/03/Bryce-Canyon-Amphitheater-Inspiration-Point-e1552078764145-1.jpg",
       "audioPoints": "195+",
       "duration": "2 Days+",
       "tourType": "Driving",
