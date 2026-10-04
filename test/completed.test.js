@@ -1,7 +1,7 @@
 const assert = require("node:assert/strict");
 const test = require("node:test");
 
-const { resolveCompletedStaleness } = require("../lib/completed");
+const { resolveCompletedStaleness, normalizeUrl } = require("../lib/completed");
 
 const tourUrl = (slug) => `https://guidealong.com/tour/${slug}/`;
 
@@ -170,4 +170,25 @@ test("treats an unverifiable probe (network failure) as no redirect", async () =
   );
   assert.equal(remapped, 0);
   assert.equal(completed[0].url, tourUrl("old-faithful"));
+});
+
+test("normalizeUrl drops fragment, query, and trailing slashes", () => {
+  const cases = [
+    ["https://Guidealong.com/Tour/Maui/", "https://guidealong.com/tour/maui"],
+    [
+      "https://guidealong.com/tour/maui/#overview",
+      "https://guidealong.com/tour/maui",
+    ],
+    [
+      "https://guidealong.com/tour/maui/?utm_source=x#top",
+      "https://guidealong.com/tour/maui",
+    ],
+    ["https://guidealong.com/tour/maui///", "https://guidealong.com/tour/maui"],
+    ["  ", ""],
+    ["", ""],
+    [undefined, ""],
+  ];
+  for (const [input, expected] of cases) {
+    assert.equal(normalizeUrl(input), expected);
+  }
 });
