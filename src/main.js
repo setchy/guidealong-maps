@@ -169,7 +169,7 @@ function buildInfoContent(t, isCompleted, completedTourData) {
     ? `: ${completedTourData.completedDate}`
     : "";
   const thumbnail = d.thumbnail
-    ? `<img src="${d.thumbnail}" alt="${String(t.title || "").replace(/"/g, "&quot;")}" loading="lazy" style="width: 100%; border-radius: 8px; margin-bottom: 8px; display: block;">`
+    ? `<img src="${d.thumbnail}" alt="${String(t.title || "").replaceAll('"', "&quot;")}" loading="lazy" style="width: 100%; border-radius: 8px; margin-bottom: 8px; display: block;">`
     : "";
   return `${thumbnail}<h3>${t.title}${isCompleted ? " ✅" : ""}</h3>
     ${isCompleted ? `<div style="color: #28a745; font-weight: bold; margin-bottom: 8px;">Completed Tour${completedDateText}</div>` : ""}
@@ -1160,7 +1160,7 @@ function renderTourList(tours) {
           const place = [g.state, g.country].filter(Boolean).join(", ");
           const status = completedTours.includes(t.title) ? "✅" : "";
           const type = d.tourType ? ` • ${d.tourType}` : "";
-          const key = (t.url || t.title).replace(/"/g, "&quot;");
+          const key = (t.url || t.title).replaceAll('"', "&quot;");
           let dist = "";
           if (sortByDistance) {
             const miles = tourDistanceMiles(t, userLocation);
