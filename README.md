@@ -1,4 +1,4 @@
-# 🗺️ GuideAlong Tours Explorer
+# GuideAlong Tours Explorer
 [![Netlify Status][netlify-badge]][netlify-deploys] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Data refresh][data-refresh-badge]][data-refresh-actions]
 
 > 🗺️ Explore GuideAlong tours on an interactive map.
