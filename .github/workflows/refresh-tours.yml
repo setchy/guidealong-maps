@@ -52,8 +52,11 @@ jobs:
       - name: Commit and open pull request
         # Tour data changes go on a dedicated branch and open a PR (reviewed
         # merge) rather than being pushed straight to the branch being run on.
+        # The default GITHUB_TOKEN cannot create PRs, so PR creation uses a
+        # fine-grained PAT secret (GH_PAT) with "Pull requests: Read and
+        # write"; without it, a warning with a manual PR link is printed.
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           git config user.name "github-actions[bot]"
@@ -71,8 +74,10 @@ jobs:
           git push origin "$branch"
 
           printf -v body 'Automated tour data refresh from the scheduled workflow.\n\nSee: %s' "${RUN_URL}"
-          gh pr create \
+          if ! gh pr create \
             --base "${GITHUB_REF_NAME}" \
             --head "$branch" \
             --title "chore: refresh tour data" \
-            --body "$body"
+            --body "$body"; then
+            echo "::warning::Could not open a pull request (the default GITHUB_TOKEN cannot create PRs). Open it manually: https://github.com/${GITHUB_REPOSITORY}/pull/new/${branch}"
+          fi
