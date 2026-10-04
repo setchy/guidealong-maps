@@ -65,12 +65,9 @@ jobs:
 
       - name: Open pull request for tour data changes
         if: steps.tour-check.outputs.changed == 'true'
-        # Create (or update) a PR with the refreshed tour data via
-        # peter-evans/create-pull-request: fixed branch name so weekly runs
-        # update one PR instead of stacking new ones. PR creation needs a
-        # token that may create PRs — GH_PAT secret, or re-enable the repo's
-        # "Allow GitHub Actions to create and approve pull requests" setting
-        # so the default GITHUB_TOKEN works.
+        # Only runs when the gate step above found tour-data changes. Fixed
+        # branch name means weekly runs update one PR instead of stacking new
+        # ones.
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
           token: ${{ secrets.GH_PAT || github.token }}
