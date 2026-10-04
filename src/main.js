@@ -104,9 +104,12 @@ function updateAutocomplete(tours) {
     document.body.appendChild(datalist);
     searchInput.setAttribute("list", "tourSearchList");
   }
-  datalist.innerHTML = (tours || [])
-    .map((t) => `<option value="${escapeHtml(t.title)}">`)
-    .join("");
+  datalist.replaceChildren();
+  (tours || []).forEach((t) => {
+    const option = document.createElement("option");
+    option.value = t.title;
+    datalist.appendChild(option);
+  });
 }
 
 function debounce(fn, wait = 150) {
@@ -1084,30 +1087,44 @@ function focusTour(t) {
 function renderSearchResults() {
   const el = getSearchResultsEl();
   if (!el) return;
+  el.replaceChildren();
+  const list = document.createElement("div");
+  list.className = "search-results-list";
+  el.appendChild(list);
+
   if (searchResults.length === 0) {
-    el.innerHTML =
-      '<div class="search-results-list"><div class="search-results-empty">No tours to display.</div></div>';
+    const empty = document.createElement("div");
+    empty.className = "search-results-empty";
+    empty.textContent = "No tours to display.";
+    list.appendChild(empty);
     return;
   }
-  el.innerHTML = `<div class="search-results-list">${searchResults
-    .map((t, i) => {
-      const g = t.geocode || {};
-      const place = [g.state, g.country]
-        .filter(Boolean)
-        .map(escapeHtml)
-        .join(", ");
-      const active = i === searchActiveIndex ? " active" : "";
-      return `<div class="search-result${active}" data-index="${i}">
-        <div class="result-title">${escapeHtml(t.title)}</div>
-        ${place ? `<div class="result-meta">${place}</div>` : ""}
-      </div>`;
-    })
-    .join("")}</div>
-    <div class="search-results-footer">
-      <span><b>↑↓</b> navigate</span>
-      <span><b>↵</b> select</span>
-      <span><b>esc</b> close</span>
-    </div>`;
+
+  searchResults.forEach((t, i) => {
+    const g = t.geocode || {};
+    const place = [g.state, g.country].filter(Boolean).join(", ");
+    const active = i === searchActiveIndex ? " active" : "";
+    const row = document.createElement("div");
+    row.className = `search-result${active}`;
+    row.dataset.index = String(i);
+    const title = document.createElement("div");
+    title.className = "result-title";
+    title.textContent = t.title;
+    row.appendChild(title);
+    if (place) {
+      const meta = document.createElement("div");
+      meta.className = "result-meta";
+      meta.textContent = place;
+      row.appendChild(meta);
+    }
+    list.appendChild(row);
+  });
+
+  const footer = document.createElement("div");
+  footer.className = "search-results-footer";
+  footer.innerHTML =
+    "<span><b>↑↓</b> navigate</span><span><b>↵</b> select</span><span><b>esc</b> close</span>";
+  el.appendChild(footer);
 }
 
 function openSearchResults() {
@@ -1213,41 +1230,55 @@ function renderTourList(tours) {
   const groups = groupAndSort(tours);
   const sortByDistance = getSortBy() === "distance";
 
+  list.replaceChildren();
+
   if (groups.every((g) => g.tours.length === 0)) {
-    list.innerHTML = '<div class="meta">No tours to display.</div>';
+    const empty = document.createElement("div");
+    empty.className = "meta";
+    empty.textContent = "No tours to display.";
+    list.appendChild(empty);
     return;
   }
 
-  list.innerHTML = groups
-    .map((group) => {
-      const items = group.tours
-        .map((t) => {
-          const g = t.geocode || {};
-          const d = t.details || {};
-          const place = [g.state, g.country]
-            .filter(Boolean)
-            .map(escapeHtml)
-            .join(", ");
-          const status = completedTours.includes(t.title) ? "✅" : "";
-          const type = d.tourType ? ` • ${escapeHtml(d.tourType)}` : "";
-          const key = escapeHtml(t.url || t.title);
-          let dist = "";
-          if (sortByDistance) {
-            const miles = tourDistanceMiles(t, userLocation);
-            dist = miles != null ? `${miles.toFixed(1)} mi · ` : "— · ";
-          }
-          return `<div class="tour-item" data-key="${key}">
-            <div class="title">${escapeHtml(t.title)} ${status}</div>
-            <div class="meta">${dist}${place || ""}${type}</div>
-          </div>`;
-        })
-        .join("");
-      const header = group.label
-        ? `<div class="group-header">${escapeHtml(group.label)} <span class="group-count">(${group.count})</span></div>`
-        : "";
-      return header + items;
-    })
-    .join("");
+  for (const group of groups) {
+    if (group.label) {
+      const header = document.createElement("div");
+      header.className = "group-header";
+      header.appendChild(document.createTextNode(group.label));
+      const count = document.createElement("span");
+      count.className = "group-count";
+      count.textContent = `(${group.count})`;
+      header.appendChild(count);
+      list.appendChild(header);
+    }
+
+    for (const t of group.tours) {
+      const g = t.geocode || {};
+      const d = t.details || {};
+      const place = [g.state, g.country].filter(Boolean).join(", ");
+      const status = completedTours.includes(t.title) ? "✅" : "";
+      const type = d.tourType ? ` • ${d.tourType}` : "";
+      const key = t.url || t.title;
+      let dist = "";
+      if (sortByDistance) {
+        const miles = tourDistanceMiles(t, userLocation);
+        dist = miles != null ? `${miles.toFixed(1)} mi · ` : "— · ";
+      }
+
+      const item = document.createElement("div");
+      item.className = "tour-item";
+      item.dataset.key = key;
+      const title = document.createElement("div");
+      title.className = "title";
+      title.textContent = `${t.title} ${status}`;
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = `${dist}${place || ""}${type}`;
+      item.appendChild(title);
+      item.appendChild(meta);
+      list.appendChild(item);
+    }
+  }
 
   // click handlers
   list.querySelectorAll(".tour-item").forEach((el) => {
