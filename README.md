@@ -5,6 +5,8 @@
 
 A simple web app that displays [GuideAlong][guidealong] tours on an interactive map powered by [MapLibre GL JS][maplibre] with free [OpenFreeMap][openfreemap] vector tiles (built from OpenStreetMap data). Deployed via [Netlify][netlify].
 
+![GuideAlong Tours][social]
+
 ![GuideAlong Tours][screenshot]
 
 ## ✨ Features
@@ -59,10 +61,15 @@ Contributions are welcome! 🎉
 
 ## 📄 License
 
+Licensed under the [ISC License](LICENSE).
+
+Tour content is sourced from [GuideAlong][guidealong] and remains their property. 
+
 This project is for demonstration purposes and is not affiliated with GuideAlong.
 
 <!-- Links -->
 [screenshot]: ./assets/image.png
+[social]: ./assets/social.png
 [guidealong]: https://guidealong.com
 [guidealong-tours]: https://guidealong.com/tour-list
 [maplibre]: https://maplibre.org
