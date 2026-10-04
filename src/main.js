@@ -921,7 +921,7 @@ async function initMap() {
   completedTours = await loadCompletedTours();
 
   // Load last-synced timestamp
-  loadLastSynced();
+  void loadLastSynced();
 
   const tours = await loadToursFromFile();
   if (!tours || !Array.isArray(tours) || tours.length === 0) {
@@ -1204,7 +1204,7 @@ function setupSearch() {
 }
 
 // MapLibre GL JS is loaded via ES module import above
-initMap();
+void initMap();
 
 function renderTourList(tours) {
   const list = document.getElementById("tourList");
