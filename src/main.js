@@ -1,6 +1,7 @@
 import {
   AttributionControl,
   GeolocateControl,
+  LngLatBounds,
   Map as MapLibreMap,
   Marker,
   NavigationControl,
@@ -32,6 +33,17 @@ async function loadCompletedTours() {
 }
 
 // --- Pure helpers ---------------------------------------------------------
+// Escape remote/user-controlled values before they are interpolated into
+// innerHTML. Prevents DOM XSS when tour data originates from a remote site.
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function computeFilteredTours(tours, completedTitles, filters) {
   const search = (filters.search || "").toLowerCase();
   const {
@@ -93,7 +105,7 @@ function updateAutocomplete(tours) {
     searchInput.setAttribute("list", "tourSearchList");
   }
   datalist.innerHTML = (tours || [])
-    .map((t) => `<option value="${t.title}">`)
+    .map((t) => `<option value="${escapeHtml(t.title)}">`)
     .join("");
 }
 
@@ -165,21 +177,22 @@ function plotToursOnMap(tours) {
 
 function buildInfoContent(t, isCompleted, completedTourData) {
   const d = t?.details || {};
+  const title = escapeHtml(t.title || "");
   const completedDateText = completedTourData?.completedDate
-    ? `: ${completedTourData.completedDate}`
+    ? `: ${escapeHtml(completedTourData.completedDate)}`
     : "";
   const thumbnail = d.thumbnail
-    ? `<img src="${d.thumbnail}" alt="${String(t.title || "").replace(/"/g, "&quot;")}" loading="lazy" style="width: 100%; border-radius: 8px; margin-bottom: 8px; display: block;">`
+    ? `<img src="${escapeHtml(d.thumbnail)}" alt="${title}" loading="lazy" style="width: 100%; border-radius: 8px; margin-bottom: 8px; display: block;">`
     : "";
-  return `${thumbnail}<h3>${t.title}${isCompleted ? " ✅" : ""}</h3>
+  return `${thumbnail}<h3>${title}${isCompleted ? " ✅" : ""}</h3>
     ${isCompleted ? `<div style="color: #28a745; font-weight: bold; margin-bottom: 8px;">Completed Tour${completedDateText}</div>` : ""}
-    ${d.location ? `<div><b>Location:</b> ${d.location}</div>` : ""}
-    ${d.duration ? `<div><b>Duration:</b> ${d.duration}</div>` : ""}
-    ${d.audioPoints ? `<div><b>Audio Points:</b> ${d.audioPoints}</div>` : ""}
-    ${d.tourType ? `<div><b>Tour Type:</b> ${d.tourType}</div>` : ""}
-    ${d.start ? `<div><b>Start:</b> ${d.start}</div>` : ""}
-    ${d.description ? `<p>${d.description}</p>` : "<p>No description available.</p>"}
-    <a href='${t.url}' target='_blank'>Learn more</a>`;
+    ${d.location ? `<div><b>Location:</b> ${escapeHtml(d.location)}</div>` : ""}
+    ${d.duration ? `<div><b>Duration:</b> ${escapeHtml(d.duration)}</div>` : ""}
+    ${d.audioPoints ? `<div><b>Audio Points:</b> ${escapeHtml(d.audioPoints)}</div>` : ""}
+    ${d.tourType ? `<div><b>Tour Type:</b> ${escapeHtml(d.tourType)}</div>` : ""}
+    ${d.start ? `<div><b>Start:</b> ${escapeHtml(d.start)}</div>` : ""}
+    ${d.description ? `<p>${escapeHtml(d.description)}</p>` : "<p>No description available.</p>"}
+    <a href='${escapeHtml(t.url || "")}' target='_blank'>Learn more</a>`;
 }
 
 function updateStats(tours) {
@@ -220,7 +233,7 @@ function populateFilters(tours) {
       .forEach((country) => {
         if (country) {
           const countryId = `country_${country.replace(/\s+/g, "_").replace(/\W/g, "")}`;
-          countryCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${countryId}" value="${country}"><label for="${countryId}">${country}</label></div>`;
+          countryCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${countryId}" value="${escapeHtml(country)}"><label for="${countryId}">${escapeHtml(country)}</label></div>`;
         }
       });
     countryDropdownContent.innerHTML = countryCheckboxes;
@@ -242,11 +255,11 @@ function populateFilters(tours) {
           a.localeCompare(b),
         );
         if (states.length) {
-          stateCheckboxes += `<div class="optgroup-label">${country}</div>`;
+          stateCheckboxes += `<div class="optgroup-label">${escapeHtml(country)}</div>`;
           states.forEach((state) => {
             if (state) {
               const stateId = `state_${state.replace(/\s+/g, "_").replace(/\W/g, "")}`;
-              stateCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${stateId}" value="${state}"><label for="${stateId}">${state}</label></div>`;
+              stateCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${stateId}" value="${escapeHtml(state)}"><label for="${stateId}">${escapeHtml(state)}</label></div>`;
             }
           });
         }
@@ -298,7 +311,7 @@ function setupStateCheckboxListeners() {
         allStatesCheckbox.checked = !anyChecked;
       }
       updateStateDropdownButtonText();
-      updateAll();
+      updateAll({ fit: true });
     });
   }
 
@@ -341,7 +354,7 @@ function setupCountryCheckboxListeners() {
         allCountriesCheckbox.checked = !anyChecked;
       }
       updateCountryDropdownButtonText();
-      updateAll();
+      updateAll({ fit: true });
     });
   }
 
@@ -397,7 +410,7 @@ function setupTourStatusFilter() {
       if (!(target instanceof HTMLInputElement) || target.type !== "radio")
         return;
       updateStatusDropdownButtonText();
-      updateAll();
+      updateAll({ fit: true });
       dropdown.classList.remove("open");
       dropdownButton.setAttribute("aria-expanded", "false");
     });
@@ -448,7 +461,7 @@ function setupTourTypeFilter(tours) {
     '<div class="checkbox-item"><input type="checkbox" id="allTourTypes" name="tourType" value="" checked><label for="allTourTypes">All Tour Types</label></div>',
     ...categories.map(
       (c) =>
-        `<div class="checkbox-item"><input type="checkbox" name="tourType" value="${c}"><label>${c}</label></div>`,
+        `<div class="checkbox-item"><input type="checkbox" name="tourType" value="${escapeHtml(c)}"><label>${escapeHtml(c)}</label></div>`,
     ),
   ].join("");
 
@@ -482,7 +495,7 @@ function setupTourTypeFilter(tours) {
       if (allCb) allCb.checked = !anyChecked;
     }
     updateTourTypeDropdownButtonText();
-    updateAll();
+    updateAll({ fit: true });
     dropdown.classList.remove("open");
     dropdownButton.setAttribute("aria-expanded", "false");
   });
@@ -503,7 +516,7 @@ function updateTourTypeDropdownButtonText() {
     dropdownButton.innerHTML =
       'All Tour Types <span class="dropdown-arrow">▼</span>';
   } else if (checked.length === 1) {
-    dropdownButton.innerHTML = `${checked[0]} <span class="dropdown-arrow">▼</span>`;
+    dropdownButton.innerHTML = `${escapeHtml(checked[0])} <span class="dropdown-arrow">▼</span>`;
   } else {
     dropdownButton.innerHTML = `${checked.length} Tour Types <span class="dropdown-arrow">▼</span>`;
   }
@@ -545,10 +558,10 @@ function updateMultiSelectButtonLabel(
   allLabel,
 ) {
   if (!buttonEl) return;
-  if (allChecked || (checkedValues && checkedValues.length === 0)) {
+  if (allChecked || checkedValues?.length === 0) {
     buttonEl.innerHTML = `${allLabel} <span class="dropdown-arrow">▼</span>`;
   } else if (checkedValues.length === 1) {
-    buttonEl.innerHTML = `${checkedValues[0]} <span class="dropdown-arrow">▼</span>`;
+    buttonEl.innerHTML = `${escapeHtml(checkedValues[0])} <span class="dropdown-arrow">▼</span>`;
   } else {
     buttonEl.innerHTML = `${checkedValues.length} ${unitPlural} selected <span class="dropdown-arrow">▼</span>`;
   }
@@ -592,7 +605,7 @@ function haversineDistanceMiles(a, b) {
 
 function tourDistanceMiles(t, userLocation) {
   const g = t?.geocode;
-  if (!g || g.lat == null || g.lng == null || !userLocation) return null;
+  if (g?.lat == null || g?.lng == null || !userLocation) return null;
   return haversineDistanceMiles(userLocation, { lat: g.lat, lng: g.lng });
 }
 
@@ -758,10 +771,62 @@ function updateSortByDropdownButtonText() {
   dropdownButton.innerHTML = `${labels[selected?.value] || "Title"} <span class="dropdown-arrow">▼</span>`;
 }
 
-function updateAll() {
+// --- Map camera fit ------------------------------------------------------
+const MOBILE_BREAKPOINT = "(max-width: 900px)"; // matches bottom-sheet breakpoint in styles.css
+const FIT_MAX_ZOOM = 10; // same cap as the locate-me control's fitBoundsOptions
+const FIT_DURATION = 800; // fixed duration: default flyTo-style easing scales with distance and can take seconds
+const FIT_PADDING = { top: 40, right: 40, bottom: 40, left: 40 };
+
+function getFitPadding() {
+  if (!window.matchMedia(MOBILE_BREAKPOINT).matches) return FIT_PADDING;
+  const sheetHeight = document.getElementById("controls")?.offsetHeight || 88;
+  // Extra bottom padding keeps fitted markers above the fixed bottom sheet.
+  return { ...FIT_PADDING, bottom: sheetHeight + 24 };
+}
+
+function fitCamera(tours) {
+  const bounds = new LngLatBounds();
+  let count = 0;
+  let point = null;
+  (tours || []).forEach((t) => {
+    const lat = t?.geocode?.lat;
+    const lng = t?.geocode?.lng;
+    if (lat && lng) {
+      bounds.extend([lng, lat]);
+      count += 1;
+      point = [lng, lat];
+    }
+  });
+  if (count === 0) return; // no geocodable results: leave the camera untouched
+  if (count === 1) {
+    // A single point makes a zero-area bounds, which fitBounds resolves
+    // inconsistently depending on the current camera. Fit a tiny non-zero
+    // box instead so padding applies and zoom lands on the max cap.
+    const [lng, lat] = point;
+    const EPS = 0.001;
+    const box = new LngLatBounds(
+      [lng - EPS, lat - EPS],
+      [lng + EPS, lat + EPS],
+    );
+    map.fitBounds(box, {
+      padding: getFitPadding(),
+      maxZoom: FIT_MAX_ZOOM,
+      duration: FIT_DURATION,
+    });
+    return;
+  }
+  map.fitBounds(bounds, {
+    padding: getFitPadding(),
+    maxZoom: FIT_MAX_ZOOM,
+    duration: FIT_DURATION,
+  });
+}
+
+function updateAll({ fit = false } = {}) {
   const filters = getFilters();
   const filtered = computeFilteredTours(allTours, completedTours, filters);
   updateAutocomplete(filtered);
+  if (fit) fitCamera(filtered);
   plotToursOnMap(filtered);
   updateStats(filtered);
   renderTourList(filtered);
@@ -856,7 +921,7 @@ async function initMap() {
   completedTours = await loadCompletedTours();
 
   // Load last-synced timestamp
-  loadLastSynced();
+  void loadLastSynced();
 
   const tours = await loadToursFromFile();
   if (!tours || !Array.isArray(tours) || tours.length === 0) {
@@ -1027,10 +1092,13 @@ function renderSearchResults() {
   el.innerHTML = `<div class="search-results-list">${searchResults
     .map((t, i) => {
       const g = t.geocode || {};
-      const place = [g.state, g.country].filter(Boolean).join(", ");
+      const place = [g.state, g.country]
+        .filter(Boolean)
+        .map(escapeHtml)
+        .join(", ");
       const active = i === searchActiveIndex ? " active" : "";
       return `<div class="search-result${active}" data-index="${i}">
-        <div class="result-title">${t.title}</div>
+        <div class="result-title">${escapeHtml(t.title)}</div>
         ${place ? `<div class="result-meta">${place}</div>` : ""}
       </div>`;
     })
@@ -1104,14 +1172,13 @@ function setupSearch() {
         closeSearchResults();
         input.blur();
       }
-      return;
     }
   });
 
   el.addEventListener("click", (e) => {
     const row = e.target.closest(".search-result");
     if (!row) return;
-    const t = searchResults[Number(row.getAttribute("data-index"))];
+    const t = searchResults[Number(row.dataset.index)];
     if (t) {
       focusTour(t);
       closeSearchResults();
@@ -1137,7 +1204,7 @@ function setupSearch() {
 }
 
 // MapLibre GL JS is loaded via ES module import above
-initMap();
+void initMap();
 
 function renderTourList(tours) {
   const list = document.getElementById("tourList");
@@ -1146,7 +1213,7 @@ function renderTourList(tours) {
   const groups = groupAndSort(tours);
   const sortByDistance = getSortBy() === "distance";
 
-  if (groups.length === 0 || groups.every((g) => g.tours.length === 0)) {
+  if (groups.every((g) => g.tours.length === 0)) {
     list.innerHTML = '<div class="meta">No tours to display.</div>';
     return;
   }
@@ -1157,23 +1224,26 @@ function renderTourList(tours) {
         .map((t) => {
           const g = t.geocode || {};
           const d = t.details || {};
-          const place = [g.state, g.country].filter(Boolean).join(", ");
+          const place = [g.state, g.country]
+            .filter(Boolean)
+            .map(escapeHtml)
+            .join(", ");
           const status = completedTours.includes(t.title) ? "✅" : "";
-          const type = d.tourType ? ` • ${d.tourType}` : "";
-          const key = (t.url || t.title).replace(/"/g, "&quot;");
+          const type = d.tourType ? ` • ${escapeHtml(d.tourType)}` : "";
+          const key = escapeHtml(t.url || t.title);
           let dist = "";
           if (sortByDistance) {
             const miles = tourDistanceMiles(t, userLocation);
             dist = miles != null ? `${miles.toFixed(1)} mi · ` : "— · ";
           }
           return `<div class="tour-item" data-key="${key}">
-            <div class="title">${t.title} ${status}</div>
+            <div class="title">${escapeHtml(t.title)} ${status}</div>
             <div class="meta">${dist}${place || ""}${type}</div>
           </div>`;
         })
         .join("");
       const header = group.label
-        ? `<div class="group-header">${group.label} <span class="group-count">(${group.count})</span></div>`
+        ? `<div class="group-header">${escapeHtml(group.label)} <span class="group-count">(${group.count})</span></div>`
         : "";
       return header + items;
     })
@@ -1182,7 +1252,7 @@ function renderTourList(tours) {
   // click handlers
   list.querySelectorAll(".tour-item").forEach((el) => {
     el.addEventListener("click", () => {
-      const key = el.getAttribute("data-key");
+      const key = el.dataset.key;
       if (!key) return;
       const idx = markerIndexByKey.get(key);
       if (idx == null) return;
