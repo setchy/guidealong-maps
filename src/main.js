@@ -546,7 +546,7 @@ function updateMultiSelectButtonLabel(
   allLabel,
 ) {
   if (!buttonEl) return;
-  if (allChecked || (checkedValues && checkedValues.length === 0)) {
+  if (allChecked || checkedValues?.length === 0) {
     buttonEl.innerHTML = `${allLabel} <span class="dropdown-arrow">▼</span>`;
   } else if (checkedValues.length === 1) {
     buttonEl.innerHTML = `${checkedValues[0]} <span class="dropdown-arrow">▼</span>`;
@@ -593,7 +593,7 @@ function haversineDistanceMiles(a, b) {
 
 function tourDistanceMiles(t, userLocation) {
   const g = t?.geocode;
-  if (!g || g.lat == null || g.lng == null || !userLocation) return null;
+  if (g?.lat == null || g?.lng == null || !userLocation) return null;
   return haversineDistanceMiles(userLocation, { lat: g.lat, lng: g.lng });
 }
 
