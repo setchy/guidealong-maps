@@ -1,5 +1,5 @@
 # 🗺️ GuideAlong Tours Explorer
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b9368d23-cad4-45f5-a018-e1af6a6269ed/deploy-status)](https://app.netlify.com/projects/guidealong-tours/deploys)
+[![Netlify Status][netlify-badge]][netlify-deploys] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Data refresh][data-refresh-badge]][data-refresh-actions]
 
 > 🗺️ Explore GuideAlong tours on an interactive map.
 
@@ -68,4 +68,12 @@ This project is for demonstration purposes and is not affiliated with GuideAlong
 [maplibre]: https://maplibre.org
 [openfreemap]: https://openfreemap.org
 [netlify]: https://netlify.com
+[netlify-badge]: https://api.netlify.com/api/v1/badges/b9368d23-cad4-45f5-a018-e1af6a6269ed/deploy-status
+[netlify-deploys]: https://app.netlify.com/projects/guidealong-tours/deploys
+[quality-badge]: https://img.shields.io/sonar/quality_gate/setchy_guidealong-maps?server=https%3A%2F%2Fsonarcloud.io&logo=sonarqubecloud
+[quality]: https://sonarcloud.io/project/overview?id=setchy_guidealong-maps
+[renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate&logoColor=white
+[renovate]: https://github.com/setchy/guidealong-maps/issues/1
+[data-refresh-badge]: https://img.shields.io/github/actions/workflow/status/setchy/guidealong-maps/refresh-tours.yml?label=Data%20refresh&logo=github
+[data-refresh-actions]: https://github.com/setchy/guidealong-maps/actions/workflows/refresh-tours.yml
 [github-issues]: https://github.com/setchy/guidealong-maps/issues
