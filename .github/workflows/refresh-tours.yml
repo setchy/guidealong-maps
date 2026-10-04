@@ -49,13 +49,25 @@ jobs:
       - name: Run tests
         run: pnpm test
 
+      - name: Check if tour data changed
+        # Only raise a PR when the actual tour catalog (tours.json) changed.
+        # meta.json's lastSynced timestamp bumps on every run; a timestamp-only
+        # change should not open a pull request.
+        id: tour-check
+        run: |
+          if git diff --quiet HEAD -- src/data/tours.json; then
+            echo "tours.json unchanged; no pull request needed."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "tours.json changed; opening pull request."
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Open pull request for tour data changes
-        # Create (or update) a PR with the refreshed tour data via
-        # peter-evans/create-pull-request: fixed branch name so weekly runs
-        # update one PR instead of stacking new ones; it skips when nothing
-        # changed. PR creation needs a token that may create PRs — GH_PAT
-        # secret, or re-enable the repo's "Allow GitHub Actions to create and
-        # approve pull requests" setting so the default GITHUB_TOKEN works.
+        if: steps.tour-check.outputs.changed == 'true'
+        # Only runs when the gate step above found tour-data changes. Fixed
+        # branch name means weekly runs update one PR instead of stacking new
+        # ones.
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
           token: ${{ secrets.GH_PAT || github.token }}
