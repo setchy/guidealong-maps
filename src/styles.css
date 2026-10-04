@@ -114,9 +114,7 @@ body {
 }
 .filter-section {
   margin-bottom: 10px;
-}
-/* Indent each block within a filter section */
-.filter-section {
+  /* Indent each block within a filter section */
   padding-left: 8px;
 }
 /* Make filter labels less prominent */
