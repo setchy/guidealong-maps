@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: refresh-tours
@@ -28,6 +29,17 @@ jobs:
           require-lockfile: true
           cache: true
 
+      - name: Cache Playwright browsers
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Playwright browser
+        # Enrichment drives a headless Chromium session (lib/enrich.js), so the
+        # runner needs the Playwright browser matching the pinned playwright-core.
+        run: pnpm exec playwright-core install chromium
+
       - name: Refresh tour data
         env:
           # Optional: geocoding is skipped when no key is present.
@@ -37,14 +49,25 @@ jobs:
       - name: Run tests
         run: pnpm test
 
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/tours.json src/data/meta.json
-          if git diff --cached --quiet; then
-            echo "No tour data changes to commit."
-          else
-            git commit -m "chore: refresh tour data"
-            git push
-          fi
+      - name: Open pull request for tour data changes
+        # Create (or update) a PR with the refreshed tour data via
+        # peter-evans/create-pull-request: fixed branch name so weekly runs
+        # update one PR instead of stacking new ones; it skips when nothing
+        # changed. PR creation needs a token that may create PRs — GH_PAT
+        # secret, or re-enable the repo's "Allow GitHub Actions to create and
+        # approve pull requests" setting so the default GITHUB_TOKEN works.
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
+          commit-message: "chore: refresh tour data"
+          branch: data/tour-refresh
+          base: ${{ github.ref_name }}
+          title: "chore: refresh tour data"
+          body: |
+            Automated tour data refresh from the scheduled workflow.
+
+            See: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          add-paths: |
+            src/data/tours.json
+            src/data/meta.json
+          delete-branch: true
