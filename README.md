@@ -71,7 +71,7 @@ Contributions are welcome! 🎉
 - Open an [issue][github-issues] for bugs or feature requests.
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for development details — data files, refreshing tour data, deploying to Netlify, and troubleshooting.
 
-## 📄 License
+## 📜 License
 
 ⚖️ Licensed under the [ISC License](LICENSE).
 
