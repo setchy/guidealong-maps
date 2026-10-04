@@ -1,0 +1,50 @@
+name: Refresh tour data
+
+on:
+  schedule:
+    # Weekly: Sunday 06:00 UTC
+    - cron: "0 6 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-tours
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@fbda4c85fc2e1e08721cd8763afea8f48d60f024 # v3
+        with:
+          node-version-file: .nvmrc
+          require-lockfile: true
+          cache: true
+
+      - name: Refresh tour data
+        env:
+          # Optional: geocoding is skipped when no key is present.
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+        run: pnpm fetch:tours
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/tours.json src/data/meta.json
+          if git diff --cached --quiet; then
+            echo "No tour data changes to commit."
+          else
+            git commit -m "chore: refresh tour data"
+            git push
+          fi
