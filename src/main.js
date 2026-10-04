@@ -32,6 +32,17 @@ async function loadCompletedTours() {
 }
 
 // --- Pure helpers ---------------------------------------------------------
+// Escape remote/user-controlled values before they are interpolated into
+// innerHTML. Prevents DOM XSS when tour data originates from a remote site.
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function computeFilteredTours(tours, completedTitles, filters) {
   const search = (filters.search || "").toLowerCase();
   const {
@@ -93,7 +104,7 @@ function updateAutocomplete(tours) {
     searchInput.setAttribute("list", "tourSearchList");
   }
   datalist.innerHTML = (tours || [])
-    .map((t) => `<option value="${t.title}">`)
+    .map((t) => `<option value="${escapeHtml(t.title)}">`)
     .join("");
 }
 
@@ -165,21 +176,22 @@ function plotToursOnMap(tours) {
 
 function buildInfoContent(t, isCompleted, completedTourData) {
   const d = t?.details || {};
+  const title = escapeHtml(t.title || "");
   const completedDateText = completedTourData?.completedDate
-    ? `: ${completedTourData.completedDate}`
+    ? `: ${escapeHtml(completedTourData.completedDate)}`
     : "";
   const thumbnail = d.thumbnail
-    ? `<img src="${d.thumbnail}" alt="${String(t.title || "").replace(/"/g, "&quot;")}" loading="lazy" style="width: 100%; border-radius: 8px; margin-bottom: 8px; display: block;">`
+    ? `<img src="${escapeHtml(d.thumbnail)}" alt="${title}" loading="lazy" style="width: 100%; border-radius: 8px; margin-bottom: 8px; display: block;">`
     : "";
-  return `${thumbnail}<h3>${t.title}${isCompleted ? " ✅" : ""}</h3>
+  return `${thumbnail}<h3>${title}${isCompleted ? " ✅" : ""}</h3>
     ${isCompleted ? `<div style="color: #28a745; font-weight: bold; margin-bottom: 8px;">Completed Tour${completedDateText}</div>` : ""}
-    ${d.location ? `<div><b>Location:</b> ${d.location}</div>` : ""}
-    ${d.duration ? `<div><b>Duration:</b> ${d.duration}</div>` : ""}
-    ${d.audioPoints ? `<div><b>Audio Points:</b> ${d.audioPoints}</div>` : ""}
-    ${d.tourType ? `<div><b>Tour Type:</b> ${d.tourType}</div>` : ""}
-    ${d.start ? `<div><b>Start:</b> ${d.start}</div>` : ""}
-    ${d.description ? `<p>${d.description}</p>` : "<p>No description available.</p>"}
-    <a href='${t.url}' target='_blank'>Learn more</a>`;
+    ${d.location ? `<div><b>Location:</b> ${escapeHtml(d.location)}</div>` : ""}
+    ${d.duration ? `<div><b>Duration:</b> ${escapeHtml(d.duration)}</div>` : ""}
+    ${d.audioPoints ? `<div><b>Audio Points:</b> ${escapeHtml(d.audioPoints)}</div>` : ""}
+    ${d.tourType ? `<div><b>Tour Type:</b> ${escapeHtml(d.tourType)}</div>` : ""}
+    ${d.start ? `<div><b>Start:</b> ${escapeHtml(d.start)}</div>` : ""}
+    ${d.description ? `<p>${escapeHtml(d.description)}</p>` : "<p>No description available.</p>"}
+    <a href='${escapeHtml(t.url || "")}' target='_blank'>Learn more</a>`;
 }
 
 function updateStats(tours) {
@@ -220,7 +232,7 @@ function populateFilters(tours) {
       .forEach((country) => {
         if (country) {
           const countryId = `country_${country.replace(/\s+/g, "_").replace(/\W/g, "")}`;
-          countryCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${countryId}" value="${country}"><label for="${countryId}">${country}</label></div>`;
+          countryCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${countryId}" value="${escapeHtml(country)}"><label for="${countryId}">${escapeHtml(country)}</label></div>`;
         }
       });
     countryDropdownContent.innerHTML = countryCheckboxes;
@@ -242,11 +254,11 @@ function populateFilters(tours) {
           a.localeCompare(b),
         );
         if (states.length) {
-          stateCheckboxes += `<div class="optgroup-label">${country}</div>`;
+          stateCheckboxes += `<div class="optgroup-label">${escapeHtml(country)}</div>`;
           states.forEach((state) => {
             if (state) {
               const stateId = `state_${state.replace(/\s+/g, "_").replace(/\W/g, "")}`;
-              stateCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${stateId}" value="${state}"><label for="${stateId}">${state}</label></div>`;
+              stateCheckboxes += `<div class="checkbox-item"><input type="checkbox" id="${stateId}" value="${escapeHtml(state)}"><label for="${stateId}">${escapeHtml(state)}</label></div>`;
             }
           });
         }
@@ -448,7 +460,7 @@ function setupTourTypeFilter(tours) {
     '<div class="checkbox-item"><input type="checkbox" id="allTourTypes" name="tourType" value="" checked><label for="allTourTypes">All Tour Types</label></div>',
     ...categories.map(
       (c) =>
-        `<div class="checkbox-item"><input type="checkbox" name="tourType" value="${c}"><label>${c}</label></div>`,
+        `<div class="checkbox-item"><input type="checkbox" name="tourType" value="${escapeHtml(c)}"><label>${escapeHtml(c)}</label></div>`,
     ),
   ].join("");
 
@@ -503,7 +515,7 @@ function updateTourTypeDropdownButtonText() {
     dropdownButton.innerHTML =
       'All Tour Types <span class="dropdown-arrow">▼</span>';
   } else if (checked.length === 1) {
-    dropdownButton.innerHTML = `${checked[0]} <span class="dropdown-arrow">▼</span>`;
+    dropdownButton.innerHTML = `${escapeHtml(checked[0])} <span class="dropdown-arrow">▼</span>`;
   } else {
     dropdownButton.innerHTML = `${checked.length} Tour Types <span class="dropdown-arrow">▼</span>`;
   }
@@ -548,7 +560,7 @@ function updateMultiSelectButtonLabel(
   if (allChecked || (checkedValues && checkedValues.length === 0)) {
     buttonEl.innerHTML = `${allLabel} <span class="dropdown-arrow">▼</span>`;
   } else if (checkedValues.length === 1) {
-    buttonEl.innerHTML = `${checkedValues[0]} <span class="dropdown-arrow">▼</span>`;
+    buttonEl.innerHTML = `${escapeHtml(checkedValues[0])} <span class="dropdown-arrow">▼</span>`;
   } else {
     buttonEl.innerHTML = `${checkedValues.length} ${unitPlural} selected <span class="dropdown-arrow">▼</span>`;
   }
@@ -1027,10 +1039,13 @@ function renderSearchResults() {
   el.innerHTML = `<div class="search-results-list">${searchResults
     .map((t, i) => {
       const g = t.geocode || {};
-      const place = [g.state, g.country].filter(Boolean).join(", ");
+      const place = [g.state, g.country]
+        .filter(Boolean)
+        .map(escapeHtml)
+        .join(", ");
       const active = i === searchActiveIndex ? " active" : "";
       return `<div class="search-result${active}" data-index="${i}">
-        <div class="result-title">${t.title}</div>
+        <div class="result-title">${escapeHtml(t.title)}</div>
         ${place ? `<div class="result-meta">${place}</div>` : ""}
       </div>`;
     })
@@ -1157,23 +1172,26 @@ function renderTourList(tours) {
         .map((t) => {
           const g = t.geocode || {};
           const d = t.details || {};
-          const place = [g.state, g.country].filter(Boolean).join(", ");
+          const place = [g.state, g.country]
+            .filter(Boolean)
+            .map(escapeHtml)
+            .join(", ");
           const status = completedTours.includes(t.title) ? "✅" : "";
-          const type = d.tourType ? ` • ${d.tourType}` : "";
-          const key = (t.url || t.title).replace(/"/g, "&quot;");
+          const type = d.tourType ? ` • ${escapeHtml(d.tourType)}` : "";
+          const key = escapeHtml(t.url || t.title);
           let dist = "";
           if (sortByDistance) {
             const miles = tourDistanceMiles(t, userLocation);
             dist = miles != null ? `${miles.toFixed(1)} mi · ` : "— · ";
           }
           return `<div class="tour-item" data-key="${key}">
-            <div class="title">${t.title} ${status}</div>
+            <div class="title">${escapeHtml(t.title)} ${status}</div>
             <div class="meta">${dist}${place || ""}${type}</div>
           </div>`;
         })
         .join("");
       const header = group.label
-        ? `<div class="group-header">${group.label} <span class="group-count">(${group.count})</span></div>`
+        ? `<div class="group-header">${escapeHtml(group.label)} <span class="group-count">(${group.count})</span></div>`
         : "";
       return header + items;
     })
