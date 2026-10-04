@@ -70,10 +70,9 @@ jobs:
           git commit -m "chore: refresh tour data"
           git push origin "$branch"
 
+          printf -v body 'Automated tour data refresh from the scheduled workflow.\n\nSee: %s' "${RUN_URL}"
           gh pr create \
             --base "${GITHUB_REF_NAME}" \
             --head "$branch" \
             --title "chore: refresh tour data" \
-            --body "Automated tour data refresh from the scheduled workflow.
-
-See: ${RUN_URL}"
+            --body "$body"
