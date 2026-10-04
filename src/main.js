@@ -1223,6 +1223,63 @@ function setupSearch() {
 // MapLibre GL JS is loaded via ES module import above
 void initMap();
 
+function buildGroupHeader(group) {
+  if (!group.label) return null;
+  const header = document.createElement("div");
+  header.className = "group-header";
+  header.appendChild(document.createTextNode(group.label));
+  const count = document.createElement("span");
+  count.className = "group-count";
+  count.textContent = `(${group.count})`;
+  header.appendChild(count);
+  return header;
+}
+
+function buildTourItem(t, sortByDistance) {
+  const g = t.geocode || {};
+  const d = t.details || {};
+  const place = [g.state, g.country].filter(Boolean).join(", ");
+  const status = completedTours.includes(t.title) ? "✅" : "";
+  const type = d.tourType ? ` • ${d.tourType}` : "";
+  const key = t.url || t.title;
+  let dist = "";
+  if (sortByDistance) {
+    const miles = tourDistanceMiles(t, userLocation);
+    dist = miles != null ? `${miles.toFixed(1)} mi · ` : "— · ";
+  }
+
+  const item = document.createElement("div");
+  item.className = "tour-item";
+  item.dataset.key = key;
+  const title = document.createElement("div");
+  title.className = "title";
+  title.textContent = `${t.title} ${status}`;
+  const meta = document.createElement("div");
+  meta.className = "meta";
+  meta.textContent = `${dist}${place || ""}${type}`;
+  item.appendChild(title);
+  item.appendChild(meta);
+  return item;
+}
+
+function wireTourItemClicks(list) {
+  list.querySelectorAll(".tour-item").forEach((el) => {
+    el.addEventListener("click", () => {
+      const key = el.dataset.key;
+      if (!key) return;
+      const idx = markerIndexByKey.get(key);
+      if (idx == null) return;
+      const marker = markers[idx];
+      if (!marker) return;
+      const pos = marker.getLngLat();
+      if (pos) {
+        map.flyTo({ center: [pos.lng, pos.lat], zoom: 6 });
+      }
+      marker.togglePopup();
+    });
+  });
+}
+
 function renderTourList(tours) {
   const list = document.getElementById("tourList");
   if (!list) return;
@@ -1241,59 +1298,12 @@ function renderTourList(tours) {
   }
 
   for (const group of groups) {
-    if (group.label) {
-      const header = document.createElement("div");
-      header.className = "group-header";
-      header.appendChild(document.createTextNode(group.label));
-      const count = document.createElement("span");
-      count.className = "group-count";
-      count.textContent = `(${group.count})`;
-      header.appendChild(count);
-      list.appendChild(header);
-    }
-
+    const header = buildGroupHeader(group);
+    if (header) list.appendChild(header);
     for (const t of group.tours) {
-      const g = t.geocode || {};
-      const d = t.details || {};
-      const place = [g.state, g.country].filter(Boolean).join(", ");
-      const status = completedTours.includes(t.title) ? "✅" : "";
-      const type = d.tourType ? ` • ${d.tourType}` : "";
-      const key = t.url || t.title;
-      let dist = "";
-      if (sortByDistance) {
-        const miles = tourDistanceMiles(t, userLocation);
-        dist = miles != null ? `${miles.toFixed(1)} mi · ` : "— · ";
-      }
-
-      const item = document.createElement("div");
-      item.className = "tour-item";
-      item.dataset.key = key;
-      const title = document.createElement("div");
-      title.className = "title";
-      title.textContent = `${t.title} ${status}`;
-      const meta = document.createElement("div");
-      meta.className = "meta";
-      meta.textContent = `${dist}${place || ""}${type}`;
-      item.appendChild(title);
-      item.appendChild(meta);
-      list.appendChild(item);
+      list.appendChild(buildTourItem(t, sortByDistance));
     }
   }
 
-  // click handlers
-  list.querySelectorAll(".tour-item").forEach((el) => {
-    el.addEventListener("click", () => {
-      const key = el.dataset.key;
-      if (!key) return;
-      const idx = markerIndexByKey.get(key);
-      if (idx == null) return;
-      const marker = markers[idx];
-      if (!marker) return;
-      const pos = marker.getLngLat();
-      if (pos) {
-        map.flyTo({ center: [pos.lng, pos.lat], zoom: 6 });
-      }
-      marker.togglePopup();
-    });
-  });
+  wireTourItemClicks(list);
 }
