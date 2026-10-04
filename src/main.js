@@ -18,6 +18,11 @@ let userLocation = null;
 let geolocateControl = null;
 let locationRequested = false;
 
+// Rendered size of a map pin. Icons are high-res PNGs downscaled to this, so
+// the pins stay crisp; the popup tip offset is derived from this so tooltips
+// stay glued to the pin edge at any zoom.
+const MARKER_SIZE_PX = 24;
+
 async function loadCompletedTours() {
   try {
     const response = await fetch("data/completed.json");
@@ -157,17 +162,27 @@ function plotToursOnMap(tours) {
       el.src = isCompleted
         ? "icons/guidealong-completed.png"
         : "icons/guidealong.png";
-      el.style.width = "16px";
-      el.style.height = "16px";
+      el.style.width = `${MARKER_SIZE_PX}px`;
+      el.style.height = `${MARKER_SIZE_PX}px`;
 
-      const marker = new Marker({ element: el })
+      const marker = new Marker({
+        element: el,
+        // White-badge styling (styles.css). Completed pins get a green ring.
+        className: isCompleted
+          ? "tour-marker tour-marker-completed"
+          : "tour-marker",
+      })
         .setLngLat([lng, lat])
         .addTo(map);
 
       const completedTourData = completedToursData.find(
         (ct) => ct.url === t.url,
       );
-      const popup = new Popup({ offset: 25 }).setHTML(
+      // Offset the popup tip by half the marker size so the tooltip sticks to
+      // the pin edge instead of floating away from it. This keeps the popup
+      // visually anchored to its marker while zooming, when MapLibre
+      // recomputes the popup anchor on every move.
+      const popup = new Popup({ offset: MARKER_SIZE_PX / 2 }).setHTML(
         buildInfoContent(t, isCompleted, completedTourData),
       );
       marker.setPopup(popup);
