@@ -53,12 +53,14 @@ Optional list of completed tours, shown with a green icon and counted in the Sta
 
 ```json
 [
-   { "title": "Banff National Park Driving Tour", "completedDate": "2024-08-20" },
-   { "title": "Zion & Bryce Canyon Driving Tour" }
+   { "url": "https://guidealong.com/tour/banff-driving-tour/", "completedDate": "2024-08-20" },
+   { "url": "https://guidealong.com/tour/banff-townsite-tour/" }
 ]
 ```
 
-Titles should match those in `tours.json` for completion to be detected. `completedDate` may be `null` (completed, date unknown); null dates sort after dated tours.
+Entries are keyed by the tour's `url` (as found in `tours.json`), never by display title — titles drift when GuideAlong renames, repacks, or bundles tours, while URLs stay stable. `completedDate` may be `null` (completed, date unknown); null dates sort after dated tours.
+
+During `pnpm fetch:tours`, the pipeline checks each completed URL against the catalog. When a URL no longer matches, it follows the site's redirect to find the successor and, for an unambiguous non-Bundle successor, updates the entry automatically (preserving `completedDate`). Entries that cannot be resolved that way are reported in a warning with a suggested successor so they can be remapped manually.
 
 ### `src/data/meta.json`
 
