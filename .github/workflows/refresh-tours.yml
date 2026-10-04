@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: refresh-tours
@@ -48,14 +49,31 @@ jobs:
       - name: Run tests
         run: pnpm test
 
-      - name: Commit and push changes
+      - name: Commit and open pull request
+        # Tour data changes go on a dedicated branch and open a PR (reviewed
+        # merge) rather than being pushed straight to the branch being run on.
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add src/data/tours.json src/data/meta.json
           if git diff --cached --quiet; then
             echo "No tour data changes to commit."
-          else
-            git commit -m "chore: refresh tour data"
-            git push
+            exit 0
           fi
+
+          branch="data/refresh-$(date -u +%Y%m%d-%H%M%S)"
+          git checkout -b "$branch"
+          git commit -m "chore: refresh tour data"
+          git push origin "$branch"
+
+          gh pr create \
+            --base "${GITHUB_REF_NAME}" \
+            --head "$branch" \
+            --title "chore: refresh tour data" \
+            --body "Automated tour data refresh from the scheduled workflow.
+
+See: ${RUN_URL}"
