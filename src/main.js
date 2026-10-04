@@ -1163,7 +1163,7 @@ function setupSearch() {
   el.addEventListener("click", (e) => {
     const row = e.target.closest(".search-result");
     if (!row) return;
-    const t = searchResults[Number(row.getAttribute("data-index"))];
+    const t = searchResults[Number(row.dataset.index)];
     if (t) {
       focusTour(t);
       closeSearchResults();
@@ -1234,7 +1234,7 @@ function renderTourList(tours) {
   // click handlers
   list.querySelectorAll(".tour-item").forEach((el) => {
     el.addEventListener("click", () => {
-      const key = el.getAttribute("data-key");
+      const key = el.dataset.key;
       if (!key) return;
       const idx = markerIndexByKey.get(key);
       if (idx == null) return;
