@@ -227,7 +227,7 @@
       "description": "The Beartooth Highway, Hwy 212, travels through some of the wildest and most scenic mountain landscape in the country. Drive, hike or even get out onto an alpine lake.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2022/07/Beartooth-Highway-Hairpin-New.webp",
       "audioPoints": "93+",
-      "duration": "1.5 Hours+",
+      "duration": "3-4 hours",
       "tourType": "Driving",
       "start": "Red Lodge or Cooke City",
       "location": "Wyoming, MT"
@@ -877,6 +877,26 @@
       "lng": -77.2310955,
       "country": "United States",
       "state": "PA"
+    }
+  },
+  {
+    "title": "GETTYSBURG DOWNTOWN TOUR",
+    "url": "https://guidealong.com/tour/gettysburg-downtown-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Walk through historic downtown Gettysburg to see a town marked by war.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/09/Gettysburg-Train-Station.jpg",
+      "audioPoints": "25+",
+      "duration": "",
+      "tourType": "Walking",
+      "start": "297 Steinwehr Avenue, in front of the Gettysburg Heritage Center",
+      "location": "Pennsylvania"
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
     }
   },
   {
@@ -1820,6 +1840,26 @@
     }
   },
   {
+    "title": "PALM SPRINGS TOUR",
+    "url": "https://guidealong.com/tour/palm-springs-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Drive through historic Palm Springs to see movie star getaways, an eclectic art and food scene, and trails through stunning desert landscapes.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/01/Plam-Springs-Trip-Planner-1.jpg",
+      "audioPoints": "135+",
+      "duration": "1 Day",
+      "tourType": "Driving",
+      "start": "Route 10 or Route 111",
+      "location": "California, USA"
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "title": "PARKS HIGHWAY TOUR",
     "url": "https://guidealong.com/tour/parks-highway/",
     "category": "Driving",
@@ -1928,7 +1968,7 @@
       "thumbnail": "https://guidealong.com/wp-content/uploads/2026/03/Things-to-See-and-Do-2.jpg",
       "audioPoints": "65+",
       "duration": "2 - 3 Hours",
-      "tourType": "Half Day",
+      "tourType": "Walking",
       "start": "Malecón McDonald’s, Paseo Díaz Ordaz & C. 31 de Octubre",
       "location": "Mexico"
     },
@@ -2366,8 +2406,8 @@
     "details": {
       "description": "US East Tours bundle includes Acadia, Bar Harbor, Blue Ridge Parkway, Creole Nature Trail, Catskills, Boston Ghost, Freedom Trail, Gettysburg Battlefield, Great Smoky Mountains, Keweenaw, Lake Michigan, Lake Superior North Shore, Miami - Key West, Natchez Trace, New River Gorge, […]",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2023/05/Cowee-Mountain-Overlook-in-Fall.jpg",
-      "audioPoints": "4370+",
-      "duration": "31 Destinations",
+      "audioPoints": "4435+",
+      "duration": "32 Destinations",
       "tourType": "Driving & Walking",
       "start": "",
       "location": ""
@@ -2384,10 +2424,10 @@
     "url": "https://guidealong.com/tour/us-pacific-coastline-bundle/",
     "category": "Bundle",
     "details": {
-      "description": "US Pacific Coastline Bundle includes tours in California, Oregon & Washington. These include 17 destinations such as 17-Mile, Big Sur, Crater Lake, Joshua Tree, Lake Tahoe, Lassen Volcanic, Mount Rainier, and more.",
+      "description": "US Pacific Coastline Bundle includes tours in California, Oregon & Washington. These include 19 destinations such as 17-Mile, Big Sur, Crater Lake, Joshua Tree, Lake Tahoe, Lassen Volcanic, Mount Rainier, and more.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/US-Pacific-Coastline-Bundle-3.jpg",
       "audioPoints": "3305+",
-      "duration": "17 Destinations",
+      "duration": "19 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
@@ -2437,6 +2477,26 @@
       "lng": -111.8939487,
       "country": "United States",
       "state": "UT"
+    }
+  },
+  {
+    "title": "VALLEY FORGE TOUR",
+    "url": "https://guidealong.com/tour/valley-forge-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore the landmarks and monuments around the encampment that shaped George Washington’s Continental Army at Valley Forge during the trying winter of 1777-78.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/09/Valley-Forge-Trip-Planner.jpg",
+      "audioPoints": "60+",
+      "duration": "1/2 Day",
+      "tourType": "Driving",
+      "start": "Driving westbound along West Valley Forge Road, driving northbound on US Route 422 NB, or driving southbound on US Route 422 SB.",
+      "location": "Pennsylvania, USA"
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
     }
   },
   {
@@ -2677,6 +2737,26 @@
       "lng": -110.5754846,
       "country": "United States",
       "state": "WY"
+    }
+  },
+  {
+    "title": "YORKTOWN BATTLEFIELD TOUR",
+    "url": "https://guidealong.com/tour/yorktown-battlefield/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore the battlefield that decided the fate of the American Revolution at Yorktown",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2017/01/The-Yorktown-Victory-Monument.jpg",
+      "audioPoints": "65+",
+      "duration": "",
+      "tourType": "Driving",
+      "start": "Gloucester",
+      "location": "Virginia, USA"
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
     }
   },
   {
