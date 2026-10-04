@@ -28,6 +28,11 @@ jobs:
           require-lockfile: true
           cache: true
 
+      - name: Install Playwright browser
+        # Enrichment drives a headless Chromium session (lib/enrich.js), so the
+        # runner needs the Playwright browser matching the pinned playwright-core.
+        run: pnpm exec playwright-core install chromium
+
       - name: Refresh tour data
         env:
           # Optional: geocoding is skipped when no key is present.
