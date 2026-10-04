@@ -1157,7 +1157,6 @@ function setupSearch() {
         closeSearchResults();
         input.blur();
       }
-      return;
     }
   });
 
