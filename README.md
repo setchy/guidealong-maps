@@ -80,7 +80,7 @@ Contributions are welcome! 🎉
 ℹ️ This project is for demonstration purposes and is not affiliated with GuideAlong.
 
 <!-- Links -->
-[screenshot]: ./assets/image.jpg
+[screenshot]: ./assets/image.png
 [social]: ./assets/social.png
 [guidealong]: https://guidealong.com
 [maplibre]: https://maplibre.org
