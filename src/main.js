@@ -12,7 +12,7 @@ let map;
 let markers = [];
 const markerIndexByKey = new Map();
 let allTours = [];
-let completedTours = [];
+let completedTours = new Set();
 let completedToursData = []; // Store full completed tour objects
 let userLocation = null;
 let geolocateControl = null;
@@ -23,9 +23,9 @@ async function loadCompletedTours() {
     const response = await fetch("data/completed.json");
     if (!response.ok) throw new Error("Failed to fetch completed tours");
     const completed = await response.json();
-    if (!Array.isArray(completed)) return [];
+    if (!Array.isArray(completed)) return new Set();
     completedToursData = completed;
-    return completed.map((tour) => tour.title);
+    return new Set(completed.map((tour) => tour.url));
   } catch (error) {
     console.error("Error loading completed tours:", error);
     return [];
@@ -44,7 +44,7 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
-function computeFilteredTours(tours, completedTitles, filters) {
+function computeFilteredTours(tours, completedUrls, filters) {
   const search = (filters.search || "").toLowerCase();
   const {
     countries = [],
@@ -63,7 +63,7 @@ function computeFilteredTours(tours, completedTitles, filters) {
       countries.length === 0 || countries.includes(g.country);
     const matchesState = states.length === 0 || states.includes(g.state);
 
-    const isCompleted = completedTitles.includes(t.title);
+    const isCompleted = completedUrls.has(t.url);
     let matchesStatus = true;
     if (status === "completed") matchesStatus = isCompleted;
     else if (status === "incomplete") matchesStatus = !isCompleted;
@@ -151,7 +151,7 @@ function plotToursOnMap(tours) {
     const lat = t?.geocode?.lat;
     const lng = t?.geocode?.lng;
     if (lat && lng) {
-      const isCompleted = completedTours.includes(t.title);
+      const isCompleted = completedTours.has(t.url);
       const key = t.url || t.title;
       const el = document.createElement("img");
       el.src = isCompleted
@@ -165,7 +165,7 @@ function plotToursOnMap(tours) {
         .addTo(map);
 
       const completedTourData = completedToursData.find(
-        (ct) => ct.title === t.title,
+        (ct) => ct.url === t.url,
       );
       const popup = new Popup({ offset: 25 }).setHTML(
         buildInfoContent(t, isCompleted, completedTourData),
@@ -200,7 +200,7 @@ function buildInfoContent(t, isCompleted, completedTourData) {
 
 function updateStats(tours) {
   const completedCount = tours.filter((tour) =>
-    completedTours.includes(tour.title),
+    completedTours.has(tour.url),
   ).length;
   const totalCount = tours.length;
   const completedText =
@@ -585,10 +585,10 @@ function getSelectedStates() {
 }
 
 // --- Group & Sort helpers -------------------------------------------------
-function getCompletedInfo(title) {
-  const data = completedToursData.find((ct) => ct.title === title);
+function getCompletedInfo(url) {
+  const data = completedToursData.find((ct) => ct.url === url);
   return {
-    completed: completedTours.includes(title),
+    completed: completedTours.has(url),
     date: data?.completedDate || null,
   };
 }
@@ -620,8 +620,8 @@ function sortTours(tours, sortKey, userLocation) {
   switch (sortKey) {
     case "completedDate": {
       sorted.sort((a, b) => {
-        const ca = getCompletedInfo(a.title);
-        const cb = getCompletedInfo(b.title);
+        const ca = getCompletedInfo(a.url);
+        const cb = getCompletedInfo(b.url);
         // Not completed first? No - completed tours go first.
         if (ca.completed !== cb.completed) return ca.completed ? -1 : 1;
         if (!ca.completed) return byTitle(a, b);
@@ -666,7 +666,7 @@ function groupTours(sortedTours, groupKey) {
     let key;
     let label;
     if (groupKey === "status") {
-      const { completed } = getCompletedInfo(t.title);
+      const { completed } = getCompletedInfo(t.url);
       key = completed ? "completed" : "incomplete";
       label = completed ? "Completed" : "Not Completed";
     } else {
@@ -1239,7 +1239,7 @@ function buildTourItem(t, sortByDistance) {
   const g = t.geocode || {};
   const d = t.details || {};
   const place = [g.state, g.country].filter(Boolean).join(", ");
-  const status = completedTours.includes(t.title) ? "✅" : "";
+  const status = completedTours.has(t.url) ? "✅" : "";
   const type = d.tourType ? ` • ${d.tourType}` : "";
   const key = t.url || t.title;
   let dist = "";
