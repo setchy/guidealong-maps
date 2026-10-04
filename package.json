@@ -2,6 +2,7 @@
   "name": "guidealong-maps",
   "version": "1.0.0",
   "description": "A simple site that helps you explore GuideAlong tour locations across the globe.",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "vite",
