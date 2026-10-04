@@ -1,6 +1,7 @@
 import {
   AttributionControl,
   GeolocateControl,
+  LngLatBounds,
   Map as MapLibreMap,
   Marker,
   NavigationControl,
@@ -298,7 +299,7 @@ function setupStateCheckboxListeners() {
         allStatesCheckbox.checked = !anyChecked;
       }
       updateStateDropdownButtonText();
-      updateAll();
+      updateAll({ fit: true });
     });
   }
 
@@ -341,7 +342,7 @@ function setupCountryCheckboxListeners() {
         allCountriesCheckbox.checked = !anyChecked;
       }
       updateCountryDropdownButtonText();
-      updateAll();
+      updateAll({ fit: true });
     });
   }
 
@@ -397,7 +398,7 @@ function setupTourStatusFilter() {
       if (!(target instanceof HTMLInputElement) || target.type !== "radio")
         return;
       updateStatusDropdownButtonText();
-      updateAll();
+      updateAll({ fit: true });
       dropdown.classList.remove("open");
       dropdownButton.setAttribute("aria-expanded", "false");
     });
@@ -482,7 +483,7 @@ function setupTourTypeFilter(tours) {
       if (allCb) allCb.checked = !anyChecked;
     }
     updateTourTypeDropdownButtonText();
-    updateAll();
+    updateAll({ fit: true });
     dropdown.classList.remove("open");
     dropdownButton.setAttribute("aria-expanded", "false");
   });
@@ -758,10 +759,62 @@ function updateSortByDropdownButtonText() {
   dropdownButton.innerHTML = `${labels[selected?.value] || "Title"} <span class="dropdown-arrow">▼</span>`;
 }
 
-function updateAll() {
+// --- Map camera fit ------------------------------------------------------
+const MOBILE_BREAKPOINT = "(max-width: 900px)"; // matches bottom-sheet breakpoint in styles.css
+const FIT_MAX_ZOOM = 10; // same cap as the locate-me control's fitBoundsOptions
+const FIT_DURATION = 800; // fixed duration: default flyTo-style easing scales with distance and can take seconds
+const FIT_PADDING = { top: 40, right: 40, bottom: 40, left: 40 };
+
+function getFitPadding() {
+  if (!window.matchMedia(MOBILE_BREAKPOINT).matches) return FIT_PADDING;
+  const sheetHeight = document.getElementById("controls")?.offsetHeight || 88;
+  // Extra bottom padding keeps fitted markers above the fixed bottom sheet.
+  return { ...FIT_PADDING, bottom: sheetHeight + 24 };
+}
+
+function fitCamera(tours) {
+  const bounds = new LngLatBounds();
+  let count = 0;
+  let point = null;
+  (tours || []).forEach((t) => {
+    const lat = t?.geocode?.lat;
+    const lng = t?.geocode?.lng;
+    if (lat && lng) {
+      bounds.extend([lng, lat]);
+      count += 1;
+      point = [lng, lat];
+    }
+  });
+  if (count === 0) return; // no geocodable results: leave the camera untouched
+  if (count === 1) {
+    // A single point makes a zero-area bounds, which fitBounds resolves
+    // inconsistently depending on the current camera. Fit a tiny non-zero
+    // box instead so padding applies and zoom lands on the max cap.
+    const [lng, lat] = point;
+    const EPS = 0.001;
+    const box = new LngLatBounds(
+      [lng - EPS, lat - EPS],
+      [lng + EPS, lat + EPS],
+    );
+    map.fitBounds(box, {
+      padding: getFitPadding(),
+      maxZoom: FIT_MAX_ZOOM,
+      duration: FIT_DURATION,
+    });
+    return;
+  }
+  map.fitBounds(bounds, {
+    padding: getFitPadding(),
+    maxZoom: FIT_MAX_ZOOM,
+    duration: FIT_DURATION,
+  });
+}
+
+function updateAll({ fit = false } = {}) {
   const filters = getFilters();
   const filtered = computeFilteredTours(allTours, completedTours, filters);
   updateAutocomplete(filtered);
+  if (fit) fitCamera(filtered);
   plotToursOnMap(filtered);
   updateStats(filtered);
   renderTourList(filtered);
