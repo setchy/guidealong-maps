@@ -3,11 +3,9 @@
 
 > 🗺️ Explore GuideAlong tours on an interactive map.
 
-A simple web app that displays [GuideAlong][guidealong] tours on an interactive map powered by [MapLibre GL JS][maplibre] with free [OpenFreeMap][openfreemap] vector tiles (built from OpenStreetMap data). Deployed via [Netlify][netlify].
-
 ![GuideAlong Tours][social]
 
-![GuideAlong Tours][screenshot]
+A simple web app that displays [GuideAlong][guidealong] tours on an interactive map powered by [MapLibre GL JS][maplibre] with free [OpenFreeMap][openfreemap] vector tiles (built from OpenStreetMap data). Deployed via [Netlify][netlify].
 
 ## ✨ Features
 
@@ -37,6 +35,8 @@ pnpm start
 The UI runs entirely in the browser — MapLibre GL JS and free [OpenFreeMap][openfreemap] tiles need **no API key**.
 
 ## 🧭 Using the UI
+
+![GuideAlong Tours][screenshot]
 
 - Search: press `Cmd+K`/`Ctrl+K` (or the search button) for a keyboard-driven tour search palette, or use the inline search field.
 - Filters: Country, State, Tour type (by category), Tour status, and Search (title/description).
