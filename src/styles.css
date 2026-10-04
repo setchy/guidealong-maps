@@ -44,7 +44,7 @@ body {
   position: absolute;
   top: 10px; /* restore default position */
   right: 10px;
-  background: #ff4444;
+  background: #d32f2f;
   color: white;
   padding: 10px;
   border-radius: 8px;
@@ -114,9 +114,7 @@ body {
 }
 .filter-section {
   margin-bottom: 10px;
-}
-/* Indent each block within a filter section */
-.filter-section {
+  /* Indent each block within a filter section */
   padding-left: 8px;
 }
 /* Make filter labels less prominent */
@@ -393,7 +391,7 @@ select[multiple] {
   top: 50%;
   transform: translateY(-50%);
   font-size: 10px;
-  color: #888;
+  color: #666;
   border: 1px solid #ddd;
   border-radius: 3px;
   padding: 0 3px;
@@ -448,7 +446,7 @@ select[multiple] {
   border-top: 1px solid #eee;
   background: #fafafa;
   font-size: 11px;
-  color: #888;
+  color: #666;
 }
 
 .controls-footer {

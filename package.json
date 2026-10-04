@@ -2,7 +2,7 @@
   "name": "guidealong-maps",
   "version": "1.0.0",
   "description": "A simple site that helps you explore GuideAlong tour locations across the globe.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "vite",
     "lint": "biome check --fix",

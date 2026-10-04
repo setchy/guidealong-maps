@@ -1,11 +1,13 @@
 # GuideAlong Tours Explorer
-[![Netlify Status][netlify-badge]][netlify-deploys] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Data refresh][data-refresh-badge]][data-refresh-actions]
+[![Netlify Status][netlify-badge]][netlify-deploys] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Data refresh][data-refresh-badge]][data-refresh-actions] [![License][license-badge]][license]
 
 > 🗺️ Explore GuideAlong tours on an interactive map.
 
-A simple web app that displays [GuideAlong][guidealong] tours on an interactive map powered by [MapLibre GL JS][maplibre] with free [OpenFreeMap][openfreemap] vector tiles (built from OpenStreetMap data). Deployed via [Netlify][netlify].
+![GuideAlong Tours][social]
 
-![GuideAlong Tours][screenshot]
+A simple web app that displays [GuideAlong][guidealong] tours on an interactive map — completely free, with no API keys required.
+
+---
 
 ## ✨ Features
 
@@ -18,13 +20,23 @@ A simple web app that displays [GuideAlong][guidealong] tours on an interactive 
 - ✅ **Progress tracking** — completed trips get a green GuideAlong pin and their completion date
 - 📱 **Mobile friendly** — collapsible panels and a peek-and-expand bottom sheet for on-the-go exploring
 
+## 🛠️ Built with
+
+- 🗺️ [MapLibre GL JS][maplibre] — interactive vector maps
+- 🌍 [OpenFreeMap][openfreemap] — free, no-API-key vector tiles
+- ⚡ [Vite](https://vitejs.dev) — dev server and static file serving
+- 📦 [pnpm](https://pnpm.io) — fast, disk-efficient package manager
+- 🧹 [Biome](https://biomejs.dev) — linting and formatting
+- ☁️ [Netlify][netlify] — hosting and preview deploys
+- 📍 [Google Maps Geocoding SDK](https://developers.google.com/maps/documentation/geocoding) — optional server-side geocoding
+
 ## 🚀 Getting started
 
 ### 📋 Prerequisites
 
-- Node.js and pnpm
+- 📦 Node.js and pnpm
 
-### Running locally
+### 🖥️ Running locally
 
 Start a static file server and open the app in your browser:
 
@@ -32,16 +44,18 @@ Start a static file server and open the app in your browser:
 pnpm start
 ```
 
-The UI runs entirely in the browser — MapLibre GL JS and free [OpenFreeMap][openfreemap] tiles need **no API key**.
+The UI runs entirely in the browser — with **no API keys required**.
 
 ## 🧭 Using the UI
 
-- Search: press `Cmd+K`/`Ctrl+K` (or the search button) for a keyboard-driven tour search palette, or use the inline search field.
-- Filters: Country, State, Tour type (by category), Tour status, and Search (title/description).
-- Group & Sort: group the list by Status or Category, and sort by Title, Completed date, or Distance.
-- Locate-me: use the map's locate control to capture your position, then sort by Distance to see tours nearest you (with computed distances shown).
-- Sections (Filters, Group & Sort, Tours) are collapsible and start collapsed on load; the Tours header shows the count and completed tally.
-- Clicking a tour in the list pans/zooms the map and opens its info window.
+![GuideAlong Tours][screenshot]
+
+- 🔍 Search: press `Cmd+K`/`Ctrl+K` (or the search button) for a keyboard-driven tour search palette, or use the inline search field.
+- 🎛️ Filters: Country, State, Tour type (by category), Tour status, and Search (title/description).
+- 🗂️ Group & Sort: group the list by Status or Category, and sort by Title, Completed date, or Distance.
+- 📡 Locate-me: use the map's locate control to capture your position, then sort by Distance to see tours nearest you (with computed distances shown).
+- 📑 Sections (Filters, Group & Sort, Tours) are collapsible and start collapsed on load; the Tours header shows the count and completed tally.
+- 🖱️ Clicking a tour in the list pans/zooms the map and opens its info window.
 
 ## 📜 Scripts
 
@@ -57,14 +71,18 @@ Contributions are welcome! 🎉
 - Open an [issue][github-issues] for bugs or feature requests.
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for development details — data files, refreshing tour data, deploying to Netlify, and troubleshooting.
 
-## 📄 License
+## 📜 License
 
-This project is for demonstration purposes and is not affiliated with GuideAlong.
+⚖️ Licensed under the [ISC License](LICENSE).
+
+🚗 Tour content is sourced from [GuideAlong][guidealong] and remains their property.
+
+ℹ️ This project is for demonstration purposes and is not affiliated with GuideAlong.
 
 <!-- Links -->
-[screenshot]: ./assets/image.png
+[screenshot]: ./assets/image.jpg
+[social]: ./assets/social.png
 [guidealong]: https://guidealong.com
-[guidealong-tours]: https://guidealong.com/tour-list
 [maplibre]: https://maplibre.org
 [openfreemap]: https://openfreemap.org
 [netlify]: https://netlify.com
@@ -76,4 +94,6 @@ This project is for demonstration purposes and is not affiliated with GuideAlong
 [renovate]: https://github.com/setchy/guidealong-maps/issues/1
 [data-refresh-badge]: https://img.shields.io/github/actions/workflow/status/setchy/guidealong-maps/refresh-tours.yml?label=Data%20refresh&logo=github
 [data-refresh-actions]: https://github.com/setchy/guidealong-maps/actions/workflows/refresh-tours.yml
+[license-badge]: https://img.shields.io/github/license/setchy/guidealong-maps?logo=github
+[license]: LICENSE
 [github-issues]: https://github.com/setchy/guidealong-maps/issues
