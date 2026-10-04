@@ -1146,7 +1146,7 @@ function renderTourList(tours) {
   const groups = groupAndSort(tours);
   const sortByDistance = getSortBy() === "distance";
 
-  if (groups.length === 0 || groups.every((g) => g.tours.length === 0)) {
+  if (groups.every((g) => g.tours.length === 0)) {
     list.innerHTML = '<div class="meta">No tours to display.</div>';
     return;
   }
