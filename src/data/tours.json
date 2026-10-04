@@ -400,26 +400,6 @@
     }
   },
   {
-    "title": "BOSTON’S GHOSTS TOUR",
-    "url": "https://guidealong.com/tour/bostons-ghosts-tour/",
-    "category": "Driving",
-    "details": {
-      "description": "A chilling evening walk through Boston’s haunted past, filled with eerie legends, shadowy cemeteries, and historic landmarks. Feel the whispers of history echo through every cobblestone street.",
-      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/11/HOW-TO-GET-HERE.jpg",
-      "audioPoints": "30+",
-      "duration": "1 To 2 Hours",
-      "tourType": "Walking",
-      "start": "243 Stuart St, Boston",
-      "location": "Massachusetts, USA"
-    },
-    "geocode": {
-      "lat": 42.3555076,
-      "lng": -71.0565364,
-      "country": "United States",
-      "state": "MA"
-    }
-  },
-  {
     "title": "CALGARY TO BANFF TOUR",
     "url": "https://guidealong.com/tour/calgary-to-banff/",
     "category": "Driving",
@@ -893,10 +873,10 @@
       "location": "Pennsylvania"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 39.8309293,
+      "lng": -77.2310955,
+      "country": "United States",
+      "state": "PA"
     }
   },
   {
@@ -1853,10 +1833,10 @@
       "location": "California, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 33.8232286,
+      "lng": -116.5106191,
+      "country": "United States",
+      "state": "CA"
     }
   },
   {
@@ -2393,9 +2373,9 @@
       "location": ""
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
+      "lat": 38.7945952,
+      "lng": -106.5348379,
+      "country": "United States",
       "state": ""
     }
   },
@@ -2493,10 +2473,10 @@
       "location": "Pennsylvania, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 40.09898510000001,
+      "lng": -75.4690966,
+      "country": "United States",
+      "state": "PA"
     }
   },
   {
@@ -2753,10 +2733,10 @@
       "location": "Virginia, USA"
     },
     "geocode": {
-      "lat": null,
-      "lng": null,
-      "country": "",
-      "state": ""
+      "lat": 37.2294775,
+      "lng": -76.5019458,
+      "country": "United States",
+      "state": "VA"
     }
   },
   {
