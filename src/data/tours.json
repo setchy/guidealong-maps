@@ -86,8 +86,8 @@
     "details": {
       "description": "One of America's best road trips is through the Appalachian Mountains along the Blue Ridge Parkway, Skyline Drive in Shenandoah National Park and Great Smoky Mountains National Park.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2023/06/Appalachian-Bundle.jpg",
-      "audioPoints": "1,115+",
-      "duration": "3 Destinations",
+      "audioPoints": "1290+",
+      "duration": "4 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
@@ -867,7 +867,7 @@
       "description": "Walk through historic downtown Gettysburg to see a town marked by war.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2026/09/Gettysburg-Train-Station.jpg",
       "audioPoints": "25+",
-      "duration": "",
+      "duration": "1/2 Day",
       "tourType": "Walking",
       "start": "297 Steinwehr Avenue, in front of the Gettysburg Heritage Center",
       "location": "Pennsylvania"
@@ -1404,11 +1404,11 @@
     "url": "https://guidealong.com/tour/miami-key-west-florida/",
     "category": "Driving",
     "details": {
-      "description": "One of America's Classic Driving routes - the Overseas Highway. Take your convertible, swimwear and partner for a day in the sun, exploring beaches, parks, towns and history along the way. Tour Northbound AND Southbound.",
+      "description": "Drive US-Rt 1 and Overseas Highway from Miami to Key West, then walk Historic & Festive Key West",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2019/03/Florida-Keys-Drive-1.jpg",
-      "audioPoints": "230+",
+      "audioPoints": "280+",
       "duration": "1 - 2 Days+",
-      "tourType": "Driving",
+      "tourType": "Driving-Hybrid",
       "start": "Miami or Key West",
       "location": "Florida, USA"
     },
@@ -2387,7 +2387,7 @@
       "description": "US East Tours bundle includes Acadia, Bar Harbor, Blue Ridge Parkway, Creole Nature Trail, Catskills, Boston Ghost, Freedom Trail, Gettysburg Battlefield, Great Smoky Mountains, Keweenaw, Lake Michigan, Lake Superior North Shore, Miami - Key West, Natchez Trace, New River Gorge, […]",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2023/05/Cowee-Mountain-Overlook-in-Fall.jpg",
       "audioPoints": "4435+",
-      "duration": "32 Destinations",
+      "duration": "33 Destinations",
       "tourType": "Driving & Walking",
       "start": "",
       "location": ""
