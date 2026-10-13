@@ -1,0 +1,22 @@
+name: Renovate
+
+on:
+  pull_request:
+    paths:
+      - renovate.json
+      - renovate.json5
+      - .github/workflows/renovate.yml
+  push:
+    paths:
+      - renovate.json
+      - renovate.json5
+      - .github/workflows/renovate.yml
+
+permissions: {}
+
+jobs:
+  validate:
+    name: Config validation
+    uses: setchy/renovate-config/.github/workflows/renovate-config-validator.yml@90ceae6dc3d2b50c31546994d84e739fae0d9141 # main
+    permissions:
+      contents: read
