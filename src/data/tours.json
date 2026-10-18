@@ -840,6 +840,26 @@
     }
   },
   {
+    "title": "GATEWAY ARCH NATIONAL PARK & ST. LOUIS TOUR",
+    "url": "https://guidealong.com/tour/st-louis-tour/",
+    "category": "National Park",
+    "details": {
+      "description": "Discover the spirit of St. Louis through the towering Gateway Arch, legendary blues history, vibrant riverfront, and iconic city landmarks.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/04/St-Louis-Trip-Planner-1.jpg",
+      "audioPoints": "60+",
+      "duration": "1 day",
+      "tourType": "Walking Hybrid",
+      "start": "Corner of Chestnut Street & North 7th Street, St. Louis",
+      "location": "Missouri, USA"
+    },
+    "geocode": {
+      "lat": 38.62742799999999,
+      "lng": -90.1982439,
+      "country": "United States",
+      "state": "MO"
+    }
+  },
+  {
     "title": "GETTYSBURG BATTLEFIELD BUNDLE",
     "url": "https://guidealong.com/tour/gettysburg-battlefield-bundle/",
     "category": "Bundle",
@@ -2080,7 +2100,7 @@
     }
   },
   {
-    "title": "SALEM WITCH TRIALS TOUR",
+    "title": "SALEM TOUR",
     "url": "https://guidealong.com/tour/salem-witch-trials-tour/",
     "category": "Driving",
     "details": {
@@ -2240,6 +2260,26 @@
     }
   },
   {
+    "title": "SKAGWAY: FRONTIER TOWN WALK TOUR",
+    "url": "https://guidealong.com/tour/skagway-fontier-town-walking-tour/",
+    "category": "Walking",
+    "details": {
+      "description": "Walk through Skagway, the historic gold-rush town surrounded by forbidding mountains and calm rivers within Alaska’s Inside Passage.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/10/Historic-Moore-Homestead.jpg",
+      "audioPoints": "45+",
+      "duration": "",
+      "tourType": "Walking",
+      "start": "Railroad Dock,Broadway Dock or Broadway Port",
+      "location": "Alaska, USA"
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "title": "SNÆFELLSNES PENINSULA TOUR",
     "url": "https://guidealong.com/tour/snaefellsnes-peninsula-tour/",
     "category": "Driving",
@@ -2277,26 +2317,6 @@
       "lng": -122.4580356,
       "country": "United States",
       "state": "CA"
-    }
-  },
-  {
-    "title": "ST. LOUIS TOUR",
-    "url": "https://guidealong.com/tour/st-louis-tour/",
-    "category": "Driving",
-    "details": {
-      "description": "Discover the spirit of St. Louis through the towering Gateway Arch, legendary blues history, vibrant riverfront, and iconic city landmarks.",
-      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/04/St-Louis-Trip-Planner-1.jpg",
-      "audioPoints": "60+",
-      "duration": "1 day",
-      "tourType": "Walking Hybrid",
-      "start": "Corner of Chestnut Street & North 7th Street, St. Louis",
-      "location": "Missouri, USA"
-    },
-    "geocode": {
-      "lat": 38.62742799999999,
-      "lng": -90.1982439,
-      "country": "United States",
-      "state": "MO"
     }
   },
   {
@@ -2644,7 +2664,7 @@
     "url": "https://guidealong.com/tour/yellowstone-national-park/",
     "category": "National Park",
     "details": {
-      "description": "The USA’s most magnificent National Park will impress you. Our tours cover all 4 quadrants of the park, allowing you either to just cover the highlights or with more time, in depth.",
+      "description": "America's most magnificent National Park is the road trip of a lifetime. Our Yellowstone tour cover all 4 quadrants of the park, showing you the highlights or exploring everything in depth.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2020/03/Yellowstone-13.jpg",
       "audioPoints": "375+",
       "duration": "1 - 3 Days+",
