@@ -22,6 +22,21 @@ test("every completed tour URL exists in tours.json", () => {
   }
 });
 
+test("data files are sorted by stable id (url)", () => {
+  for (const file of [TOURS_FILE, COMPLETED_FILE]) {
+    const rows = JSON.parse(readFileSync(file, "utf8"));
+    const urls = rows.map((row) => row.url);
+    assert.deepEqual(urls, [...urls].sort(), `${file} is not sorted by url`);
+  }
+});
+
+test("tours.json puts the stable id (url) before title", () => {
+  const tours = JSON.parse(readFileSync(TOURS_FILE, "utf8"));
+  for (const tour of tours) {
+    assert.deepEqual(Object.keys(tour).slice(0, 2), ["url", "title"]);
+  }
+});
+
 test("completed entries use URL identity, never a title field", () => {
   const completed = JSON.parse(readFileSync(COMPLETED_FILE, "utf8"));
 
