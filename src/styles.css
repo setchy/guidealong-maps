@@ -262,6 +262,9 @@ select[multiple] {
   margin-top: 10px;
   border-top: 1px solid #eee;
   padding-top: 10px;
+  /* Keep the right-hand chevrons clear of the overlay scrollbar. */
+  padding-right: 10px;
+  scrollbar-gutter: stable;
   overflow-y: auto;
   max-height: 45vh;
 }
@@ -360,20 +363,46 @@ select[multiple] {
 }
 
 .group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   padding: 6px 8px;
   margin: 8px 0 4px;
+  font-family: inherit;
   font-size: 12px;
   font-weight: 700;
+  text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: #555;
   background: #f4f4f4;
+  border: 0;
   border-radius: 4px;
+  cursor: pointer;
 }
-
+.group-header:hover {
+  background: #ececec;
+}
+.group-header:focus-visible {
+  outline: 2px solid #2f6fed;
+  outline-offset: 1px;
+}
 .group-header .group-count {
   font-weight: 400;
   color: #888;
+  margin-left: 4px;
+}
+.group-chevron {
+  font-size: 10px;
+  color: #888;
+  transition: transform 0.2s;
+}
+.group-section.collapsed .group-chevron {
+  transform: rotate(-90deg);
+}
+.group-section.collapsed .group-body {
+  display: none;
 }
 
 .controls-header-actions {

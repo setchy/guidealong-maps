@@ -17,6 +17,9 @@ let completedToursData = []; // Store full completed tour objects
 let userLocation = null;
 let geolocateControl = null;
 let locationRequested = false;
+// Group sections the user has collapsed, keyed by "<groupBy>:<groupKey>" so the
+// state survives filter/sort re-renders without leaking across grouping modes.
+const collapsedGroups = new Set();
 
 // Rendered size of a map pin. Icons are high-res PNGs downscaled to this, so
 // the pins stay crisp; the popup tip offset is derived from this so tooltips
@@ -627,10 +630,16 @@ function tourDistanceMiles(t, userLocation) {
   return haversineDistanceMiles(userLocation, { lat: g.lat, lng: g.lng });
 }
 
+// The tours.json export is ordered by stable id (url) to keep diffs small; the
+// UI always presents tours alphabetically by name, never in file order.
+function byTourTitle(a, b) {
+  return (a.title || "").localeCompare(b.title || "", undefined, {
+    numeric: true,
+  });
+}
+
 function sortTours(tours, sortKey, userLocation) {
   const sorted = [...tours];
-  const byTitle = (a, b) =>
-    (a.title || "").localeCompare(b.title || "", undefined, { numeric: true });
 
   switch (sortKey) {
     case "completedDate": {
@@ -639,11 +648,11 @@ function sortTours(tours, sortKey, userLocation) {
         const cb = getCompletedInfo(b.url);
         // Not completed first? No - completed tours go first.
         if (ca.completed !== cb.completed) return ca.completed ? -1 : 1;
-        if (!ca.completed) return byTitle(a, b);
+        if (!ca.completed) return byTourTitle(a, b);
         // Both completed: dated before undated
         if (!!ca.date !== !!cb.date) return ca.date ? -1 : 1;
         if (ca.date && cb.date) return cb.date.localeCompare(ca.date); // newest first
-        return byTitle(a, b);
+        return byTourTitle(a, b);
       });
       break;
     }
@@ -651,7 +660,7 @@ function sortTours(tours, sortKey, userLocation) {
       sorted.sort((a, b) => {
         const da = tourDistanceMiles(a, userLocation);
         const db = tourDistanceMiles(b, userLocation);
-        if (da == null && db == null) return byTitle(a, b);
+        if (da == null && db == null) return byTourTitle(a, b);
         if (da == null) return 1; // ungeocoded last
         if (db == null) return -1;
         return da - db;
@@ -659,7 +668,7 @@ function sortTours(tours, sortKey, userLocation) {
       break;
     }
     default:
-      sorted.sort(byTitle);
+      sorted.sort(byTourTitle);
   }
   return sorted;
 }
@@ -870,6 +879,9 @@ async function loadToursFromFile() {
     if (!response.ok) throw new Error("No saved tours file found");
     const toursRaw = await response.json();
     const tours = Array.isArray(toursRaw) ? toursRaw : [];
+    // Sort once on load so every UI surface that doesn't apply its own sort
+    // (autocomplete, search results, markers) is alphabetical by tour name.
+    tours.sort(byTourTitle);
     hideLoading();
     return tours;
   } catch {
@@ -1238,15 +1250,41 @@ function setupSearch() {
 // MapLibre GL JS is loaded via ES module import above
 void initMap();
 
-function buildGroupHeader(group) {
+function buildGroupHeader(group, { stateKey, section, bodyId }) {
   if (!group.label) return null;
-  const header = document.createElement("div");
+  const header = document.createElement("button");
+  header.type = "button";
   header.className = "group-header";
-  header.appendChild(document.createTextNode(group.label));
+  header.setAttribute("aria-expanded", "true");
+  header.setAttribute("aria-controls", bodyId);
+
+  const label = document.createElement("span");
+  label.className = "group-header-label";
+  label.appendChild(document.createTextNode(group.label));
   const count = document.createElement("span");
   count.className = "group-count";
   count.textContent = `(${group.count})`;
-  header.appendChild(count);
+  label.appendChild(count);
+  header.appendChild(label);
+
+  const chevron = document.createElement("span");
+  chevron.className = "group-chevron";
+  chevron.setAttribute("aria-hidden", "true");
+  chevron.textContent = "▼";
+  header.appendChild(chevron);
+
+  header.addEventListener("click", () => {
+    const collapsed = section.classList.toggle("collapsed");
+    header.setAttribute("aria-expanded", String(!collapsed));
+    if (collapsed) collapsedGroups.add(stateKey);
+    else collapsedGroups.delete(stateKey);
+  });
+
+  // Restore any collapse state from a previous render.
+  if (collapsedGroups.has(stateKey)) {
+    section.classList.add("collapsed");
+    header.setAttribute("aria-expanded", "false");
+  }
   return header;
 }
 
@@ -1301,6 +1339,7 @@ function renderTourList(tours) {
 
   const groups = groupAndSort(tours);
   const sortByDistance = getSortBy() === "distance";
+  const groupBy = getGroupBy();
 
   list.replaceChildren();
 
@@ -1312,13 +1351,28 @@ function renderTourList(tours) {
     return;
   }
 
-  for (const group of groups) {
-    const header = buildGroupHeader(group);
-    if (header) list.appendChild(header);
+  groups.forEach((group, index) => {
+    const bodyId = `groupBody-${index}`;
+    const section = document.createElement("section");
+    section.className = "group-section";
+    section.dataset.groupKey = group.key;
+
+    const header = buildGroupHeader(group, {
+      stateKey: `${groupBy}:${group.key}`,
+      section,
+      bodyId,
+    });
+    if (header) section.appendChild(header);
+
+    const body = document.createElement("div");
+    body.id = bodyId;
+    body.className = "group-body";
     for (const t of group.tours) {
-      list.appendChild(buildTourItem(t, sortByDistance));
+      body.appendChild(buildTourItem(t, sortByDistance));
     }
-  }
+    section.appendChild(body);
+    list.appendChild(section);
+  });
 
   wireTourItemClicks(list);
 }
