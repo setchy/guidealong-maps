@@ -1,13 +1,14 @@
 ---
+
 name: openspec-update-change
 description: Update an OpenSpec change by revising its existing planning artifacts and keeping them coherent with one another. Use when the user wants to revise a change's plan, fold new decisions into it, or reconcile its artifacts after an edit. Also use when the user says "openspec update change" or "opsx update". If the user means the openspec update CLI command, which refreshes generated files, run that command instead. Never edits code.
 allowed-tools: Bash(openspec:*)
 license: MIT
 compatibility: Requires openspec CLI.
 metadata:
-  author: openspec
-  version: "1.0"
-  generatedBy: "1.14.1"
+author: openspec
+version: "1.0"
+generatedBy: "1.14.1"
 ---
 
 Revise a change's existing planning artifacts and keep them coherent. Never edit code.
@@ -19,7 +20,6 @@ Revise a change's existing planning artifacts and keep them coherent. Never edit
 One `"root": null` is not about setup: when a `status` error message starts with `Declared in` or `Invalid store declaration in` and names this project's `openspec/config.yaml` (or `config.yml`), the project does use OpenSpec through a store it declares, which this machine cannot resolve (the store is not registered, or the `store:` line is malformed). Do not treat it as uninitialized and skip the branches below: stop before writing and show the user that error's `message` and `fix`.
 
 Otherwise, with no root, what happens next depends on how this workflow was reached:
-
 - **Auto-selected**: you chose this workflow yourself, without the user naming OpenSpec, naming this skill, or running its slash command. Stop using OpenSpec and answer the request normally, as you would with no OpenSpec installed. Do not ask them to set anything up and do not mention OpenSpec setup.
 - **Explicit OpenSpec request**: the user named OpenSpec, named this skill, or ran its slash command. Stop before writing and ask how to proceed: set this project up (`openspec init`), target a store they already have (`--store <id>`), or continue without OpenSpec for this request. Wait for their answer.
 
@@ -30,7 +30,6 @@ In both branches, never create the root as a side effect: do not run `openspec i
 This workflow revises artifacts that already exist; it never creates missing ones. When an artifact is missing, `openspec status --change "<name>" --json` names the next one and `openspec instructions "<artifact-id>" --change "<name>" --json` explains how to write it.
 
 **Steps**
-
 1. **Select the change**
 
    If a name is provided, use it. Otherwise:
@@ -48,9 +47,11 @@ This workflow revises artifacts that already exist; it never creates missing one
    Always announce: "Using change: <name>" and how to override (e.g., `/opsx-update <other>`).
 
 2. **Get the change's artifacts**
+
    ```bash
    openspec status --change "<name>" --json
    ```
+
    Parse the JSON to understand current state. The response includes:
    - `schemaName`: The workflow schema being used (e.g., "spec-driven")
    - `artifacts`: Array of artifacts with their status ("done", "skipped", "ready", "blocked")
@@ -83,6 +84,7 @@ This workflow revises artifacts that already exist; it never creates missing one
    - Show each proposed revision and why - including the requested edit drafted in step 4. Write only after the user confirms.
    - If the user rejects a revision, do not write it - leave that artifact unchanged.
    - When a substantial rewrite is needed, get that artifact's rules and template first:
+
      ```bash
      openspec instructions "<artifact-id>" --change "<name>" --json
      ```
@@ -106,4 +108,4 @@ After each invocation, show:
 - Edit only the concrete files in `existingOutputPaths`; never write to a glob `resolvedOutputPath`.
 - Do not advance the build frontier: if an artifact has empty `existingOutputPaths` and status `ready` or `blocked`, creating them is a separate step, outside this workflow. Leave `skipped` artifacts untouched. The only new-file scope is a confirmed concrete path under a glob artifact whose `existingOutputPaths` is non-empty.
 - Confirm every edit with the user before writing.
-- If the request changes the change's *intent* rather than refining it, ask for a distinct unused change name and recommend `openspec new change "<new-change-name>"` instead (the "Update vs. Start Fresh" heuristic).
+- If the request changes the change's _intent_ rather than refining it, ask for a distinct unused change name and recommend `openspec new change "<new-change-name>"` instead (the "Update vs. Start Fresh" heuristic).

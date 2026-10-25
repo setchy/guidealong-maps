@@ -2,7 +2,7 @@
 
 ## Why
 
-`completed.json` records completed tours by **title**, and the site matches them against `tours.json` by exact title. GuideAlong renames, repacks, and bundles tours frequently, so titles drift and completed-tour highlighting silently disappears. Repo history shows both display titles *and* tour slugs change over time, but the slug (URL) is far more stable, and when an old URL dies the site itself 301-redirects it to its successor. Matching by title is the fragile link.
+`completed.json` records completed tours by **title**, and the site matches them against `tours.json` by exact title. GuideAlong renames, repacks, and bundles tours frequently, so titles drift and completed-tour highlighting silently disappears. Repo history shows both display titles _and_ tour slugs change over time, but the slug (URL) is far more stable, and when an old URL dies the site itself 301-redirects it to its successor. Matching by title is the fragile link.
 
 ## What Changes
 

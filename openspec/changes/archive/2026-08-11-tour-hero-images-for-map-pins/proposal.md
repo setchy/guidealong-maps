@@ -12,9 +12,11 @@ Map pin popups are text-only (title, location, duration, etc.) — the tour's he
 ## Capabilities
 
 ### New Capabilities
+
 - `tour-hero-images`: Fetch-time capture and local download of each tour's hero image stored in `details.thumbnail`, plus map-pin popup rendering of that thumbnail.
 
 ### Modified Capabilities
+
 <!-- No existing specs change; this capability is new. -->
 
 ## Impact

@@ -13,12 +13,14 @@ The left sidebar currently opens with both Filters and Group & Sort expanded, pu
 ## Capabilities
 
 ### New Capabilities
+
 - `sidebar-collapse-on-load`: Filters and Group & Sort sections start collapsed on initial load on all viewports.
 - `command-search-palette`: A Cmd/Ctrl+K overlay that searches tours and selects a result to focus it on the map.
 - `category-filter`: The tour type filter filters by normalized category instead of raw scraped tour type.
 - `data-freshness-and-site-link`: A footer showing the last-synced timestamp of `tours.json` and a link to the official GuideAlong site.
 
 ### Modified Capabilities
+
 <!-- No main specs exist yet; this change introduces the capabilities above. -->
 
 ## Impact

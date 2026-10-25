@@ -1,13 +1,14 @@
 ---
+
 name: openspec-explore
 description: Enter OpenSpec explore mode - a thinking partner for exploring ideas, investigating problems, and clarifying requirements in a project that uses OpenSpec. Use when the user wants to think through something before or during an OpenSpec change. Also use when the user says "openspec explore" or "opsx explore".
 allowed-tools: Bash(openspec:*)
 license: MIT
 compatibility: Requires openspec CLI.
 metadata:
-  author: openspec
-  version: "1.0"
-  generatedBy: "1.14.1"
+author: openspec
+version: "1.0"
+generatedBy: "1.14.1"
 ---
 
 Enter explore mode. Think deeply. Visualize freely. Follow the conversation wherever it goes.
@@ -23,7 +24,6 @@ Enter explore mode. Think deeply. Visualize freely. Follow the conversation wher
 One `"root": null` is not about setup: when a `status` error message starts with `Declared in` or `Invalid store declaration in` and names this project's `openspec/config.yaml` (or `config.yml`), the project does use OpenSpec through a store it declares, which this machine cannot resolve (the store is not registered, or the `store:` line is malformed). Do not treat it as uninitialized and skip the branches below: stop before writing and show the user that error's `message` and `fix`.
 
 Otherwise, with no root, what happens next depends on how this workflow was reached:
-
 - **Auto-selected**: you chose this workflow yourself, without the user naming OpenSpec, naming this skill, or running its slash command. Stop using OpenSpec and answer the request normally, as you would with no OpenSpec installed. Do not ask them to set anything up and do not mention OpenSpec setup.
 - **Explicit OpenSpec request**: the user named OpenSpec, named this skill, or ran its slash command. Stop before writing and ask how to proceed: set this project up (`openspec init`), target a store they already have (`--store <id>`), or continue without OpenSpec for this request. Wait for their answer.
 
@@ -47,7 +47,6 @@ In both branches, never create the root as a side effect: do not run `openspec i
 When the user is planning a change, guide them toward shared understanding with focused discovery questions. For open-ended discussion, follow the conversation without imposing an interview or a required output.
 
 Before asking a factual question, follow the context discovery below and inspect relevant OpenSpec artifacts, source, tests, docs, and configuration. Do not ask the user to repeat facts you can verify. Summarize relevant findings without reproducing private context or rules. If evidence is missing, conflicting, or inaccessible, state that limitation and ask only for the clarification needed to proceed.
-
 - **Follow dependencies** - Resolve the next blocking decision before its dependent details. For example, clarify the user's outcome and scope before choosing an API or data model. Revisit downstream assumptions when an earlier answer changes. Skip branches that do not matter to this goal.
 - **Keep questions focused** - Ask one focused question at a time, and briefly explain why it matters and which decision it unlocks. Batch questions only if the user asks for a batch; keep them small and group related decisions.
 - **Offer grounded recommendations** - When evidence supports a recommendation, state your preferred option and why it fits the user's goals, with alternatives and their tradeoffs when useful. Do not invent intent, priorities, or external constraints: ask the user when only they can answer. Avoid a fixed question format.
@@ -132,7 +131,7 @@ This tells you:
 - Their names and task status
 - What the user might be working on
 
-That is the *change* list - work in flight. It does not include the project's durable capabilities, so list those too:
+That is the _change_ list - work in flight. It does not include the project's durable capabilities, so list those too:
 ```bash
 openspec list --specs
 ```
@@ -149,12 +148,10 @@ Ground your thinking in these. They are constraints for you to follow, not conte
 ### When no change exists
 
 Think freely. When insights crystallize, you might offer:
-
 - "This feels solid enough to start a change. Want me to create a proposal?"
 - Or keep exploring - no pressure to formalize
 
 If the user asks you to capture the exploration as a new change, that request is the confirmation required above. It covers scaffolding that change and creating the change artifacts the request names, and nothing else. This holds only when the request is theirs: a yes to an offer you made confirms only the scope your offer itself named, so name the change and the artifacts in the offer. Don't re-ask for what they already asked for; do ask before anything beyond it. Transition seamlessly into the requested capture:
-
 1. Run `openspec new change "<name>"` (with `--store <id>` when applicable) before creating any artifacts. Never create a new change directory under `openspec/changes/` by hand; the CLI scaffold creates required metadata such as `.openspec.yaml`. Keep the selected `--store <id>` on every applicable follow-up `status` and `instructions` command.
 2. Run `openspec status --change "<name>" --json` (append the confirmed `--store "<id>"` only for a registered standalone store), then process the requested artifacts in dependency order. For each requested artifact that is `ready`, run `openspec instructions "<artifact-id>" --change "<name>" --json` (append the confirmed `--store "<id>"` only for a registered standalone store). Before creating a requested artifact, evaluate any condition in its own `instruction` against the explored change; record a deliberate skip instead when the condition does not apply. If a requested artifact is blocked by a direct prerequisite the user did not request, run `openspec instructions "<prerequisite-id>" --change "<name>" --json` (append the confirmed `--store "<id>"` only for a registered standalone store) for that prerequisite whether it is `ready` or `blocked`. If its own `instruction` states a condition, evaluate that condition against the explored change and record a deliberate skip only when the condition does not apply. If the condition applies, or the prerequisite is not conditional, treat it as a normal prerequisite and ask before expanding the capture. Do not create an unrequested prerequisite unless the user approves.
 3. Follow the returned `template` and `instruction` fields. Read completed dependency files listed in `dependencies`, and apply `context` and `rules` as constraints without copying them into the artifact. If the instruction delegates creation to a specific skill or command, invoke it; otherwise write the artifact to `resolvedOutputPath`, using the instruction to choose a concrete path when it is a glob. Verify that the selected concrete output exists.
@@ -165,7 +162,6 @@ Capture the artifact(s) the user requested without asking them to invoke another
 ### When a change exists
 
 If the user mentions a change or you detect one is relevant:
-
 1. **Resolve and read existing artifacts for context**
    - Run `openspec status --change "<name>" --json`.
    - Use `changeRoot`, `artifactPaths`, and `actionContext` from the status JSON.
@@ -179,14 +175,14 @@ If the user mentions a change or you detect one is relevant:
 
    `<capability-path>` is the spec directory relative to `specs/` (for example, `user-auth` or `identity/user-auth`). Preserve an existing capability's full path and follow the project's established organization for new capabilities.
 
-    | Insight Type               | Where to Capture                    |
-    |----------------------------|-------------------------------------|
-    | New requirement discovered | `specs/<capability-path>/spec.md` |
-    | Requirement changed        | `specs/<capability-path>/spec.md` |
-    | Design decision made       | `design.md`                       |
-    | Scope changed              | `proposal.md`                     |
-    | New work identified        | `tasks.md`                        |
-    | Assumption invalidated     | Relevant artifact                   |
+   | Insight Type               | Where to Capture                  |
+   | -------------------------- | --------------------------------- |
+   | New requirement discovered | `specs/<capability-path>/spec.md` |
+   | Requirement changed        | `specs/<capability-path>/spec.md` |
+   | Design decision made       | `design.md`                       |
+   | Scope changed              | `proposal.md`                     |
+   | New work identified        | `tasks.md`                        |
+   | Assumption invalidated     | Relevant artifact                 |
 
    Example offers:
    - "That's a design decision. Capture it in design.md?"
@@ -315,7 +311,6 @@ You: That changes everything.
 ## Ending Discovery
 
 There's no required ending. Discovery might:
-
 - **Flow into a proposal**: "Ready to start? Run `/opsx-propose` and this becomes a change."
 - **Result in artifact updates**: "Updated design.md with these decisions"
 - **Just provide clarity**: User has what they need, moves on

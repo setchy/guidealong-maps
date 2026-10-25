@@ -5,7 +5,6 @@ See proposal.md for the product motivation. The app is a static vanilla-JS MapLi
 ## Goals / Non-Goals
 
 **Goals:**
-
 - Make the mobile presentation map-first across phones, landscape devices, and narrow tablets.
 - Reuse the existing controls and sheet state rather than creating a parallel mobile filter UI.
 - Give the sheet a small, predictable peek state and a fixed expanded state.
@@ -13,7 +12,6 @@ See proposal.md for the product motivation. The app is a static vanilla-JS MapLi
 - Preserve desktop styles and behavior above the mobile breakpoint.
 
 **Non-Goals:**
-
 - No drag-to-resize behavior or arbitrary sheet heights.
 - No redesign of filters, grouping, sorting, tour data, markers, or popups.
 - No new runtime dependencies or framework migration.
@@ -23,34 +21,29 @@ See proposal.md for the product motivation. The app is a static vanilla-JS MapLi
 ### D1: Broaden the mobile breakpoint to 900px
 
 Use the Wander Atlas breakpoint for the sheet presentation so narrow tablets and landscape phones receive the map-first layout. Desktop remains the existing floating panel above 900px.
-
 - **Alternative considered:** Keep 600px. Rejected because the current layout can still be cramped and clipped on 601-900px screens, especially in landscape.
 
 ### D2: Use two fixed sheet heights
 
 Use a compact fixed peek height of approximately `88px` and an expanded height of approximately `62dvh`, with a sensible maximum for larger narrow screens. The peek includes the handle/header and search or tour summary affordances; the expanded state exposes the existing controls and list.
-
 - **Rationale:** A small peek preserves map context and makes the sheet feel like a secondary surface. A fixed expanded state avoids the complexity and gesture conflicts of dragging.
 - **Alternative considered:** Keep `38dvh` peek and `90dvh` expanded. Rejected because the current peek exposes too much data and the expanded state obscures most of the map.
 
 ### D3: Keep one controls surface
 
 Keep search, Filters, Group & Sort, Tours, and the footer in `#controls`. Mobile-specific presentation changes will use the existing section collapse behavior instead of duplicating controls into floating menus.
-
 - **Rationale:** GuideAlong's primary workflow uses the map and tour explorer together; one sheet keeps filtering and browsing discoverable without adding a second navigation layer.
 - **Alternative considered:** Add separate floating View and Filters menus like Wander Atlas. Rejected for this product because GuideAlong has no equivalent multi-view navigation and its filter controls are already cohesive.
 
 ### D4: Use explicit sheet interaction boundaries
 
 The sheet remains fixed over the map with an internally scrollable body. Sheet controls stop propagation where needed, while map taps outside MapLibre controls collapse an expanded sheet. MapLibre retains ownership of pan and zoom gestures in the map area.
-
 - **Rationale:** The map is the primary surface, so tapping it should restore map context without disabling normal gestures.
 - **Alternative considered:** Collapse only through the sheet handle/header. Rejected because users need a fast way to get the map back after browsing.
 
 ### D5: Use dynamic viewport sizing and safe-area insets
 
 Remove the competing inline map height or otherwise ensure the mobile CSS can apply `100vh` fallback followed by `100dvh`. Add bottom padding based on `env(safe-area-inset-bottom)` to the sheet's usable content/footer area.
-
 - **Rationale:** `100dvh` handles mobile browser chrome, while safe-area padding prevents controls from sitting beneath home indicators.
 - **Alternative considered:** JavaScript `visualViewport` sizing. Rejected because CSS viewport units provide the simpler progressive solution.
 

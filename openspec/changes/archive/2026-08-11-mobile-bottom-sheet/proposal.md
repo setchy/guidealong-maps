@@ -13,9 +13,11 @@ On mobile (≤600px), the controls panel is made near-full-width and near-full-h
 ## Capabilities
 
 ### New Capabilities
+
 - `mobile-bottom-sheet`: A mobile-only bottom sheet that hosts the controls, with peek and expanded states, keeping the map visible.
 
 ### Modified Capabilities
+
 - `mobile-responsive-layout`: the "Mobile controls panel" requirement changes from a near-full-width overlay panel to a bottom sheet that leaves the map visible.
 
 ## Impact

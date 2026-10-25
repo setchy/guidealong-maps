@@ -21,9 +21,11 @@ The repo was taken from 37 → 0 open SonarCloud issues using a repeatable formu
 ## Capabilities
 
 ### New Capabilities
+
 None — this is a developer-tooling/docs change and the change sets `skip_specs: true`. Specs describe application behavior; the skill does not alter application behavior, so creating a delta spec would invent a requirement purely to satisfy validation.
 
 ### Modified Capabilities
+
 None.
 
 ## Impact

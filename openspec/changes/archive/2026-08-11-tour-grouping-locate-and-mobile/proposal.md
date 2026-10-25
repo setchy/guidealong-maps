@@ -15,12 +15,14 @@ The tour list is a flat, always-title-sorted list with no way to organize the da
 ## Capabilities
 
 ### New Capabilities
+
 - `tour-categorization`: Deriving a normalized `category` for each tour during the fetch pipeline (`National Park | Bundle | Walking | Driving`), persisted in `tours.json`.
 - `tour-list-organization`: Grouping the tour list by Status or Category, sorting by Title, Completed date, or Distance, group headers with counts, and distance display.
 - `map-locate-and-attribution`: A locate-me control that captures the user's position for distance sorting, and a collapsed-on-load attribution control.
 - `mobile-responsive-layout`: Viewport meta tag and responsive styling so the sidebar layout works on small screens.
 
 ### Modified Capabilities
+
 <!-- No existing specs to modify; this is the first change with specs. -->
 
 ## Impact

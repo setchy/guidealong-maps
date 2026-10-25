@@ -20,6 +20,7 @@ The current pipeline fuses inventory discovery, per-tour detail enrichment, and 
 ## Decisions
 
 ### D1: Three modules, one thin orchestrator
+
 ```
 lib/index.js            thin runner: inventory → details → geocode
 lib/inventory.js        Phase 1: URL/title discovery from /tour-list/ (+ total)
@@ -33,6 +34,7 @@ Each phase reads `tours.json`, computes its own work set (tours missing that pha
 - **Alternative considered**: keeping the current single script with flags — rejected; the fused script is what caused the firewall/data-loss problems.
 
 ### D2: Incremental work-set per phase (union is a field-merge, not replace)
+
 ```
 inventory:  URL set from /tour-list/  → union with existing tours:
               - add new URLs
@@ -46,6 +48,7 @@ The inventory union MUST merge per-field (fill missing `start`/`location`/`durat
 - **Alternative considered**: replacing existing entries wholesale on union — rejected; that is what caused the data-loss bug.
 
 ### D3: Detail fetching: plain `fetch` + cheerio, with pacing + backoff
+
 Tour pages are server-rendered static HTML; cheerio parses `Location:`/`Start:` spans without a browser or AJAX. Fetching uses:
 - configurable base delay between requests (e.g. 1–2s)
 - exponential backoff (e.g. ×2 up to a cap) on 403/firewall responses, bounded retries
@@ -55,11 +58,13 @@ Tour pages are server-rendered static HTML; cheerio parses `Location:`/`Start:` 
 - **Alternative considered**: Playwright browser for details — rejected as the primary path (also 403'd, heavier); kept only as an optional fallback if a future site change requires JS.
 
 ### D4: Inventory keeps `admin-ajax.php` pagination + browser driver optional
+
 Page 1 is static HTML. Pages 2..N use the site's `tourmaster_tour_ajax` endpoint with the page's settings (as today). The existing headless-browser driver is retained as an optional `FETCH_DRIVER=browser` fallback (it was verified to work from a non-flagged context) but is not the default.
 - **Rationale**: inventory is cheap (≈2 requests); the AJAX path mirrors the site and works when not blocked. The browser driver stays behind the same interface for environments where http is blocked.
 - **Alternative considered**: dropping the browser driver entirely — rejected; it's already written and may help in CI/non-flagged runs, but it is not the default path.
 
 ### D5: Remove `scripts/merge-tours.js`
+
 The page-2 tours it merged are already in `tours.json` (131 total). The inventory phase now handles the full set; the paste helper has no ongoing role.
 - **Rationale**: dead code after the refactor; removing reduces surface area.
 

@@ -25,26 +25,32 @@ See proposal.md for motivation.
 ## Decisions
 
 ### D1: Page 1 from static HTML; remaining pages via `/tour-list/`'s own pagination
+
 Parse page 1 from `/tour-list/` static HTML (as today). Read the reported total ("N Results Found") and pagination (`data-settings`, `num-fetch`) from the page, then request pages 2..N using the site's own pagination mechanism (`admin-ajax.php` action `tourmaster_tour_ajax` with the page's `settings` object and `option {name:"paged", value:i}`). Parse each response's `content` with cheerio and merge, de-duplicating by URL.
 - **Rationale**: mirrors the site's own behavior and keeps `/tour-list/` as the single source; preserves existing parsing logic. The pagination is AJAX-only — page-number links have `data-ajax-name` and no `href`, and there is no URL-based page 2.
 - **Alternative considered**: WordPress REST API, sitemaps, crawling individual tour pages — all rejected (firewall-blocked or secondary sources; the change is single-source by requirement).
 
 ### D2: Reliability driver — lightweight HTTP with browser-like headers, with a browser fallback
+
 The deciding evidence: raw Node fetch to `admin-ajax.php` gets blocked from a flagged IP, but a real browser session does not. So:
 1. **Primary**: Node `fetch` with browser-like `User-Agent`, `Referer: https://guidealong.com/tour-list/`, `Origin`, and `X-Requested-With`. Space requests by a configurable delay and stop on a 403/firewall response, warning instead of retrying.
 2. **Fallback** (`FETCH_DRIVER=browser`): drive a headless Chromium via Playwright — load `/tour-list/`, click each page number, scrape rendered tour items. Same single source, different transport.
+
 - **Rationale**: lightweight-first keeps the dependency footprint small; the browser fallback is the escalation if blocking persists, still fetching only `/tour-list/`.
 - **Trade-off**: adds `playwright-core` as a devDependency only for the fallback; the driver is swappable behind one function.
 
 ### D3: Count mismatch warning from the reported total
+
 Extract the reported total from the page (e.g. the "131 Results Found" element). After merging all pages, if `parsedCount !== reportedTotal`, log a warning with both numbers and the delta. This is purely advisory; the sync still writes whatever was parsed.
 - **Alternative considered**: hard-failing on mismatch — rejected; a mismatch may be benign and shouldn't block the sync.
 
 ### D4: completed.json remap warnings
+
 After building the tour list, load `completed.json`, and for each entry with no exact title match in `tours.json`, emit a warning. Attempt a token-overlap title-similarity match to suggest a likely renamed equivalent. Missing/unreadable `completed.json` is silently skipped.
 - **Alternative considered**: auto-rewriting `completed.json` — rejected; renames need human confirmation (see Non-Goals).
 
 ### D5: New `warn()` log helper
+
 Add `warn(msg)` to `lib/log.js` (distinct from `log`/`error`) so warnings stand out in output.
 
 ## Risks / Trade-offs
@@ -64,5 +70,3 @@ Add `warn(msg)` to `lib/log.js` (distinct from `log`/`error`) so warnings stand 
 ## Open Questions
 
 None — requirements and approach are settled. The change fetches all pages of `/tour-list/` from that single source.
-
-

@@ -30,7 +30,6 @@ Currently everything renders as plain text. The design goal is cosmetic: better 
 ### 2. Extend `lib/log.js` with colorized helpers
 
 Keep existing `log`/`warn`/`error` signatures (they're called from many modules) but add new semantic helpers alongside them so call sites read clearly:
-
 - `phase(title)` → bold + distinct color per phase (inventory=cyan, details=magenta, geocode=yellow)
 - `progress(prefix, message)` → cyan `[i/n]` counter, normal message text
 - `success(message)` → green

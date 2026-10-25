@@ -14,10 +14,12 @@ The fetch pipeline (`pnpm fetch:tours`) only reads the first page of GuideAlong'
 ## Capabilities
 
 ### New Capabilities
+
 - `tour-fetch-all-pages`: Fetch the complete tour list across all paginated pages via the site's AJAX endpoint, de-duplicated, with rate-limit-aware fetching.
 - `fetch-data-warnings`: Emit warnings during `pnpm fetch:tours` for dataset total mismatches and for `completed.json` entries that no longer match `tours.json` titles.
 
 ### Modified Capabilities
+
 <!-- No existing specs change; both capabilities are new. -->
 
 ## Impact

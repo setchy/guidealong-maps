@@ -1,6 +1,6 @@
 ---
-description: "Implement tasks from an OpenSpec change (Experimental)"
----
+
+## description: "Implement tasks from an OpenSpec change (Experimental)"
 
 Implement tasks from an OpenSpec change.
 
@@ -11,7 +11,6 @@ Implement tasks from an OpenSpec change.
 One `"root": null` is not about setup: when a `status` error message starts with `Declared in` or `Invalid store declaration in` and names this project's `openspec/config.yaml` (or `config.yml`), the project does use OpenSpec through a store it declares, which this machine cannot resolve (the store is not registered, or the `store:` line is malformed). Do not treat it as uninitialized and skip the branches below: stop before writing and show the user that error's `message` and `fix`.
 
 Otherwise, with no root, what happens next depends on how this workflow was reached:
-
 - **Auto-selected**: you chose this workflow yourself, without the user naming OpenSpec, naming this skill, or running its slash command. Stop using OpenSpec and answer the request normally, as you would with no OpenSpec installed. Do not ask them to set anything up and do not mention OpenSpec setup.
 - **Explicit OpenSpec request**: the user named OpenSpec, named this skill, or ran its slash command. Stop before writing and ask how to proceed: set this project up (`openspec init`), target a store they already have (`--store <id>`), or continue without OpenSpec for this request. Wait for their answer.
 
@@ -21,7 +20,6 @@ In both branches, never create the root as a side effect: do not run `openspec i
 **Provided arguments**: $ARGUMENTS
 
 **Steps**
-
 1. **Select the change**
 
    If a name is provided, use it. Otherwise:
@@ -32,9 +30,11 @@ In both branches, never create the root as a side effect: do not run `openspec i
    Always announce: "Using change: <name>" and how to override (e.g., `/opsx-apply <other>`).
 
 2. **Check status to understand the schema**
+
    ```bash
    openspec status --change "<name>" --json
    ```
+
    Parse the JSON to understand:
    - `schemaName`: The workflow being used (e.g., "spec-driven")
    - `planningHome`, `changeRoot`, and `actionContext`: planning scope and edit constraints
@@ -194,6 +194,5 @@ What would you like to do?
 **Fluid Workflow Integration**
 
 This skill supports the "actions on a change" model:
-
 - **Can be invoked anytime**: Before all artifacts are done (if tasks exist), after partial implementation, interleaved with other actions
 - **Allows artifact updates**: If implementation reveals design issues, suggest updating artifacts - not phase-locked, work fluidly

@@ -12,9 +12,11 @@ Map pin popovers are text-only — no visual preview of each tour. The tour hero
 ## Capabilities
 
 ### New Capabilities
+
 - `tour-list-hero-images`: Capture each tour's hero image URL from the tour-list page during fetch and render it in the map pin popover.
 
 ### Modified Capabilities
+
 <!-- No existing specs change; this capability is new. -->
 
 ## Impact

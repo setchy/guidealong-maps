@@ -29,21 +29,26 @@ The main dataset consumed by the UI. Each tour has a normalized `category` (`Dri
 
 ```json
 [
-   {
-      "title": "Banff National Park Driving Tour",
-      "url": "https://guidealong.com/tour/banff-driving-tour/",
-      "category": "Driving",
-      "details": {
-         "description": "Explore scenic drives and viewpoints...",
-         "thumbnail": "",
-         "audioPoints": "130+",
-         "duration": "5-7 hours",
-         "tourType": "Driving",
-         "start": "Banff Townsite",
-         "location": "Alberta, Canada"
-      },
-      "geocode": { "lat": 51.178, "lng": -115.570, "country": "Canada", "state": "AB" }
-   }
+  {
+    "title": "Banff National Park Driving Tour",
+    "url": "https://guidealong.com/tour/banff-driving-tour/",
+    "category": "Driving",
+    "details": {
+      "description": "Explore scenic drives and viewpoints...",
+      "thumbnail": "",
+      "audioPoints": "130+",
+      "duration": "5-7 hours",
+      "tourType": "Driving",
+      "start": "Banff Townsite",
+      "location": "Alberta, Canada"
+    },
+    "geocode": {
+      "lat": 51.178,
+      "lng": -115.57,
+      "country": "Canada",
+      "state": "AB"
+    }
+  }
 ]
 ```
 
@@ -53,8 +58,11 @@ Optional list of completed tours, shown with a green icon and counted in the Sta
 
 ```json
 [
-   { "url": "https://guidealong.com/tour/banff-driving-tour/", "completedDate": "2024-08-20" },
-   { "url": "https://guidealong.com/tour/banff-townsite-tour/" }
+  {
+    "url": "https://guidealong.com/tour/banff-driving-tour/",
+    "completedDate": "2024-08-20"
+  },
+  { "url": "https://guidealong.com/tour/banff-townsite-tour/" }
 ]
 ```
 
@@ -69,22 +77,20 @@ Holds the `lastSynced` timestamp shown in the app's footer (e.g. "Last synced Au
 ## 🔄 Refreshing tour data (server-side)
 
 You can refresh `src/data/tours.json` by scraping the tour list and optionally geocoding each tour using the Google Maps Geocoding SDK (server-side only). This also re-derives each tour's `category`.
-
-1) Install dependencies and ensure your key is in `.env` (copy `.env.template`):
+1. Install dependencies and ensure your key is in `.env` (copy `.env.template`):
 
 ```shell
 pnpm i
 cp .env.template .env
 ```
 
-2) Run the fetch script:
+2. Run the fetch script:
 
 ```shell
 pnpm fetch:tours
 ```
 
 Behavior:
-
 - If `GOOGLE_MAPS_API_KEY` is set in `.env`, the script geocodes missing tours and fills the `geocode` fields.
 - If not set, the script still scrapes/upserts tours but skips geocoding.
 
@@ -95,7 +101,6 @@ Output: `./src/data/tours.json` (sorted by title)
 ## ☁️ Deploying to Netlify
 
 The site is deployed with [Netlify][netlify]:
-
 - **Production** deploys automatically from the `main` branch.
 - **Preview branches** — every pull request gets its own preview deploy, so changes can be reviewed live before merging.
 - **Base directory / publish directory**: `./src` (the site is static — no build step).

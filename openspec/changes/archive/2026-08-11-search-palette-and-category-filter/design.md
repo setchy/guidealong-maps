@@ -20,11 +20,13 @@ The app is a static, vanilla-JS MapLibre site with no build step or framework. `
 ## Decisions
 
 ### D1: Collapse via existing `.collapsed` classes, applied in `initMap`
+
 The HTML already marks sections collapsible; the change is to start them collapsed. In `initMap`, after wiring toggles, add the `collapsed` class to `#filtersSection` and `#groupSortSection` and set their toggles' `aria-expanded="false"` unconditionally (removing the mobile-only `window.innerWidth <= 600` guard).
 - **Rationale**: one-line-per-section change, reuses existing toggle listeners and CSS, consistent on all viewports.
 - **Alternative considered**: HTML default `collapsed` class — rejected because JS-driven state keeps single source of truth and still lets the first click expand correctly.
 
 ### D2: Search palette as a static overlay in `index.html` + plain DOM in `main.js`
+
 Add a hidden overlay (`#searchPalette`) with backdrop, input, results list, and hint footer. `main.js` wires:
 - `Cmd/Ctrl+K` (and the search button) → open + focus
 - `Esc` → close
@@ -36,11 +38,13 @@ Add a hidden overlay (`#searchPalette`) with backdrop, input, results list, and 
 - **Alternative considered**: making the palette a `<dialog>` — rejected for simplicity and consistent styling with existing dropdowns; plain divs keep control over styling.
 
 ### D3: Tour type filter driven by `category`, options derived from data
+
 Replace the static Driving/Walking radios in `#tourTypeDropdownContent` with options generated from distinct `t.category` values (plus "All"), sorted. `getSelectedTourType` keeps returning the selected value or `"all"`. `computeFilteredTours` changes its type match from `d.tourType === type` to `(t.category || "Driving") === type`.
 - **Rationale**: single source of truth (data-derived), matches Group & Sort vocabulary, and the `|| "Driving"` fallback handles legacy tours without `category`.
 - **Alternative considered**: hardcoding the four categories — rejected; deriving from data keeps it correct as the dataset changes.
 
 ### D4: README documents Netlify deployment
+
 Rewrite the README deployment section to describe Netlify as the host: production deploy from the main branch and per-PR preview branches, publishing the `./src` directory with no build step. Remove GitHub Pages references. `.github/workflows/deploy-pages.yml` was already deleted on `main` (commit `cc1f754`), so no workflow changes are needed.
 - **Rationale**: keeps docs accurate with the current hosting setup.
 - **Alternative considered**: adding Netlify config files (e.g. `netlify.toml`) — rejected as out of scope for a docs update.

@@ -1,6 +1,6 @@
 ---
-description: "Archive a completed change in the experimental workflow"
----
+
+## description: "Archive a completed change in the experimental workflow"
 
 Archive a completed change in the experimental workflow.
 
@@ -11,7 +11,6 @@ Archive a completed change in the experimental workflow.
 One `"root": null` is not about setup: when a `status` error message starts with `Declared in` or `Invalid store declaration in` and names this project's `openspec/config.yaml` (or `config.yml`), the project does use OpenSpec through a store it declares, which this machine cannot resolve (the store is not registered, or the `store:` line is malformed). Do not treat it as uninitialized and skip the branches below: stop before writing and show the user that error's `message` and `fix`.
 
 Otherwise, with no root, what happens next depends on how this workflow was reached:
-
 - **Auto-selected**: you chose this workflow yourself, without the user naming OpenSpec, naming this skill, or running its slash command. Stop using OpenSpec and answer the request normally, as you would with no OpenSpec installed. Do not ask them to set anything up and do not mention OpenSpec setup.
 - **Explicit OpenSpec request**: the user named OpenSpec, named this skill, or ran its slash command. Stop before writing and ask how to proceed: set this project up (`openspec init`), target a store they already have (`--store <id>`), or continue without OpenSpec for this request. Wait for their answer.
 
@@ -23,7 +22,6 @@ In both branches, never create the root as a side effect: do not run `openspec i
 **Provided arguments**: $ARGUMENTS
 
 **Steps**
-
 1. **Select the change**
 
    If a name is provided, use it. Otherwise:
@@ -39,9 +37,11 @@ In both branches, never create the root as a side effect: do not run `openspec i
    **Load current archive inputs before the existing archive checks:**
 
    After resolving the selected change and planning root, run:
+
    ```bash
    openspec instructions archive --change "<name>" --json
    ```
+
    Keep the same selected-root flags on this command. This lookup is advisory and
    optional: it only supplies extra prompt inputs, so it must never block archiving.
    If it exits non-zero or returns invalid JSON — for example on an older CLI that
@@ -110,7 +110,7 @@ In both branches, never create the root as a side effect: do not run `openspec i
 
    **If delta specs exist:**
    - Compare each delta spec with its corresponding main spec at `<planningHome.root>/openspec/specs/<capability-path>/spec.md` (use the store-aware `planningHome.root` from step 2, not a hardcoded repo path)
-   - A missing main spec is **not automatically** "already synced". For a new capability, the main spec is an *output* of the sync, not an input:
+   - A missing main spec is **not automatically** "already synced". For a new capability, the main spec is an _output_ of the sync, not an input:
      - If the delta has MODIFIED or RENAMED requirements, report that only ADDED requirements can create a new main spec and mark that capability as sync-blocked. Never invent a requirement that has no current version.
      - Otherwise, if the delta has only REMOVED requirements and the change's `.openspec.yaml` declares `retire_capabilities: true`, the capability is already retired: count it as already synced, warn that there is nothing left to remove, and do not recreate the main spec. Apply this rule both now and when verifying a completed sync.
      - Otherwise, if the delta has no ADDED requirements, report that no sync is possible and mark that capability as sync-blocked. For a REMOVED-only delta, warn that there is no main spec to remove from and leave the main-spec tree unchanged. `openspec archive` refuses the unmarked REMOVED-only case with `Spec must have at least one requirement`.
@@ -162,6 +162,7 @@ In both branches, never create the root as a side effect: do not run `openspec i
 5. **Perform the archive**
 
    Create an `archive` directory under `planningHome.changesDir` if it doesn't exist:
+
    ```bash
    mkdir -p "<planningHome.changesDir>/archive"
    ```

@@ -1,7 +1,6 @@
 ## 1. Hero image capture and download
 
 > Deferred: hero-image fetching is blocked by GuideAlong's site firewall (tour pages return 403). Revisit once the fetch issue is resolved.
-
 - [ ] 1.1 In `lib/enrich.js`, extend `parseTourDetail` to read the page's `<meta property="og:image">` URL and return it alongside `start`/`location`.
 - [ ] 1.2 Add a fallback source: when a tour page has no `og:image`, use the tour-list item image `src` captured by `lib/inventory.js` (currently disabled at line 79-80).
 - [ ] 1.3 Derive the local filename from the tour URL slug (e.g. `/tour/banff-driving-tour/` → `banff-driving-tour`), sanitized, with the extension taken from the image's `Content-Type` (default `.jpg`).

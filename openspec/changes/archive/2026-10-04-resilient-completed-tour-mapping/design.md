@@ -26,7 +26,6 @@
 ### D1: URL is the identity key in completed.json
 
 Entry shape changes `{ title, completedDate }` -> `{ url, completedDate }`; `completedDate` stays optional/nullable. The `title` field is dropped.
-
 - **Why**: The site renders titles from `tours.json`, so `completed.json` never needs a title for display; a mutable title field would reintroduce exactly the drift this change removes. JSON has no comments, so there is no way to keep a title "for readability" without it becoming stale.
 - **Alternative considered**: keep `title` as an informational label. Rejected — driftable duplicate; the fetch-time warning already prints the resolved tour title alongside the URL, preserving human readability in pipeline output.
 
@@ -37,7 +36,6 @@ Entry shape changes `{ title, completedDate }` -> `{ url, completedDate }`; `com
 ### D3: Sync-time resolution follows redirects, auto-remap with gates
 
 After `tours.json` is written in `lib/index.js`, build the catalog URL set and check each completed entry whose URL is absent:
-
 1. Probe the stale URL with Node `fetch` (manual-redirect, `redirect: "manual"` or handling the response directly), reusing the inventory `User-Agent`. Only mismatched entries are probed — a normal sync does zero extra requests.
 2. A 30x status with a `location` header is the site's mapping. Normalize (strip fragment/query/trailing slash) and look up the successor URL in the catalog.
 3. If the successor URL is not an exact catalog URL (observed: typo'd redirect targets like `geyese` vs. catalog `geyser`), resolve via slug-similarity against catalog slugs — single high-confidence winner only (extend the existing token-overlap machinery to slug tokens; keep a confidence threshold and require a clear gap over the runner-up).
@@ -46,8 +44,7 @@ After `tours.json` is written in `lib/index.js`, build the catalog URL set and c
 6. Any entry with no redirect (404) or an unverified probe (403/network error) goes to the warning path — never auto-remapped.
 
 The summary reports remapped vs. warned counts so the sync log and the git diff explain the write-back.
-
-- **Alternative considered**: warnings-only (status quo of the archived change). Rejected — a confirmed redirect is machine-verified ground truth, unlike a similarity guess; the issue asks to *prevent* drift, not keep reporting it.
+- **Alternative considered**: warnings-only (status quo of the archived change). Rejected — a confirmed redirect is machine-verified ground truth, unlike a similarity guess; the issue asks to _prevent_ drift, not keep reporting it.
 - **Alternative considered**: an `aliases.json` table consulted at render. Rejected — redirects make the site's mapping self-maintaining at sync time; a hand-maintained alias file is extra state with no benefit once completed.json itself is normalized.
 
 ### D4: Similarity/suggestion machinery is re-keyed to slugs
@@ -60,7 +57,7 @@ The summary reports remapped vs. warned counts so the sync log and the git diff 
 
 ### D6: Bundle redirects stop and warn
 
-If guidealong.com ever 301s an individual tour URL *into* a Bundle page (absorption), the bundle gate (D3.4) surfaces it as a warning instead of silently changing what "completed" means. The successful observed redirects were 1:1, non-bundle — this gate is defensive now and correctness-preserving later.
+If guidealong.com ever 301s an individual tour URL _into_ a Bundle page (absorption), the bundle gate (D3.4) surfaces it as a warning instead of silently changing what "completed" means. The successful observed redirects were 1:1, non-bundle — this gate is defensive now and correctness-preserving later.
 
 ## Risks / Trade-offs
 

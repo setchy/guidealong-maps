@@ -15,7 +15,7 @@ See proposal.md — Why. The Sonar-fixing playbook was proven end-to-end on this
 **Non-Goals**
 - Bundling the skill into the application package or shipping it to users of the site.
 - Automating the workflow in CI (it is an agent-assisted process).
-- Covering SonarQube *Server* (self-hosted) specifics beyond noting the same API surface.
+- Covering SonarQube _Server_ (self-hosted) specifics beyond noting the same API surface.
 
 ## Decisions
 

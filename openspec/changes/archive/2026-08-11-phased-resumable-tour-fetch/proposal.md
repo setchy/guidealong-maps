@@ -19,10 +19,12 @@ The current fetch pipeline (`lib/index.js` + `lib/fetch-tour-list.js` + `lib/enr
 ## Capabilities
 
 ### New Capabilities
+
 - `incremental-tour-sync`: The tour data pipeline runs as independent, resumable phases (inventory → details → geocode), each processing only tours that still need its output.
 - `rate-limited-page-fetching`: Fetching tour pages uses polite pacing and exponential backoff so runs survive the site's firewall without losing data.
 
 ### Modified Capabilities
+
 - `tour-fetch-all-pages`: re-scoped from "fetch all pages of /tour-list/" to the inventory phase that discovers the full URL set; the detail-fetching moves to `incremental-tour-sync`.
 
 ## Impact
