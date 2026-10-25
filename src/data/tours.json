@@ -860,26 +860,6 @@
     }
   },
   {
-    "title": "GETTYSBURG BATTLEFIELD BUNDLE",
-    "url": "https://guidealong.com/tour/gettysburg-battlefield-bundle/",
-    "category": "Bundle",
-    "details": {
-      "description": "A sacred Civil War battlefield in southern Pennsylvania. Gettysburg National Military Park preserves the rolling fields, stone walls, and historic landmarks where one of America’s most pivotal battles unfolded.",
-      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/02/Gettysburg-Battlefield-trip-planner-4.jpg",
-      "audioPoints": "160+",
-      "duration": "1 Day",
-      "tourType": "Driving Hybrid",
-      "start": "Any drive into Gettysburg",
-      "location": "Pennsylvania, USA"
-    },
-    "geocode": {
-      "lat": 39.8309293,
-      "lng": -77.2310955,
-      "country": "United States",
-      "state": "PA"
-    }
-  },
-  {
     "title": "GETTYSBURG DOWNTOWN TOUR",
     "url": "https://guidealong.com/tour/gettysburg-downtown-tour/",
     "category": "Driving",
@@ -891,6 +871,26 @@
       "tourType": "Walking",
       "start": "297 Steinwehr Avenue, in front of the Gettysburg Heritage Center",
       "location": "Pennsylvania"
+    },
+    "geocode": {
+      "lat": 39.8309293,
+      "lng": -77.2310955,
+      "country": "United States",
+      "state": "PA"
+    }
+  },
+  {
+    "title": "GETTYSBURG NATIONAL MILITRAY PARK TOUR",
+    "url": "https://guidealong.com/tour/gettysburg-battlefield-bundle/",
+    "category": "Driving",
+    "details": {
+      "description": "A sacred Civil War battlefield in southern Pennsylvania. Gettysburg National Military Park preserves the rolling fields, stone walls, and historic landmarks where one of America’s most pivotal battles unfolded.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/02/Gettysburg-Battlefield-trip-planner-4.jpg",
+      "audioPoints": "160+",
+      "duration": "1 Day",
+      "tourType": "Driving Hybrid",
+      "start": "Any drive into Gettysburg",
+      "location": "Pennsylvania, USA"
     },
     "geocode": {
       "lat": 39.8309293,
@@ -2104,7 +2104,7 @@
     "url": "https://guidealong.com/tour/salem-witch-trials-tour/",
     "category": "Driving",
     "details": {
-      "description": "Spellbinding Salem. Explore historic streets, uncover chilling Witch Trials tales, and visit iconic sites that bring Salem’s legends to life.",
+      "description": "Explore Salem on a walk through the historic sites, including the Old Burying Point Cemetery, the Witch Trials Memorial, the Old Town Hall, and more.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2025/10/The-Witch-House.jpg",
       "audioPoints": "40+",
       "duration": "2 - 3 Hours",
