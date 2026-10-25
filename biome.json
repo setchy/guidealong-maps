@@ -12,6 +12,11 @@
     "enabled": true,
     "indentStyle": "space"
   },
+  "markdown": {
+    "formatter": {
+      "enabled": false
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
