@@ -1,4 +1,5 @@
 # GuideAlong Tours Explorer
+
 [![Netlify Status][netlify-badge]][netlify-deploys] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Data refresh][data-refresh-badge]][data-refresh-actions] [![License][license-badge]][license]
 
 > 🗺️ Explore GuideAlong tours on an interactive map.
@@ -49,7 +50,6 @@ The UI runs entirely in the browser — with **no API keys required**.
 ## 🧭 Using the UI
 
 ![GuideAlong Tours][screenshot]
-
 - 🔍 Search: press `Cmd+K`/`Ctrl+K` (or the search button) for a keyboard-driven tour search palette, or use the inline search field.
 - 🎛️ Filters: Country, State, Tour type (by category), Tour status, and Search (title/description).
 - 🗂️ Group & Sort: group the list by Status or Category, and sort by Title, Completed date, or Distance.
@@ -67,7 +67,6 @@ The UI runs entirely in the browser — with **no API keys required**.
 ## 🤝 Contributing
 
 Contributions are welcome! 🎉
-
 - Open an [issue][github-issues] for bugs or feature requests.
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for development details — data files, refreshing tour data, deploying to Netlify, and troubleshooting.
 
