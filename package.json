@@ -18,6 +18,13 @@
     "url": "https://github.com/setchy/guidealong-maps/issues"
   },
   "license": "ISC",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.22.1",
+      "onFail": "warn"
+    }
+  },
   "packageManager": "pnpm@12.15.0",
   "devDependencies": {
     "@biomejs/biome": "2.6.3",
