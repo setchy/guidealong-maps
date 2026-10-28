@@ -1,5 +1,21 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "markdown": {
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+  "yaml": {
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
   "vcs": {
     "enabled": false,
     "clientKind": "git",
@@ -7,7 +23,15 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!.opencode", "!openspec", "!pnpm-lock.yaml"]
+    "includes": [
+      "**",
+      "!pnpm-lock.yaml",
+      "!pnpm-workspace.yaml",
+      "!.github/prompts",
+      "!.github/skills",
+      "!.opencode",
+      "!openspec"
+    ]
   },
   "formatter": {
     "enabled": true,
