@@ -760,6 +760,26 @@
     }
   },
   {
+    "url": "https://guidealong.com/tour/denver-walking-combo-tour/",
+    "title": "DENVER WALKING COMBO TOUR",
+    "category": "Bundle",
+    "details": {
+      "description": "Two short walking tours introduce you to Denver's iconic spots along the Mile High Steps Walking Tour and the Larimer Square Walking Tour. Hear the history, see the public art, and get aquainted with Denver's colorful past.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/10/Denver-Trip-Planner-1.jpg",
+      "audioPoints": "60+",
+      "duration": "1/2 Day",
+      "tourType": "Walking",
+      "start": "1400 Larimer St and Colorado State Capitol Building",
+      "location": "Colorado, USA"
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "url": "https://guidealong.com/tour/drumheller-badlands/",
     "title": "DRUMHELLER TOUR",
     "category": "Driving",
@@ -2346,7 +2366,7 @@
     "details": {
       "description": "Discover the untamed beauty of North Dakota on the Theodore Roosevelt National Park Tour—where vast prairies, striking Badlands formations, and diverse wildlife come together to showcase the rugged spirit of the American West.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2024/08/When-To-Visit-TR.webp",
-      "audioPoints": "65+",
+      "audioPoints": "85+",
       "duration": "1 Day",
       "tourType": "Driving",
       "start": "From Medora Or US-85",
@@ -2446,8 +2466,8 @@
     "details": {
       "description": "US Rockies & Plains Bundle includes tours in Colorado, Montana, Wyoming, North & South Dakota. These include 16 destinations such as Yellowstone & Grand Teton, Glacier, Black Hills, Black Canyon, Rocky Mountain, Mesa Verde, Theodore Roosevelt, and more.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/Rockies-Plains.jpg",
-      "audioPoints": "2060+",
-      "duration": "16 Destinations",
+      "audioPoints": "2160+",
+      "duration": "17 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
