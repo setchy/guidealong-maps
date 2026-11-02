@@ -8,6 +8,8 @@
     "lint": "biome check --fix",
     "lint:check": "biome check .",
     "lint:ci": "biome ci --reporter=github",
+    "links:check": "lychee --offline \"src/**/*.html\"",
+    "links:check:external": "lychee \"src/**/*.html\"",
     "fetch:tours": "node ./lib/index.js",
     "test": "node --test"
   },

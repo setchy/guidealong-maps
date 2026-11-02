@@ -1,0 +1,4 @@
+# Shared lychee settings for checking the static site.
+
+no_progress = true
+root_dir = "src"

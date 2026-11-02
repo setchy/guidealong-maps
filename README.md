@@ -64,6 +64,10 @@ The UI runs entirely in the browser — with **no API keys required**.
 - 🧪 `pnpm test` — Run the Node test suite.
 - 🔍 `pnpm lint` — Check and auto-fix formatting/linting via Biome.
 - 🔎 `pnpm lint:check` — Check formatting/linting without writing changes.
+- 🔗 `pnpm links:check` — Check internal links with lychee.
+
+`pnpm links:check` uses [lychee](https://lychee.cli.rs) (`brew install lychee`);
+settings live in [`lychee.toml`](lychee.toml).
 
 ## 🤝 Contributing
 
