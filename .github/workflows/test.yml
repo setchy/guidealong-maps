@@ -25,5 +25,15 @@ jobs:
       - name: Lint
         run: pnpm lint:ci
 
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: >-
+            --offline
+            "${{ github.workspace }}/src/**/*.html"
+          fail: true
+          failIfEmpty: true
+          jobSummary: true
+
       - name: Test
         run: pnpm test

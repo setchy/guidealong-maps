@@ -112,6 +112,8 @@ The site is deployed with [Netlify][netlify]:
 - `pnpm lint` — check and auto-fix formatting/linting via Biome.
 - `pnpm lint:check` — check formatting/linting without writing changes.
 - `pnpm lint:ci` — CI variant with GitHub annotations.
+- `pnpm links:check` — check internal links in the static site with lychee.
+- `pnpm links:check:external` — also check external URLs.
 
 ## 🛠️ Troubleshooting
 
