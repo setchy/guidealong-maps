@@ -8,12 +8,8 @@ This guide covers the developer and maintainer side of the project — project l
 
 Requires Node.js and pnpm (see `.nvmrc` for the pinned Node version).
 
-```shell
-pnpm install
-pnpm start
-```
-
-`pnpm start` serves the static UI from `./src` on port 3000.
+See the [README](README.md) to install and start the app, and the
+[README Scripts table](README.md#-scripts) for all commands.
 
 ## 📦 Project structure
 
@@ -77,10 +73,9 @@ Holds the `lastSynced` timestamp shown in the app's footer (e.g. "Last synced Au
 ## 🔄 Refreshing tour data (server-side)
 
 You can refresh `src/data/tours.json` by scraping the tour list and optionally geocoding each tour using the Google Maps Geocoding SDK (server-side only). This also re-derives each tour's `category`.
-1. Install dependencies and ensure your key is in `.env` (copy `.env.template`):
+1. Ensure your key is in `.env` (copy `.env.template`):
 
 ```shell
-pnpm i
 cp .env.template .env
 ```
 
@@ -108,12 +103,13 @@ The site is deployed with [Netlify][netlify]:
 
 ## 🧪 Tests & linting
 
-- `pnpm test` — run the Node test suite (`test/`).
-- `pnpm lint` — check and auto-fix formatting/linting via Biome.
-- `pnpm lint:check` — check formatting/linting without writing changes.
-- `pnpm lint:ci` — CI variant with GitHub annotations.
-- `pnpm links:check` — check internal links in the static site with lychee.
-- `pnpm links:check:external` — also check external URLs.
+Run `pnpm test` for the Node test suite. Linting, formatting, link checks, and
+the full command reference live in the [README Scripts table](README.md#-scripts).
+
+- **Formatting & linting** — Biome; run `pnpm check:fix` to auto-fix.
+- **Links** — `pnpm links:check` validates internal links in the static site.
+
+CI runs `pnpm lint:ci`, `pnpm test`, and `pnpm links:check`.
 
 ## 🛠️ Troubleshooting
 

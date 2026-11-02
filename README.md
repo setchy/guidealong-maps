@@ -39,13 +39,15 @@ A simple web app that displays [GuideAlong][guidealong] tours on an interactive 
 
 ### 🖥️ Running locally
 
-Start a static file server and open the app in your browser:
+Install dependencies and start the Vite dev server:
 
-```
+```shell
+pnpm install
 pnpm start
 ```
 
-The UI runs entirely in the browser — with **no API keys required**.
+The UI runs entirely in the browser — with **no API keys required**. See
+[Scripts](#-scripts) for the full command reference.
 
 ## 🧭 Using the UI
 
@@ -59,12 +61,20 @@ The UI runs entirely in the browser — with **no API keys required**.
 
 ## 📜 Scripts
 
-- ⚡ `pnpm start` — Serve the UI from `./src` on port 3000.
-- 🔄 `pnpm fetch:tours` — Scrape and update `src/data/tours.json` (and geocode when an API key is present).
-- 🧪 `pnpm test` — Run the Node test suite.
-- 🔍 `pnpm lint` — Check and auto-fix formatting/linting via Biome.
-- 🔎 `pnpm lint:check` — Check formatting/linting without writing changes.
-- 🔗 `pnpm links:check` — Check internal links with lychee.
+| Command                     | Description                                                                  |
+| --------------------------- | ---------------------------------------------------------------------------- |
+| `pnpm start`                | Serve the UI from `./src` on port 3000                                       |
+| `pnpm fetch:tours`          | Scrape and update `src/data/tours.json` (and geocode when an API key is set) |
+| `pnpm test`                 | Run the Node test suite                                                      |
+| `pnpm lint`                 | Apply lint fixes via Biome                                                   |
+| `pnpm lint:check`           | Check lint without writing changes                                           |
+| `pnpm lint:ci`              | Combined CI gate with GitHub annotations                                     |
+| `pnpm format`               | Format files via Biome                                                       |
+| `pnpm format:check`         | Check formatting without writing changes                                     |
+| `pnpm check`                | Check lint, formatting, and import order                                     |
+| `pnpm check:fix`            | Apply all Biome fixes                                                        |
+| `pnpm links:check`          | Check internal links with lychee                                             |
+| `pnpm links:check:external` | Also check external URLs                                                     |
 
 `pnpm links:check` uses [lychee](https://lychee.cli.rs) (`brew install lychee`);
 settings live in [`lychee.toml`](lychee.toml).
