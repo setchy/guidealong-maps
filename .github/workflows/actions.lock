@@ -11,6 +11,7 @@ workflows:
     '.github/workflows/renovate.yml': []
     '.github/workflows/test.yml':
         - 'actions/checkout@v7.0.1'
+        - 'lycheeverse/lychee-action@v2.9.0'
         - 'pnpm/setup@v3.1.2'
 dependencies:
     'actions/cache@v6.1.0':
@@ -23,6 +24,11 @@ dependencies:
         commit: 'sha1-3d3c42e5aac5ba805825da76410c181273ba90b1'
         owner_id: 44036562
         repo_id: 197814629
+    'lycheeverse/lychee-action@v2.9.0':
+        ref: 'v2.9.0'
+        commit: 'sha1-e7477775783ea5526144ba13e8db5eec57747ce8'
+        owner_id: 74027027
+        repo_id: 320929718
     'peter-evans/create-pull-request@v8.1.1':
         ref: 'v8.1.1'
         commit: 'sha1-5f6978faf089d4d20b00c7766989d076bb2fc7f1'
