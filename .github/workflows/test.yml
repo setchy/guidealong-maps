@@ -23,7 +23,7 @@ jobs:
           cache: true
 
       - name: Lint
-        run: pnpm exec biome ci .
+        run: pnpm lint:ci
 
       - name: Test
         run: pnpm test
