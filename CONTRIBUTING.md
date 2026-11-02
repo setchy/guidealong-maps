@@ -110,6 +110,8 @@ The site is deployed with [Netlify][netlify]:
 
 - `pnpm test` — run the Node test suite (`test/`).
 - `pnpm lint` — check and auto-fix formatting/linting via Biome.
+- `pnpm lint:check` — check formatting/linting without writing changes.
+- `pnpm lint:ci` — CI variant with GitHub annotations.
 
 ## 🛠️ Troubleshooting
 

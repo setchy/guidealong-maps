@@ -63,6 +63,7 @@ The UI runs entirely in the browser — with **no API keys required**.
 - 🔄 `pnpm fetch:tours` — Scrape and update `src/data/tours.json` (and geocode when an API key is present).
 - 🧪 `pnpm test` — Run the Node test suite.
 - 🔍 `pnpm lint` — Check and auto-fix formatting/linting via Biome.
+- 🔎 `pnpm lint:check` — Check formatting/linting without writing changes.
 
 ## 🤝 Contributing
 
