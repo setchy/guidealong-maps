@@ -2026,8 +2026,8 @@
     "details": {
       "description": "Experience Maui’s famous Road to Hana with the most trusted audio tour. We’ll guide you to all the must-see sights and hidden gems including spectacular waterfalls, black sand beaches, bamboo forests, lava rock formations and amazing ocean views.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/r2h-1.jpg",
-      "audioPoints": "140+",
-      "duration": "10 Hours+",
+      "audioPoints": "500+",
+      "duration": "3+ Days",
       "tourType": "Driving",
       "start": "Central Maui",
       "location": "Hawaii"
@@ -2161,12 +2161,12 @@
   },
   {
     "url": "https://guidealong.com/tour/savannah-to-charleston-tour/",
-    "title": "SAVANNAH TO CHARLESTON TOUR",
+    "title": "SAVANNAH AND CHARLESTON TOUR",
     "category": "Driving",
     "details": {
-      "description": "Explore the scenic route between Savannah and Charleston, featuring historic Lowcountry charm, coastal landscapes, and iconic stops like Drayton Hall and Angel Oak Tree.",
-      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/03/Savannah-Charleston-Trip-Planner-4.jpg",
-      "audioPoints": "200+",
+      "description": "Drive between Savannah and Charleston along scenic Route 17 for natural beauty and picturesque small towns, then walk through the Colonial history of Savannah and the Civil War stories in Charleston.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/11/Savannah-to-charleston-trip-planner-1.jpg",
+      "audioPoints": "350+",
       "duration": "1 day",
       "tourType": "Driving",
       "start": "Savannah, Charleston",
