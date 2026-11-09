@@ -73,6 +73,7 @@ Holds the `lastSynced` timestamp shown in the app's footer (e.g. "Last synced Au
 ## 🔄 Refreshing tour data (server-side)
 
 You can refresh `src/data/tours.json` by scraping the tour list and optionally geocoding each tour using the Google Maps Geocoding SDK (server-side only). This also re-derives each tour's `category`.
+
 1. Ensure your key is in `.env` (copy `.env.template`):
 
 ```shell
@@ -86,6 +87,7 @@ pnpm fetch:tours
 ```
 
 Behavior:
+
 - If `GOOGLE_MAPS_API_KEY` is set in `.env`, the script geocodes missing tours and fills the `geocode` fields.
 - If not set, the script still scrapes/upserts tours but skips geocoding.
 
@@ -96,6 +98,7 @@ Output: `./src/data/tours.json` (sorted by title)
 ## ☁️ Deploying to Netlify
 
 The site is deployed with [Netlify][netlify]:
+
 - **Production** deploys automatically from the `main` branch.
 - **Preview branches** — every pull request gets its own preview deploy, so changes can be reviewed live before merging.
 - **Base directory / publish directory**: `./src` (the site is static — no build step).
