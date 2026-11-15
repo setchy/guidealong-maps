@@ -1160,6 +1160,26 @@
     }
   },
   {
+    "url": "https://guidealong.com/tour/icelands-south-coast-tour/",
+    "title": "ICELAND’S SOUTH COAST TOUR",
+    "category": "Driving",
+    "details": {
+      "description": "Drive between Reykjavik and Vík for geometric basalt pillars and black sand beaches, hidden waterfall trails, and puffins along rocky coastal cliffs.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/11/Icelands-South-Coast-Trip-Planner-1.jpg",
+      "audioPoints": "265+",
+      "duration": "1 Day",
+      "tourType": "Driving",
+      "start": "Reykjavík or Vík",
+      "location": "Iceland"
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "url": "https://guidealong.com/tour/isle-of-skye/",
     "title": "ISLE OF SKYE TOUR",
     "category": "Driving",
@@ -1404,7 +1424,7 @@
     "title": "MIAMI <-> KEY WEST TOUR",
     "category": "Driving",
     "details": {
-      "description": "Drive US-Rt 1 and Overseas Highway from Miami to Key West, then walk Historic & Festive Key West",
+      "description": "Drive US-Route 1 and Overseas Highway from Miami to Key West, then walk historic and festive Key West.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2019/03/Florida-Keys-Drive-1.jpg",
       "audioPoints": "280+",
       "duration": "1 - 2 Days+",
@@ -1880,6 +1900,26 @@
     }
   },
   {
+    "url": "https://guidealong.com/tour/pinnacles-national-park-tour/",
+    "title": "PINNACLES NATIONAL PARK TOUR",
+    "category": "National Park",
+    "details": {
+      "description": "Follow the trail in Pinnacles National Park for a hidden cave, colorful stone formations, and a secret refuge of life in a thirsty desert landscape.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/11/Pinnacles-National-park-trip-planner-entrance-fees.jpg",
+      "audioPoints": "35+",
+      "duration": "1/2 Day",
+      "tourType": "Driving-Hybrid",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "url": "https://guidealong.com/tour/plymouth-walking-tour/",
     "title": "PLYMOUTH WALKING TOUR",
     "category": "Walking",
@@ -2026,7 +2066,7 @@
     "details": {
       "description": "Experience Maui’s famous Road to Hana with the most trusted audio tour. We’ll guide you to all the must-see sights and hidden gems including spectacular waterfalls, black sand beaches, bamboo forests, lava rock formations and amazing ocean views.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2017/09/r2h-1.jpg",
-      "audioPoints": "500+",
+      "audioPoints": "190+",
       "duration": "3+ Days",
       "tourType": "Driving",
       "start": "Central Maui",
@@ -2064,9 +2104,9 @@
     "title": "VERMONT, RT100 SCENIC BYWAY TOUR",
     "category": "Driving",
     "details": {
-      "description": "Vermont's Main Street. A road trip for those that like food sampling, shops with arts & crafts and the prettiest New England towns, villages and covered bridges. And when it's fall you'll be blinded by the autumn colors.",
+      "description": "Vermont's Main Street. A road trip for those that like food sampling, shops with arts & crafts and the prettiest New England towns, villages and covered bridges.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2019/03/Vermont-Scenic-Drive-1.jpg",
-      "audioPoints": "300",
+      "audioPoints": "310+",
       "duration": "1 Day+",
       "tourType": "Driving",
       "start": "Wilmington or Jeffersonville",
@@ -2424,7 +2464,7 @@
     "title": "US EAST BUNDLE",
     "category": "Bundle",
     "details": {
-      "description": "US East Tours bundle includes Acadia, Bar Harbor, Blue Ridge Parkway, Creole Nature Trail, Catskills, Boston Ghost, Freedom Trail, Gettysburg Battlefield, Great Smoky Mountains, Keweenaw, Lake Michigan, Lake Superior North Shore, Miami - Key West, Natchez Trace, New River Gorge, […]",
+      "description": "US East Tours bundle includes Acadia, Bar Harbor, Blue Ridge Parkway, Creole Nature Trail, Catskills, Freedom Trail, Gettysburg Battlefield, Great Smoky Mountains, Keweenaw, Lake Michigan, Lake Superior North Shore, Miami - Key West, Natchez Trace, New River Gorge, Outer Banks, […]",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2023/05/Cowee-Mountain-Overlook-in-Fall.jpg",
       "audioPoints": "4435+",
       "duration": "33 Destinations",
@@ -2446,8 +2486,8 @@
     "details": {
       "description": "US Pacific Coastline Bundle includes tours in California, Oregon & Washington. These include 19 destinations such as 17-Mile, Big Sur, Crater Lake, Joshua Tree, Lake Tahoe, Lassen Volcanic, Mount Rainier, and more.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/US-Pacific-Coastline-Bundle-3.jpg",
-      "audioPoints": "3305+",
-      "duration": "19 Destinations",
+      "audioPoints": "3575+",
+      "duration": "20 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
