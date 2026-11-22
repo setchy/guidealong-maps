@@ -60,6 +60,26 @@
     }
   },
   {
+    "url": "https://guidealong.com/tour/alaska-bundle/",
+    "title": "ALASKA BUNDLE",
+    "category": "Bundle",
+    "details": {
+      "description": "Alaska Bundle includes Sterling Highway and Seward Highway.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2025/12/Anchorage-to-Homer-Trip-Planner-2.jpg",
+      "audioPoints": "790+",
+      "duration": "3 Destinations",
+      "tourType": "Driving",
+      "start": "",
+      "location": ""
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "url": "https://guidealong.com/tour/alaska-combo/",
     "title": "ALASKA COMBO TOUR",
     "category": "Bundle",
@@ -77,6 +97,26 @@
       "lng": -154.4930619,
       "country": "United States",
       "state": "AK"
+    }
+  },
+  {
+    "url": "https://guidealong.com/tour/alaskas-alcan-highway-tour/",
+    "title": "ALASKA’S ALCAN HIGHWAY TOUR",
+    "category": "Driving",
+    "details": {
+      "description": "Drive the 200-mile stretch of the Alaska Highway between Fairbanks and Tok on this adventure through the Alaskan interior.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/11/Alcan-highway-trip-planner-1.jpg",
+      "audioPoints": "185+",
+      "duration": "1 Day",
+      "tourType": "Driving",
+      "start": "Fairbanks or Tok",
+      "location": "Alaska, USA"
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
     }
   },
   {
@@ -881,7 +921,7 @@
   },
   {
     "url": "https://guidealong.com/tour/gettysburg-battlefield-bundle/",
-    "title": "GETTYSBURG NATIONAL MILITRAY PARK TOUR",
+    "title": "GETTYSBURG NATIONAL MILITARY PARK TOUR",
     "category": "Driving",
     "details": {
       "description": "A sacred Civil War battlefield in southern Pennsylvania. Gettysburg National Military Park preserves the rolling fields, stone walls, and historic landmarks where one of America’s most pivotal battles unfolded.",
@@ -1820,6 +1860,26 @@
     }
   },
   {
+    "url": "https://guidealong.com/tour/pacific-coast-highway-tour/",
+    "title": "PACIFIC COAST HIGHWAY TOUR (ROUTE 1)",
+    "category": "Driving",
+    "details": {
+      "description": "Drive the 400+ miles of west coast views on the Pacific Coast Highway. Includes optional loops of San Luis Obispo, 17-Mile Drive, and Santa Monica Pier.",
+      "thumbnail": "https://guidealong.com/wp-content/uploads/2026/11/Pacific-coast-highway-trip-planner-image-1.jpg",
+      "audioPoints": "750+",
+      "duration": "3-4 Days",
+      "tourType": "Driving",
+      "start": "Santa Los Angeles or San Francisco",
+      "location": "California, USA"
+    },
+    "geocode": {
+      "lat": null,
+      "lng": null,
+      "country": "",
+      "state": ""
+    }
+  },
+  {
     "url": "https://guidealong.com/tour/palm-springs-tour/",
     "title": "PALM SPRINGS TOUR",
     "category": "Driving",
@@ -2484,10 +2544,10 @@
     "title": "US PACIFIC COASTLINE BUNDLE",
     "category": "Bundle",
     "details": {
-      "description": "US Pacific Coastline Bundle includes tours in California, Oregon & Washington. These include 19 destinations such as 17-Mile, Big Sur, Crater Lake, Joshua Tree, Lake Tahoe, Lassen Volcanic, Mount Rainier, and more.",
+      "description": "US Pacific Coastline Bundle includes tours in California, Oregon & Washington. These include 20 destinations such as 17-Mile, Big Sur, Crater Lake, Joshua Tree, Lake Tahoe, Lassen Volcanic, Mount Rainier, and more.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/US-Pacific-Coastline-Bundle-3.jpg",
-      "audioPoints": "3575+",
-      "duration": "20 Destinations",
+      "audioPoints": "4325+",
+      "duration": "21 Destinations",
       "tourType": "Driving",
       "start": "",
       "location": ""
@@ -2504,7 +2564,7 @@
     "title": "US ROCKIES & PLAINS BUNDLE",
     "category": "Bundle",
     "details": {
-      "description": "US Rockies & Plains Bundle includes tours in Colorado, Montana, Wyoming, North & South Dakota. These include 16 destinations such as Yellowstone & Grand Teton, Glacier, Black Hills, Black Canyon, Rocky Mountain, Mesa Verde, Theodore Roosevelt, and more.",
+      "description": "US Rockies & Plains Bundle includes tours in Colorado, Montana, Wyoming, North & South Dakota. These include 17 destinations such as Yellowstone & Grand Teton, Glacier, Black Hills, Black Canyon, Rocky Mountain, Mesa Verde, Theodore Roosevelt, and more.",
       "thumbnail": "https://guidealong.com/wp-content/uploads/2025/04/Rockies-Plains.jpg",
       "audioPoints": "2160+",
       "duration": "17 Destinations",
